@@ -12,6 +12,15 @@ The model calculates and returns the predicted cost of replacing that pipe.
 - The train data was merged with pipes.csv by matching their pipe IDs.
 - After merging the data, Takito created and added features that he felt could be useful for model training.
 
+## Data Preprocessing
+
+| Step | Details |
+|---|---|
+| Data merge | Attributes from `pipes.csv` were added by matching `Pipe ID` in `train.csv`. All 14,113 train records matched. |
+| Missing-row removal | After the merge, rows with a missing value in any of the original 11 columns were removed. **Six rows with missing installation dates were excluded, leaving 14,107 rows**. |
+| Years of use | **The number of days between the installation date and the leak date is divided by 365.25**. This approximates the number of days per year while accounting for leap years. Since installation times are unknown, the calculation uses dates only, and fractional years are retained without rounding. |
+| Row ordering | Saved in **ascending `pipe_id` order**. |
+
 ## Meaning and Purpose of Each Column
 
 | Column | Content / Calculation | Purpose / Role in Model Training |
