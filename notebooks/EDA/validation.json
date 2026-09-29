@@ -1,0 +1,28 @@
+{
+  "python": "3.14.5",
+  "libraries": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "scipy": "1.17.1",
+    "statsmodels": "0.15.0"
+  },
+  "files": {
+    "data/pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data/train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "checks": {
+    "pipe_rows": 43039,
+    "leak_rows": 14113,
+    "duplicate_pipe_ids": 0,
+    "duplicate_leak_pipe_ids": 0,
+    "unmatched_leak_ids": 0,
+    "nonpositive_lengths": 0,
+    "leaks_before_installation": 0,
+    "material_reconciliation": true,
+    "event_reconciliation": true,
+    "cost_reconciliation": true,
+    "figures": 28
+  }
+}
