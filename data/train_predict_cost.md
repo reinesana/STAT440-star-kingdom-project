@@ -43,6 +43,7 @@ The model calculates and returns the predicted cost of replacing that pipe.
 | `midpoint_x` | (x1+x2)/2 | Representative pipe location. A candidate for regional differences not captured by material and surface alone. |
 | `midpoint_y` | (y1+y2)/2 | Same as above. |
 | `event_decimal_year` | Leak year + elapsed days in that year / number of days in that year | A candidate for cost changes across years. It is not a price index itself. |
+| `event_year` | Leak year as an integer, such as 2019 or 2020 | Used for annual cost differences, yearly summaries, and identifying years for validation. `event_decimal_year` is also retained so the representation can be selected for the task. |
 | `event_month` | Leak month (1–12) | A candidate for learning month-specific cost differences. Calculate it from the scenario date for future predictions. Numeric differences do not correctly represent seasonal distance, so the seasonal sine/cosine features are also retained. |
 | `season_sin` | sin(2π × elapsed fraction of the year) | Represents seasonality and the proximity of the end and beginning of a year. |
 | `season_cos` | cos(2π × elapsed fraction of the year) | Used together with sine to distinguish positions within the seasonal cycle. |
