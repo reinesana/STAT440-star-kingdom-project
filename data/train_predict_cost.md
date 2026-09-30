@@ -97,20 +97,29 @@ Therefore, when adding features in the future or using the features I created, p
 
 ## Validation Plan
 
-Each person will build a model to predict costs.
-We will compare the models using the mean and variability of RMSE across 5 folds.
+Each person will build a cost-prediction model using the same chronological split and evaluation metric. Split by the leak year in `date`, not by row order or Pipe ID.
 
-In 5-fold validation, the train data is divided into five parts. Four parts are used as the actual training data, and the remaining part is used as test data. The trained model predicts costs, and RMSE is obtained by taking the differences from the actual costs in the test data, squaring them, and taking the square root. This metric indicates how far predictions are from the actual values.
+| Stage | Training data | Validation / test data | Purpose |
+|---|---|---|---|
+| Model and configuration selection | 2019–2024 | 2025 | Compare and select models, features, hyperparameters, and conversion / correction methods back to monetary units |
+| Final test | 2019–2025 | 2026 | Freeze the selected approach, refit, and evaluate once |
+| Production refit | All data from 2019–2026 | Future competition data | After evaluation, train on all available data using the frozen approach |
 
-The advantage of RMSE is that 1^2=1 but 2^2=4, so larger differences between predicted and actual values contribute more to the error.
-Also, if costs are originally in CAD, RMSE is also expressed in CAD, making it easy to understand.
+### Evaluation Metric
 
-Use parts 1, 2, 3, and 4 as train and part 5 as test.
-Use parts 1, 2, 3, and 5 as train and part 4 as test.
-Repeat this for five rounds to examine how accurately the model predicts the test data.
+The primary metric is **RMSE on the original monetary scale**.
 
-This produces five RMSE values. Their average indicates the model's predictive accuracy. A larger value means the predictions deviate more from the actual values.
+`RMSE = sqrt(mean((actual Cost - predicted Cost)^2))`
+
+Lower values indicate smaller prediction errors, and larger monetary errors receive more weight. RMSE has the same units as Cost. Models trained on log costs must convert predictions back to monetary units before comparison. Report the 2025 validation RMSE and the 2026 final-test RMSE separately; do not average them.
+
+### Operating Rules
+
+- Use the 2025 validation results to select and tune models, features, and configurations.
+- Do not reselect models or adjust settings after viewing the 2026 final-test results. Doing so makes 2026 validation data rather than an independent final evaluation.
+- Fit scaling, imputation, learned feature transformations, target encoding, and log-to-money correction using only the training data at each stage. For the final test, refit the frozen procedure on 2019–2025.
+- This evaluation measures next-year predictive performance; it does not establish accuracy 20 years into the future.
 
 ## Shared Setting
 
-Please use **440** as the random seed.
+Use **440** as the seed for models and procedures that use randomness. The data split itself is fixed by the years above.
