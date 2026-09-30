@@ -180,3 +180,15 @@ Historical backtesting evaluates predictions. It does not directly observe the s
 Work on branches and open pull requests into `main`.
 
 Record each candidate's method, model/data version, random seed, costs, completion year and validation result so results can be reproduced.
+
+
+## Data handling reminders
+
+- Treat both `cast iron` and `wrought iron` as iron replacement targets. Check the actual material labels before filtering.
+- Keep missing materials as unknown; do not assume these pipes are polyurethane or exempt from replacement. Confirm how they should be handled.
+- For pipes replaced after historical leaks, the original `Lay date` is not the installation date of the replacement polyurethane pipe.
+- EDA surface maps show estimated regions, not measured land boundaries. Calculate work-unit surface costs from the labels of wholly contained pipes, not map colours or area proportions.
+
+EDA documentation 
+[English](notebooks/EDA/EDA.md) and
+[Japanese](notebooks/EDA/EDA_Japanese.md).
