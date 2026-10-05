@@ -1,0 +1,2262 @@
+---
+title: "STA 440 Project"
+author: "Rion Oyama"
+date: "2026-09-30"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# random forest regression
+```{r data }
+# random forest regression
+library(ranger)
+```
+
+
+```{r}
+# view data set 
+
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+df <- read.csv(url, stringsAsFactors = FALSE)
+View(df)
+
+```
+
+
+```{r}
+dim(df)    
+names(df)  
+head(df)   
+```
+
+```{r}
+# doenload data and distribute 
+set.seed(440)
+
+# 1. GitHub data
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv")
+
+df <- read.csv(url, stringsAsFactors = FALSE)
+
+# 2. 日付から漏洩年を作る
+df$date <- as.Date(df$date)
+df$event_year <- as.integer(format(df$date, "%Y"))
+
+# 3. 今回使用する説明変数
+features <- c(
+  "material",
+  "surface",
+  "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x",
+  "midpoint_y",
+  "event_year"
+)
+
+# 必要な列の確認
+required <- c("pipe_id", "date", "cost", features)
+stopifnot(all(required %in% names(df)))
+
+# 4. 2019～2022年で学習、2023年だけでテスト
+train <- subset(df, event_year >= 2019 & event_year <= 2022)
+test  <- subset(df, event_year == 2023)
+
+stopifnot(nrow(train) > 0, nrow(test) > 0)
+
+# 欠損値などがあれば、勝手に削除せず停止する
+used <- c("cost", features)
+stopifnot(
+  !anyNA(train[, used]),
+  !anyNA(test[, used]),
+  all(train$cost > 0),
+  all(test$cost > 0)
+)
+
+numeric_cols <- setdiff(used, c("material", "surface"))
+
+stopifnot(
+  all(vapply(train[numeric_cols],
+             function(x) is.numeric(x) && all(is.finite(x)),
+             logical(1))),
+  all(vapply(test[numeric_cols],
+             function(x) is.numeric(x) && all(is.finite(x)),
+             logical(1)))
+)
+
+# 5. カテゴリは学習データに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(train[[col]]))
+  unseen <- setdiff(unique(test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "学習データにないカテゴリがあります:",
+      col, paste(unseen, collapse = ", ")
+    ))
+  }
+
+  train[[col]] <- factor(train[[col]], levels = categories)
+  test[[col]]  <- factor(test[[col]], levels = categories)
+}
+
+cat("Training: 2019–2022,", nrow(train), "rows\n")
+cat("Testing: 2023,", nrow(test), "rows\n")
+
+# 学習データの費用分布を確認
+print(quantile(
+  train$cost,
+  probs = c(0, 0.5, 0.9, 0.99, 1)
+))
+
+```
+
+```{r}
+# 通常版とlog版のrandom forest regressors
+# 大きな費用は削除せず、同じデータ・同じ設定で、目的変数の変換だけを変えます。
+
+x_train <- train[, features, drop = FALSE]
+x_test  <- test[, features, drop = FALSE]
+
+y_train <- train$cost
+y_test  <- test$cost
+
+# A. 費用をそのまま学習
+rf_raw <- ranger(
+  x = x_train,
+  y = y_train,
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# B. log(1 + 費用)を学習
+rf_log <- ranger(
+  x = x_train,
+  y = log1p(y_train),
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 2023年 prediction 
+pred_raw <- predict(rf_raw, data = x_test)$predictions
+
+# log版は、予測後に元のドル単位へ戻す
+pred_log <- expm1(
+  predict(rf_log, data = x_test)$predictions
+)
+
+```
+
+
+# 2023 ver 
+
+```{r}
+# 2023年のMAE・RMSE
+# log版も、対数のままではなくドルに戻してから評価します。
+
+evaluate <- function(model_name, actual, predicted) {
+
+  data.frame(
+    model = model_name,
+    test_year = 2023,
+    n_test = length(actual),
+    MAE = mean(abs(actual - predicted)),
+    RMSE = sqrt(mean((actual - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(actual) - 1)
+  )
+}
+
+results <- rbind(
+  evaluate("Random forest: raw", y_test, pred_raw),
+  evaluate("Random forest: log1p", y_test, pred_log)
+)
+
+print(results, row.names = FALSE, digits = 7)
+
+# 今回のテストでRMSEが小さい方法を表示
+cat(
+  "\nLower RMSE on 2023:",
+  results$model[which.min(results$RMSE)],
+  "\n"
+)
+
+```
+
+```{r}
+# save the results 
+predictions <- data.frame(
+  pipe_id = test$pipe_id,
+  leak_date = test$date,
+  actual_cost = y_test,
+  predicted_raw = pred_raw,
+  predicted_log = pred_log
+)
+
+write.csv(
+  results,
+  "rf_metrics_2023.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  predictions,
+  "rf_predictions_2023.csv",
+  row.names = FALSE
+)
+
+head(predictions)
+View(predictions)
+```
+
+
+
+# 2024 ver 
+```{r}
+
+# 1. 2024年用のデータ分割
+df$date <- as.Date(df$date)
+df$event_year <- as.integer(format(df$date, "%Y"))
+
+train_2024 <- subset(
+  df, event_year >= 2019 & event_year <= 2023
+)
+test_2024 <- subset(df, event_year == 2024)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+stopifnot(
+  nrow(train_2024) > 0,
+  nrow(test_2024) > 0,
+  !anyNA(train_2024[, c(features, "cost")]),
+  !anyNA(test_2024[, c(features, "cost")]),
+  all(train_2024$cost > 0),
+  all(test_2024$cost > 0)
+)
+
+# 2. カテゴリの処理
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(as.character(train_2024[[col]])))
+
+  unseen <- setdiff(
+    as.character(test_2024[[col]]), categories
+  )
+
+  if (length(unseen) > 0) {
+    stop(paste("学習データにないカテゴリ:", col))
+  }
+
+  train_2024[[col]] <- factor(
+    train_2024[[col]], levels = categories
+  )
+  test_2024[[col]] <- factor(
+    test_2024[[col]], levels = categories
+  )
+}
+
+# 3. 入力と正解を更新
+x_train_2024 <- train_2024[, features, drop = FALSE]
+x_test_2024  <- test_2024[, features, drop = FALSE]
+
+y_train_2024 <- train_2024$cost
+y_test_2024  <- test_2024$cost
+
+# 4. 通常版を新しく学習
+rf_raw_2024 <- ranger(
+  x = x_train_2024,
+  y = y_train_2024,
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 5. log版を新しく学習
+rf_log_2024 <- ranger(
+  x = x_train_2024,
+  y = log1p(y_train_2024),
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 6. 2024年のデータで予測
+pred_raw_2024 <- predict(
+  rf_raw_2024, data = x_test_2024
+)$predictions
+
+pred_log_2024 <- expm1(
+  predict(rf_log_2024, data = x_test_2024)$predictions
+)
+
+# 7. 件数と予測値を確認
+stopifnot(
+  length(pred_raw_2024) == nrow(test_2024),
+  length(pred_log_2024) == nrow(test_2024),
+  all(is.finite(pred_raw_2024)),
+  all(is.finite(pred_log_2024))
+)
+
+# 8. 元のドル単位で評価
+evaluate_2024 <- function(name, predicted) {
+  data.frame(
+    model = name,
+    test_year = 2024,
+    n_test = length(y_test_2024),
+    MAE = mean(abs(y_test_2024 - predicted)),
+    RMSE = sqrt(mean((y_test_2024 - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(y_test_2024) - 1)
+  )
+}
+
+results_2024 <- rbind(
+  evaluate_2024("Random forest: raw", pred_raw_2024),
+  evaluate_2024("Random forest: log1p", pred_log_2024)
+)
+
+cat("Training rows:", nrow(train_2024), "\n")
+cat("Testing rows:", nrow(test_2024), "\n")
+
+print(results_2024, row.names = FALSE, digits = 7)
+
+write.csv(
+  results_2024,
+  "rf_metrics_2024.csv",
+  row.names = FALSE
+)
+
+```
+
+# 2025 ver 
+```{r}
+
+# 1. データを分割
+df$date <- as.Date(df$date)
+df$event_year <- as.integer(format(df$date, "%Y"))
+
+train_2025 <- subset(
+  df, event_year >= 2019 & event_year <= 2024
+)
+test_2025 <- subset(df, event_year == 2025)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+stopifnot(
+  nrow(train_2025) > 0,
+  nrow(test_2025) > 0,
+  !anyNA(train_2025[, c(features, "cost")]),
+  !anyNA(test_2025[, c(features, "cost")]),
+  all(train_2025$cost > 0),
+  all(test_2025$cost > 0)
+)
+
+# 2. カテゴリを学習データに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(
+    as.character(train_2025[[col]])
+  ))
+
+  unseen <- setdiff(
+    as.character(test_2025[[col]]), categories
+  )
+
+  if (length(unseen) > 0) {
+    stop(paste("学習データにないカテゴリ:", col))
+  }
+
+  train_2025[[col]] <- factor(
+    train_2025[[col]], levels = categories
+  )
+  test_2025[[col]] <- factor(
+    test_2025[[col]], levels = categories
+  )
+}
+
+# 3. 説明変数と予測対象
+x_train_2025 <- train_2025[, features, drop = FALSE]
+x_test_2025  <- test_2025[, features, drop = FALSE]
+
+y_train_2025 <- train_2025$cost
+y_test_2025  <- test_2025$cost
+
+# 4. 通常版を学習
+rf_raw_2025 <- ranger(
+  x = x_train_2025,
+  y = y_train_2025,
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 5. log版を学習
+rf_log_2025 <- ranger(
+  x = x_train_2025,
+  y = log1p(y_train_2025),
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 6. 2025年を予測
+pred_raw_2025 <- predict(
+  rf_raw_2025, data = x_test_2025
+)$predictions
+
+# log版はドル単位に戻す
+pred_log_2025 <- expm1(
+  predict(rf_log_2025, data = x_test_2025)$predictions
+)
+
+stopifnot(
+  length(pred_raw_2025) == nrow(test_2025),
+  length(pred_log_2025) == nrow(test_2025),
+  all(is.finite(pred_raw_2025)),
+  all(is.finite(pred_log_2025))
+)
+
+# 7. ドル単位でMAE・RMSEを計算
+evaluate_2025 <- function(name, predicted) {
+  data.frame(
+    model = name,
+    test_year = 2025,
+    n_test = length(y_test_2025),
+    MAE = mean(abs(y_test_2025 - predicted)),
+    RMSE = sqrt(mean((y_test_2025 - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(y_test_2025) - 1)
+  )
+}
+
+results_2025 <- rbind(
+  evaluate_2025("Random forest: raw", pred_raw_2025),
+  evaluate_2025("Random forest: log1p", pred_log_2025)
+)
+
+cat("Training: 2019–2024,", nrow(train_2025), "rows\n")
+cat("Validation: 2025,", nrow(test_2025), "rows\n")
+
+print(results_2025, row.names = FALSE, digits = 7)
+
+cat(
+  "\nLower RMSE on 2025:",
+  results_2025$model[which.min(results_2025$RMSE)],
+  "\n"
+)
+
+# 8. 結果を保存
+write.csv(
+  results_2025,
+  "rf_metrics_2025.csv",
+  row.names = FALSE
+)
+
+predictions_2025 <- data.frame(
+  pipe_id = test_2025$pipe_id,
+  leak_date = test_2025$date,
+  actual_cost = y_test_2025,
+  predicted_raw = pred_raw_2025,
+  predicted_log = pred_log_2025
+)
+
+write.csv(
+  predictions_2025,
+  "rf_predictions_2025.csv",
+  row.names = FALSE
+)
+```
+
+
+
+# 2026 ver
+```{r}
+# 1. データを分割
+df$date <- as.Date(df$date)
+df$event_year <- as.integer(format(df$date, "%Y"))
+
+train_2026 <- subset(
+  df, event_year >= 2019 & event_year <= 2025
+)
+test_2026 <- subset(df, event_year == 2026)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+stopifnot(
+  nrow(train_2026) > 0,
+  nrow(test_2026) > 0,
+  !anyNA(train_2026[, c(features, "cost")]),
+  !anyNA(test_2026[, c(features, "cost")]),
+  all(train_2026$cost > 0),
+  all(test_2026$cost > 0)
+)
+
+# 2. カテゴリを学習データに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(
+    as.character(train_2026[[col]])
+  ))
+
+  unseen <- setdiff(
+    as.character(test_2026[[col]]), categories
+  )
+
+  if (length(unseen) > 0) {
+    stop(paste("学習データにないカテゴリ:", col))
+  }
+
+  train_2026[[col]] <- factor(
+    train_2026[[col]], levels = categories
+  )
+  test_2026[[col]] <- factor(
+    test_2026[[col]], levels = categories
+  )
+}
+
+# 3. 説明変数と予測対象
+x_train_2026 <- train_2026[, features, drop = FALSE]
+x_test_2026  <- test_2026[, features, drop = FALSE]
+
+y_train_2026 <- train_2026$cost
+y_test_2026  <- test_2026$cost
+
+# 4. 選択済みの通常版を、同じ設定で学習し直す
+rf_raw_2026 <- ranger(
+  x = x_train_2026,
+  y = y_train_2026,
+  num.trees = 500,
+  min.node.size = 20,
+  mtry = 3,
+  respect.unordered.factors = "order",
+  seed = 440
+)
+
+# 5. 2026年の費用を予測
+pred_raw_2026 <- predict(
+  rf_raw_2026, data = x_test_2026
+)$predictions
+
+stopifnot(
+  length(pred_raw_2026) == nrow(test_2026),
+  all(is.finite(pred_raw_2026))
+)
+
+# 6. ドル単位でMAE・RMSEを計算
+results_2026 <- data.frame(
+  model = "Random forest: raw",
+  test_year = 2026,
+  n_test = length(y_test_2026),
+  MAE = mean(abs(y_test_2026 - pred_raw_2026)),
+  RMSE = sqrt(mean((y_test_2026 - pred_raw_2026)^2)),
+  total_bias_pct =
+    100 * (sum(pred_raw_2026) / sum(y_test_2026) - 1)
+)
+
+cat("Training: 2019–2025,", nrow(train_2026), "rows\n")
+cat("Final test: 2026,", nrow(test_2026), "rows\n")
+
+print(results_2026, row.names = FALSE, digits = 7)
+
+# 7. 評価結果とパイプごとの予測を保存
+write.csv(
+  results_2026,
+  "rf_metrics_2026.csv",
+  row.names = FALSE
+)
+
+predictions_2026 <- data.frame(
+  pipe_id = test_2026$pipe_id,
+  leak_date = test_2026$date,
+  actual_cost = y_test_2026,
+  predicted_raw = pred_raw_2026
+)
+
+write.csv(
+  predictions_2026,
+  "rf_predictions_2026.csv",
+  row.names = FALSE
+)
+
+```
+
+
+
+--------------------------
+# Gamma Regression 
+
+# 2023 ver 
+```{r}
+# 1. Choose the years
+train_start <- 2019
+train_end   <- 2022  
+test_year   <- 2023
+
+set.seed(440)
+
+# 2. Read the prepared dataset
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+gamma_df <- read.csv(url, stringsAsFactors = FALSE)
+
+gamma_df$date <- as.Date(gamma_df$date)
+gamma_df$event_year <- as.integer(
+  format(gamma_df$date, "%Y")
+)
+
+# 3. Split the data by year
+gamma_train <- subset(
+  gamma_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+gamma_test <- subset(
+  gamma_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# Check the data without removing or capping large costs
+stopifnot(
+  nrow(gamma_train) > 0,
+  nrow(gamma_test) > 0,
+  !anyNA(gamma_train[, c(features, "cost")]),
+  !anyNA(gamma_test[, c(features, "cost")]),
+  all(gamma_train$cost > 0),
+  all(gamma_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(gamma_train[[col]]),
+    is.numeric(gamma_test[[col]]),
+    all(is.finite(gamma_train[[col]])),
+    all(is.finite(gamma_test[[col]]))
+  )
+}
+
+# 4. Treat material and surface as categories
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(gamma_train[[col]]))
+  unseen <- setdiff(unique(gamma_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  gamma_train[[col]] <- factor(
+    gamma_train[[col]], levels = categories
+  )
+  gamma_test[[col]] <- factor(
+    gamma_test[[col]], levels = categories
+  )
+}
+
+# Center year for numerical stability.
+# The reference is calculated from training data only.
+year_reference <- mean(gamma_train$event_year)
+
+gamma_train$year_centered <-
+  gamma_train$event_year - year_reference
+
+gamma_test$year_centered <-
+  gamma_test$event_year - year_reference
+
+# 5. Fit Gamma regression with a log link
+# The target remains the original dollar cost.
+gamma_model <- glm(
+  cost ~ material + surface + pipe_length +
+    years_used_at_leak + midpoint_x + midpoint_y +
+    year_centered,
+  family = Gamma(link = "log"),
+  data = gamma_train,
+  control = glm.control(maxit = 100)
+)
+
+if (!isTRUE(gamma_model$converged)) {
+  stop("Gamma model did not converge. Check before reporting results.")
+}
+
+# 6. Predict directly in dollars
+gamma_pred <- predict(
+  gamma_model,
+  newdata = gamma_test,
+  type = "response"
+)
+
+stopifnot(
+  length(gamma_pred) == nrow(gamma_test),
+  all(is.finite(gamma_pred)),
+  all(gamma_pred > 0)
+)
+
+# 7. Calculate MAE and RMSE
+actual <- gamma_test$cost
+
+gamma_results <- data.frame(
+  model = "Gamma regression (log link)",
+  training_years = paste(train_start, train_end, sep = "-"),
+  test_year = test_year,
+  n_train = nrow(gamma_train),
+  n_test = nrow(gamma_test),
+  MAE = mean(abs(actual - gamma_pred)),
+  RMSE = sqrt(mean((actual - gamma_pred)^2)),
+  total_bias_pct =
+    100 * (sum(gamma_pred) / sum(actual) - 1)
+)
+
+print(gamma_results, row.names = FALSE, digits = 7)
+
+# 8. Save results with the training period in the filename
+file_label <- paste0(
+  "gamma_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  gamma_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+gamma_predictions <- data.frame(
+  pipe_id = gamma_test$pipe_id,
+  leak_date = gamma_test$date,
+  actual_cost = actual,
+  predicted_gamma = as.numeric(gamma_pred)
+)
+
+write.csv(
+  gamma_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+
+```
+
+
+# 2024 ver
+```{r}
+# Fold 2: train on 2019–2023, test on 2024
+train_start <- 2019
+train_end   <- 2023
+test_year   <- 2024
+
+set.seed(440)
+# 2. Read the prepared dataset
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+gamma_df <- read.csv(url, stringsAsFactors = FALSE)
+
+gamma_df$date <- as.Date(gamma_df$date)
+gamma_df$event_year <- as.integer(
+  format(gamma_df$date, "%Y")
+)
+
+# 3. Split the data by year
+gamma_train <- subset(
+  gamma_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+gamma_test <- subset(
+  gamma_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# Check the data without removing or capping large costs
+stopifnot(
+  nrow(gamma_train) > 0,
+  nrow(gamma_test) > 0,
+  !anyNA(gamma_train[, c(features, "cost")]),
+  !anyNA(gamma_test[, c(features, "cost")]),
+  all(gamma_train$cost > 0),
+  all(gamma_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(gamma_train[[col]]),
+    is.numeric(gamma_test[[col]]),
+    all(is.finite(gamma_train[[col]])),
+    all(is.finite(gamma_test[[col]]))
+  )
+}
+
+# 4. Treat material and surface as categories
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(gamma_train[[col]]))
+  unseen <- setdiff(unique(gamma_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  gamma_train[[col]] <- factor(
+    gamma_train[[col]], levels = categories
+  )
+  gamma_test[[col]] <- factor(
+    gamma_test[[col]], levels = categories
+  )
+}
+
+# Center year for numerical stability.
+# The reference is calculated from training data only.
+year_reference <- mean(gamma_train$event_year)
+
+gamma_train$year_centered <-
+  gamma_train$event_year - year_reference
+
+gamma_test$year_centered <-
+  gamma_test$event_year - year_reference
+
+# 5. Fit Gamma regression with a log link
+# The target remains the original dollar cost.
+gamma_model <- glm(
+  cost ~ material + surface + pipe_length +
+    years_used_at_leak + midpoint_x + midpoint_y +
+    year_centered,
+  family = Gamma(link = "log"),
+  data = gamma_train,
+  control = glm.control(maxit = 100)
+)
+
+if (!isTRUE(gamma_model$converged)) {
+  stop("Gamma model did not converge. Check before reporting results.")
+}
+
+# 6. Predict directly in dollars
+gamma_pred <- predict(
+  gamma_model,
+  newdata = gamma_test,
+  type = "response"
+)
+
+stopifnot(
+  length(gamma_pred) == nrow(gamma_test),
+  all(is.finite(gamma_pred)),
+  all(gamma_pred > 0)
+)
+
+# 7. Calculate MAE and RMSE
+actual <- gamma_test$cost
+
+gamma_results <- data.frame(
+  model = "Gamma regression (log link)",
+  training_years = paste(train_start, train_end, sep = "-"),
+  test_year = test_year,
+  n_train = nrow(gamma_train),
+  n_test = nrow(gamma_test),
+  MAE = mean(abs(actual - gamma_pred)),
+  RMSE = sqrt(mean((actual - gamma_pred)^2)),
+  total_bias_pct =
+    100 * (sum(gamma_pred) / sum(actual) - 1)
+)
+
+print(gamma_results, row.names = FALSE, digits = 7)
+
+# 8. Save results with the training period in the filename
+file_label <- paste0(
+  "gamma_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  gamma_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+gamma_predictions <- data.frame(
+  pipe_id = gamma_test$pipe_id,
+  leak_date = gamma_test$date,
+  actual_cost = actual,
+  predicted_gamma = as.numeric(gamma_pred)
+)
+
+write.csv(
+  gamma_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+```
+
+
+
+# 2025 ver 
+```{r}
+# Fold 2: train on 2019–2024, test on 2025
+train_start <- 2019
+train_end   <- 2024
+test_year   <- 2025
+
+set.seed(440)
+# 2. Read the prepared dataset
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+gamma_df <- read.csv(url, stringsAsFactors = FALSE)
+
+gamma_df$date <- as.Date(gamma_df$date)
+gamma_df$event_year <- as.integer(
+  format(gamma_df$date, "%Y")
+)
+
+# 3. Split the data by year
+gamma_train <- subset(
+  gamma_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+gamma_test <- subset(
+  gamma_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# Check the data without removing or capping large costs
+stopifnot(
+  nrow(gamma_train) > 0,
+  nrow(gamma_test) > 0,
+  !anyNA(gamma_train[, c(features, "cost")]),
+  !anyNA(gamma_test[, c(features, "cost")]),
+  all(gamma_train$cost > 0),
+  all(gamma_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(gamma_train[[col]]),
+    is.numeric(gamma_test[[col]]),
+    all(is.finite(gamma_train[[col]])),
+    all(is.finite(gamma_test[[col]]))
+  )
+}
+
+# 4. Treat material and surface as categories
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(gamma_train[[col]]))
+  unseen <- setdiff(unique(gamma_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  gamma_train[[col]] <- factor(
+    gamma_train[[col]], levels = categories
+  )
+  gamma_test[[col]] <- factor(
+    gamma_test[[col]], levels = categories
+  )
+}
+
+# Center year for numerical stability.
+# The reference is calculated from training data only.
+year_reference <- mean(gamma_train$event_year)
+
+gamma_train$year_centered <-
+  gamma_train$event_year - year_reference
+
+gamma_test$year_centered <-
+  gamma_test$event_year - year_reference
+
+# 5. Fit Gamma regression with a log link
+# The target remains the original dollar cost.
+gamma_model <- glm(
+  cost ~ material + surface + pipe_length +
+    years_used_at_leak + midpoint_x + midpoint_y +
+    year_centered,
+  family = Gamma(link = "log"),
+  data = gamma_train,
+  control = glm.control(maxit = 100)
+)
+
+if (!isTRUE(gamma_model$converged)) {
+  stop("Gamma model did not converge. Check before reporting results.")
+}
+
+# 6. Predict directly in dollars
+gamma_pred <- predict(
+  gamma_model,
+  newdata = gamma_test,
+  type = "response"
+)
+
+stopifnot(
+  length(gamma_pred) == nrow(gamma_test),
+  all(is.finite(gamma_pred)),
+  all(gamma_pred > 0)
+)
+
+# 7. Calculate MAE and RMSE
+actual <- gamma_test$cost
+
+gamma_results <- data.frame(
+  model = "Gamma regression (log link)",
+  training_years = paste(train_start, train_end, sep = "-"),
+  test_year = test_year,
+  n_train = nrow(gamma_train),
+  n_test = nrow(gamma_test),
+  MAE = mean(abs(actual - gamma_pred)),
+  RMSE = sqrt(mean((actual - gamma_pred)^2)),
+  total_bias_pct =
+    100 * (sum(gamma_pred) / sum(actual) - 1)
+)
+
+print(gamma_results, row.names = FALSE, digits = 7)
+
+# 8. Save results with the training period in the filename
+file_label <- paste0(
+  "gamma_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  gamma_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+gamma_predictions <- data.frame(
+  pipe_id = gamma_test$pipe_id,
+  leak_date = gamma_test$date,
+  actual_cost = actual,
+  predicted_gamma = as.numeric(gamma_pred)
+)
+
+write.csv(
+  gamma_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+
+
+```
+
+
+# 2026 ver
+```{r}
+# Fold 2: train on 2019–2025, test on 2026
+train_start <- 2019
+train_end   <- 2025
+test_year   <- 2026
+
+set.seed(440)
+# 2. Read the prepared dataset
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+gamma_df <- read.csv(url, stringsAsFactors = FALSE)
+
+gamma_df$date <- as.Date(gamma_df$date)
+gamma_df$event_year <- as.integer(
+  format(gamma_df$date, "%Y")
+)
+
+# 3. Split the data by year
+gamma_train <- subset(
+  gamma_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+gamma_test <- subset(
+  gamma_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# Check the data without removing or capping large costs
+stopifnot(
+  nrow(gamma_train) > 0,
+  nrow(gamma_test) > 0,
+  !anyNA(gamma_train[, c(features, "cost")]),
+  !anyNA(gamma_test[, c(features, "cost")]),
+  all(gamma_train$cost > 0),
+  all(gamma_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(gamma_train[[col]]),
+    is.numeric(gamma_test[[col]]),
+    all(is.finite(gamma_train[[col]])),
+    all(is.finite(gamma_test[[col]]))
+  )
+}
+
+# 4. Treat material and surface as categories
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(gamma_train[[col]]))
+  unseen <- setdiff(unique(gamma_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  gamma_train[[col]] <- factor(
+    gamma_train[[col]], levels = categories
+  )
+  gamma_test[[col]] <- factor(
+    gamma_test[[col]], levels = categories
+  )
+}
+
+# Center year for numerical stability.
+# The reference is calculated from training data only.
+year_reference <- mean(gamma_train$event_year)
+
+gamma_train$year_centered <-
+  gamma_train$event_year - year_reference
+
+gamma_test$year_centered <-
+  gamma_test$event_year - year_reference
+
+# 5. Fit Gamma regression with a log link
+# The target remains the original dollar cost.
+gamma_model <- glm(
+  cost ~ material + surface + pipe_length +
+    years_used_at_leak + midpoint_x + midpoint_y +
+    year_centered,
+  family = Gamma(link = "log"),
+  data = gamma_train,
+  control = glm.control(maxit = 100)
+)
+
+if (!isTRUE(gamma_model$converged)) {
+  stop("Gamma model did not converge. Check before reporting results.")
+}
+
+# 6. Predict directly in dollars
+gamma_pred <- predict(
+  gamma_model,
+  newdata = gamma_test,
+  type = "response"
+)
+
+stopifnot(
+  length(gamma_pred) == nrow(gamma_test),
+  all(is.finite(gamma_pred)),
+  all(gamma_pred > 0)
+)
+
+# 7. Calculate MAE and RMSE
+actual <- gamma_test$cost
+
+gamma_results <- data.frame(
+  model = "Gamma regression (log link)",
+  training_years = paste(train_start, train_end, sep = "-"),
+  test_year = test_year,
+  n_train = nrow(gamma_train),
+  n_test = nrow(gamma_test),
+  MAE = mean(abs(actual - gamma_pred)),
+  RMSE = sqrt(mean((actual - gamma_pred)^2)),
+  total_bias_pct =
+    100 * (sum(gamma_pred) / sum(actual) - 1)
+)
+
+print(gamma_results, row.names = FALSE, digits = 7)
+
+# 8. Save results with the training period in the filename
+file_label <- paste0(
+  "gamma_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  gamma_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+gamma_predictions <- data.frame(
+  pipe_id = gamma_test$pipe_id,
+  leak_date = gamma_test$date,
+  actual_cost = actual,
+  predicted_gamma = as.numeric(gamma_pred)
+)
+
+write.csv(
+  gamma_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+
+```
+
+
+
+
+```{r}
+mean(c(30116.21, 16257.05, 24111.92, 24161.66))
+# 23661.71
+
+mean(c(157549.3, 101120.1, 114040.9, 129651.1))
+# 125590.35
+
+```
+
+--------------------------------
+# LightGBM
+
+
+# 2023 ver 
+```{r}
+library(lightgbm)
+
+# 1. 年を設定
+train_start <- 2019
+train_end   <- 2022
+test_year   <- 2023
+
+set.seed(440)
+
+# 2. データを読み込む
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+lgb_df <- read.csv(url, stringsAsFactors = FALSE)
+
+lgb_df$date <- as.Date(lgb_df$date)
+lgb_df$event_year <- as.integer(
+  format(lgb_df$date, "%Y")
+)
+
+# 3. 年で分割
+lgb_train <- subset(
+  lgb_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+lgb_test <- subset(
+  lgb_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# 欠損や不正な値を確認。高額な費用もそのまま残す
+stopifnot(
+  nrow(lgb_train) > 0,
+  nrow(lgb_test) > 0,
+  !anyNA(lgb_train[, c(features, "cost")]),
+  !anyNA(lgb_test[, c(features, "cost")]),
+  all(lgb_train$cost > 0),
+  all(lgb_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(lgb_train[[col]]),
+    is.numeric(lgb_test[[col]]),
+    all(is.finite(lgb_train[[col]])),
+    all(is.finite(lgb_test[[col]]))
+  )
+}
+
+# 4. 学習データのカテゴリに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(lgb_train[[col]]))
+  unseen <- setdiff(unique(lgb_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  lgb_train[[col]] <- factor(
+    lgb_train[[col]], levels = categories
+  )
+
+  lgb_test[[col]] <- factor(
+    lgb_test[[col]], levels = categories
+  )
+}
+
+# 5. カテゴリを0/1の列に変換して数値行列を作る
+x_formula <- ~ material + surface + pipe_length +
+  years_used_at_leak + midpoint_x + midpoint_y +
+  event_year - 1
+
+x_train_lgb <- model.matrix(x_formula, data = lgb_train)
+x_test_lgb  <- model.matrix(x_formula, data = lgb_test)
+
+stopifnot(
+  identical(colnames(x_train_lgb), colnames(x_test_lgb))
+)
+
+# LightGBM用に列名を整理
+safe_names <- make.names(
+  colnames(x_train_lgb), unique = TRUE
+)
+
+colnames(x_train_lgb) <- safe_names
+colnames(x_test_lgb)  <- safe_names
+
+y_train_lgb <- lgb_train$cost
+y_test_lgb  <- lgb_test$cost
+
+# 6. 共通のモデル設定
+# まずは固定設定で比較。テストデータは学習に使わない
+params <- list(
+  objective = "regression",
+  metric = "rmse",
+  learning_rate = 0.05,
+  num_leaves = 15L,
+  min_data_in_leaf = 20L,
+  feature_fraction = 1.0,
+  bagging_fraction = 1.0,
+  bagging_freq = 0L,
+  seed = 440L,
+  deterministic = TRUE,
+  force_col_wise = TRUE,
+  num_threads = 1L,
+  verbosity = -1L
+)
+
+# 7. 通常版：元のcostを学習
+dtrain_raw <- lgb.Dataset(
+  data = x_train_lgb,
+  label = y_train_lgb
+)
+
+lgb_raw_model <- lgb.train(
+  params = params,
+  data = dtrain_raw,
+  nrounds = 500L
+)
+
+# 8. log版：log1p(cost)を学習
+dtrain_log <- lgb.Dataset(
+  data = x_train_lgb,
+  label = log1p(y_train_lgb)
+)
+
+lgb_log_model <- lgb.train(
+  params = params,
+  data = dtrain_log,
+  nrounds = 500L
+)
+
+# 9. 予測
+pred_raw_lgb <- predict(
+  lgb_raw_model, newdata = x_test_lgb
+)
+
+pred_log_lgb <- expm1(
+  predict(lgb_log_model, newdata = x_test_lgb)
+)
+
+stopifnot(
+  length(pred_raw_lgb) == nrow(lgb_test),
+  length(pred_log_lgb) == nrow(lgb_test),
+  all(is.finite(pred_raw_lgb)),
+  all(is.finite(pred_log_lgb))
+)
+
+# 費用は非負なので、負の予測は両モデルとも0にする
+# このルールは評価結果を見る前に固定
+cat("Negative predictions, raw:", sum(pred_raw_lgb < 0), "\n")
+cat("Negative predictions, log:", sum(pred_log_lgb < 0), "\n")
+
+pred_raw_lgb <- pmax(0, pred_raw_lgb)
+pred_log_lgb <- pmax(0, pred_log_lgb)
+
+# 10. 元のドル単位で評価
+evaluate_lgb <- function(name, predicted) {
+  data.frame(
+    model = name,
+    training_years = paste(
+      train_start, train_end, sep = "-"
+    ),
+    test_year = test_year,
+    n_train = nrow(lgb_train),
+    n_test = nrow(lgb_test),
+    MAE = mean(abs(y_test_lgb - predicted)),
+    RMSE = sqrt(mean((y_test_lgb - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(y_test_lgb) - 1)
+  )
+}
+
+lgb_results <- rbind(
+  evaluate_lgb("LightGBM: raw", pred_raw_lgb),
+  evaluate_lgb("LightGBM: log1p", pred_log_lgb)
+)
+
+cat(
+  "\nTraining:", train_start, "-", train_end,
+  ",", nrow(lgb_train), "rows\n"
+)
+cat("Evaluation:", test_year, ",", nrow(lgb_test), "rows\n")
+
+print(lgb_results, row.names = FALSE, digits = 7)
+
+# 11. 保存
+file_label <- paste0(
+  "lightgbm_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  lgb_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+lgb_predictions <- data.frame(
+  pipe_id = lgb_test$pipe_id,
+  leak_date = lgb_test$date,
+  actual_cost = y_test_lgb,
+  predicted_raw = pred_raw_lgb,
+  predicted_log = pred_log_lgb
+)
+
+write.csv(
+  lgb_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+```
+
+
+
+# 2024 ver 
+```{r}
+# 1. 年を設定
+train_start <- 2019
+train_end   <- 2023
+test_year   <- 2024
+
+set.seed(440)
+
+# 2. データを読み込む
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+lgb_df <- read.csv(url, stringsAsFactors = FALSE)
+
+lgb_df$date <- as.Date(lgb_df$date)
+lgb_df$event_year <- as.integer(
+  format(lgb_df$date, "%Y")
+)
+
+# 3. 年で分割
+lgb_train <- subset(
+  lgb_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+lgb_test <- subset(
+  lgb_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# 欠損や不正な値を確認。高額な費用もそのまま残す
+stopifnot(
+  nrow(lgb_train) > 0,
+  nrow(lgb_test) > 0,
+  !anyNA(lgb_train[, c(features, "cost")]),
+  !anyNA(lgb_test[, c(features, "cost")]),
+  all(lgb_train$cost > 0),
+  all(lgb_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(lgb_train[[col]]),
+    is.numeric(lgb_test[[col]]),
+    all(is.finite(lgb_train[[col]])),
+    all(is.finite(lgb_test[[col]]))
+  )
+}
+
+# 4. 学習データのカテゴリに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(lgb_train[[col]]))
+  unseen <- setdiff(unique(lgb_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  lgb_train[[col]] <- factor(
+    lgb_train[[col]], levels = categories
+  )
+
+  lgb_test[[col]] <- factor(
+    lgb_test[[col]], levels = categories
+  )
+}
+
+# 5. カテゴリを0/1の列に変換して数値行列を作る
+x_formula <- ~ material + surface + pipe_length +
+  years_used_at_leak + midpoint_x + midpoint_y +
+  event_year - 1
+
+x_train_lgb <- model.matrix(x_formula, data = lgb_train)
+x_test_lgb  <- model.matrix(x_formula, data = lgb_test)
+
+stopifnot(
+  identical(colnames(x_train_lgb), colnames(x_test_lgb))
+)
+
+# LightGBM用に列名を整理
+safe_names <- make.names(
+  colnames(x_train_lgb), unique = TRUE
+)
+
+colnames(x_train_lgb) <- safe_names
+colnames(x_test_lgb)  <- safe_names
+
+y_train_lgb <- lgb_train$cost
+y_test_lgb  <- lgb_test$cost
+
+# 6. 共通のモデル設定
+# まずは固定設定で比較。テストデータは学習に使わない
+params <- list(
+  objective = "regression",
+  metric = "rmse",
+  learning_rate = 0.05,
+  num_leaves = 15L,
+  min_data_in_leaf = 20L,
+  feature_fraction = 1.0,
+  bagging_fraction = 1.0,
+  bagging_freq = 0L,
+  seed = 440L,
+  deterministic = TRUE,
+  force_col_wise = TRUE,
+  num_threads = 1L,
+  verbosity = -1L
+)
+
+# 7. 通常版：元のcostを学習
+dtrain_raw <- lgb.Dataset(
+  data = x_train_lgb,
+  label = y_train_lgb
+)
+
+lgb_raw_model <- lgb.train(
+  params = params,
+  data = dtrain_raw,
+  nrounds = 500L
+)
+
+# 8. log版：log1p(cost)を学習
+dtrain_log <- lgb.Dataset(
+  data = x_train_lgb,
+  label = log1p(y_train_lgb)
+)
+
+lgb_log_model <- lgb.train(
+  params = params,
+  data = dtrain_log,
+  nrounds = 500L
+)
+
+# 9. 予測
+pred_raw_lgb <- predict(
+  lgb_raw_model, newdata = x_test_lgb
+)
+
+pred_log_lgb <- expm1(
+  predict(lgb_log_model, newdata = x_test_lgb)
+)
+
+stopifnot(
+  length(pred_raw_lgb) == nrow(lgb_test),
+  length(pred_log_lgb) == nrow(lgb_test),
+  all(is.finite(pred_raw_lgb)),
+  all(is.finite(pred_log_lgb))
+)
+
+# 費用は非負なので、負の予測は両モデルとも0にする
+# このルールは評価結果を見る前に固定
+cat("Negative predictions, raw:", sum(pred_raw_lgb < 0), "\n")
+cat("Negative predictions, log:", sum(pred_log_lgb < 0), "\n")
+
+pred_raw_lgb <- pmax(0, pred_raw_lgb)
+pred_log_lgb <- pmax(0, pred_log_lgb)
+
+# 10. 元のドル単位で評価
+evaluate_lgb <- function(name, predicted) {
+  data.frame(
+    model = name,
+    training_years = paste(
+      train_start, train_end, sep = "-"
+    ),
+    test_year = test_year,
+    n_train = nrow(lgb_train),
+    n_test = nrow(lgb_test),
+    MAE = mean(abs(y_test_lgb - predicted)),
+    RMSE = sqrt(mean((y_test_lgb - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(y_test_lgb) - 1)
+  )
+}
+
+lgb_results <- rbind(
+  evaluate_lgb("LightGBM: raw", pred_raw_lgb),
+  evaluate_lgb("LightGBM: log1p", pred_log_lgb)
+)
+
+cat(
+  "\nTraining:", train_start, "-", train_end,
+  ",", nrow(lgb_train), "rows\n"
+)
+cat("Evaluation:", test_year, ",", nrow(lgb_test), "rows\n")
+
+print(lgb_results, row.names = FALSE, digits = 7)
+
+# 11. 保存
+file_label <- paste0(
+  "lightgbm_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  lgb_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+lgb_predictions <- data.frame(
+  pipe_id = lgb_test$pipe_id,
+  leak_date = lgb_test$date,
+  actual_cost = y_test_lgb,
+  predicted_raw = pred_raw_lgb,
+  predicted_log = pred_log_lgb
+)
+
+write.csv(
+  lgb_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+```
+
+
+# 2025 ver 
+```{r}
+# 1. 年を設定
+train_start <- 2019
+train_end   <- 2024
+test_year   <- 2025
+
+set.seed(440)
+
+# 2. データを読み込む
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+lgb_df <- read.csv(url, stringsAsFactors = FALSE)
+
+lgb_df$date <- as.Date(lgb_df$date)
+lgb_df$event_year <- as.integer(
+  format(lgb_df$date, "%Y")
+)
+
+# 3. 年で分割
+lgb_train <- subset(
+  lgb_df,
+  event_year >= train_start & event_year <= train_end
+)
+
+lgb_test <- subset(
+  lgb_df,
+  event_year == test_year
+)
+
+features <- c(
+  "material", "surface", "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+# 欠損や不正な値を確認。高額な費用もそのまま残す
+stopifnot(
+  nrow(lgb_train) > 0,
+  nrow(lgb_test) > 0,
+  !anyNA(lgb_train[, c(features, "cost")]),
+  !anyNA(lgb_test[, c(features, "cost")]),
+  all(lgb_train$cost > 0),
+  all(lgb_test$cost > 0)
+)
+
+numeric_cols <- c(
+  "cost", "pipe_length", "years_used_at_leak",
+  "midpoint_x", "midpoint_y", "event_year"
+)
+
+for (col in numeric_cols) {
+  stopifnot(
+    is.numeric(lgb_train[[col]]),
+    is.numeric(lgb_test[[col]]),
+    all(is.finite(lgb_train[[col]])),
+    all(is.finite(lgb_test[[col]]))
+  )
+}
+
+# 4. 学習データのカテゴリに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(lgb_train[[col]]))
+  unseen <- setdiff(unique(lgb_test[[col]]), categories)
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  lgb_train[[col]] <- factor(
+    lgb_train[[col]], levels = categories
+  )
+
+  lgb_test[[col]] <- factor(
+    lgb_test[[col]], levels = categories
+  )
+}
+
+# 5. カテゴリを0/1の列に変換して数値行列を作る
+x_formula <- ~ material + surface + pipe_length +
+  years_used_at_leak + midpoint_x + midpoint_y +
+  event_year - 1
+
+x_train_lgb <- model.matrix(x_formula, data = lgb_train)
+x_test_lgb  <- model.matrix(x_formula, data = lgb_test)
+
+stopifnot(
+  identical(colnames(x_train_lgb), colnames(x_test_lgb))
+)
+
+# LightGBM用に列名を整理
+safe_names <- make.names(
+  colnames(x_train_lgb), unique = TRUE
+)
+
+colnames(x_train_lgb) <- safe_names
+colnames(x_test_lgb)  <- safe_names
+
+y_train_lgb <- lgb_train$cost
+y_test_lgb  <- lgb_test$cost
+
+# 6. 共通のモデル設定
+# まずは固定設定で比較。テストデータは学習に使わない
+params <- list(
+  objective = "regression",
+  metric = "rmse",
+  learning_rate = 0.05,
+  num_leaves = 15L,
+  min_data_in_leaf = 20L,
+  feature_fraction = 1.0,
+  bagging_fraction = 1.0,
+  bagging_freq = 0L,
+  seed = 440L,
+  deterministic = TRUE,
+  force_col_wise = TRUE,
+  num_threads = 1L,
+  verbosity = -1L
+)
+
+# 7. 通常版：元のcostを学習
+dtrain_raw <- lgb.Dataset(
+  data = x_train_lgb,
+  label = y_train_lgb
+)
+
+lgb_raw_model <- lgb.train(
+  params = params,
+  data = dtrain_raw,
+  nrounds = 500L
+)
+
+# 8. log版：log1p(cost)を学習
+dtrain_log <- lgb.Dataset(
+  data = x_train_lgb,
+  label = log1p(y_train_lgb)
+)
+
+lgb_log_model <- lgb.train(
+  params = params,
+  data = dtrain_log,
+  nrounds = 500L
+)
+
+# 9. 予測
+pred_raw_lgb <- predict(
+  lgb_raw_model, newdata = x_test_lgb
+)
+
+pred_log_lgb <- expm1(
+  predict(lgb_log_model, newdata = x_test_lgb)
+)
+
+stopifnot(
+  length(pred_raw_lgb) == nrow(lgb_test),
+  length(pred_log_lgb) == nrow(lgb_test),
+  all(is.finite(pred_raw_lgb)),
+  all(is.finite(pred_log_lgb))
+)
+
+# 費用は非負なので、負の予測は両モデルとも0にする
+# このルールは評価結果を見る前に固定
+cat("Negative predictions, raw:", sum(pred_raw_lgb < 0), "\n")
+cat("Negative predictions, log:", sum(pred_log_lgb < 0), "\n")
+
+pred_raw_lgb <- pmax(0, pred_raw_lgb)
+pred_log_lgb <- pmax(0, pred_log_lgb)
+
+# 10. 元のドル単位で評価
+evaluate_lgb <- function(name, predicted) {
+  data.frame(
+    model = name,
+    training_years = paste(
+      train_start, train_end, sep = "-"
+    ),
+    test_year = test_year,
+    n_train = nrow(lgb_train),
+    n_test = nrow(lgb_test),
+    MAE = mean(abs(y_test_lgb - predicted)),
+    RMSE = sqrt(mean((y_test_lgb - predicted)^2)),
+    total_bias_pct =
+      100 * (sum(predicted) / sum(y_test_lgb) - 1)
+  )
+}
+
+lgb_results <- rbind(
+  evaluate_lgb("LightGBM: raw", pred_raw_lgb),
+  evaluate_lgb("LightGBM: log1p", pred_log_lgb)
+)
+
+cat(
+  "\nTraining:", train_start, "-", train_end,
+  ",", nrow(lgb_train), "rows\n"
+)
+cat("Evaluation:", test_year, ",", nrow(lgb_test), "rows\n")
+
+print(lgb_results, row.names = FALSE, digits = 7)
+
+# 11. 保存
+file_label <- paste0(
+  "lightgbm_train_", train_start, "_", train_end,
+  "_test_", test_year
+)
+
+write.csv(
+  lgb_results,
+  paste0(file_label, "_metrics.csv"),
+  row.names = FALSE
+)
+
+lgb_predictions <- data.frame(
+  pipe_id = lgb_test$pipe_id,
+  leak_date = lgb_test$date,
+  actual_cost = y_test_lgb,
+  predicted_raw = pred_raw_lgb,
+  predicted_log = pred_log_lgb
+)
+
+write.csv(
+  lgb_predictions,
+  paste0(file_label, "_predictions.csv"),
+  row.names = FALSE
+)
+```
+
+
+
+# 2026 ver 
+```{r}
+set.seed(440)
+
+# 1. データを読み込む
+url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "reinesana/STAT440-star-kingdom-project/",
+  "main/data/train_predict_cost.csv"
+)
+
+lgb_df_2026 <- read.csv(url, stringsAsFactors = FALSE)
+
+lgb_df_2026$date <- as.Date(lgb_df_2026$date)
+lgb_df_2026$event_year <- as.integer(
+  format(lgb_df_2026$date, "%Y")
+)
+
+# 2. 学習：2019～2025年、最終テスト：2026年
+lgb_train_2026 <- subset(
+  lgb_df_2026,
+  event_year >= 2019 & event_year <= 2025
+)
+
+lgb_test_2026 <- subset(
+  lgb_df_2026,
+  event_year == 2026
+)
+
+features_2026 <- c(
+  "material",
+  "surface",
+  "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x",
+  "midpoint_y",
+  "event_year"
+)
+
+# 3. データを確認
+# 高額な修理費も削除・上限処理せず、そのまま使用
+stopifnot(
+  nrow(lgb_train_2026) > 0,
+  nrow(lgb_test_2026) > 0,
+  !anyNA(lgb_train_2026[, c(features_2026, "cost")]),
+  !anyNA(lgb_test_2026[, c(features_2026, "cost")]),
+  all(lgb_train_2026$cost > 0),
+  all(lgb_test_2026$cost > 0)
+)
+
+numeric_cols_2026 <- c(
+  "cost",
+  "pipe_length",
+  "years_used_at_leak",
+  "midpoint_x",
+  "midpoint_y",
+  "event_year"
+)
+
+for (col in numeric_cols_2026) {
+  stopifnot(
+    is.numeric(lgb_train_2026[[col]]),
+    is.numeric(lgb_test_2026[[col]]),
+    all(is.finite(lgb_train_2026[[col]])),
+    all(is.finite(lgb_test_2026[[col]]))
+  )
+}
+
+# 4. カテゴリを学習データに合わせる
+for (col in c("material", "surface")) {
+
+  categories <- sort(unique(lgb_train_2026[[col]]))
+
+  unseen <- setdiff(
+    unique(lgb_test_2026[[col]]),
+    categories
+  )
+
+  if (length(unseen) > 0) {
+    stop(paste(
+      "Unseen test category in", col, ":",
+      paste(unseen, collapse = ", ")
+    ))
+  }
+
+  lgb_train_2026[[col]] <- factor(
+    lgb_train_2026[[col]],
+    levels = categories
+  )
+
+  lgb_test_2026[[col]] <- factor(
+    lgb_test_2026[[col]],
+    levels = categories
+  )
+}
+
+# 5. 数値行列を作る
+x_formula_2026 <- ~ material + surface + pipe_length +
+  years_used_at_leak + midpoint_x + midpoint_y +
+  event_year - 1
+
+x_train_lgb_2026 <- model.matrix(
+  x_formula_2026,
+  data = lgb_train_2026
+)
+
+x_test_lgb_2026 <- model.matrix(
+  x_formula_2026,
+  data = lgb_test_2026
+)
+
+stopifnot(
+  identical(
+    colnames(x_train_lgb_2026),
+    colnames(x_test_lgb_2026)
+  )
+)
+
+safe_names <- make.names(
+  colnames(x_train_lgb_2026),
+  unique = TRUE
+)
+
+colnames(x_train_lgb_2026) <- safe_names
+colnames(x_test_lgb_2026) <- safe_names
+
+y_train_lgb_2026 <- lgb_train_2026$cost
+y_test_lgb_2026 <- lgb_test_2026$cost
+
+# 6. 2025年と同じモデル設定
+params_2026 <- list(
+  objective = "regression",
+  metric = "rmse",
+  learning_rate = 0.05,
+  num_leaves = 15L,
+  min_data_in_leaf = 20L,
+  feature_fraction = 1.0,
+  bagging_fraction = 1.0,
+  bagging_freq = 0L,
+  seed = 440L,
+  deterministic = TRUE,
+  force_col_wise = TRUE,
+  num_threads = 1L,
+  verbosity = -1L
+)
+
+# 7. log1p(cost)で学習
+dtrain_log_2026 <- lgb.Dataset(
+  data = x_train_lgb_2026,
+  label = log1p(y_train_lgb_2026)
+)
+
+lgb_log_model_2026 <- lgb.train(
+  params = params_2026,
+  data = dtrain_log_2026,
+  nrounds = 500L
+)
+
+# 8. 2026年を予測し、ドル単位に戻す
+pred_log_lgb_2026 <- expm1(
+  predict(
+    lgb_log_model_2026,
+    newdata = x_test_lgb_2026
+  )
+)
+
+stopifnot(
+  length(pred_log_lgb_2026) == nrow(lgb_test_2026),
+  all(is.finite(pred_log_lgb_2026))
+)
+
+# 前の年と同じルール：負の費用予測は0にする
+cat(
+  "Negative predictions:",
+  sum(pred_log_lgb_2026 < 0),
+  "\n"
+)
+
+pred_log_lgb_2026 <- pmax(0, pred_log_lgb_2026)
+
+# 9. 元のドル単位でMAE・RMSEを計算
+lgb_results_2026 <- data.frame(
+  model = "LightGBM: log1p",
+  training_years = "2019-2025",
+  test_year = 2026,
+  n_train = nrow(lgb_train_2026),
+  n_test = nrow(lgb_test_2026),
+
+  MAE = mean(
+    abs(y_test_lgb_2026 - pred_log_lgb_2026)
+  ),
+
+  RMSE = sqrt(mean(
+    (y_test_lgb_2026 - pred_log_lgb_2026)^2
+  )),
+
+  total_bias_pct = 100 * (
+    sum(pred_log_lgb_2026) / sum(y_test_lgb_2026) - 1
+  )
+)
+
+cat(
+  "\nTraining: 2019–2025,",
+  nrow(lgb_train_2026), "rows\n"
+)
+
+cat(
+  "Final test: 2026,",
+  nrow(lgb_test_2026), "rows\n"
+)
+
+print(
+  lgb_results_2026,
+  row.names = FALSE,
+  digits = 7
+)
+
+# 10. 評価結果を保存
+write.csv(
+  lgb_results_2026,
+  "lightgbm_log_train_2019_2025_test_2026_metrics.csv",
+  row.names = FALSE
+)
+
+# 11. パイプごとの予測を保存
+lgb_predictions_2026 <- data.frame(
+  pipe_id = lgb_test_2026$pipe_id,
+  leak_date = lgb_test_2026$date,
+  actual_cost = y_test_lgb_2026,
+  predicted_log = pred_log_lgb_2026
+)
+
+write.csv(
+  lgb_predictions_2026,
+  "lightgbm_log_train_2019_2025_test_2026_predictions.csv",
+  row.names = FALSE
+)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+{
+  "input_sha256": "dc851cc3c6e23d117b5018b4f133459945476fabfb44c9fc7380ba08db090c9d",
+  "source_sha256": "4d116d71b9b6470d8a02c55c21a80d7124914f51dbd7633095160ead75e00b8e",
+  "original_chunks_executed": 19,
+  "prediction_rows": 36854,
+  "metric_rows": 18,
+  "primary_output_rows": 8586,
+  "duplicate_model_variant_pipe_ids": 0,
+  "actual_costs_match_source": true,
+  "all_18_metric_pairs_match_prior_screenshots_at_display_precision": true,
+  "primary_output_pipe_ids_match_across_models": true
+}
