@@ -1,0 +1,34 @@
+{
+  "validated_on": "2026-10-05",
+  "rows": 14107,
+  "columns": 536,
+  "added_columns": 501,
+  "output_sha256": "8eb62aa7e29d57191f1b6e583f9ad613240a26100575cb4fc065d7f658604d52",
+  "original_cells_preserved": true,
+  "original_documents_preserved": true,
+  "topology_fixtures": [
+    "straight",
+    "right angle",
+    "branch",
+    "interior crossing",
+    "closed loop",
+    "smooth curve",
+    "unknown lay date"
+  ],
+  "full_prior_group_cost_statistics_checked": true,
+  "brute_force_spatial_history_samples": 16,
+  "archived_runner_original_input_restored": true,
+  "full_route_history_checked": true,
+  "future_mutation_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "state_history_samples": 16,
+  "no_infinite_values": true
+}

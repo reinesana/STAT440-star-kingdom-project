@@ -123,3 +123,56 @@ Lower values indicate smaller prediction errors, and larger monetary errors rece
 ## Shared Setting
 
 Use **440** as the seed for models and procedures that use randomness. The data split itself is fixed by the years above.
+
+
+## 2026-10-05 — Added candidate features and inferred pipe routes
+
+Today, 501 candidate feature columns were appended to `train_predict_cost.csv`.
+The original 35 columns, their values and the 14,107-row order were preserved;
+the CSV now has 536 columns. Raw `pipes.csv` and `train.csv` were not changed.
+
+The additions cover installation/event calendar information; spans, orientation,
+length-age products and squared terms; material/surface combinations; neighbouring
+pipe counts, lengths, ages and surface/material composition; nearest surface-pipe
+distances, parallel overlaps and planar intersections; prior repair/replacement
+state; previous repair-cost statistics by attribute group and spatial neighbourhood;
+and age/length/environment interactions. Existing equivalent aliases were not
+duplicated. Earlier rolling repair candidates were converted to year-start cutoffs.
+
+Endpoint geometry also supplies `route_id`, `straight_section_id`, local straight/
+bend flags, turn angles, endpoint degrees, branch flags, route length/count,
+position, accumulated turn and tortuosity. Routes are maximal nonbranching chains
+through exactly matching endpoints; interior crossings are not connected. The
+initial straight threshold is 10 degrees. Straight sections also split when
+accumulated direction deviation from their first pipe exceeds 10 degrees; smooth
+curves are represented by route-level turn/tortuosity flags. IDs are grouping keys,
+not ordered numeric features, and inferred geometry does not prove connectivity.
+
+All history features use strictly previous calendar years, frozen on January 1.
+The explicit repair-state and route/section histories use all raw leak records,
+including six rows excluded from severity training. Archived cost-group features
+retain the original severity-row source. Group leak counts/costs and per-length
+rates support macro analysis, but are not annual failure probabilities.
+
+The full inventory produces 36,304 inferred routes (4,871 with multiple pipes)
+and 37,747 straight sections. A route contains at most 52 segments. The 15 pipes
+with unknown lay dates are excluded from historical topology and retained as
+ineligible rows with blank route fields in the inventory lookup. Known inventory
+lay dates all precede the training window. Historical attributes are assumed
+applicable at each incident; retirement/attribute-change records are unavailable.
+
+Files added: `pipe_route_lookup.csv` (one row per inventory pipe),
+`pipe_route_summary.csv` (one row per inferred route), and
+`pipe_route_event_membership.csv` (one row per severity event).
+See [the complete added-column dictionary](train_predict_cost_feature_dictionary_2026-10-05.md),
+`train_predict_cost_features_2026-10-05.json` for generation settings/provenance,
+and `train_predict_cost_validation_2026-10-05.json` for verification evidence.
+
+Rebuild from the repository root with `python src/enrich_cost_features.py` using
+the pinned dependencies in `notebooks/Takito_Kobayashi/requirements.txt`; verify
+with `python src/verify_cost_features.py`. The default rebuild uses an isolated
+temporary copy of the archived feature code; an optional matching legacy cache
+can be supplied with `--legacy-features`. Existing archived model reproduction
+extracts and hash-checks the original 35 columns before using its frozen builders.
+Select candidate features using temporal validation; do not automatically train
+on every column or infer that all candidates improve prediction.

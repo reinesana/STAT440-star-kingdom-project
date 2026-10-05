@@ -1,7 +1,9 @@
 """Rebuild all features and refit the 12 saved single-model configurations."""
 from pathlib import Path
 import argparse
+import csv
 import hashlib
+import io
 import json
 import shutil
 import subprocess
@@ -26,8 +28,18 @@ def main():
     hashes = json.loads((package/'source_hashes.json').read_text())
     for name, expected in hashes.items():
         source = repo/'data'/name
-        assert hashlib.sha256(source.read_bytes()).hexdigest() == expected, f'Source changed: {name}'
-        shutil.copy2(source, data/name)
+        content = source.read_bytes()
+        if name == 'train_predict_cost.csv' and hashlib.sha256(content).hexdigest() != expected:
+            # 2026-10-05 appended candidate columns; archived models still use
+            # the byte-identical original 35-column input and archived builders.
+            metadata = json.loads((repo/'data/train_predict_cost_features_2026-10-05.json').read_text())
+            rows = list(csv.reader(io.StringIO(content.decode('utf-8'))))
+            positions = [rows[0].index(c) for c in metadata['original_columns']]
+            buffer = io.StringIO(newline='')
+            csv.writer(buffer, lineterminator='\r\n').writerows([[r[i] for i in positions] for r in rows])
+            content = buffer.getvalue().encode('utf-8')
+        assert hashlib.sha256(content).hexdigest() == expected, f'Source changed: {name}'
+        (data/name).write_bytes(content)
     out = root/'model_comparison'
     def execute(name, *options):
         subprocess.run([sys.executable, str(out/name), *options], check=True)

@@ -374,3 +374,15 @@ EDA documentation
 4. baseline の円と工事順序を作り、費用・スコア・実行可能性を確認する。
 5. 予測を使って、円の大きさ・位置・組合せ・工事順序を改善する。
 6. 最終 CSV を別のメンバーが再確認し、レポートを作成する。
+
+
+## 2026-10-05 — Cost feature data extension
+
+Today, 501 candidate columns were appended to `data/train_predict_cost.csv`
+(14,107 rows; 536 total columns), preserving all original columns/values/order.
+Added candidates include prior-year repair costs/state, spatial geometry and
+endpoint-based route/straight-section groups for macro leak analysis. Raw inputs
+remain unchanged. Full definitions, limitations and rebuild instructions are in
+[the dated English addendum](data/train_predict_cost.md#2026-10-05--added-candidate-features-and-inferred-pipe-routes),
+[the Japanese addendum](data/train_predict_cost_jpn.md), and
+[the feature dictionary](data/train_predict_cost_feature_dictionary_2026-10-05.md).

@@ -90,3 +90,14 @@ Verification independently recomputed all 12 test/train metric pairs and their
 averages. Mutating each test year's and all future costs and rebuilding the
 cost-dependent features left that test year's inputs unchanged for all four
 folds. Inventory calculations were independently checked on sampled rows.
+
+
+## 2026-10-05 — Compatibility with the extended shared CSV
+
+Today, the shared `data/train_predict_cost.csv` received 501 additional candidate
+columns, including inferred endpoint routes and year-start histories. Existing
+published predictions, selected configurations and archived executed code were
+not changed. `reproduce.py` now extracts the original 35 columns and checks their
+original SHA-256 before invoking the frozen builders, preserving reproduction of
+the previous experiments. The new route/state features are not retroactively
+part of those models. See the shared data documentation's dated addendum.
