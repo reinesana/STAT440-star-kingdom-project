@@ -1,0 +1,53 @@
+{
+  "seed": 440,
+  "features": [
+    "material",
+    "surface",
+    "pipe_length",
+    "years_used_at_leak",
+    "midpoint_x",
+    "midpoint_y",
+    "event_year"
+  ],
+  "random_forest": {
+    "package": "ranger",
+    "num.trees": 500,
+    "min.node.size": 20,
+    "mtry": 3,
+    "respect.unordered.factors": "order",
+    "variants_2023_2025": [
+      "raw",
+      "log1p"
+    ],
+    "variant_2026": "raw"
+  },
+  "gamma": {
+    "package": "stats",
+    "family": "Gamma",
+    "link": "log",
+    "maxit": 100,
+    "year_centering": "training mean only",
+    "variant_all_years": "original cost target"
+  },
+  "lightgbm": {
+    "package": "lightgbm",
+    "objective": "regression",
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_data_in_leaf": 20,
+    "feature_fraction": 1.0,
+    "bagging_fraction": 1.0,
+    "bagging_freq": 0,
+    "deterministic": true,
+    "force_col_wise": true,
+    "num_threads": 1,
+    "nrounds": 500,
+    "categorical_encoding": "model.matrix based on training levels",
+    "negative_predictions": "clipped to zero",
+    "variants_2023_2025": [
+      "raw",
+      "log1p"
+    ],
+    "variant_2026": "log1p"
+  }
+}

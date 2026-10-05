@@ -1,0 +1,7 @@
+{
+  "data/train_predict_cost.csv": {
+    "sha256": "dc851cc3c6e23d117b5018b4f133459945476fabfb44c9fc7380ba08db090c9d",
+    "git_blob_sha": "67736631b500b98be241cc2cfe29741ec3e6b79e",
+    "rows": 14107
+  }
+}

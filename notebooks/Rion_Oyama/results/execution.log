@@ -1,0 +1,120 @@
+
+--- Archived R chunk 1 ---
+
+--- Archived R chunk 2 ---
+
+--- Archived R chunk 3 ---
+
+--- Archived R chunk 4 ---
+Training: 2019–2022, 5521 rows
+Testing: 2023, 1824 rows
+        0%        50%        90%        99%       100% 
+     19.78    4128.15   42442.46  487871.82 7257576.36 
+
+--- Archived R chunk 5 ---
+
+--- Archived R chunk 6 ---
+                model test_year n_test      MAE     RMSE total_bias_pct
+   Random forest: raw      2023   1824 44530.58 170941.1       80.47070
+ Random forest: log1p      2023   1824 20706.18 165696.3      -66.31875
+
+Lower RMSE on 2023: Random forest: log1p 
+
+--- Archived R chunk 7 ---
+
+--- Archived R chunk 8 ---
+Training rows: 7345 
+Testing rows: 1951 
+                model test_year n_test      MAE     RMSE total_bias_pct
+   Random forest: raw      2024   1951 37041.38 147154.0      164.84773
+ Random forest: log1p      2024   1951 12443.76 104102.7      -61.54168
+
+--- Archived R chunk 9 ---
+Training: 2019–2024, 9296 rows
+Validation: 2025, 1773 rows
+                model test_year n_test      MAE     RMSE total_bias_pct
+   Random forest: raw      2025   1773 29468.14 116908.3       32.86527
+ Random forest: log1p      2025   1773 19658.27 118042.7      -59.99550
+
+Lower RMSE on 2025: Random forest: raw 
+
+--- Archived R chunk 10 ---
+Training: 2019–2025, 11069 rows
+Final test: 2026, 3038 rows
+              model test_year n_test      MAE     RMSE total_bias_pct
+ Random forest: raw      2026   3038 29209.95 135663.9       23.09476
+
+--- Archived R chunk 11 ---
+                       model training_years test_year n_train n_test      MAE
+ Gamma regression (log link)      2019-2022      2023    5521   1824 30116.21
+     RMSE total_bias_pct
+ 157549.3       10.23452
+
+--- Archived R chunk 12 ---
+                       model training_years test_year n_train n_test      MAE
+ Gamma regression (log link)      2019-2023      2024    7345   1951 16257.05
+     RMSE total_bias_pct
+ 101120.1      -9.253353
+
+--- Archived R chunk 13 ---
+                       model training_years test_year n_train n_test      MAE
+ Gamma regression (log link)      2019-2024      2025    9296   1773 24111.92
+     RMSE total_bias_pct
+ 114040.9      -9.783051
+
+--- Archived R chunk 14 ---
+                       model training_years test_year n_train n_test      MAE
+ Gamma regression (log link)      2019-2025      2026   11069   3038 24161.66
+     RMSE total_bias_pct
+ 129651.1      -16.26056
+
+--- Archived R chunk 15 ---
+
+--- Archived R chunk 16 ---
+Negative predictions, raw: 508 
+Negative predictions, log: 0 
+
+Training: 2019 - 2022 , 5521 rows
+Evaluation: 2023 , 1824 rows
+           model training_years test_year n_train n_test      MAE     RMSE
+   LightGBM: raw      2019-2022      2023    5521   1824 55108.89 218222.9
+ LightGBM: log1p      2019-2022      2023    5521   1824 20405.70 164614.6
+ total_bias_pct
+      105.67354
+      -67.60168
+
+--- Archived R chunk 17 ---
+Negative predictions, raw: 975 
+Negative predictions, log: 0 
+
+Training: 2019 - 2023 , 7345 rows
+Evaluation: 2024 , 1951 rows
+           model training_years test_year n_train n_test      MAE     RMSE
+   LightGBM: raw      2019-2023      2024    7345   1951 36093.64 127838.6
+ LightGBM: log1p      2019-2023      2024    7345   1951 12199.15 105398.5
+ total_bias_pct
+      115.23332
+      -67.05954
+
+--- Archived R chunk 18 ---
+Negative predictions, raw: 267 
+Negative predictions, log: 0 
+
+Training: 2019 - 2024 , 9296 rows
+Evaluation: 2025 , 1773 rows
+           model training_years test_year n_train n_test      MAE     RMSE
+   LightGBM: raw      2019-2024      2025    9296   1773 34673.26 124907.6
+ LightGBM: log1p      2019-2024      2025    9296   1773 19889.19 117606.5
+ total_bias_pct
+       41.70683
+      -58.78243
+
+--- Archived R chunk 19 ---
+Negative predictions: 0 
+
+Training: 2019–2025, 11069 rows
+Final test: 2026, 3038 rows
+           model training_years test_year n_train n_test      MAE     RMSE
+ LightGBM: log1p      2019-2025      2026   11069   3038 20720.89 136023.8
+ total_bias_pct
+      -64.86087

@@ -1,0 +1,2 @@
+"model","training_years","test_year","n_train","n_test","MAE","RMSE","total_bias_pct"
+"Gamma regression (log link)","2019-2024",2025,9296,1773,24111.9171732697,114040.91724947,-9.78305127165957
