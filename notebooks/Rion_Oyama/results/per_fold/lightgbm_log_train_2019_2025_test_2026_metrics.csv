@@ -1,0 +1,2 @@
+"model","training_years","test_year","n_train","n_test","MAE","RMSE","total_bias_pct"
+"LightGBM: log1p","2019-2025",2026,11069,3038,20720.8851186493,136023.780643918,-64.860874346562
