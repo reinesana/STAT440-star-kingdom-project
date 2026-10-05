@@ -1,0 +1,16 @@
+{
+  "xgboost": "3.2.0",
+  "catboost": "1.2.10",
+  "lightgbm": "4.6.0",
+  "optuna": "4.9.0",
+  "pandas": "3.0.3",
+  "threads_for_final_fits": {
+    "xgboost": 2,
+    "catboost": 3,
+    "lightgbm": 2
+  },
+  "seed": 440,
+  "source_fingerprint": {
+    "train_predict_cost.csv": "68f23cc5f72f06e9aa6b8baa91597692e0d7c6658e1361ebf89607ad3f61fd1c"
+  }
+}

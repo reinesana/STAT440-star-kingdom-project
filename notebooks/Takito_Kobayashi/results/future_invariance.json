@@ -1,0 +1,34 @@
+[
+  {
+    "outer_test_year": 2023,
+    "mutated_current_and_future_cost_rows": 8586,
+    "verified_rows_through_test_year": 7345,
+    "verified_feature_columns": 470,
+    "all_features_invariant": true,
+    "supplemental_inventory_cost_free_by_construction": true
+  },
+  {
+    "outer_test_year": 2024,
+    "mutated_current_and_future_cost_rows": 6762,
+    "verified_rows_through_test_year": 9296,
+    "verified_feature_columns": 470,
+    "all_features_invariant": true,
+    "supplemental_inventory_cost_free_by_construction": true
+  },
+  {
+    "outer_test_year": 2025,
+    "mutated_current_and_future_cost_rows": 4811,
+    "verified_rows_through_test_year": 11069,
+    "verified_feature_columns": 470,
+    "all_features_invariant": true,
+    "supplemental_inventory_cost_free_by_construction": true
+  },
+  {
+    "outer_test_year": 2026,
+    "mutated_current_and_future_cost_rows": 3038,
+    "verified_rows_through_test_year": 14107,
+    "verified_feature_columns": 470,
+    "all_features_invariant": true,
+    "supplemental_inventory_cost_free_by_construction": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-10-05T03:19:31.898808+00:00",
+  "rebuilt_features_from_original_csvs": true,
+  "all_12_folds_reproduced": true,
+  "all_12_test_metric_pairs_match": true,
+  "prediction_checks": {
+    "xgboost": {
+      "rows": 8586,
+      "pipe_ids_match": true,
+      "maximum_absolute_prediction_difference": 0.0
+    },
+    "catboost": {
+      "rows": 8586,
+      "pipe_ids_match": true,
+      "maximum_absolute_prediction_difference": 1.1641532182693481e-10
+    },
+    "lightgbm": {
+      "rows": 8586,
+      "pipe_ids_match": true,
+      "maximum_absolute_prediction_difference": 1.1641532182693481e-10
+    }
+  }
+}

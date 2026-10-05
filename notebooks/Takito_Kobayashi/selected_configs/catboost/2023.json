@@ -1,0 +1,27 @@
+{
+  "features": [
+    "hist_grid250_all_median",
+    "hist_material_surface_last2_median",
+    "hist_surface_all_mean",
+    "hist_surface_all_median_log1p",
+    "hist_surface_all_tail_rate",
+    "material",
+    "material_surface",
+    "surface",
+    "surface_road",
+    "y2"
+  ],
+  "params": {
+    "learning_rate": 0.01951409473634728,
+    "depth": 3,
+    "l2_leaf_reg": 7.115991090600124,
+    "random_strength": 18.658496689170093,
+    "bootstrap_type": "Bernoulli",
+    "subsample": 0.6128979677188174,
+    "rsm": 0.9808188438425882,
+    "border_count": 64
+  },
+  "iterations": 107,
+  "threads": 3,
+  "inner_mean_rmse": 227146.14575973127
+}

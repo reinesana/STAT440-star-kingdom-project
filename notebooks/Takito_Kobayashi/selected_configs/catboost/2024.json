@@ -1,0 +1,33 @@
+{
+  "features": [
+    "hist_grid250_all_median",
+    "hist_grid500_all_mean",
+    "hist_material_all_mean",
+    "hist_material_surface_all_mean",
+    "hist_material_surface_all_median",
+    "hist_material_surface_all_std",
+    "hist_radius250_tail_rate",
+    "hist_radius500_median",
+    "hist_surface_all_median",
+    "hist_surface_all_n",
+    "hist_surface_all_std",
+    "hist_surface_all_tail_rate",
+    "hist_surface_last2_mean",
+    "surface_road",
+    "surface_structure"
+  ],
+  "params": {
+    "learning_rate": 0.1086561515060856,
+    "depth": 3,
+    "l2_leaf_reg": 0.8820734944000431,
+    "random_strength": 0.2883723562711601,
+    "bootstrap_type": "Bernoulli",
+    "subsample": 0.9029163001449033,
+    "rsm": 0.6340304014592798,
+    "border_count": 64,
+    "one_hot_max_size": 2
+  },
+  "iterations": 11,
+  "threads": 3,
+  "inner_mean_rmse": 160252.82526750208
+}

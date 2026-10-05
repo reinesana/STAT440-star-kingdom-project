@@ -1,0 +1,26 @@
+{
+  "source_rows": 14107,
+  "source_hash_verified": true,
+  "history_samples_verified": 42,
+  "history_sample_scope": "one row per surface and year 2020-2026; grouped cost and direct-distance 250m statistics",
+  "no_current_cost_predictor": true,
+  "annual_counts": {
+    "2019": 1078,
+    "2020": 703,
+    "2021": 866,
+    "2022": 2874,
+    "2023": 1824,
+    "2024": 1951,
+    "2025": 1773,
+    "2026": 3038
+  },
+  "all_four_current_future_cost_mutation_checks_passed": true,
+  "prediction_rows": 25758,
+  "training_prediction_rows": 99693,
+  "all_12_fold_metrics_recomputed": true,
+  "all_12_training_metrics_recomputed": true,
+  "macro_averages_verified": true,
+  "outer_test_sets_identical": true,
+  "all_selection_hashes_frozen_before_test": true,
+  "minimum_220_completed_trials_per_model_fold_verified": true
+}

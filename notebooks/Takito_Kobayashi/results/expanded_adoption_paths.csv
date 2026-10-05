@@ -1,0 +1,55 @@
+model,test_year,phase,step,action,feature,before_RMSE,after_RMSE,improvement
+xgboost,2023,pool446_before_parameter_retune,1,add,inventory_50m_road_count,230097.49049482594,229585.17933569197,512.3111591339693
+xgboost,2023,pool446_final_parameters,1,replace,hist_material_surface_last2_mean -> hist_material_surface_all_mean,228294.8725030373,228168.06687996344,126.80562307385844
+xgboost,2023,pool446_final_parameters,2,replace,log1p_years_used -> years_used_squared,228168.06687996344,228165.33424114808,2.732638815359678
+xgboost,2023,pool446_final_parameters,3,replace,hist_grid250_last1_std -> hist_grid250_last1_max_log1p,228165.33424114808,228165.29650850352,0.037732644559582695
+xgboost,2023,pool446_final_parameters,4,replace,hist_age_band_last2_std -> hist_age_band_all_max,228165.29650850352,228165.2671982927,0.029310210811672732
+xgboost,2023,pool446_final_parameters,5,replace,hist_grid250_last2_std -> hist_grid250_last2_max_log1p,228165.2671982927,228164.93530588623,0.3318924064806197
+xgboost,2023,pool446_final_parameters,6,replace,hist_grid250_last1_max -> hist_grid250_last1_std,228164.93530588623,228164.92036958036,0.01493630587356165
+xgboost,2023,pool470_before_parameter_retune,1,add,inventory_50m_road_count,230097.49049482594,229585.17933569197,512.3111591339693
+xgboost,2024,pool446_final_parameters,1,add,inventory_10m_road_count,163980.1655671793,162525.47903806076,1454.6865291185386
+xgboost,2024,pool446_final_parameters,2,add,inventory_100m_road_count,162525.47903806076,161246.7630087409,1278.716029319854
+xgboost,2024,pool446_final_parameters,3,add,hist_grid1000_last1_std,161246.7630087409,160554.4981117135,692.2648970274022
+xgboost,2024,pool446_final_parameters,4,add,age_x_wet_proximity,160554.4981117135,159882.54352452012,671.9545871933806
+xgboost,2024,pool446_final_parameters,5,add,hist_radius50_max,159882.54352452012,159419.8807265972,462.6627979229088
+xgboost,2025,pool446_final_parameters,1,add,inventory_5m_length_sum,124583.0930096911,122995.10815611437,1587.9848535767378
+xgboost,2025,pool446_final_parameters,2,add,inventory_250m_count,122995.10815611437,122294.91827742063,700.1898786937381
+xgboost,2025,pool446_final_parameters,3,add,hist_grid500_last2_n,122294.91827742063,122053.17809317296,241.74018424766837
+xgboost,2025,pool446_final_parameters,4,remove,hist_grid500_last2_std,122053.17809317296,121440.47634932486,612.701743848098
+xgboost,2026,pool446_final_parameters,1,add,event_decimal_year,105203.36296752351,104458.36275434241,745.0002131811052
+xgboost,2026,pool446_final_parameters,2,replace,hist_grid250_last1_max -> hist_grid250_last1_std,104458.36275434241,104084.84392300874,373.51883133366937
+xgboost,2026,pool446_final_parameters,3,replace,hist_material_surface_last2_std -> hist_material_surface_all_std,104084.84392300874,103589.77457129065,495.06935171809164
+xgboost,2026,pool446_final_parameters,4,remove,hist_grid250_last2_median,103589.77457129065,103281.5969430914,308.17762819924974
+xgboost,2026,pool446_final_parameters,5,replace,hist_grid500_last1_std -> hist_grid500_last1_max,103281.5969430914,102999.21836683832,282.37857625307515
+lightgbm,2023,pool446_final_parameters,1,add,inventory_distance_to_road,228906.28072007906,228740.10983637627,166.1708837027836
+lightgbm,2023,pool446_final_parameters,2,add,surface_road,228740.10983637627,227452.5974025941,1287.5124337821617
+lightgbm,2023,pool446_final_parameters,3,add,inventory_250m_count,227452.5974025941,226953.5295730731,499.06782952102367
+lightgbm,2023,pool446_final_parameters,4,remove,material_surface,226953.5295730731,226782.66829414846,170.86127892462537
+lightgbm,2023,pool446_final_parameters,5,add,log1p_years_used,226782.66829414846,226723.8878073426,58.780486805859255
+lightgbm,2023,pool446_final_parameters,6,remove,material_copper,226723.8878073426,226593.02694429742,130.86086304517812
+lightgbm,2024,pool446_final_parameters,1,add,road_x_structure_exposure,163140.2382461098,162970.95848492027,169.27976118953666
+lightgbm,2024,pool446_final_parameters,2,replace,years_used -> log1p_years_used,162970.95848492027,162880.30246176716,90.65602315310389
+lightgbm,2024,pool446_final_parameters,3,replace,hist_material_surface_all_mean -> hist_material_surface_last2_mean,162880.30246176716,162808.58981274438,71.71264902278199
+lightgbm,2024,pool446_final_parameters,4,replace,hist_surface_all_mean -> hist_surface_last2_mean,162808.58981274438,162772.30570809648,36.284104647900676
+lightgbm,2025,pool446_final_parameters,1,add,inventory_100m_parallel_count,125732.14158418449,125068.4570183563,663.6845658281818
+lightgbm,2025,pool446_final_parameters,2,add,hist_length_band_last2_std,125068.4570183563,124011.21095387891,1057.2460644773964
+lightgbm,2026,pool446_final_parameters,1,add,inventory_10m_road_count,104439.19145253015,103723.6366959333,715.5547565968591
+lightgbm,2026,pool446_final_parameters,2,remove,hist_grid250_all_median,103723.6366959333,102784.97837165956,938.6583242737397
+lightgbm,2026,pool446_final_parameters,3,replace,hist_material_surface_all_std -> hist_material_surface_last2_std,102784.97837165956,102639.99807954076,144.98029211879475
+lightgbm,2026,pool446_final_parameters,4,replace,hist_radius100_n -> inventory_100m_prior_repairs,102639.99807954076,102570.48259208784,69.5154874529253
+lightgbm,2026,pool446_final_parameters,5,remove,hist_radius100_max,102570.48259208784,102070.38486699949,500.0977250883443
+lightgbm,2026,pool446_final_parameters,6,add,hist_grid1000_last2_mean,102070.38486699949,101502.85451394328,567.5303530562087
+lightgbm,2026,pool446_final_parameters,7,replace,hist_material_surface_all_median -> hist_material_surface_all_median_log1p,101502.85451394328,101491.09178333641,11.762730606875266
+catboost,2023,pool446_final_parameters,1,replace,hist_material_surface_all_median -> hist_material_surface_last2_median,227158.13766533224,227147.76316379043,10.374501541809877
+catboost,2023,pool446_final_parameters,2,replace,midpoint_y -> y2,227147.76316379043,227146.163189803,1.599973987438716
+catboost,2023,pool446_final_parameters,3,replace,hist_surface_all_median -> hist_surface_all_median_log1p,227146.163189803,227146.14575973127,0.017430071718990803
+catboost,2024,pool446_final_parameters,1,replace,hist_surface_all_mean -> hist_surface_last2_mean,160296.9115088442,160252.82526750208,44.08624134212732
+catboost,2025,pool446_final_parameters,1,add,weekday_cos,124721.22042035256,123611.61611828083,1109.6043020717334
+catboost,2025,pool446_final_parameters,2,replace,hist_surface_last2_max -> hist_surface_all_max_log1p,123611.61611828083,123381.18552836569,230.4305899151368
+catboost,2025,pool446_final_parameters,3,replace,hist_grid500_last1_max -> hist_grid500_last1_std_log1p,123381.18552836569,123346.63500026896,34.550528096733615
+catboost,2026,pool446_final_parameters,1,add,inventory_50m_surface_diversity,105477.54406089117,104851.91626118377,625.6277997074067
+catboost,2026,pool446_final_parameters,2,add,y2,104851.91626118377,104840.62619686019,11.290064323577099
+catboost,2026,pool446_final_parameters,3,remove,surface_road,104840.62619686019,104793.85735959631,46.768837263880414
+catboost,2026,pool446_final_parameters,4,remove,hour_cos,104793.85735959631,103936.23408293558,857.6232766607282
+catboost,2026,pool446_final_parameters,5,add,inventory_10m_length_sum,103936.23408293558,103919.15681510273,17.07726783285034
+catboost,2026,pool446_final_parameters,6,replace,event_decimal_year -> event_year,103919.15681510273,102950.87600178299,968.2808133197395
