@@ -1,0 +1,41 @@
+model,target,test_year,MAE,RMSE,ridge_alpha,n_features
+reference: training-mean constant,raw,2023,40230.39519768818,169548.5817896443,,
+reference: training-mean constant,raw,2024,32336.894535863157,111782.40107950816,,
+reference: training-mean constant,raw,2025,36694.33391022514,124485.00842283382,,
+reference: training-mean constant,raw,2026,35121.76074640723,139607.62588310923,,
+linear regression (baseline features),raw,2023,37867.047065047744,159850.31913895076,,16.0
+linear regression (baseline features),raw,2024,20341.628980041005,99745.9382318601,,16.0
+linear regression (baseline features),raw,2025,27071.680694178747,114579.17220560386,,16.0
+linear regression (baseline features),raw,2026,25745.139969839707,128667.172371291,,16.0
+linear regression (selected features),raw,2023,30342.923794865852,158614.76731832878,,21.0
+linear regression (selected features),raw,2024,17707.98718000562,99158.97212059838,,21.0
+linear regression (selected features),raw,2025,28220.01914748108,114090.08662683112,,21.0
+linear regression (selected features),raw,2026,26277.841757125705,128796.46469601148,,21.0
+"ridge (selected features, inner-validated alpha)",raw,2023,41718.14171188822,161925.1519032859,3162.2776601683795,21.0
+"ridge (selected features, inner-validated alpha)",raw,2024,17707.99785956776,99158.98164856416,0.01,21.0
+"ridge (selected features, inner-validated alpha)",raw,2025,28219.979934170777,114090.0800314898,0.01,21.0
+"ridge (selected features, inner-validated alpha)",raw,2026,25640.04256935345,128634.76065617781,1000.0,21.0
+linear regression (baseline features),log,2023,21283.98167591546,164970.69266860955,,16.0
+linear regression (baseline features),log,2024,12611.387112220233,107557.33091214077,,16.0
+linear regression (baseline features),log,2025,20847.902386162765,121567.14424040748,,16.0
+linear regression (baseline features),log,2026,20393.410383494018,136260.37857117868,,16.0
+linear regression (selected features),log,2023,25528.973069351377,142860.534848868,,120.0
+linear regression (selected features),log,2024,14105.270547055354,88158.07226912634,,120.0
+linear regression (selected features),log,2025,20282.20321502875,115235.76333263043,,120.0
+linear regression (selected features),log,2026,19782.30755884614,135520.37899069887,,120.0
+"ridge (selected features, inner-validated alpha)",log,2023,21432.47964753856,162677.5224410272,1000.0,120.0
+"ridge (selected features, inner-validated alpha)",log,2024,14080.532963911282,88170.3278621586,0.01,120.0
+"ridge (selected features, inner-validated alpha)",log,2025,20280.77297574254,115238.94298225762,0.01,120.0
+"ridge (selected features, inner-validated alpha)",log,2026,19782.32766801202,135520.66585302717,0.01,120.0
+linear regression (baseline features),log_smear,2023,25705.673424930705,159915.21823254335,,16.0
+linear regression (baseline features),log_smear,2024,14377.152817657468,103094.39758498312,,16.0
+linear regression (baseline features),log_smear,2025,21577.664072732732,116677.84890322732,,16.0
+linear regression (baseline features),log_smear,2026,22219.223471625606,131527.50683296865,,16.0
+linear regression (selected features),log_smear,2023,27631.784279784388,150429.36359454965,,79.0
+linear regression (selected features),log_smear,2024,17386.735665036213,87532.21455272326,,79.0
+linear regression (selected features),log_smear,2025,23831.39696976641,113657.55005087871,,79.0
+linear regression (selected features),log_smear,2026,21080.09624184286,133257.9647939322,,79.0
+"ridge (selected features, inner-validated alpha)",log_smear,2023,25358.374106532756,152892.66646081666,1000.0,79.0
+"ridge (selected features, inner-validated alpha)",log_smear,2024,16169.283121017224,89058.15793158892,10.0,79.0
+"ridge (selected features, inner-validated alpha)",log_smear,2025,23802.773438793432,113675.18816207492,1.0,79.0
+"ridge (selected features, inner-validated alpha)",log_smear,2026,21080.097302771213,133257.90464224163,0.01,79.0
