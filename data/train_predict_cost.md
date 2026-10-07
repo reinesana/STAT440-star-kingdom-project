@@ -168,9 +168,9 @@ See [the complete added-column dictionary](train_predict_cost_feature_dictionary
 `train_predict_cost_features_2026-10-05.json` for generation settings/provenance,
 and `train_predict_cost_validation_2026-10-05.json` for verification evidence.
 
-Rebuild from the repository root with `python src/enrich_cost_features.py` using
+Rebuild from the repository root with `python feature_engineering/enrich_cost_features.py` using
 the pinned dependencies in `notebooks/Takito_Kobayashi/requirements.txt`; verify
-with `python src/verify_cost_features.py`. The default rebuild uses an isolated
+with `python feature_engineering/verify_cost_features.py`. The default rebuild uses an isolated
 temporary copy of the archived feature code; an optional matching legacy cache
 can be supplied with `--legacy-features`. Existing archived model reproduction
 extracts and hash-checks the original 35 columns before using its frozen builders.

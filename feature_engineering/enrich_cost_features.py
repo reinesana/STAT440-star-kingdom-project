@@ -1,6 +1,6 @@
 """Append historical candidates and endpoint-route features, preserving original cells.
 
-python src/enrich_cost_features.py [--legacy-features /path/to/features.csv]
+python feature_engineering/enrich_cost_features.py [--legacy-features /path/to/features.csv]
 The optional cache must come from the archived experiment with identical inputs.
 Without a cache, rebuild the archived features in an isolated temporary directory.
 Requires numpy, pandas, scipy; rebuilding legacy candidates also requires the

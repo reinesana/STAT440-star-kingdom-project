@@ -163,9 +163,9 @@ season_cos, season_sinという列も追加した。これは1月と2月は隣�
 `train_predict_cost_features_2026-10-05.json` に設定・出典、
 `train_predict_cost_validation_2026-10-05.json` に検証結果を記録した。
 
-リポジトリ直下で `python src/enrich_cost_features.py` を実行すると再生成できる。
+リポジトリ直下で `python feature_engineering/enrich_cost_features.py` を実行すると再生成できる。
 必要なライブラリは `notebooks/Takito_Kobayashi/requirements.txt` に固定している。
-検証は `python src/verify_cost_features.py`。既存のモデル再現コードは、拡張CSVから
+検証は `python feature_engineering/verify_cost_features.py`。既存のモデル再現コードは、拡張CSVから
 元の35列を復元してハッシュを確認し、従来の固定された特徴量作成コードを使う。
 今回の追加は候補の整理であり、全列の採用や予測精度の向上を意味しない。モデルへの
 採用は時系列検証で決める。将来の事件日時は未知なので、日時・管齢などは予測

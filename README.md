@@ -9,10 +9,10 @@ The assignment specification is authoritative. Strategy suggestions below should
 ## Layout
 
 ```text
-data/          pipes.csv, train.csv (leak history 2019–2026). Don't edit these.
-notebooks/     exploration, named yourname_topic
-src/           shared code, cost function, simulator and validator
-submissions/   submission CSVs, named YYYY-MM-DD_description.csv
+data/                 pipes.csv, train.csv (leak history 2019–2026). Don't edit these.
+feature_engineering/  scripts that build, verify and document the extra columns in data/train_predict_cost.csv
+notebooks/            exploration and model work, one folder per person (First_Last)
+submissions/          submission CSVs, named YYYY-MM-DD_description.csv
 ```
 
 Setup: create a `.venv` and install the packages in `requirements.txt`.
