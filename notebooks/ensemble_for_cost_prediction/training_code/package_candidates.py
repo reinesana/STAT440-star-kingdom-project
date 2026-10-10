@@ -7,7 +7,7 @@ import joblib
 from features import FeatureBuilder, HERE, BASE
 from optimize import predict, CORE, MODELS, OUT
 
-DEST=HERE.parent/'github-main/notebooks/Takito_Kobayashi/ensemble_candidates_2027'
+DEST=HERE.parent/'github-main/notebooks/ensemble_for_cost_prediction'
 METHODS=['takito_catboost','ensemble_equal','ensemble_stable','ensemble_balanced','ensemble_rmse_weighted','prior_surface_mean']
 DESCRIPTIONS={
 'takito_catboost':('Best single model: CatBoost','最良単一モデル：CatBoost','One raw-cost CatBoost model. Lowest mean annual and pooled RMSE among evaluated single models; higher budget bias.','元単位の費用を予測するCatBoost単体。単一モデル中で年平均・プールRMSEが最小。ただし総額の偏りは大きい。'),
