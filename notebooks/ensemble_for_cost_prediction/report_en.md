@@ -75,6 +75,9 @@ Weights are percentages. Ensembles combine the same ten components: surface mean
 5. Learned ensemble weights only from preceding OOF years. Final 2027 components were trained on all 14,113 events with seed 440. Excluded existing Shana predictions and models requiring unavailable realized failure time/weekday.
 6. Verified ten saved models, 80 temporal configurations, independent metric/blend recomputation and invariance to future cost/date changes.
 
+
+**Why existing Shana submissions were excluded (temporal leakage):** Outcomes from evaluation years 2023–2025 were used for feature/model selection, so those predictions cannot serve as clean OOF ensemble inputs. This temporal validation contamination is distinct from using realized future failure hour/weekday, which is unavailable at forecast time. The architectures themselves can be candidates if refitted with selection entirely inside past-only folds.
+
 ## Best single-model settings
 
 ```json
@@ -102,34 +105,104 @@ The actual inventory filename is pipes.csv. All 43,039 IDs were considered and t
 
 Costs are conditional on a failure, not repair necessity or failure probability. Summing every CSV row does not produce an annual budget: failure probabilities/counts are needed. Monetary units follow the source data and are not assumed to be yen. Candidate selection follows inspection of historical results; this is not an untouched final holdout guarantee.
 
-## Annual results
+## Detailed handling of missing, unseen and invalid values
 
-| model                  |   year |   n_test |      RMSE |   total_bias_pct |
-|:-----------------------|-------:|---------:|----------:|-----------------:|
-| prior_surface_mean     |   2023 |     1826 | 158531.63 |             4.93 |
-| takito_catboost        |   2023 |     1826 | 158723.20 |            10.34 |
-| ensemble_equal         |   2023 |     1826 | 159167.41 |             3.47 |
-| ensemble_rmse_weighted |   2023 |     1826 | 158626.76 |             5.33 |
-| ensemble_stable        |   2023 |     1826 | 159453.14 |            -1.95 |
-| prior_surface_mean     |   2024 |     1955 |  99232.67 |            -1.01 |
-| takito_catboost        |   2024 |     1955 |  97780.40 |            28.78 |
-| ensemble_equal         |   2024 |     1955 |  99065.40 |             5.96 |
-| ensemble_rmse_weighted |   2024 |     1955 |  99458.85 |            -2.62 |
-| ensemble_stable        |   2024 |     1955 |  99245.82 |             2.59 |
-| prior_surface_mean     |   2025 |     1773 | 114824.73 |            21.22 |
-| takito_catboost        |   2025 |     1773 | 115475.00 |            34.45 |
-| ensemble_equal         |   2025 |     1773 | 113674.62 |            12.39 |
-| ensemble_rmse_weighted |   2025 |     1773 | 114737.81 |            21.30 |
-| ensemble_stable        |   2025 |     1773 | 113590.50 |            10.02 |
-| prior_surface_mean     |   2026 |     3038 | 128432.27 |             7.36 |
-| takito_catboost        |   2026 |     3038 | 126300.80 |             8.43 |
-| ensemble_equal         |   2026 |     3038 | 128698.93 |            -4.06 |
-| ensemble_rmse_weighted |   2026 |     3038 | 128492.84 |             1.43 |
-| ensemble_stable        |   2026 |     3038 | 128632.64 |            -3.90 |
-| ensemble_balanced      |   2023 |     1826 | 159543.95 |            -9.96 |
-| ensemble_balanced      |   2024 |     1955 |  98941.25 |             1.75 |
-| ensemble_balanced      |   2025 |     1773 | 113997.86 |            13.33 |
-| ensemble_balanced      |   2026 |     3038 | 128538.33 |            -0.50 |
+### What was actually found
+
+| Item | Inventory: 43,039 | Prediction targets: 28,926 | Handling |
+|:---|---:|---:|:---|
+| PU (`polyurethane`) | 1,678 | 1,678 | Material is known, but has no cost labels; use each model's unseen-category handling |
+| Missing material | 8 | 8 | Replace with `__unknown__`, without asserting iron or PU |
+| Missing lay date | 15 | 9 | Keep age NaN, set `age_missing=1`; retain the six training rows too |
+| Missing surface | 0 | 0 | No observed replacements required; categorical blanks become `__unknown__` |
+| Missing/non-numeric/nonfinite coordinates | 0 | 0 | Use observed coordinates; no automatic repair of invalid new coordinates |
+| Zero endpoint length | 0 | 0 | None observed; new zero-length input requires correction before directional features |
+
+train.csv has no missing ID, Date, Time or Cost and no nonpositive costs. The six training records with missing inventory lay date were restored from raw train.csv rather than dropped with an incomplete enriched table. All 14,113 labels were retained. Training materials are wrought iron, cast iron, gray iron, brass and copper; neither PU nor missing-material costs were observed. Expensive events, including the maximum observed cost of 7,257,576.36, were not deleted or capped as presumed outliers.
+
+### How each model calculated PU and missing-material costs
+
+PU retains the string `polyurethane`; missing material becomes `__unknown__`. The material–surface composite category carries the same values. Neither is relabeled as a supported material in the source features, although the encoder introduces the limitations below.
+
+| Family | Actual unseen-category handling | Basis and limitation |
+|:---|:---|:---|
+| CatBoost | Pass PU/`__unknown__` as strings through CatBoost categorical processing | Learned trees and selected age, surface, length, route and other inputs; no PU-specific price relationship was learned |
+| XGBoost/LightGBM | Convert categories outside fitted category levels to category missing | Learned missing-category behavior plus remaining features; that path is not validated for PU |
+| Linear/Gamma/Random Forest | `OneHotEncoder(handle_unknown='ignore', drop='first')` makes every dummy in the unseen category block zero | Encoding collides with the dropped reference category; other inputs remain, but this does not establish an appropriate PU material effect |
+| Surface mean | Ignore material; shrink surface-specific average toward global mean | `(surface cost sum + α × global mean)/(surface count + α)`, with Optuna-selected α; unseen surface falls back to global mean |
+| Ensembles | Weighted average of the ten saved component predictions | Averaging does not remove unsupported-material uncertainty or substitute for a PU-specific fit |
+
+### Missing age and missing historical statistics
+
+Age is `(2027-01-01 − Lay date in days)/365.25`. Missing lay date produces NaN age/log-age and `age_missing=1`; the age-band aggregation key is the separate missing group `-1`. Age was not assumed to be zero.
+
+Linear, Gamma and RF pipelines use `SimpleImputer(strategy='median', add_indicator=True)` with medians fitted only on their training period, then standardize. Indicators are added for columns missing during fit, not automatically for every column that might become missing later. CatBoost, XGBoost and LightGBM retain numeric NaN and use their learned native missing-value behavior.
+
+For material, material–surface, route and similar groups with no historical repairs, aggregation count and sum are set to zero. This does not assign zero repair cost. Mean features are `(past sum + 20 × past global mean)/(past count + 20)`; zero count gives the global past mean. Median, maximum and standard deviation remain NaN if unsupported. High-cost rates are shrunk as `(past high-cost count + 50 × past global rate)/(past count + 50)`. Radius aggregates follow the same approach: nearby costs from other materials may be available, but they are not PU observations.
+
+Inventory neighborhoods and endpoint routes use the same pipes.csv; repair-state features use only dates preceding the forecast origin. Neighborhood inventory candidates require known lay dates, so missing-lay-date pipes are excluded as neighbors. Endpoint connections are distinguished from planar crossings; geometry is a proxy, not excavated length or verified physical connectivity.
+
+### Unusual values and limits on new inputs
+
+Observed coordinates are finite, endpoint lengths are nonzero, and known lay dates precede 2019. These were checked before using the data; there is no universal invalid-value sanitization. Nonblank unseen strings follow category rules above; typos are not automatically distinguished from genuinely new categories. Duplicate IDs, unparseable dates, nonfinite coordinates, zero-length geometry or missing inventory IDs require correction and revalidation. Missing coordinates were not replaced with zero or another location.
+
+Negative model predictions are clipped at zero with `max(prediction, 0)`. Log models are first transformed back with `exp`/`expm1` and their fitted correction factor, then clipped. Nonfinite predictions fail validation and are not saved; large predictions are not capped. CatBoost's saved CSV has 35 zero predictions; the other five candidates have none. These arise from model inference and nonnegative constraints, not blanket zero assignment to unseen materials; zero is not evidence of free repair. Counts are recorded in [input_quality_audit.json](evidence/input_quality_audit.json).
+
+See [input_quality_by_pipe.csv](evidence/input_quality_by_pipe.csv) for per-row flags and [input_quality_audit.json](evidence/input_quality_audit.json) for counts. Material support and missing lay date are separate dimensions: a supported-material row can still have missing age.
+
+## Model inputs, outputs and coordination with failure-timing models
+
+### Shared inputs
+
+- Inventory: `Pipe ID`, `Lay date`, `Material`, `Surface`, `GPS x1`, `GPS y1`, `GPS x2`, `GPS y2`. ID is a join/output key, not a predictor.
+- Training/history: train.csv `Pipe ID`, `Date`, `Cost`. Date establishes historical years and cutoff. `Time` exists in the file but is not an input to these models.
+- Scenario: year 2027, age reference 2027-01-01, observed history strictly before 2027-01-01. Full inventory and past history, not just one pipe row, are needed for neighborhood and route features.
+- Estimator inputs: only selected derived columns, explicitly listed in [model_input_contract.json](evidence/model_input_contract.json) and each configs JSON `features`. Ensembles consume the same ten component predictions and apply their saved weights.
+
+### Features and outputs by component
+
+| model                   | feature_pack   |   selected_columns | output                |
+|:------------------------|:---------------|-------------------:|:----------------------|
+| anthony_gamma           | inventory      |                 52 | Original-unit cost    |
+| anthony_linear_raw      | inventory      |                 52 | Original-unit cost    |
+| anthony_rf_log_mean     | inventory      |                 57 | Log prediction → cost |
+| prior_surface_mean      | surface only   |                  1 | Surface mean cost     |
+| rion_gamma_refit        | inventory      |                 54 | Original-unit cost    |
+| rion_lgb_log_mean_refit | all            |                309 | Log prediction → cost |
+| rion_rf_raw_refit       | local_history  |                 61 | Original-unit cost    |
+| takito_catboost         | topology       |                 49 | Original-unit cost    |
+| takito_lightgbm         | inventory      |                 57 | Original-unit cost    |
+| takito_xgboost          | base           |                 11 | Original-unit cost    |
+
+base covers year, material, surface, year-start age and endpoint length; inventory adds neighborhood inventory, past repair state, orientation and interactions; group_history adds material/surface/grid/age-band/route historical costs; local_history adds radius/nearest-neighbor historical costs; topology adds endpoint routes and their history; all combines every group. Exact columns are selected/removed by family, so pack names alone are not a full schema. The surface-mean configuration contains common columns, but actual inference only reads surface.
+
+### Outputs
+
+Each candidate returns one nonnegative point estimate of repair cost conditional on a failure in the 2027 scenario, in original cost units. Submitted CSVs contain only `id,predicted_cost`. They do not predict failure time, probability, uncertainty intervals, PU reliability or intervention priority. Input-quality and material-support metadata are separate files.
+
+### Alignment with the failure-timing team
+
+Share ID keys, inventory snapshot, observation cutoff, excluded IDs and material/lay-date missing flags. If that team retains repaired training IDs, repeat failures and material replacement need a separate state definition. For an annual budget, obtain failure probabilities `p_i` for the same population and interval and form `Σ p_i × predicted_cost_i`. If multiple failures are allowed, use expected event counts only after checking that this severity estimate applies to each event. The combined budget model has not thereby been independently validated.
+
+The current severity models do not require realized failure month, weekday or hour; predicted failure dates were not inputs to these CSVs either. Substituting a predicted incident-date age changes the year-start specification and requires validation. For later years, update scenario year/year-start age and re-run inference without adding unobserved future repair history. Track unsupported-material coverage separately in the timing and cost models.
+
+
+## Total cost if every target pipe is repaired in 2027
+
+| Candidate              |   Supported: 27,240 pipes |   PU: 1,678 (extrapolated) |   Missing material: 8 (extrapolated) |   All 28,926 targets |
+|:-----------------------|--------------------------:|---------------------------:|-------------------------------------:|---------------------:|
+| takito_catboost        |            678,080,616.66 |              60,261,238.25 |                           553,308.96 |       738,895,163.87 |
+| ensemble_equal         |            598,280,863.28 |              44,285,679.47 |                           290,308.64 |       642,856,851.39 |
+| ensemble_stable        |            590,257,789.64 |              33,788,551.47 |                           220,471.30 |       624,266,812.40 |
+| ensemble_balanced      |            590,650,232.16 |              16,542,838.04 |                            80,416.31 |       607,273,486.51 |
+| ensemble_rmse_weighted |            606,600,766.13 |              28,702,046.70 |                           149,819.68 |       635,452,632.51 |
+| prior_surface_mean     |            628,897,965.63 |              15,064,555.23 |                            48,285.75 |       644,010,806.62 |
+
+This table sums saved CSV predictions under the explicit assumption that every target pipe is repaired once in 2027. The population is 28,926 pipes after excluding the 14,113 train.csv IDs as requested, not all 43,039 inventory pipes. Units are those of the source costs; neither yen nor dollars is asserted. PU and missing-material contributions are separate to expose reliance on unvalidated extrapolation.
+
+No failure probabilities are applied. This is a repair-all scenario, not the usual annual failure budget. Models were trained on costs incurred at failures, not planned preventive replacement; shared mobilization costs, coordinated-work discounts and inflation have not been modeled separately. These totals are not calibrated quotes for a coordinated replacement project. The earlier RMSE and total-bias explanations remain as historical validation on actually failed pipes.
+
+Totals were calculated with decimal arithmetic from the saved CSV values. The same figures are available in the [machine-readable totals CSV](evidence/repair_all_2027_totals.csv).
 
 ## Sources and validation
 

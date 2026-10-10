@@ -1,0 +1,48 @@
+{
+  "inventory_rows": 43039,
+  "training_rows": 14113,
+  "target_rows": 28926,
+  "inventory_missing": {
+    "Pipe ID": 0,
+    "Lay date": 15,
+    "Material": 8,
+    "Surface": 0,
+    "GPS x1": 0,
+    "GPS y1": 0,
+    "GPS x2": 0,
+    "GPS y2": 0
+  },
+  "target_missing": {
+    "Pipe ID": 0,
+    "Lay date": 9,
+    "Material": 8,
+    "Surface": 0,
+    "GPS x1": 0,
+    "GPS y1": 0,
+    "GPS x2": 0,
+    "GPS y2": 0
+  },
+  "training_missing": {
+    "Pipe ID": 0,
+    "Date": 0,
+    "Time": 0,
+    "Cost": 0
+  },
+  "invalid_or_nonfinite_coordinate_rows": 0,
+  "zero_length_rows": 0,
+  "nonpositive_training_cost_rows": 0,
+  "maximum_observed_training_cost": 7257576.36,
+  "maximum_endpoint_length_m": 74.88144496469081,
+  "source_sha256": {
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2"
+  },
+  "zero_prediction_counts": {
+    "takito_catboost": 35,
+    "ensemble_equal": 0,
+    "ensemble_stable": 0,
+    "ensemble_balanced": 0,
+    "ensemble_rmse_weighted": 0,
+    "prior_surface_mean": 0
+  }
+}
