@@ -1,0 +1,50 @@
+{
+  "ensemble_equal": {
+    "prior_surface_mean": 0.1,
+    "anthony_linear_raw": 0.1,
+    "anthony_gamma": 0.1,
+    "anthony_rf_log_mean": 0.1,
+    "takito_xgboost": 0.1,
+    "takito_catboost": 0.1,
+    "takito_lightgbm": 0.1,
+    "rion_gamma_refit": 0.1,
+    "rion_rf_raw_refit": 0.1,
+    "rion_lgb_log_mean_refit": 0.1
+  },
+  "ensemble_rmse_weighted": {
+    "prior_surface_mean": 0.7444388452039297,
+    "anthony_linear_raw": 0.0,
+    "anthony_gamma": 0.013412410514867532,
+    "anthony_rf_log_mean": 0.056812889973770625,
+    "takito_xgboost": 0.04545048738071354,
+    "takito_catboost": 0.045037584031106845,
+    "takito_lightgbm": 0.0,
+    "rion_gamma_refit": 3.5429439748258515e-18,
+    "rion_rf_raw_refit": 0.0,
+    "rion_lgb_log_mean_refit": 0.0948477828956118
+  },
+  "ensemble_stable": {
+    "prior_surface_mean": 0.19605427315975832,
+    "anthony_linear_raw": 0.09861518657699933,
+    "anthony_gamma": 0.11083861884917948,
+    "anthony_rf_log_mean": 0.10394540419992149,
+    "takito_xgboost": 0.060510817695201065,
+    "takito_catboost": 0.09974259773375577,
+    "takito_lightgbm": 0.05,
+    "rion_gamma_refit": 0.053217885392742595,
+    "rion_rf_raw_refit": 0.07362081213047625,
+    "rion_lgb_log_mean_refit": 0.15345440426196572
+  },
+  "ensemble_balanced": {
+    "prior_surface_mean": 0.6156087226804104,
+    "anthony_linear_raw": 0.06575633513325548,
+    "anthony_gamma": 0.010000000000000009,
+    "anthony_rf_log_mean": 0.010000000000000047,
+    "takito_xgboost": 0.010000000000000073,
+    "takito_catboost": 0.010000000000000002,
+    "takito_lightgbm": 0.010000000000000016,
+    "rion_gamma_refit": 0.01000000000000002,
+    "rion_rf_raw_refit": 0.010000000000000016,
+    "rion_lgb_log_mean_refit": 0.24863494218633414
+  }
+}

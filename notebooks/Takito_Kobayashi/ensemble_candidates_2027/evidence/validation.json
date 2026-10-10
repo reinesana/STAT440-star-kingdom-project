@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "training_rows": 14113,
+  "out_of_time_rows": 13035,
+  "evaluation_rows": 8592,
+  "future_supported_pipes": 27240,
+  "features": 309,
+  "temporal_config_checks": 80,
+  "saved_models_replayed": 10,
+  "all_metrics_and_blends_independently_recomputed": true,
+  "future_date_mutation_invariance_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "future_cost_injection_invariance": true,
+  "all_2026_and_earlier_events_retained": true,
+  "source_commit": "a09355d835d9acbb5746f11edcddd0cfd5e8ec3e",
+  "versions": {
+    "optuna": "4.9.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.6.0",
+    "catboost": "1.2.10",
+    "joblib": "1.5.3"
+  },
+  "sha256": {
+    "data\\training_rich.csv": "99c812818843264a762a7f5e901415af4e339f09b9d3d5dc3c8b7d2a38740ff8",
+    "data\\forecast_features_2027.csv": "dcb02db7afc655361f82520f96c411551866dbda465928a2a6fc7bcea3258f17",
+    "features.py": "956a42d02cab0839e59fb29370073f11d36e1123c5bae2b490ecce570d16f87b",
+    "optimize.py": "52d4fea09b84338ae0fdfe6e7b27e1d148cef5d669b0ab62a69a2384638afd19",
+    "finish_optuna.py": "63336bdb6fd2ac692f51ccbaa6e384d2ff31e524f9febdcc94de88a0d537bcb2",
+    "optuna\\results\\out_of_time_predictions.csv": "c485e87add4c712bf9b0b9b4eb0436935b5e436a905e1625e2686ef56b5a6e48",
+    "optuna\\results\\forecast_costs_2027.csv": "14f4a6df0a3e9a7d4a919da2e431f0b4b6f270641b3e31716c5a4ea62b056b34"
+  }
+}

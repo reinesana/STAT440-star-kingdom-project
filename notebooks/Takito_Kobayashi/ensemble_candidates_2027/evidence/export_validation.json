@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "scenario_year": 2027,
+  "training_rows": 14113,
+  "inventory_rows": 43039,
+  "skipped_training_ids": 14113,
+  "prediction_rows_per_candidate": 28926,
+  "supported_material_rows": 27240,
+  "unvalidated_material_rows": 1686,
+  "unvalidated_material_breakdown": {
+    "polyurethane": 1678,
+    "missing": 8
+  },
+  "candidates": [
+    "takito_catboost",
+    "ensemble_equal",
+    "ensemble_stable",
+    "ensemble_balanced",
+    "ensemble_rmse_weighted",
+    "prior_surface_mean"
+  ],
+  "sort": "predicted_cost descending, id ascending ties",
+  "columns": [
+    "id",
+    "predicted_cost"
+  ],
+  "seed": 440,
+  "finite_nonnegative_predictions": true,
+  "exact_inventory_minus_train_id_coverage": true,
+  "source_sha256": {
+    "github-main\\data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "github-main\\data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "ensemble_training\\optuna\\results\\forecast_costs_2027.csv": "14f4a6df0a3e9a7d4a919da2e431f0b4b6f270641b3e31716c5a4ea62b056b34"
+  },
+  "prediction_sha256": {
+    "ensemble_balanced.csv": "3e3fdd53c26cc25cec6218d559b459f77e8846dd21563c360b2bceb2f8dce9d3",
+    "ensemble_equal.csv": "93780756c594b6cb5af8da5f24a98e28a615c7dd52b20195aa9e6705545ca9cd",
+    "ensemble_rmse_weighted.csv": "d4a9deff96092a1be7656ae68966459fedbe91e3a635b62ad0c700e311eca505",
+    "ensemble_stable.csv": "af72252aa534a41ae09430ab4d1d3168a6c0d19e52a46deec128e4aaca19d3a0",
+    "prior_surface_mean.csv": "9429a1f529ee5b20d8910e997b377856d34434e333372a68385354887449fe6e",
+    "takito_catboost.csv": "ebb7d1e7070e316b0b041bc03933de703406ea46cf91f2c1df09d29c6d3e0480"
+  }
+}

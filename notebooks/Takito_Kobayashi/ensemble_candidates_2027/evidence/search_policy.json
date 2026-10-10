@@ -1,0 +1,26 @@
+{
+  "requested_trials_per_model_origin": 30,
+  "fingerprint": "f9ec9cccc1341355",
+  "objective": "mean annual RMSE on the two most recent available inner years; one year where only one exists",
+  "outer_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027
+  ],
+  "cold_start_2020": "No temporal validation exists; seeded midpoint configuration, not optimized",
+  "fixed_controls": [
+    "random seed 440",
+    "worker thread count is a runtime control, not optimized",
+    "raw-cost RMSE objective; log families retain log target",
+    "CPU histogram/gbdt/symmetric-tree implementations",
+    "convergence tolerances and iterations"
+  ],
+  "current_code_sha256": "52d4fea09b84338ae0fdfe6e7b27e1d148cef5d669b0ab62a69a2384638afd19",
+  "model_revision": "Anthony linear/Gamma use log length/age; Rion Gamma uses raw length/age, avoiding duplicate Gamma specifications.",
+  "scope_limitation": "Substantive listed predictive parameters, not every library option. RF absolute-error/Poisson criteria and alternate booster/loss families are not searched. No guarantee of global optimum."
+}

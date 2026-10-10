@@ -1,0 +1,30 @@
+{
+  "model": "prior_surface_mean",
+  "origin": 2027,
+  "training_end": 2026,
+  "inner_years": [
+    2025,
+    2026
+  ],
+  "params": {
+    "smoothing": 114.72895299736683
+  },
+  "features": [
+    "scenario_year",
+    "material",
+    "surface",
+    "material_surface",
+    "pipe_length_m",
+    "log1p_pipe_length_m",
+    "midpoint_x_m",
+    "midpoint_y_m",
+    "age_at_year_start",
+    "log1p_age_at_year_start",
+    "age_missing"
+  ],
+  "inner_mean_RMSE": 121219.73720122082,
+  "completed_trials": 30,
+  "fingerprint": "f9ec9cccc1341355",
+  "training_rows": 14113,
+  "smearing_factor": null
+}
