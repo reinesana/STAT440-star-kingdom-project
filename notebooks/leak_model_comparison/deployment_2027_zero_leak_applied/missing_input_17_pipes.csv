@@ -1,0 +1,18 @@
+pipe_id,year,material,exclusion_reason,xgboost_probability,catboost_probability,lightgbm_probability,leak_probability,probability_status
+P09986,2027,,missing_material,,,,,unknown_missing_required_input
+P09987,2027,,missing_material,,,,,unknown_missing_required_input
+P10869,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12275,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12276,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12277,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12278,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12279,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12280,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12281,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P12282,2027,wrought iron,missing_or_invalid_lay_date,,,,,unknown_missing_required_input
+P42036,2027,,missing_material,,,,,unknown_missing_required_input
+P42037,2027,,missing_material,,,,,unknown_missing_required_input
+P42038,2027,,missing_material,,,,,unknown_missing_required_input
+P42039,2027,,missing_material,,,,,unknown_missing_required_input
+P42040,2027,,missing_material,,,,,unknown_missing_required_input
+P42041,2027,,missing_material,,,,,unknown_missing_required_input
