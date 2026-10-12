@@ -1,0 +1,76 @@
+{
+  "prediction_year": 2027,
+  "training_years": [
+    2019,
+    2026
+  ],
+  "training_rows": 305391,
+  "inventory_rows": 43039,
+  "eligible_rows": 28909,
+  "excluded_rows": 14130,
+  "historically_leaked_inventory": 14113,
+  "feature_checks_against_2026": 28909,
+  "expected_leaks": {
+    "xgboost_probability": 6209.301034535805,
+    "catboost_probability": 1625.7836579187222,
+    "lightgbm_probability": 1504.7986867992113,
+    "leak_probability": 3113.294459751246
+  },
+  "weights": {
+    "xgboost": 0.3333333333333333,
+    "catboost": 0.3333333333333333,
+    "lightgbm": 0.3333333333333333
+  },
+  "parameters": {
+    "xgboost": {
+      "objective": "binary:logistic",
+      "eval_metric": "logloss",
+      "scale_pos_weight": 10,
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 100,
+      "random_state": 440,
+      "n_jobs": 4
+    },
+    "catboost": {
+      "iterations": 500,
+      "depth": 6,
+      "learning_rate": 0.05,
+      "loss_function": "Logloss",
+      "random_seed": 440,
+      "verbose": false,
+      "allow_writing_files": false,
+      "thread_count": 4
+    },
+    "lightgbm": {
+      "objective": "binary",
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 20,
+      "colsample_bytree": 1.0,
+      "subsample": 1.0,
+      "n_estimators": 500,
+      "scale_pos_weight": 1,
+      "random_state": 440,
+      "verbosity": -1,
+      "n_jobs": 4
+    }
+  },
+  "versions": {
+    "python": "3.14.4",
+    "pandas": "3.0.3",
+    "numpy": "2.5.1",
+    "sklearn": "1.9.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0"
+  },
+  "input_sha256": {
+    "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\data\\leak_prediction_master.csv": "f39b7a3e9beb4955ac4f59a77e80d668ef0ea681b013f9cd8aaa259d86161015",
+    "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "script_sha256": "4f73d0a0b8b4514be22909c8f9ae5ea2437b941964d25e102b8693982f774d65",
+  "scope": "Annual first-recorded-leak probabilities for eligible inventory without historical leaks; before any 2027 planned replacement."
+}
