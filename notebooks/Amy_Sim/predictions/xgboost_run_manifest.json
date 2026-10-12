@@ -1,0 +1,37 @@
+{
+  "input_path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\data\\leak_prediction_master.csv",
+  "input_sha256": "f39b7a3e9beb4955ac4f59a77e80d668ef0ea681b013f9cd8aaa259d86161015",
+  "script_sha256": "199ead59d20f6a91566e291ebd05345715c396bc51dc26554df1824e62026b9f",
+  "features": [
+    "material",
+    "surface",
+    "pipe_length",
+    "pipe_age"
+  ],
+  "parameters": {
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "scale_pos_weight": 10,
+    "max_depth": 4,
+    "learning_rate": 0.1,
+    "n_estimators": 100,
+    "random_state": 440,
+    "n_jobs": 4
+  },
+  "test_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "pandas": "3.0.3",
+    "sklearn": "1.9.0",
+    "xgboost": "3.4.1"
+  },
+  "calibration": "LogisticRegression on clipped probability logits; preceding year; frozen estimator",
+  "note": "No tuning or ensemble selection. Prior project exposure to 2026 is unverified.",
+  "output_rows": 138833
+}

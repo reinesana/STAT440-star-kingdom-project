@@ -1,0 +1,67 @@
+{
+  "selected_candidate": "equal__xgboost_raw__catboost__lightgbm_baseline_raw",
+  "members": [
+    "xgboost_raw",
+    "catboost",
+    "lightgbm_baseline_raw"
+  ],
+  "weights": {
+    "xgboost_raw": 0.3333333333333333,
+    "catboost": 0.3333333333333333,
+    "lightgbm_baseline_raw": 0.3333333333333333
+  },
+  "best_single": "lightgbm_baseline_raw",
+  "selection_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "evaluation_year": 2026,
+  "candidates": 127,
+  "rule": "Mean annual Brier; ties: mean annual log loss, then name",
+  "caveat": "Prior exposure to 2026 in the team's development cannot be excluded.",
+  "inputs": [
+    {
+      "model": "xgboost_raw",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Amy_Sim\\predictions\\xgboost_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "4d245a446de41c791a69c8e289b9a25a4dbe66924423956ea95988e7a58ee270"
+    },
+    {
+      "model": "xgboost_calibrated",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Amy_Sim\\predictions\\xgboost_calibrated_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "7a374d0b96ebd5565249b4fa303d7e7e69f0b9f7cf6894029cfcc27b867fab4b"
+    },
+    {
+      "model": "catboost",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Ryota_Sato\\catboost_predictions.csv",
+      "rows": 138833,
+      "sha256": "4d615f38d76aa17c04630490d5202de5e31edf825d795c64745a50958446175d"
+    },
+    {
+      "model": "lightgbm_weighted_raw",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Mar_Nacianceno\\lightgbm_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "8c90431851f3eb69ae0396c1934d8bd87cefe312514942ff920d35675807db98"
+    },
+    {
+      "model": "lightgbm_weighted_calibrated",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Mar_Nacianceno\\lightgbm_calibrated_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "07f51038ccefd7b959f28b15960e5b84f9c6c943b971f7e61f0c04a4f48a9d9d"
+    },
+    {
+      "model": "lightgbm_baseline_raw",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Mar_Nacianceno\\lightgbm_baseline_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "29048f667001f2f0e1a4c4293c342d7e174beb55f4f3c6577475dbcbd0e46a3a"
+    },
+    {
+      "model": "lightgbm_baseline_calibrated",
+      "path": "E:\\User\\nsim\\Documents\\User\\nsim\\Documents\\stat440\\STAT440-star-kingdom-project\\notebooks\\Mar_Nacianceno\\lightgbm_baseline_calibrated_oof_predictions.csv",
+      "rows": 138833,
+      "sha256": "21db5ad6bd2d766cdf73f55c96c196e2082ecbde3b935fa414244dbc5da24e05"
+    }
+  ]
+}
