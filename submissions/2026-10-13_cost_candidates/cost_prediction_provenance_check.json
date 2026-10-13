@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "training_rows": 14113,
+  "training_years": [
+    2019,
+    2026
+  ],
+  "all_ten_component_configs_full_history": true,
+  "training_ids_match_raw_history": true,
+  "inventory_rows": 43039,
+  "prediction_rows": 28926,
+  "historically_replaced_ids_excluded": 14113,
+  "team_components": [
+    "prior_surface_mean",
+    "anthony_linear_raw",
+    "anthony_gamma",
+    "anthony_rf_log_mean",
+    "takito_xgboost",
+    "takito_catboost",
+    "takito_lightgbm",
+    "rion_gamma_refit",
+    "rion_rf_raw_refit",
+    "rion_lgb_log_mean_refit"
+  ],
+  "blend_max_errors": {
+    "ensemble_equal": 1.1641532182693481e-10,
+    "ensemble_rmse_weighted": 1.1641532182693481e-10,
+    "ensemble_stable": 1.1641532182693481e-10,
+    "ensemble_balanced": 8.731149137020111e-11
+  },
+  "candidates": [
+    {
+      "candidate": "01_catboost_risk",
+      "cost_model": "takito_catboost",
+      "ensemble": false,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    },
+    {
+      "candidate": "02_stable_risk",
+      "cost_model": "ensemble_stable",
+      "ensemble": true,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    },
+    {
+      "candidate": "03_equal_risk",
+      "cost_model": "ensemble_equal",
+      "ensemble": true,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    },
+    {
+      "candidate": "04_rmse_weighted_risk",
+      "cost_model": "ensemble_rmse_weighted",
+      "ensemble": true,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    },
+    {
+      "candidate": "05_catboost_cost_only",
+      "cost_model": "takito_catboost",
+      "ensemble": false,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    },
+    {
+      "candidate": "06_stable_risk_per_work_cost",
+      "cost_model": "ensemble_stable",
+      "ensemble": true,
+      "prediction_hash_matches": true,
+      "submission_hash_matches": true,
+      "all_audit_pipe_costs_match": true
+    }
+  ],
+  "supported_prediction_rows": 27240,
+  "unsupported_prediction_rows": 1686,
+  "note": "01/05 use the full-history CatBoost single model; 02/03/04/06 use team ensembles. Leak probability comes from a separate older risk model."
+}

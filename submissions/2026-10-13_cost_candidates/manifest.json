@@ -1,0 +1,85 @@
+{
+  "seed": 440,
+  "history_cutoff": "2026-12-31",
+  "ranking_window": [
+    2027,
+    2028
+  ],
+  "baseline_reported_official_score_approx": -26000000,
+  "source_sha256": {
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "submissions\\risk_priority_models\\risk.txt": "b720eb0b442bf0626bb620d944e824f05e5886a930d4db4af01f3f0ea3f39c02",
+    "submissions\\risk_priority_models\\metadata.json": "44bcc003c48fe12df0443a8cccb23fe8ceffc97c256aef495dd809f5d6ba6f63",
+    "src\\build_cost_submissions.py": "6ca9d6b1a6d3bedfec1d14899ea7b665f57655cc5dbe13990097d1fdef8d8e99"
+  },
+  "candidates": [
+    {
+      "candidate": "01_catboost_risk",
+      "cost_model": "takito_catboost",
+      "ordering": "risk",
+      "construction_cost": 151387714.75,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "ebb7d1e7070e316b0b041bc03933de703406ea46cf91f2c1df09d29c6d3e0480",
+      "submission_sha256": "b32ae0deaceadde25743e84c4a2255fec63dcdbc1829cfde354e54e27e7ffb6d"
+    },
+    {
+      "candidate": "02_stable_risk",
+      "cost_model": "ensemble_stable",
+      "ordering": "risk",
+      "construction_cost": 151395562.92,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "af72252aa534a41ae09430ab4d1d3168a6c0d19e52a46deec128e4aaca19d3a0",
+      "submission_sha256": "58089d74c7ca00b13a8aea13a8377e0fd9597b71984969e4de26c57417ddcbee"
+    },
+    {
+      "candidate": "03_equal_risk",
+      "cost_model": "ensemble_equal",
+      "ordering": "risk",
+      "construction_cost": 151387714.71,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "93780756c594b6cb5af8da5f24a98e28a615c7dd52b20195aa9e6705545ca9cd",
+      "submission_sha256": "118a404f039c9549cf3df9ff450504f4e6d56a32ebfd0f4a76686710095a0993"
+    },
+    {
+      "candidate": "04_rmse_weighted_risk",
+      "cost_model": "ensemble_rmse_weighted",
+      "ordering": "risk",
+      "construction_cost": 151395562.98,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "d4a9deff96092a1be7656ae68966459fedbe91e3a635b62ad0c700e311eca505",
+      "submission_sha256": "254d6c4a232749cc0186e27fd96e894f7f681a8f787b5374f278e017fe07d01e"
+    },
+    {
+      "candidate": "05_catboost_cost_only",
+      "cost_model": "takito_catboost",
+      "ordering": "cost",
+      "construction_cost": 151442877.96,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "ebb7d1e7070e316b0b041bc03933de703406ea46cf91f2c1df09d29c6d3e0480",
+      "submission_sha256": "c25f5a2178d3d9a3b7782ed86117e2732d9ba885fe1acd0786588859a24406a3"
+    },
+    {
+      "candidate": "06_stable_risk_per_work_cost",
+      "cost_model": "ensemble_stable",
+      "ordering": "ratio",
+      "construction_cost": 152116379.58,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "source_prediction_sha256": "af72252aa534a41ae09430ab4d1d3168a6c0d19e52a46deec128e4aaca19d3a0",
+      "submission_sha256": "6b561356918eff5a1de72fc7ca144adfef1d147b94d203df235a53f8a15cddd8"
+    }
+  ],
+  "limitations": [
+    "Conditional cost predictions are not leak probabilities.",
+    "Fixed 2027 severity and 2027-2028 probability ranking, not a full horizon optimizer.",
+    "Circle priorities overlap; benefits are ranking heuristics, not additive savings.",
+    "No future leak validation establishes construction feasibility, not official score improvement.",
+    "Unknown-material pipes are not original-iron targets; incidental replacement is charged."
+  ]
+}
