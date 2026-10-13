@@ -35,6 +35,42 @@ M$ means million dollars. Positive changes mean improvement. Scores and differen
 Including construction cost gave the largest gain: 06 beat 02 by $10.09 million and the baseline by $9.97 million. This supports choosing work by expected benefit per construction dollar. Total scores alone cannot separate construction savings from avoided leak repairs.
 
 
+## Candidate 06 explained simply
+
+Candidate 06 is a way to decide **which circle to work on first**. It does not learn or optimize circle sizes. The cost ensemble predicts repair costs; a separate model predicts leak probabilities; a final rule turns these predictions into a construction order.
+
+### Step 1 Draw a circle around each original iron pipe
+
+The center is halfway between the pipe’s two endpoints. The radius is half the distance between those endpoints, plus a tiny 0.000001 m margin to prevent rounding from leaving an endpoint outside. For example, endpoints 40 m apart give a radius of approximately 20 m. This is endpoint geometry, not a measured curved pipe length.
+
+We kept all 38,455 baseline circles. Their centers and radii are the same in all six files. A circle can also contain other pipes; any fully contained, currently unreplaced pipe is included in its work cost. **Candidate 06 changes the order, not the size, of the circles.**
+
+### Step 2 Predict repair cost using the 2027 scenario
+
+Yes: **every repair-cost forecast used here assumes the year is 2027**. The model inputs use scenario year 2027, pipe age on 1 January 2027, and observed repair history through the end of 2026. No actual future leak month or day is supplied.
+
+The forecast asks, “If this pipe leaks in the 2027 scenario, how much might the repair cost?” It does not predict the preventive construction bill. Even pipes whose work is delayed until 2028 or later keep their 2027 repair-cost estimate in this experiment; costs are not re-predicted for their eventual work year.
+
+### Step 3 Multiply by the chance of a leak
+
+The separate risk model estimates leak probabilities for 2027 and 2028, updating pipe age for each year. These are combined into a two-year probability. **Repair cost uses 2027; leak probability covers 2027–2028.**
+
+For example, a $100,000 predicted repair cost and a 10% two-year leak probability give $10,000 of expected repair cost. We sum these amounts for all fully contained, unreplaced pipes in each circle.
+
+### Step 4 Put the circles with more expected benefit per construction dollar first
+
+**Priority = expected repair cost inside the circle ÷ initial construction cost of the circle.**
+
+| Illustrative circle | Expected repair cost | Construction cost | Priority |
+| --- | --- | --- | --- |
+| A | $100,000 | $50,000 | 2 |
+| B | $150,000 | $150,000 | 1 |
+
+These are teaching examples, not actual circles from the submissions. Candidate 06 puts A first: although B has a larger expected repair cost, A offers more expected benefit for each construction dollar.
+
+The result is one fixed ordered list. Annual budgets determine when the evaluator can execute each circle. **The plan does not update predictions or reorder circles each year, and it does not optimize the full 25-year schedule.** The initial construction-cost estimate also stays fixed during ranking; actual costs can change when preceding work or leaks replace pipes.
+
+
 ## How Candidate 06 Was Built
 
 Candidate 06 combined three quantities: the cost of a leak, the probability of a leak, and the cost of preventive replacement. The repair-cost estimate came from the team’s optimized ensemble. A separate model supplied leak probabilities. We then used these predictions to order the same construction circles as the baseline.
@@ -192,6 +228,42 @@ CSVの各行は円の中心と半径を表し、行の順番が工事順にな�
 01〜04はbaselineを上回らなかった。修理費だけの05は−35.45百万ドルで最も悪かった。同じCatBoostに漏れ確率を加えた01は、05より7.91百万ドル良かった。
 
 工事費の考慮が最大の改善につながった。06は02より10.09百万ドル、baselineより9.97百万ドル良かった。工事費1ドルあたりの期待効果で工事を選ぶ方法が有力である。ただし、総スコアだけでは工事費削減と漏れ修理費削減を分けて評価できない。
+
+
+## 候補06を簡単に説明すると
+
+06は、**どの円から工事するかを決める方法**である。円の大きさを学習・最適化しているわけではない。コストアンサンブルで修理費、別のモデルで漏れ確率を予測し、最後にルールを使って工事順序を決める。
+
+### 手順1 元の鉄管を囲む円を作る
+
+中心は管の両端のちょうど真ん中。半径は両端間の距離の半分に、丸め誤差で端点が外に出ないよう0.000001 mの余裕を加える。例えば両端間が40 mなら半径は約20 mである。これは端点の座標から決める形で、曲がった管の実測長ではない。
+
+baselineの38,455個の円をそのまま使い、6ファイルで中心・半径を揃えた。円には他の管も入ることがあり、完全に含まれる未交換管は工事費の計算に含める。**06で変えたのは円の大きさではなく、工事する順番である。**
+
+### 手順2 2027年という条件で修理費を予測する
+
+**今回の修理コスト予測はすべて2027年を仮定している。** 入力は予測年2027年、2027年1月1日時点の管の年齢、2026年末までの修理履歴である。実際に将来漏れる月・日は入力していない。
+
+予測するのは「2027年という条件でこの管が漏れたら、修理費はいくらか」で、予防交換の工事費ではない。工事が2028年以降に遅れる管にも、今回は2027年の修理費予測を使い続ける。実際の工事年に合わせた再予測はしていない。
+
+### 手順3 漏れる可能性を掛ける
+
+別のリスクモデルで2027年と2028年の漏れ確率を求め、各年の年齢を反映した上で2年間の漏れ確率にまとめる。**コスト予測は2027年、漏れ確率は2027〜2028年という組み合わせである。**
+
+例えば、漏れた場合の予測修理費が10万ドルで、2年間の漏れ確率が10%なら、期待修理費は1万ドルになる。円に完全に含まれる未交換管について、この金額を合計する。
+
+### 手順4 工事費に対して期待効果が大きい円から並べる
+
+**優先度＝円内の期待修理費合計÷その円の初期工事費。**
+
+| 説明用の円 | 期待修理費 | 工事費 | 優先度 |
+| --- | --- | --- | --- |
+| A | 10万ドル | 5万ドル | 2 |
+| B | 15万ドル | 15万ドル | 1 |
+
+これは説明用の例で、提出ファイル内の実際の円ではない。06はAを先に工事する。Bの方が期待修理費は大きいが、Aは工事費1ドルあたりの期待効果が大きいためである。
+
+こうして1つの固定された順序を作る。各円を実際に何年に工事できるかは、評価側の年間予算で決まる。**毎年予測を更新したり、円の順位を決め直したりする計画ではなく、25年間全体を最適化したものでもない。** 順位計算時の初期工事費も固定であり、先行工事や漏れによって交換済み管が増えると、実際の工事費は変わり得る。
 
 
 ## 候補06をどのように作ったか
