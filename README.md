@@ -1,5 +1,36 @@
 # STAT 440 – Star Kingdom Pipe Replacement
 
+## Project description — updated October 14, 2026
+
+Star Kingdom has a natural gas network of approximately 43,000 iron, copper, brass and polyurethane pipes. The project replaces every iron pipe with polyurethane during **2027–2051**, using **$10 million per year for 25 years**. We choose circular work areas and their execution order to prevent costly leaks and reduce earthwork costs.
+
+The supplied data comprise `pipes.csv` and leak history for **2019–2026**. The assignment calls the historical file `costs.csv`; this repository stores the leak history as `data/train.csv`.
+
+Submit a **headerless CSV**, one circular work unit per line, in the form `"(x, y)",r`, with coordinates and radius in metres. Every original iron pipe must be wholly inside at least one circle. Executed work units replace every currently non-polyurethane pipe wholly inside them, including copper and brass. Work runs in CSV order, subject to the annual budget and carryover; it stops at the first unaffordable unit each year.
+
+**Score = $250 million − work-unit costs − leak repair costs during 2027–2051.** Plans are rejected if they cannot complete within the project window or leave iron pipes unreplaced. Historical and future leak repairs replace the affected pipes with polyurethane; empty or polyurethane-only work units are skipped at zero cost.
+
+### Public and private evaluation
+
+- During the competition, the leaderboard uses the **public testing set**, representing one version of future leaks.
+- At the end, submissions are re-scored on the **private testing set**, representing another version of the future. Public and private sets are independent and identically distributed conditional on the training set.
+- You may submit multiple solutions and withdraw submissions. Your mark uses the **private score of the submission with the highest public score**. A public improvement does not guarantee the same private improvement.
+
+### Competition rules
+
+- **Do not augment the provided data with data from outside sources.**
+- Outside code is allowed only when you have the right to use it, such as public-domain or appropriately licensed open-source code.
+
+The [full supplied assignment description, updated October 14](docs/assignment_2026-10-14.md) records the detailed submission, cost, evaluation and competition rules. The implementation notes below provide additional project guidance; the assignment specification remains authoritative.
+
+### 日本語概要
+
+約43,000本の天然ガス管網について、2027〜2051年の25年間で鉄管をポリウレタン管へ交換する。年額1,000万ドルの予算内で円の位置・半径・実行順を決め、工事費と漏れ修理費の合計を減らす。
+
+開催中の順位はpublic testing setで評価される。終了時には別のprivate testing setで再評価され、**publicスコアが最も高い提出のprivateスコア**が採点に使われる。両テストセットは与えられた学習データを条件として独立同分布である。外部データの追加は禁止。外部コードは利用権がある場合に使用できる。
+
+---
+
 Replace every iron pipe with polyurethane between **2027 and 2051**, with **$10M added to the budget each year**. We submit an ordered list of circular work units, one per line, in the form `"(x, y)",r`.
 
 **Score = ($250M − work-unit costs) − leak repair costs during 2027–2051**
