@@ -1,0 +1,139 @@
+{
+  "submission": "2026-10-14_timing_only_baseline.csv",
+  "ordering": "2027 leak_probability descending; Pipe ID ascending ties; unknown probability last. Timing proxy, not predicted date.",
+  "radius_margin_m": 1e-06,
+  "coordinate_decimal_places": 9,
+  "pipe_count": 43039,
+  "iron_unknown_probability_count": 9,
+  "iron_zero_probability_count": 12218,
+  "model": "Equal-weight XGBoost, CatBoost, LightGBM; zero-leak rules applied",
+  "github_commit": "58fd8a5b4b3f8b5365c525b0156163ece60a8100",
+  "original_iron_count": 38455,
+  "unknown_material_count": 8,
+  "unknown_policy": "No circles generated for unknown materials. If contained incidentally, charge replacement unless historically replaced.",
+  "iron_missing_lay_date_count": 15,
+  "work_unit_count": 38455,
+  "uncovered_iron_count": 0,
+  "uncovered_unknown_count": 8,
+  "scenario": "No future leaks; historical leak pipes start as polyurethane.",
+  "rounding": "Nearest cent, ties half up; budget uses integer cents.",
+  "completed_by_2051": true,
+  "completion_year": 2041,
+  "construction_cost": 149211442.76,
+  "no_future_leak_score": 100788557.24,
+  "remaining_original_iron_count": 0,
+  "skipped_units": 16368,
+  "annual_execution": [
+    {
+      "year": 2027,
+      "executed_units": 3097,
+      "construction_cost": 9993874.49,
+      "budget_balance": 6125.51,
+      "remaining_units": 35156
+    },
+    {
+      "year": 2028,
+      "executed_units": 973,
+      "construction_cost": 10002919.53,
+      "budget_balance": 3205.98,
+      "remaining_units": 34039
+    },
+    {
+      "year": 2029,
+      "executed_units": 733,
+      "construction_cost": 9978332.27,
+      "budget_balance": 24873.71,
+      "remaining_units": 33290
+    },
+    {
+      "year": 2030,
+      "executed_units": 553,
+      "construction_cost": 10022535.88,
+      "budget_balance": 2337.83,
+      "remaining_units": 32725
+    },
+    {
+      "year": 2031,
+      "executed_units": 753,
+      "construction_cost": 9991014.33,
+      "budget_balance": 11323.5,
+      "remaining_units": 31902
+    },
+    {
+      "year": 2032,
+      "executed_units": 1670,
+      "construction_cost": 10011162.18,
+      "budget_balance": 161.32,
+      "remaining_units": 30063
+    },
+    {
+      "year": 2033,
+      "executed_units": 956,
+      "construction_cost": 9947963.99,
+      "budget_balance": 52197.33,
+      "remaining_units": 29014
+    },
+    {
+      "year": 2034,
+      "executed_units": 792,
+      "construction_cost": 10049104.81,
+      "budget_balance": 3092.52,
+      "remaining_units": 28136
+    },
+    {
+      "year": 2035,
+      "executed_units": 2180,
+      "construction_cost": 9999753.63,
+      "budget_balance": 3338.89,
+      "remaining_units": 25527
+    },
+    {
+      "year": 2036,
+      "executed_units": 2833,
+      "construction_cost": 9984306.44,
+      "budget_balance": 19032.45,
+      "remaining_units": 21796
+    },
+    {
+      "year": 2037,
+      "executed_units": 2912,
+      "construction_cost": 10018829.0,
+      "budget_balance": 203.45,
+      "remaining_units": 17852
+    },
+    {
+      "year": 2038,
+      "executed_units": 2126,
+      "construction_cost": 9988043.22,
+      "budget_balance": 12160.23,
+      "remaining_units": 14992
+    },
+    {
+      "year": 2039,
+      "executed_units": 855,
+      "construction_cost": 9992563.83,
+      "budget_balance": 19596.4,
+      "remaining_units": 13921
+    },
+    {
+      "year": 2040,
+      "executed_units": 1155,
+      "construction_cost": 10000698.58,
+      "budget_balance": 18897.82,
+      "remaining_units": 12689
+    },
+    {
+      "year": 2041,
+      "executed_units": 499,
+      "construction_cost": 9230340.58,
+      "budget_balance": 788557.24,
+      "remaining_units": 0
+    }
+  ],
+  "sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "full_inventory_2027_probabilities.csv": "d68dd356fa175fc6cb9ec91f7d565a910decc9bd934a53dc85148f94b58b6988",
+    "2026-10-14_timing_only_baseline.csv": "ced0fa6c8ad431eb9039898ef06acac7d3ef11c796fc96b9675390d4e57229ea"
+  }
+}
