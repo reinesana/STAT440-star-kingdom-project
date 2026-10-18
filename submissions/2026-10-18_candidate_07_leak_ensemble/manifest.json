@@ -1,0 +1,77 @@
+{
+  "reference": "06_stable_risk_per_work_cost (scored -15.61M)",
+  "candidate_06_reproduced": true,
+  "circles": "Baseline: one per original iron pipe, midpoint centre, half endpoint length + MARGIN_M",
+  "priority": "sum over contained unreplaced pipes of benefit / initial circle construction cost",
+  "gross_benefit": "P(leak 2027) * predicted repair cost",
+  "net_benefit": "P(leak 2027) * (predicted repair cost - 200 * endpoint length)",
+  "leak_window": [
+    2027
+  ],
+  "probability_fallback": "06 LightGBM risk model 2027 probability for ensemble-missing pipes",
+  "fallback_counts": {
+    "full_ensemble": 17,
+    "catboost_lightgbm": 17
+  },
+  "source_sha256": {
+    "data/pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data/train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "notebooks/ensemble_for_cost_prediction/predictions/ensemble_stable.csv": "d1098c4b78cd9efd17b3b39054eae83c4535b99e768aa10ff81f492247786771",
+    "notebooks/leak_model_comparison/deployment_2027_zero_leak_applied/full_inventory_2027_probabilities.csv": "f8fb266940bbeadebae0b2637b70ba6aefab0a4d936d3d991a3684cef72153f8",
+    "submissions/risk_priority_models/risk.txt": "837f01970e9378373f45b114de4294a2835288436cc6245ac6a20d274f851279",
+    "submissions/risk_priority_models/metadata.json": "43b358f51fda039da28d59a2d55ba2785b9feec152b64a3aa79ad5d8e5e6296a",
+    "src/build_candidate_07.py": "7712c02a7afaeb381b94dc16b2ac003ef50defffdb8419264e2d27a0ac87fac5"
+  },
+  "candidates": [
+    {
+      "candidate": "07a_full_ensemble_gross",
+      "leak_probabilities": "full_ensemble",
+      "benefit": "gross",
+      "construction_cost": 152235326.19,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "negative_benefit_circles": 0,
+      "rank_correlation_with_06": 0.9815571924464843,
+      "submission_sha256": "72f76a51f2cd01cf9f5ba5b7e7b95b003a4de5d660c251ab3d20d8dbf7253641"
+    },
+    {
+      "candidate": "07b_catboost_lightgbm_gross",
+      "leak_probabilities": "catboost_lightgbm",
+      "benefit": "gross",
+      "construction_cost": 152204483.88,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "negative_benefit_circles": 0,
+      "rank_correlation_with_06": 0.9758347730465612,
+      "submission_sha256": "207a23e37f2b391a276e019a502d7e3c989bb9cc43c99fe6d62fb8b2999c3a8e"
+    },
+    {
+      "candidate": "09a_full_ensemble_net",
+      "leak_probabilities": "full_ensemble",
+      "benefit": "net",
+      "construction_cost": 152944811.51,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "negative_benefit_circles": 1950,
+      "rank_correlation_with_06": 0.9190237939803904,
+      "submission_sha256": "3c871b165901564653cd1acb56cbfbd0df7f943eaf1ef733e55aa9ca20d7c1c2"
+    },
+    {
+      "candidate": "09b_catboost_lightgbm_net",
+      "leak_probabilities": "catboost_lightgbm",
+      "benefit": "net",
+      "construction_cost": 153011182.47,
+      "completion_year": 2042,
+      "uncovered_iron_count": 0,
+      "negative_benefit_circles": 1959,
+      "rank_correlation_with_06": 0.9180221842084233,
+      "submission_sha256": "551ed269a1387787a6c9d6754420f4b0390914ce30436d4b984668e6daaaf22c"
+    }
+  ],
+  "limitations": [
+    "Single-year 2027 probabilities rank the whole 2027-2051 plan; 06 used 2027-2028.",
+    "Net benefit ignores surface fees saved when every pipe in a circle has already leaked.",
+    "Circle priorities overlap and are not re-ranked as work executes.",
+    "Validation assumes no future leaks; it checks feasibility, not the official score."
+  ]
+}
