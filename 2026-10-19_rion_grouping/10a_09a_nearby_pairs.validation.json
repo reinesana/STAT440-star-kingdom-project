@@ -1,0 +1,111 @@
+{
+  "file": "10a_09a_nearby_pairs.csv",
+  "units": 37799,
+  "original_iron": 38455,
+  "uncovered_iron": 0,
+  "remaining_iron": 0,
+  "construction_cost": 152227909.47,
+  "completion_year": 2042,
+  "completed_by_2051": true,
+  "skipped_units": 14108,
+  "scenario": "No future leaks; not an official score prediction",
+  "annual": [
+    {
+      "year": 2027,
+      "spent": 9986154.99,
+      "balance": 13845.01,
+      "remaining": 34767
+    },
+    {
+      "year": 2028,
+      "spent": 9992536.61,
+      "balance": 21308.4,
+      "remaining": 32013
+    },
+    {
+      "year": 2029,
+      "spent": 10018280.77,
+      "balance": 3027.63,
+      "remaining": 30066
+    },
+    {
+      "year": 2030,
+      "spent": 10002930.98,
+      "balance": 96.65,
+      "remaining": 28148
+    },
+    {
+      "year": 2031,
+      "spent": 9984299.85,
+      "balance": 15796.8,
+      "remaining": 25338
+    },
+    {
+      "year": 2032,
+      "spent": 9997166.38,
+      "balance": 18630.42,
+      "remaining": 22628
+    },
+    {
+      "year": 2033,
+      "spent": 10018453.24,
+      "balance": 177.18,
+      "remaining": 19933
+    },
+    {
+      "year": 2034,
+      "spent": 9984707.91,
+      "balance": 15469.27,
+      "remaining": 17532
+    },
+    {
+      "year": 2035,
+      "spent": 9999979.91,
+      "balance": 15489.36,
+      "remaining": 15890
+    },
+    {
+      "year": 2036,
+      "spent": 10008043.24,
+      "balance": 7446.12,
+      "remaining": 14516
+    },
+    {
+      "year": 2037,
+      "spent": 10004251.43,
+      "balance": 3194.69,
+      "remaining": 13499
+    },
+    {
+      "year": 2038,
+      "spent": 9985646.27,
+      "balance": 17548.42,
+      "remaining": 1736
+    },
+    {
+      "year": 2039,
+      "spent": 10016348.71,
+      "balance": 1199.71,
+      "remaining": 1273
+    },
+    {
+      "year": 2040,
+      "spent": 9980081.31,
+      "balance": 21118.4,
+      "remaining": 655
+    },
+    {
+      "year": 2041,
+      "spent": 10019099.62,
+      "balance": 2018.78,
+      "remaining": 113
+    },
+    {
+      "year": 2042,
+      "spent": 2229928.25,
+      "balance": 7772090.53,
+      "remaining": 0
+    }
+  ],
+  "sha256": "e5a42a2b0db640bc5cf2372181890731dddf107623b8da06c44ab8a7a683cab7"
+}
