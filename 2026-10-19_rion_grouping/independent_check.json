@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "method": "Independent all-pipe endpoint distance checks, without spatial grid, for every merged pair; every untouched circle matches source exactly",
+  "merged_pairs": 656,
+  "source_sha256": "3c871b165901564653cd1acb56cbfbd0df7f943eaf1ef733e55aa9ca20d7c1c2",
+  "source_matches_published_09a": true
+}
