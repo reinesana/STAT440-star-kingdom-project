@@ -1,0 +1,8 @@
+candidate,geometry,priority,updates_after_planned_replacement,public_score_millions,precision
+09a,Original,Initial net benefit / cost,No,-6.79,Exact displayed score
+09b,"Original, alternative leak ensemble",Initial net benefit / cost,No,-14.40,Exact displayed score
+10a,656 merged pairs,09a order with pair merges,No,-5.98,Exact displayed score
+11b,Original,Initial net benefit,No,-19,Approximate user-reported score
+11c,Original,Initial net benefit / sqrt(cost),No,-9.69,Exact displayed score
+12a,Original,Remaining net benefit / current cost,Yes,22.50,Exact displayed score
+13a,10a grouped circles,Remaining net benefit / current cost,Yes,23.29,Exact displayed score

@@ -1,0 +1,12 @@
+{
+  "candidate": "13a",
+  "filename": "13a_grouped_dynamic_net_benefit_per_cost.csv",
+  "public_score_millions": 23.29,
+  "submitted_by": "Rion",
+  "submitted_local_time": "2026-10-20 15:12 America/Vancouver",
+  "evidence": "User-provided evaluator screenshot",
+  "private_score": null,
+  "improvement_vs_12a_millions": 0.79,
+  "improvement_vs_09a_millions": 30.08,
+  "note": "Differences use rounded displayed scores."
+}
