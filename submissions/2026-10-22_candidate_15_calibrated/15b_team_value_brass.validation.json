@@ -1,0 +1,128 @@
+{
+  "submission": "15b_team_value_brass.csv",
+  "work_unit_count": 37893,
+  "uncovered_iron_count": 0,
+  "completed_by_2051": true,
+  "completion_year": 2042,
+  "construction_cost": 151033041.66,
+  "no_future_leak_score": 98966958.34,
+  "skipped_units": 13167,
+  "scenario": "No future leaks; NOT an estimated official score",
+  "annual_execution": [
+    {
+      "year": 2027,
+      "construction_cost": 9999689.68,
+      "executed_units": 3160,
+      "budget_balance": 310.32,
+      "remaining_units": 23087
+    },
+    {
+      "year": 2028,
+      "construction_cost": 9999515.63,
+      "executed_units": 2749,
+      "budget_balance": 794.69,
+      "remaining_units": 20076
+    },
+    {
+      "year": 2029,
+      "construction_cost": 9999938.19,
+      "executed_units": 1782,
+      "budget_balance": 856.5,
+      "remaining_units": 18045
+    },
+    {
+      "year": 2030,
+      "construction_cost": 9999809.05,
+      "executed_units": 2567,
+      "budget_balance": 1047.45,
+      "remaining_units": 15195
+    },
+    {
+      "year": 2031,
+      "construction_cost": 9997599.14,
+      "executed_units": 2563,
+      "budget_balance": 3448.31,
+      "remaining_units": 12452
+    },
+    {
+      "year": 2032,
+      "construction_cost": 9996787.45,
+      "executed_units": 2524,
+      "budget_balance": 6660.86,
+      "remaining_units": 9812
+    },
+    {
+      "year": 2033,
+      "construction_cost": 10004933.38,
+      "executed_units": 2372,
+      "budget_balance": 1727.48,
+      "remaining_units": 7333
+    },
+    {
+      "year": 2034,
+      "construction_cost": 9976654.83,
+      "executed_units": 1688,
+      "budget_balance": 25072.65,
+      "remaining_units": 5550
+    },
+    {
+      "year": 2035,
+      "construction_cost": 10019953.19,
+      "executed_units": 1338,
+      "budget_balance": 5119.46,
+      "remaining_units": 4135
+    },
+    {
+      "year": 2036,
+      "construction_cost": 10002145.94,
+      "executed_units": 993,
+      "budget_balance": 2973.52,
+      "remaining_units": 3085
+    },
+    {
+      "year": 2037,
+      "construction_cost": 9998479.2,
+      "executed_units": 843,
+      "budget_balance": 4494.32,
+      "remaining_units": 2197
+    },
+    {
+      "year": 2038,
+      "construction_cost": 9993863.74,
+      "executed_units": 698,
+      "budget_balance": 10630.58,
+      "remaining_units": 1478
+    },
+    {
+      "year": 2039,
+      "construction_cost": 10005984.43,
+      "executed_units": 513,
+      "budget_balance": 4646.15,
+      "remaining_units": 949
+    },
+    {
+      "year": 2040,
+      "construction_cost": 9999535.24,
+      "executed_units": 404,
+      "budget_balance": 5110.91,
+      "remaining_units": 537
+    },
+    {
+      "year": 2041,
+      "construction_cost": 9992799.04,
+      "executed_units": 495,
+      "budget_balance": 12311.87,
+      "remaining_units": 37
+    },
+    {
+      "year": 2042,
+      "construction_cost": 1045353.53,
+      "executed_units": 37,
+      "budget_balance": 8966958.34,
+      "remaining_units": 0
+    }
+  ],
+  "radius_margin_m": 1e-06,
+  "sha256": "40628fdb95bbc453c9c79a3ab29fdd22403165bdf05abd7af2ce86bc01c2cabe",
+  "exported_csv_reparsed": true
+}
