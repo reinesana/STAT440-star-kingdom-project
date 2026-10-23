@@ -17,8 +17,10 @@ warnings.filterwarnings('ignore')
 S = sim.ROOT / 'submissions'
 # Post-evaluator-bug-fix public scores (M$), as displayed on the leaderboard.
 # Deleted dead ends (Oct 22), for the record: net-value/age-model order 67.84; free circle
-# merging 62.6-63.8; cold-only merging 69.4-69.9; old-iron p lowered 69.6-69.8 and x1.5 70.46;
-# old copper/gray raised 70.73; 17b-probabilities with the 12b order 61.32.
+# merging 62.6-63.8; cold-only merging 69.4-69.9; old cohorts capped at 1.4% 68.95; old-iron p
+# lowered 69.6-69.8 and x1.5 70.46; old copper/gray raised 70.73; 1961/62 staged 70.48;
+# 17b probabilities with the 12b order 61.32; second same-year merge pass 73.90; merges across
+# adjacent planned years 73.60.
 PUBLIC = {
     S / '2026-10-18_candidate_07_leak_ensemble/09a_full_ensemble_net.csv': 64.56,
     S / '2026-10-18_candidate_07_leak_ensemble/09b_catboost_lightgbm_net.csv': 59.32,
@@ -30,11 +32,10 @@ PUBLIC = {
     S / '2026-10-21_candidate_14_dynamic_drift/14c_dynamic_drift_net_skip1.csv': 56.95,
     S / '2026-10-22_candidate_15_calibrated/15a_fixed_wave50_team50_brass.csv': 68.96,
     S / '2026-10-22_candidate_15_calibrated/15b_team_value_brass.csv': 69.56,
-    S / '2026-10-22_candidate_16_cohort_stage/16a_stage_and_old.csv': 68.95,
     S / '2026-10-22_candidate_16_cohort_stage/16b_stage_only.csv': 70.51,
-    S / '2026-10-22_candidate_17_stage_refinements/17a_stage_1961_1962.csv': 70.48,
     S / '2026-10-22_candidate_17_stage_refinements/17b_stronger_1964_1965.csv': 70.66,
     S / '2026-10-22_candidate_18_shifted_circles/18a_shifted_circles_17b_order.csv': 73.14,
+    S / '2026-10-22_candidate_20_sameyear_merge/20a_sameyear_merge_17b_order.csv': 74.03,
 }
 
 

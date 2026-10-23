@@ -1,11 +1,10 @@
 """Candidate 17: refinements on 16b (public 70.51).
 
 16b = 15b machinery with wave-stage 2027 probabilities for the 1963-1966 cohorts.
-Each 17 variant adds exactly one further change so public scores stay interpretable:
-  17a: stage also for 1961 (4th wave year, 0.03) and 1962 (3rd wave year, 0.10)
-  17b: stronger 2027 wave for 1964 (0.55) and 1965 (0.70)
-  17c: 1971 cohort (wave due ~2031-34, 1,546 live pipes) p raised to 0.10
-  17d: old copper / gray iron (pre-1956) raised to their observed rates (0.13 / 0.05)
+17b (public 70.66) strengthens the 2027 wave for 1964 (0.55) and 1965 (0.70), within the
+range the completed analogue cohorts show for a second wave year (0.40-0.65).
+Siblings tested and dropped: 1961/1962 staged too (70.48); 1971 p 0.10 and old copper/gray
+raised (not submitted).
 
 Run from repository root: python src/build_candidate_17.py
 """
@@ -43,25 +42,7 @@ def main():
     pipes, a, b = sim.load()
     lengths = pipes.len.to_numpy()
     p_ml, sev = team_inputs(pipes)
-    base = adjusted_p(pipes, p_ml, stage=True, old=False)           # == 16b
-    ly = pipes.lay.dt.year.to_numpy()
-    live = (~(pipes.mat.eq('polyurethane') | pipes.leak_date.notna())).to_numpy()
-    mat = pipes.mat.to_numpy()
-
-    def with_(**over):
-        p = base.copy()
-        for yr, v in over.get('cohort', {}).items():
-            p[live & (ly == yr)] = v
-        for m, v in over.get('old_material', {}).items():
-            p[live & (ly <= 1955) & (mat == m)] = v
-        return p
-
-    variants = {
-        '17a_stage_1961_1962': with_(cohort={1961: 0.03, 1962: 0.10}),
-        '17b_stronger_1964_1965': with_(cohort={1964: 0.55, 1965: 0.70}),
-        '17c_1971_p10': with_(cohort={1971: 0.10}),
-        '17d_old_copper_gray': with_(old_material={'copper': 0.13, 'gray iron': 0.05}),
-    }
+    variants = {'17b_stronger_1964_1965': p17b(pipes, p_ml)}
     lines = CIRCLES.read_text(encoding='utf-8').splitlines()
     xy, r = sim.read_units(CIRCLES)
     inside = sim.containment(xy, r, a, b, lengths)

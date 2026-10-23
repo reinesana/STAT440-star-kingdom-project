@@ -6,8 +6,8 @@ with lay year; the stage each live cohort has reached by end-2026 implies its 20
   1963: third wave year  -> ~0.12 (ML ensemble says 0.64)
   1964: second wave year -> ~0.50 (ML 0.51)
   1965: second wave year after a weak start -> ~0.60 (ML 0.25)
-  pre-1956 (post-wave):  observed 2025-26 rate ~0.014 (ML 0.035-0.05)
-Variants isolate each change so the public score tells us which one matters.
+16b (public 70.51) changes only these cohorts. A sibling that also capped pre-1956
+cohorts at 1.4% scored 68.95 and was dropped.
 
 Run from repository root: python src/build_candidate_16.py
 """
@@ -58,11 +58,7 @@ def main():
     pipes, a, b = sim.load()
     lengths = pipes.len.to_numpy()
     p_ml, sev = team_inputs(pipes)
-    variants = {
-        '16a_stage_and_old': adjusted_p(pipes, p_ml, True, True),
-        '16b_stage_only': adjusted_p(pipes, p_ml, True, False),
-        '16c_old_only': adjusted_p(pipes, p_ml, False, True),
-    }
+    variants = {'16b_stage_only': adjusted_p(pipes, p_ml, stage=True, old=False)}
     lines = CIRCLES.read_text(encoding='utf-8').splitlines()
     xy, r = sim.read_units(CIRCLES)
     inside = sim.containment(xy, r, a, b, lengths)

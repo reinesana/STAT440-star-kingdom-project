@@ -93,7 +93,7 @@ def main():
             lines[k] = f'"({c[0]:.9f}, {c[1]:.9f})",{rad:.9f}'
             replaced += 1
     print('circles replaced:', replaced)
-    tmp = OUT / 'circles_shifted.csv'
+    tmp = OUT / 'circles_shifted.GEOMETRY_ONLY_DO_NOT_SUBMIT.csv'
     OUT.mkdir(exist_ok=True)
     tmp.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     xy, r = sim.read_units(tmp)
