@@ -15,16 +15,26 @@ import simulate_score as sim
 
 warnings.filterwarnings('ignore')
 S = sim.ROOT / 'submissions'
+# Post-evaluator-bug-fix public scores (M$), as displayed on the leaderboard.
+# Deleted dead ends (Oct 22), for the record: net-value/age-model order 67.84; free circle
+# merging 62.6-63.8; cold-only merging 69.4-69.9; old-iron p lowered 69.6-69.8 and x1.5 70.46;
+# old copper/gray raised 70.73; 17b-probabilities with the 12b order 61.32.
 PUBLIC = {
-    S / '2026-10-05_baseline_v1.csv': -25.58,
-    S / '2026-10-13_cost_candidates/06_stable_risk_per_work_cost.csv': -15.61,
-    S / '2026-10-18_candidate_07_leak_ensemble/07a_full_ensemble_gross.csv': -11.71,
-    S / '2026-10-18_candidate_07_leak_ensemble/07b_catboost_lightgbm_gross.csv': -23.39,
-    S / '2026-10-18_candidate_07_leak_ensemble/09a_full_ensemble_net.csv': -6.79,
-    S / '2026-10-18_candidate_07_leak_ensemble/09b_catboost_lightgbm_net.csv': -14.40,
-    S / '2026-10-19_rion_grouping/10a_09a_nearby_pairs.csv': -5.98,
-    S / '2026-10-20_rion_dynamic/12a_dynamic_net_benefit_per_cost.csv': 22.50,
-    S / '2026-10-20_rion_combined 2/13a_grouped_dynamic_net_benefit_per_cost.csv': 23.29,
+    S / '2026-10-18_candidate_07_leak_ensemble/09a_full_ensemble_net.csv': 64.56,
+    S / '2026-10-18_candidate_07_leak_ensemble/09b_catboost_lightgbm_net.csv': 59.32,
+    S / '2026-10-19_rion_grouping/10a_09a_nearby_pairs.csv': 64.62,
+    S / '2026-10-20_rion_dynamic/12a_dynamic_net_benefit_per_cost.csv': 69.54,
+    S / '2026-10-20_rion_combined 2/13a_grouped_dynamic_net_benefit_per_cost.csv': 69.60,
+    S / '2026-10-21_candidate_14_dynamic_drift/14a_dynamic_drift_net_decay030.csv': 65.10,
+    S / '2026-10-21_candidate_14_dynamic_drift/14b_dynamic_drift_net_team25.csv': 66.07,
+    S / '2026-10-21_candidate_14_dynamic_drift/14c_dynamic_drift_net_skip1.csv': 56.95,
+    S / '2026-10-22_candidate_15_calibrated/15a_fixed_wave50_team50_brass.csv': 68.96,
+    S / '2026-10-22_candidate_15_calibrated/15b_team_value_brass.csv': 69.56,
+    S / '2026-10-22_candidate_16_cohort_stage/16a_stage_and_old.csv': 68.95,
+    S / '2026-10-22_candidate_16_cohort_stage/16b_stage_only.csv': 70.51,
+    S / '2026-10-22_candidate_17_stage_refinements/17a_stage_1961_1962.csv': 70.48,
+    S / '2026-10-22_candidate_17_stage_refinements/17b_stronger_1964_1965.csv': 70.66,
+    S / '2026-10-22_candidate_18_shifted_circles/18a_shifted_circles_17b_order.csv': 73.14,
 }
 
 
