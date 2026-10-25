@@ -90,7 +90,9 @@ def optimize(data, name, origin, budget, out):
             return float(np.mean([m['brier'] for m in scores]))
         finally:
             trial.set_user_attr('elapsed_seconds',time.time()-started)
-    remaining=max(0,budget-len(study.trials))
+    # Enqueued WAITING candidates are not attempted trials; optimize consumes
+    # them within n_trials. Counting them here would silently subtract five.
+    remaining=max(0,budget-sum(t.state.name!='WAITING' for t in study.trials))
     study.optimize(objective,n_trials=remaining,catch=(Exception,),gc_after_trial=True)
     trials=[]
     for t in study.trials:
@@ -143,7 +145,9 @@ def export_prediction(model,frame,origin,out):
 def run_model(data,name,budget,deployment_budget,origins):
     for origin in origins:
         out=BASE/name/str(origin);out.mkdir(parents=True,exist_ok=True)
-        if (out/'finished.json').exists():
+        required=deployment_budget if origin==2027 else budget
+        attempted=len(json.loads((out/'trials.json').read_text())) if (out/'trials.json').exists() else 0
+        if (out/'finished.json').exists() and attempted>=required:
             print(f'SKIP {name} {origin}: already complete',flush=True);continue
         started=time.time(); print(f'START {name} {origin}',flush=True)
         selection,train,duration,event=optimize(data,name,origin,deployment_budget if origin==2027 else budget,out)

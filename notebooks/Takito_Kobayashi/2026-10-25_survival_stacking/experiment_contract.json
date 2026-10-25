@@ -14,7 +14,7 @@
   "code_sha256": {
     "build_results.py": "ca30150cc8a787d9d6c02b9df72d51255772af625dfdb1f89d481290e2d2b3a9",
     "data.py": "1c364f6137c277ac94c0c671907938b27507421f059da02c4ba104baf875d72e",
-    "experiment.py": "4d34bfe33fa28d5872b92ad78c1d1dc2cdc706214b36a084038134dcecacd483",
+    "experiment.py": "772b32e17b2da0bd839fc92545808edec57a9694bd8bcdbe1a58eef53e820128",
     "models.py": "e80d0e4afa0a4b2c19b091acf3c2d788dd3d4af6dc2ec9dc6d8b1787a38d41cd",
     "predict.py": "b852d34910dcf7f76a47be0c8910b32c0a86a0324aa3fd33ed3facf37a782552",
     "verify.py": "dc3dc96eced6ec13c7e39cbc7aecdfc40ebc2ece6e4e821579c3b9afe05f41e2"
@@ -24,5 +24,6 @@
   "landmarking": "all still-at-risk pipes at each historical Jan 1; correlated within pipe",
   "forecast": "first leak without future planned replacement; observed history frozen at forecast origin",
   "asymmetric_penalty": false,
-  "source_commit": "668a598ba8efd478d1c5bf569b39fc7fb93162e2"
+  "source_commit": "668a598ba8efd478d1c5bf569b39fc7fb93162e2",
+  "operational_revision": "checks/budget_accounting.md"
 }
