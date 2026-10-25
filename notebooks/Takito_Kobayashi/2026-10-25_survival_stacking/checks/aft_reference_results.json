@@ -1,0 +1,14 @@
+[
+  {
+    "model": "02_weibull_aft",
+    "max_abs_survival_difference": 1.2881022166677525e-06,
+    "reference": "lifelines unpenalized AFT",
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "max_abs_survival_difference": 1.2178916939387108e-06,
+    "reference": "lifelines unpenalized AFT",
+    "passed": true
+  }
+]

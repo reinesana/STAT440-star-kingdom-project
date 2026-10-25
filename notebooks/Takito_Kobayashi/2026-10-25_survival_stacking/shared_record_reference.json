@@ -1,0 +1,23 @@
+{
+  "url": "https://docs.google.com/document/d/1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ/edit",
+  "modified_time": "2026-10-23T05:17:36.060Z",
+  "retrieved_date": "2026-10-25",
+  "reviewed_sections": [
+    "Week 1: Leak Prediction Model",
+    "Leak probability Comparison",
+    "Timing-only baseline"
+  ],
+  "protocol_summary": "Expanding-window prediction: train 2019-2022/test 2023, then advance annually through test 2026. One pipe-year for each pipe still at risk at year start; remove pipe after first leak because it becomes polyurethane. Prior ensemble selection used probability Brier scores.",
+  "result_format": [
+    "Model",
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+    "Mean",
+    "precision",
+    "recall",
+    "PR-AUC"
+  ],
+  "reuse": "Protocol and result layout only; original shared document text is not republished. No edits made to Google Doc."
+}

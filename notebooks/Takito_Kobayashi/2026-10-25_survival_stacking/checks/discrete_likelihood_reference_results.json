@@ -1,0 +1,14 @@
+[
+  {
+    "model": "DeepHit_PMF",
+    "absolute_NLL_difference": 2.384185791015625e-07,
+    "reference": "pycox",
+    "passed": true
+  },
+  {
+    "model": "MTLR",
+    "absolute_NLL_difference": 2.384185791015625e-07,
+    "reference": "pycox",
+    "passed": true
+  }
+]
