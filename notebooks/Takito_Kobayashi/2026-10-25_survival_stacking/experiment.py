@@ -28,7 +28,7 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 
 def write_json(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix('.tmp')
+    temporary = path.with_name(path.name + f'.{os.getpid()}.tmp')
     temporary.write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str), encoding='utf8')
     temporary.replace(path)
 
@@ -152,7 +152,26 @@ def run_model(data,name,budget,deployment_budget,origins):
         started=time.time(); print(f'START {name} {origin}',flush=True)
         selection,train,duration,event=optimize(data,name,origin,deployment_budget if origin==2027 else budget,out)
         with threadpool_limits(limits=4):
-            estimator=Estimator(name,selection['config'],selection['selected_features'],origin-1).fit(train,duration,event)
+            # A converged inner candidate can fail on the larger full refit.
+            # Try candidates in INNER-score order, never using outer outcomes.
+            tried=[]
+            candidates=sorted([t for t in json.loads((out/'trials.json').read_text())
+                               if t['state']=='COMPLETE' and t['value'] is not None],key=lambda t:t['value'])
+            ranked=json.loads((BASE/'cache'/f'ranking_{origin-1}.json').read_text())
+            for candidate in candidates:
+                config=candidate['full_config'];columns=select(train,config,data.groups,ranked)
+                try:
+                    estimator=Estimator(name,config,columns,origin-1).fit(train,duration,event)
+                except Exception as error:
+                    tried.append(dict(trial=candidate['number'],error=repr(error)))
+                    continue
+                selection.update(best_trial=candidate['number'],inner_mean_brier=candidate['value'],
+                                 config=config,selected_features=columns,full_refit_rejections=tried)
+                write_json(out/'selection.json',selection)
+                break
+            else:
+                write_json(out/'full_refit_failures.json',tried)
+                raise RuntimeError(f'No inner-selected candidate could be refit: {name} {origin}')
             frame=data.forecast(origin)
             pred=export_prediction(estimator,frame,origin,out)
         model_dir=BASE/'models'/name;model_dir.mkdir(parents=True,exist_ok=True)
@@ -217,6 +236,7 @@ def main():
     parser.add_argument('--models',nargs='+',default=MODELS,choices=MODELS)
     parser.add_argument('--origins',nargs='+',type=int,default=list(range(2023,2028)))
     parser.add_argument('--report-only',action='store_true')
+    parser.add_argument('--no-report',action='store_true',help='Independent workers; collect reports once all workers finish')
     args=parser.parse_args()
     prepare();data=Dataset()
     if not args.report_only:
@@ -238,7 +258,7 @@ def main():
         versions={v:importlib.metadata.version(v) for v in ['numpy','pandas','scipy','scikit-learn','scikit-survival','xgboost','catboost','torch','optuna','joblib']}
         write_json(BASE/'environment.json',dict(python=sys.version,platform=platform.platform(),versions=versions))
         for name in args.models:run_model(data,name,args.trials,args.deployment_trials,args.origins)
-    report(data)
+    if not args.no_report:report(data)
 
 
 if __name__=='__main__':main()

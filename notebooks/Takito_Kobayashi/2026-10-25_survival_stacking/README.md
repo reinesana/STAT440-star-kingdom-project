@@ -151,3 +151,25 @@ repository, dependency versions, seeds and selected configurations reproduce
 them. SQLite studies/logs are local; portable JSON/CSV trial records are tracked.
 `predict.py` provides Pipe ID lookup with a selected saved deployment model.
 Known replaced/native-polyurethane pipes receive an explicit ineligible status.
+
+## Long-running local execution
+
+`scripts/finish_pipeline.py` is a one-off completion supervisor for the three
+independent worker groups. It watches their actual process creation times,
+finishes any missing 40/60-trial budgets with the frozen protocol, verifies all
+50 model/origin exports, collects results, executes the companion notebook and
+pushes verified result files to this experiment's branch and draft PR #6.
+It does not merge the PR, edit the shared Doc, send messages or install a schedule.
+Local computation and the eventual push require this PC and network access.
+
+`pipeline_status.json` records progress and any failure. Logs and SQLite studies
+remain local; portable trial records and result exports are committed. A failed
+training/verification step prevents the final result push. The supervisor cannot
+visually inspect charts: notebook execution is checked, and visual review is
+explicitly marked pending until an agent/user inspects the rendered output.
+
+Full-data refit failures are handled by trying candidates in their **inner**
+validation order; rejection reasons are saved and no outer labels are used.
+Operational fixes to queue accounting and safe parallel writes are documented
+in `checks/`, together with prior contracts. They do not change data, model
+families, feature candidates or the tuning objective.

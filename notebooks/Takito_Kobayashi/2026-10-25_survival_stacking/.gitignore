@@ -3,3 +3,4 @@ models/
 *.log
 __pycache__/
 *.sqlite3*
+*.tmp
