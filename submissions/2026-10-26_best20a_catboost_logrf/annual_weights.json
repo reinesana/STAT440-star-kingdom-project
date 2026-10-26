@@ -1,0 +1,149 @@
+[
+  {
+    "year": 2024,
+    "model": "all_optimized",
+    "weights": {
+      "prior_surface_mean": 0.0,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.0,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.0,
+      "takito_lightgbm": 0.0,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.5592639844825978,
+      "rion_lgb_log_mean_refit": 0.0,
+      "small_mlp": 0.2838789146829252,
+      "hierarchical_gamma": 0.15685710083447707,
+      "extra_trees": 0.0,
+      "anthony_rf_log_mean_plain": 0.0,
+      "rion_lgb_log_mean_refit_plain": 0.0
+    }
+  },
+  {
+    "year": 2024,
+    "model": "old_ten_optimized",
+    "weights": {
+      "prior_surface_mean": 0.2798848601151761,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.15586914831692245,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.09309839982751297,
+      "takito_lightgbm": 0.0,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.47114759174038834,
+      "rion_lgb_log_mean_refit": 0.0
+    }
+  },
+  {
+    "year": 2024,
+    "model": "previous_six_optimized",
+    "weights": {
+      "takito_catboost": 0.4692216944188295,
+      "anthony_gamma": 0.030152552874363598,
+      "anthony_rf_log_mean": 0.08532608420059981,
+      "small_mlp": 0.17672015335170757,
+      "hierarchical_gamma": 0.23857951515449954,
+      "extra_trees": 0.0
+    }
+  },
+  {
+    "year": 2025,
+    "model": "all_optimized",
+    "weights": {
+      "prior_surface_mean": 0.0,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.14767705076827548,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.29490554591675683,
+      "takito_lightgbm": 0.0,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.5574174033149678,
+      "rion_lgb_log_mean_refit": 0.0,
+      "small_mlp": 0.0,
+      "hierarchical_gamma": 0.0,
+      "extra_trees": 0.0,
+      "anthony_rf_log_mean_plain": 0.0,
+      "rion_lgb_log_mean_refit_plain": 0.0
+    }
+  },
+  {
+    "year": 2025,
+    "model": "old_ten_optimized",
+    "weights": {
+      "prior_surface_mean": 0.0,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.14767703345410782,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.2949055581370934,
+      "takito_lightgbm": 0.0,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.5574174084087989,
+      "rion_lgb_log_mean_refit": 0.0
+    }
+  },
+  {
+    "year": 2025,
+    "model": "previous_six_optimized",
+    "weights": {
+      "takito_catboost": 0.7603040073964618,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.18979969608919672,
+      "small_mlp": 0.0,
+      "hierarchical_gamma": 0.049896296514341514,
+      "extra_trees": 0.0
+    }
+  },
+  {
+    "year": 2026,
+    "model": "all_optimized",
+    "weights": {
+      "prior_surface_mean": 0.0,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.4836866872870471,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.31469146394019676,
+      "takito_lightgbm": 0.0499799181237722,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.15164193064898396,
+      "rion_lgb_log_mean_refit": 0.0,
+      "small_mlp": 0.0,
+      "hierarchical_gamma": 0.0,
+      "extra_trees": 0.0,
+      "anthony_rf_log_mean_plain": 0.0,
+      "rion_lgb_log_mean_refit_plain": 0.0
+    }
+  },
+  {
+    "year": 2026,
+    "model": "old_ten_optimized",
+    "weights": {
+      "prior_surface_mean": 0.0,
+      "anthony_linear_raw": 0.0,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.4836866875195642,
+      "takito_xgboost": 0.0,
+      "takito_catboost": 0.3146914639114731,
+      "takito_lightgbm": 0.04997991740514449,
+      "rion_gamma_refit": 0.0,
+      "rion_rf_raw_refit": 0.1516419311638183,
+      "rion_lgb_log_mean_refit": 0.0
+    }
+  },
+  {
+    "year": 2026,
+    "model": "previous_six_optimized",
+    "weights": {
+      "takito_catboost": 0.4547586083165176,
+      "anthony_gamma": 0.0,
+      "anthony_rf_log_mean": 0.5086168521963271,
+      "small_mlp": 0.0,
+      "hierarchical_gamma": 0.036624539487155376,
+      "extra_trees": 0.0
+    }
+  }
+]

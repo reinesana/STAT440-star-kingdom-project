@@ -417,3 +417,7 @@ remain unchanged. Full definitions, limitations and rebuild instructions are in
 [the dated English addendum](data/train_predict_cost.md#2026-10-05--added-candidate-features-and-inferred-pipe-routes),
 [the Japanese addendum](data/train_predict_cost_jpn.md), and
 [the feature dictionary](data/train_predict_cost_feature_dictionary_2026-10-05.md).
+
+## Takito latest model — 26 October 2026
+
+[Model and experiment report](reports/2026-10-26_takito_latest_model.md) · [21a submission and reproducible evidence](submissions/2026-10-26_best20a_catboost_logrf/). The user-provided screenshot shows Takito $74.78M; filename association and evaluator-version comparability are explicitly qualified in the report.

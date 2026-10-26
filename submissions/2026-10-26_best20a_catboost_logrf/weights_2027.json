@@ -1,0 +1,51 @@
+{
+  "method": "convex nonnegative linear stacking, no intercept",
+  "objective": "pooled past-OOF mean squared error",
+  "models": [
+    "prior_surface_mean",
+    "anthony_linear_raw",
+    "anthony_gamma",
+    "anthony_rf_log_mean",
+    "takito_xgboost",
+    "takito_catboost",
+    "takito_lightgbm",
+    "rion_gamma_refit",
+    "rion_rf_raw_refit",
+    "rion_lgb_log_mean_refit",
+    "small_mlp",
+    "hierarchical_gamma",
+    "extra_trees",
+    "anthony_rf_log_mean_plain",
+    "rion_lgb_log_mean_refit_plain"
+  ],
+  "weights": {
+    "prior_surface_mean": 0.0,
+    "anthony_linear_raw": 0.0,
+    "anthony_gamma": 0.0,
+    "anthony_rf_log_mean": 0.3137298830250163,
+    "takito_xgboost": 0.0,
+    "takito_catboost": 0.6862701169749837,
+    "takito_lightgbm": 0.0,
+    "rion_gamma_refit": 0.0,
+    "rion_rf_raw_refit": 0.0,
+    "rion_lgb_log_mean_refit": 0.0,
+    "small_mlp": 0.0,
+    "hierarchical_gamma": 0.0,
+    "extra_trees": 0.0,
+    "anthony_rf_log_mean_plain": 0.0,
+    "rion_lgb_log_mean_refit_plain": 0.0
+  },
+  "seed": 440,
+  "random_search": false,
+  "training_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "forecast_year": 2027,
+  "kkt_scaled_residual": 1.1102230246251565e-16,
+  "successful_starts": 16,
+  "max_training_year": 2026,
+  "training_rows": 8592
+}
