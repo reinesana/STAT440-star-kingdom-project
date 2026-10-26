@@ -1,0 +1,8 @@
+{
+  "model": "04_spline_survival",
+  "origin": 2024,
+  "rows": 34014,
+  "support_years": 25,
+  "elapsed_seconds": 1907.5974428653717,
+  "prediction_sha256": "f7728485391b058a3232e9b5cecc8678077dc312c13281274979ecd6a53142ab"
+}

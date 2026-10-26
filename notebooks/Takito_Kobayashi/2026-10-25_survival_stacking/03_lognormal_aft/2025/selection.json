@@ -1,0 +1,34 @@
+{
+  "model": "03_lognormal_aft",
+  "origin": 2025,
+  "train_years": [
+    2019,
+    2024
+  ],
+  "inner_validation_years": [
+    2023,
+    2024
+  ],
+  "best_trial": 23,
+  "inner_mean_brier": 0.06342694243606095,
+  "config": {
+    "model": "03_lognormal_aft",
+    "features": "basic",
+    "penalty": 0.9644818173060462
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 36,
+  "failed_trials": 4,
+  "training_landmarks": 229792,
+  "training_event_landmarks": 37438,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

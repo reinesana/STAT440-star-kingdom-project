@@ -1,0 +1,40 @@
+{
+  "model": "10_hierarchical_hazard",
+  "origin": 2024,
+  "train_years": [
+    2019,
+    2023
+  ],
+  "inner_validation_years": [
+    2022,
+    2023
+  ],
+  "best_trial": 34,
+  "inner_mean_brier": 0.07028698578796141,
+  "config": {
+    "model": "10_hierarchical_hazard",
+    "features": "basic",
+    "cohort_width": 2,
+    "lr": 0.01396246527701542,
+    "epochs": 30,
+    "fixed_penalty": 0.09644480631925234,
+    "group_penalty": 5.362113884853542e-05,
+    "nested_multiplier": 5.810003877812784
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing",
+    "lay_year"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 40,
+  "failed_trials": 0,
+  "training_landmarks": 195778,
+  "training_event_landmarks": 25708,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

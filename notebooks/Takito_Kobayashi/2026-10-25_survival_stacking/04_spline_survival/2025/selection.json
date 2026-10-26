@@ -1,0 +1,35 @@
+{
+  "model": "04_spline_survival",
+  "origin": 2025,
+  "train_years": [
+    2019,
+    2024
+  ],
+  "inner_validation_years": [
+    2023,
+    2024
+  ],
+  "best_trial": 13,
+  "inner_mean_brier": 0.04711345883295293,
+  "config": {
+    "model": "04_spline_survival",
+    "features": "basic",
+    "knots": 10,
+    "C": 9.275034545753668
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 18,
+  "failed_trials": 22,
+  "training_landmarks": 229792,
+  "training_event_landmarks": 37438,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

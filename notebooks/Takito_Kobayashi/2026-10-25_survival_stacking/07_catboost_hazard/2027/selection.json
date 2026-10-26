@@ -1,0 +1,57 @@
+{
+  "model": "07_catboost_hazard",
+  "origin": 2027,
+  "train_years": [
+    2019,
+    2026
+  ],
+  "inner_validation_years": [
+    2025,
+    2026
+  ],
+  "best_trial": 12,
+  "inner_mean_brier": 0.07250549113785895,
+  "config": {
+    "model": "07_catboost_hazard",
+    "features": "ranked",
+    "top_k": 24,
+    "trees": 800,
+    "depth": 5,
+    "lr": 0.015571652860861096,
+    "l2": 1.018441665983266,
+    "random_strength": 0.017811774480184228
+  },
+  "selected_features": [
+    "age",
+    "material_cohort",
+    "cohort_prior_rate",
+    "origin_year",
+    "lay_decade",
+    "lay_year",
+    "material",
+    "material_prior_rate",
+    "history_250m_last1_leak_count",
+    "history_100m_last1_leak_count",
+    "history_50m_last1_leak_count",
+    "history_100m_prior_leak_fraction",
+    "history_250m_prior_leak_fraction",
+    "history_50m_prior_leak_fraction",
+    "length_m",
+    "history_250m_prior_leak_count",
+    "neighbor_50m_material_wrought_iron_fraction",
+    "neighbor_100m_mean_length_m",
+    "mid_x",
+    "history_250m_last2_leak_count",
+    "mid_y",
+    "neighbor_250m_mean_length_m",
+    "log_length",
+    "history_100m_last2_leak_count"
+  ],
+  "requested_trials": 60,
+  "completed_trials": 60,
+  "failed_trials": 0,
+  "training_landmarks": 292137,
+  "training_event_landmarks": 74153,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

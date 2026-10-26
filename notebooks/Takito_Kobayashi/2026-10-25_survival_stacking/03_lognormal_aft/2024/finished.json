@@ -1,0 +1,8 @@
+{
+  "model": "03_lognormal_aft",
+  "origin": 2024,
+  "rows": 34014,
+  "support_years": 25,
+  "elapsed_seconds": 79.50212025642395,
+  "prediction_sha256": "7b30d59d1fa687e35a11fc59214de5286b785b8041673f300f074540fdc67d56"
+}

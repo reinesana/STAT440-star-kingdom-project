@@ -1,0 +1,8 @@
+{
+  "model": "02_weibull_aft",
+  "origin": 2027,
+  "rows": 27248,
+  "support_years": 25,
+  "elapsed_seconds": 36.622600078582764,
+  "prediction_sha256": "eae2cfc30f0355d6cc3966060c8f076b6b0679eec668ba8c1bb1f19047459094"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "model": "02_weibull_aft",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "02_weibull_aft",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "02_weibull_aft",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "02_weibull_aft",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "02_weibull_aft",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "03_lognormal_aft",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "04_spline_survival",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "04_spline_survival",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "04_spline_survival",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "04_spline_survival",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "04_spline_survival",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "06_xgboost_aft",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "06_xgboost_aft",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "06_xgboost_aft",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "06_xgboost_aft",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "06_xgboost_aft",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "07_catboost_hazard",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "07_catboost_hazard",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "07_catboost_hazard",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "07_catboost_hazard",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "07_catboost_hazard",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "08_mtlr",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "08_mtlr",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "08_mtlr",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "08_mtlr",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "08_mtlr",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "09_deephit",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "09_deephit",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "09_deephit",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "09_deephit",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "09_deephit",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  },
+  {
+    "model": "10_hierarchical_hazard",
+    "origin": 2023,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "model": "10_hierarchical_hazard",
+    "origin": 2024,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "model": "10_hierarchical_hazard",
+    "origin": 2025,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "model": "10_hierarchical_hazard",
+    "origin": 2026,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "model": "10_hierarchical_hazard",
+    "origin": 2027,
+    "rows": 27248,
+    "passed": true
+  }
+]
