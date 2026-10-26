@@ -1,0 +1,32 @@
+[
+  {
+    "origin": 2023,
+    "attempted_trials": 40,
+    "rows": 35840,
+    "passed": true
+  },
+  {
+    "origin": 2024,
+    "attempted_trials": 40,
+    "rows": 34014,
+    "passed": true
+  },
+  {
+    "origin": 2025,
+    "attempted_trials": 40,
+    "rows": 32059,
+    "passed": true
+  },
+  {
+    "origin": 2026,
+    "attempted_trials": 40,
+    "rows": 30286,
+    "passed": true
+  },
+  {
+    "origin": 2027,
+    "attempted_trials": 60,
+    "rows": 27248,
+    "passed": true
+  }
+]

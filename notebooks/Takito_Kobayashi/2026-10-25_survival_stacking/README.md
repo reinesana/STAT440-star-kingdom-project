@@ -173,3 +173,17 @@ validation order; rejection reasons are saved and no outer labels are used.
 Operational fixes to queue accounting and safe parallel writes are documented
 in `checks/`, together with prior contracts. They do not change data, model
 families, feature candidates or the tuning objective.
+
+### 2026-10-26: lighter models first
+
+At the user's request, the expensive Cox and Random Survival Forest processes
+are suspended with their in-progress state retained. Three lanes now run:
+AFT models followed by spline survival; hierarchical hazards followed by MTLR
+and DeepHit; CatBoost hazards followed by XGBoost-AFT. Relative runtime of the
+previously unstarted models is still an expectation, not a measured guarantee.
+
+With `--priority-plan`, the supervisor verifies and uploads those eight models
+before resuming the two expensive models. Trial budgets, features and temporal
+validation remain unchanged. Completed Weibull exports have already passed
+all-five-origin verification in `checks/weibull_completed_exports.json` and
+are uploaded separately; the ten-model experiment is still in progress.
