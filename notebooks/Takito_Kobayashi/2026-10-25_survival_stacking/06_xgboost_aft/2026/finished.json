@@ -1,0 +1,8 @@
+{
+  "model": "06_xgboost_aft",
+  "origin": 2026,
+  "rows": 30286,
+  "support_years": 25,
+  "elapsed_seconds": 975.0058722496033,
+  "prediction_sha256": "ff0367f3efa7f965d2e4452f909c276d188150486df66c2efaf5c35eddf6c1be"
+}

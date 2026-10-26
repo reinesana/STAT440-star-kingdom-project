@@ -1,0 +1,8 @@
+{
+  "model": "07_catboost_hazard",
+  "origin": 2027,
+  "rows": 27248,
+  "support_years": 25,
+  "elapsed_seconds": 11772.543702840805,
+  "prediction_sha256": "f52de5b22e81d8ee7a9744c3de6635160fc77517ac476c7730fb582e7ad34d8f"
+}

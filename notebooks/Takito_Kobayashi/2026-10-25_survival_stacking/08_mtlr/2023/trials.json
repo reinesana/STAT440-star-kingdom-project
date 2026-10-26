@@ -1,0 +1,5484 @@
+[
+  {
+    "number": 0,
+    "state": "COMPLETE",
+    "value": 0.06228379113599658,
+    "params": {
+      "features": "basic",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.07526206215476501,
+      "lr": 0.007022163469978558,
+      "decay": 4.546713022522215e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 18.273982524871826,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.07526206215476501,
+      "lr": 0.007022163469978558,
+      "decay": 4.546713022522215e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022573290392756462,
+            "log_loss": 0.11592744290828705,
+            "average_precision": 0.05402889417243793,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 663.8790893554688,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09593147039413452,
+            "log_loss": 0.45783212780952454,
+            "average_precision": 0.10328257407653935,
+            "f1_at_05": 0.015416238437821172,
+            "precision_at_05": 0.19736842105263158,
+            "recall_at_05": 0.008021390374331552,
+            "actual_events": 3740,
+            "expected_events": 1142.806640625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05925238039344549
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06531520187854767,
+            "log_loss": 0.264040470123291,
+            "average_precision": 0.4362931428453235,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 536.026123046875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06531520187854767
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 1,
+    "state": "COMPLETE",
+    "value": 0.06475502112880349,
+    "params": {
+      "features": "all",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.23074956778646538,
+      "lr": 0.00021825998589542752,
+      "decay": 1.7337238892643378e-06,
+      "epochs": 60,
+      "batch": 2048
+    },
+    "elapsed_seconds": 56.34932780265808,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "all",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.23074956778646538,
+      "lr": 0.00021825998589542752,
+      "decay": 1.7337238892643378e-06,
+      "epochs": 60,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.021709086373448372,
+            "log_loss": 0.1337345391511917,
+            "average_precision": 0.039831031482315093,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 381.09930419921875,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09510522335767746,
+            "log_loss": 0.6024942994117737,
+            "average_precision": 0.07460518311208901,
+            "f1_at_05": 0.01327546591779423,
+            "precision_at_05": 0.14689265536723164,
+            "recall_at_05": 0.006951871657754011,
+            "actual_events": 3740,
+            "expected_events": 663.4127197265625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.058407154865562916
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07110288739204407,
+            "log_loss": 0.41070717573165894,
+            "average_precision": 0.2030033821051778,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 266.5604248046875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07110288739204407
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 2,
+    "state": "COMPLETE",
+    "value": 0.06555043067783117,
+    "params": {
+      "features": "ranked",
+      "top_k": 8,
+      "width": 64,
+      "layers": 3,
+      "dropout": 0.026415812679797448,
+      "lr": 0.0007963894761063087,
+      "decay": 0.00018513713737480157,
+      "epochs": 60,
+      "batch": 2048
+    },
+    "elapsed_seconds": 72.94728803634644,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 8,
+      "width": 64,
+      "layers": 3,
+      "dropout": 0.026415812679797448,
+      "lr": 0.0007963894761063087,
+      "decay": 0.00018513713737480157,
+      "epochs": 60,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.021491985768079758,
+            "log_loss": 0.12284081429243088,
+            "average_precision": 0.03954568123110723,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 420.0971984863281,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09543757140636444,
+            "log_loss": 0.5044044256210327,
+            "average_precision": 0.07979903810714845,
+            "f1_at_05": 0.03296703296703297,
+            "precision_at_05": 0.1547085201793722,
+            "recall_at_05": 0.018449197860962566,
+            "actual_events": 3740,
+            "expected_events": 1050.47607421875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.0584647785872221
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07263608276844025,
+            "log_loss": 0.41035279631614685,
+            "average_precision": 0.35574690860412156,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 99.44844055175781,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07263608276844025
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade"
+      ]
+    ]
+  },
+  {
+    "number": 3,
+    "state": "COMPLETE",
+    "value": 0.06461680680513382,
+    "params": {
+      "features": "ranked",
+      "top_k": 24,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.24948661355926194,
+      "lr": 0.0006557592172743605,
+      "decay": 2.227289504015346e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 76.78906893730164,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 24,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.24948661355926194,
+      "lr": 0.0006557592172743605,
+      "decay": 2.227289504015346e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.021566972136497498,
+            "log_loss": 0.14406757056713104,
+            "average_precision": 0.03918996993280717,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 238.67005920410156,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09406384825706482,
+            "log_loss": 0.662093460559845,
+            "average_precision": 0.07588063108126494,
+            "f1_at_05": 0.005827814569536424,
+            "precision_at_05": 0.3142857142857143,
+            "recall_at_05": 0.0029411764705882353,
+            "actual_events": 3740,
+            "expected_events": 353.78466796875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05781541019678116
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07141820341348648,
+            "log_loss": 0.39036449790000916,
+            "average_precision": 0.2611333723578927,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 200.5611114501953,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07141820341348648
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction",
+        "age",
+        "origin_year",
+        "log_length",
+        "length_m",
+        "surface",
+        "lay_year",
+        "abs_dy",
+        "history_250m_last2_leak_count",
+        "endpoint1_terminal",
+        "history_250m_prior_leak_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_count",
+        "mid_x",
+        "abs_dx",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "history_250m_last1_leak_count",
+        "history_250m_prior_leak_fraction",
+        "length_m",
+        "history_250m_prior_leak_count",
+        "log_length",
+        "history_250m_last2_leak_count",
+        "surface",
+        "neighbor_50m_material_gray_iron_fraction",
+        "endpoint1_terminal",
+        "lay_year",
+        "mid_x",
+        "abs_dy",
+        "neighbor_50m_surface_water_fraction",
+        "orientation_cos"
+      ]
+    ]
+  },
+  {
+    "number": 4,
+    "state": "COMPLETE",
+    "value": 0.07059062691405416,
+    "params": {
+      "features": "ranked",
+      "top_k": 64,
+      "width": 64,
+      "layers": 1,
+      "dropout": 0.031072206769845456,
+      "lr": 0.0023721318327613937,
+      "decay": 5.947559501961529e-05,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 77.08841061592102,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 64,
+      "width": 64,
+      "layers": 1,
+      "dropout": 0.031072206769845456,
+      "lr": 0.0023721318327613937,
+      "decay": 5.947559501961529e-05,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022977197542786598,
+            "log_loss": 0.1726388931274414,
+            "average_precision": 0.03663019285225199,
+            "f1_at_05": 0.04048582995951417,
+            "precision_at_05": 0.16393442622950818,
+            "recall_at_05": 0.023094688221709007,
+            "actual_events": 866,
+            "expected_events": 445.49578857421875,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.11266464740037918,
+            "log_loss": 0.909749448299408,
+            "average_precision": 0.07227707518417509,
+            "f1_at_05": 0.03819804857795308,
+            "precision_at_05": 0.08542246982358404,
+            "recall_at_05": 0.02459893048128342,
+            "actual_events": 3740,
+            "expected_events": 1280.0599365234375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.06782092247158289
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07336033135652542,
+            "log_loss": 0.6211754083633423,
+            "average_precision": 0.15421428037084248,
+            "f1_at_05": 0.0006956521739130435,
+            "precision_at_05": 1.0,
+            "recall_at_05": 0.0003479471120389701,
+            "actual_events": 2874,
+            "expected_events": 75.99658966064453,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07336033135652542
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction",
+        "age",
+        "origin_year",
+        "log_length",
+        "length_m",
+        "surface",
+        "lay_year",
+        "abs_dy",
+        "history_250m_last2_leak_count",
+        "endpoint1_terminal",
+        "history_250m_prior_leak_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_count",
+        "mid_x",
+        "abs_dx",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "orientation_cos",
+        "neighbor_100m_count",
+        "neighbor_100m_material_gray_iron_fraction",
+        "endpoint1_branch",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "orientation_sin",
+        "neighbor_250m_surface_structure_fraction",
+        "endpoint1_degree",
+        "neighbor_100m_mean_length_m",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "history_100m_prior_leak_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_100m_material_cast_iron_fraction",
+        "mid_y",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "history_100m_last2_leak_count",
+        "nearest_prior_leak_m",
+        "neighbor_50m_surface_water_fraction",
+        "endpoint2_terminal",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "endpoint2_degree",
+        "neighbor_250m_surface_water_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "history_100m_prior_leak_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "history_100m_last1_leak_count",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_count",
+        "neighbor_50m_surface_swamp_fraction"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "history_250m_last1_leak_count",
+        "history_250m_prior_leak_fraction",
+        "length_m",
+        "history_250m_prior_leak_count",
+        "log_length",
+        "history_250m_last2_leak_count",
+        "surface",
+        "neighbor_50m_material_gray_iron_fraction",
+        "endpoint1_terminal",
+        "lay_year",
+        "mid_x",
+        "abs_dy",
+        "neighbor_50m_surface_water_fraction",
+        "orientation_cos",
+        "neighbor_50m_count",
+        "history_100m_prior_leak_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_50m_surface_structure_fraction",
+        "mid_y",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_mean_length_m",
+        "abs_dx",
+        "nearest_prior_leak_m",
+        "orientation_sin",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "endpoint1_branch",
+        "history_50m_prior_leak_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_100m_count",
+        "endpoint1_degree",
+        "neighbor_100m_material_cast_iron_fraction",
+        "history_50m_last1_leak_count",
+        "neighbor_100m_surface_structure_fraction",
+        "history_100m_last1_leak_count",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "history_100m_last2_leak_count",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "history_50m_prior_leak_count",
+        "endpoint2_terminal",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "history_100m_prior_leak_count",
+        "endpoint2_degree",
+        "neighbor_250m_material_copper_fraction"
+      ]
+    ]
+  },
+  {
+    "number": 5,
+    "state": "COMPLETE",
+    "value": 0.06609469978138804,
+    "params": {
+      "features": "all",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.13106536759688367,
+      "lr": 0.0004158852503198259,
+      "decay": 0.002159461863069405,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 101.07915592193604,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "all",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.13106536759688367,
+      "lr": 0.0004158852503198259,
+      "decay": 0.002159461863069405,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02210160158574581,
+            "log_loss": 0.15066665410995483,
+            "average_precision": 0.04115910773777823,
+            "f1_at_05": 0.019801980198019802,
+            "precision_at_05": 0.20930232558139536,
+            "recall_at_05": 0.010392609699769052,
+            "actual_events": 866,
+            "expected_events": 383.17742919921875,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09551983326673508,
+            "log_loss": 0.680259108543396,
+            "average_precision": 0.07676375470669733,
+            "f1_at_05": 0.020100502512562814,
+            "precision_at_05": 0.16666666666666666,
+            "recall_at_05": 0.0106951871657754,
+            "actual_events": 3740,
+            "expected_events": 651.4622802734375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.058810717426240444
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07337868213653564,
+            "log_loss": 0.6015370488166809,
+            "average_precision": 0.1602668070454712,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 82.47722625732422,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07337868213653564
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 6,
+    "state": "COMPLETE",
+    "value": 0.06434716749936342,
+    "params": {
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": true,
+      "group_space": false,
+      "group_topology": false,
+      "group_neighbors": true,
+      "group_history": false,
+      "group_calendar": false,
+      "width": 32,
+      "layers": 1,
+      "dropout": 0.12311183986435692,
+      "lr": 0.00022998347313966962,
+      "decay": 5.586994087489793e-06,
+      "epochs": 30,
+      "batch": 2048
+    },
+    "elapsed_seconds": 18.319318771362305,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": true,
+      "group_space": false,
+      "group_topology": false,
+      "group_neighbors": true,
+      "group_history": false,
+      "group_calendar": false,
+      "width": 32,
+      "layers": 1,
+      "dropout": 0.12311183986435692,
+      "lr": 0.00022998347313966962,
+      "decay": 5.586994087489793e-06,
+      "epochs": 30,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022685084491968155,
+            "log_loss": 0.13653847575187683,
+            "average_precision": 0.03142666407325771,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 606.8992309570312,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09369926154613495,
+            "log_loss": 0.40015557408332825,
+            "average_precision": 0.09539751762083909,
+            "f1_at_05": 0.01608848667672197,
+            "precision_at_05": 0.13445378151260504,
+            "recall_at_05": 0.008556149732620321,
+            "actual_events": 3740,
+            "expected_events": 1546.6842041015625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05819217301905155
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07050216197967529,
+            "log_loss": 0.32482388615608215,
+            "average_precision": 0.16965582890917555,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 627.134765625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07050216197967529
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction"
+      ]
+    ]
+  },
+  {
+    "number": 7,
+    "state": "COMPLETE",
+    "value": 0.06277927150949836,
+    "params": {
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": true,
+      "group_space": false,
+      "group_topology": true,
+      "group_neighbors": true,
+      "group_history": false,
+      "group_calendar": true,
+      "width": 32,
+      "layers": 2,
+      "dropout": 0.28062124725315507,
+      "lr": 0.0005895564374486243,
+      "decay": 1.2150016662125358e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 16.16149353981018,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": true,
+      "group_space": false,
+      "group_topology": true,
+      "group_neighbors": true,
+      "group_history": false,
+      "group_calendar": true,
+      "width": 32,
+      "layers": 2,
+      "dropout": 0.28062124725315507,
+      "lr": 0.0005895564374486243,
+      "decay": 1.2150016662125358e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022498024627566338,
+            "log_loss": 0.11851782351732254,
+            "average_precision": 0.03984917327101423,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 787.033203125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09458557516336441,
+            "log_loss": 0.3829089403152466,
+            "average_precision": 0.0947089983611756,
+            "f1_at_05": 0.036605657237936774,
+            "precision_at_05": 0.16488222698072805,
+            "recall_at_05": 0.020588235294117647,
+            "actual_events": 3740,
+            "expected_events": 2188.311767578125,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.058541799895465374
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06701674312353134,
+            "log_loss": 0.3282965421676636,
+            "average_precision": 0.23996712163949366,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 717.5706176757812,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06701674312353134
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 8,
+    "state": "COMPLETE",
+    "value": 0.06122019235044718,
+    "params": {
+      "features": "basic",
+      "width": 64,
+      "layers": 3,
+      "dropout": 0.07744831597057407,
+      "lr": 0.0041871624764800676,
+      "decay": 7.155490996432163e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 24.697030544281006,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 64,
+      "layers": 3,
+      "dropout": 0.07744831597057407,
+      "lr": 0.0041871624764800676,
+      "decay": 7.155490996432163e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022308025509119034,
+            "log_loss": 0.11300251632928848,
+            "average_precision": 0.06032876399780814,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 628.0665893554688,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09617741405963898,
+            "log_loss": 0.4538162350654602,
+            "average_precision": 0.11539390470202801,
+            "f1_at_05": 0.02091633466135458,
+            "precision_at_05": 0.15217391304347827,
+            "recall_at_05": 0.011229946524064172,
+            "actual_events": 3740,
+            "expected_events": 1138.0516357421875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.059242719784379005
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06319766491651535,
+            "log_loss": 0.2656968832015991,
+            "average_precision": 0.3987947850866548,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 654.477783203125,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06319766491651535
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 9,
+    "state": "COMPLETE",
+    "value": 0.06474619358778,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.15545776547214316,
+      "lr": 0.00016694013268185362,
+      "decay": 0.0023278583803483257,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 169.9044644832611,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.15545776547214316,
+      "lr": 0.00016694013268185362,
+      "decay": 0.0023278583803483257,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022768616676330566,
+            "log_loss": 0.1207519918680191,
+            "average_precision": 0.04241252611276551,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 681.1406860351562,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09711013734340668,
+            "log_loss": 0.46357327699661255,
+            "average_precision": 0.08880967432296943,
+            "f1_at_05": 0.0429263789522271,
+            "precision_at_05": 0.15682967959527824,
+            "recall_at_05": 0.02486631016042781,
+            "actual_events": 3740,
+            "expected_events": 1208.9718017578125,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05993937700986862
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06955301016569138,
+            "log_loss": 0.3219163417816162,
+            "average_precision": 0.21038933090123318,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 568.09130859375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06955301016569138
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 10,
+    "state": "COMPLETE",
+    "value": 0.06498482450842857,
+    "params": {
+      "features": "all",
+      "width": 64,
+      "layers": 1,
+      "dropout": 0.3631273795796399,
+      "lr": 0.0006612223452830795,
+      "decay": 2.4967813918660127e-06,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "elapsed_seconds": 35.06439018249512,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "all",
+      "width": 64,
+      "layers": 1,
+      "dropout": 0.3631273795796399,
+      "lr": 0.0006612223452830795,
+      "decay": 2.4967813918660127e-06,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0218411386013031,
+            "log_loss": 0.12440609186887741,
+            "average_precision": 0.038752478227671465,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 478.82366943359375,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09915590286254883,
+            "log_loss": 0.3957664370536804,
+            "average_precision": 0.08078680855767763,
+            "f1_at_05": 0.04954367666232073,
+            "precision_at_05": 0.13225058004640372,
+            "recall_at_05": 0.03048128342245989,
+            "actual_events": 3740,
+            "expected_events": 2995.83056640625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.060498520731925964
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06947112828493118,
+            "log_loss": 0.34147515892982483,
+            "average_precision": 0.2059839218239542,
+            "f1_at_05": 0.0006949270326615705,
+            "precision_at_05": 0.25,
+            "recall_at_05": 0.0003479471120389701,
+            "actual_events": 2874,
+            "expected_events": 554.72265625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06947112828493118
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 11,
+    "state": "COMPLETE",
+    "value": 0.06537272734567523,
+    "params": {
+      "features": "all",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.003197845038251046,
+      "lr": 0.0009539229802510883,
+      "decay": 0.00015517789864984843,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "elapsed_seconds": 49.21904230117798,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "all",
+      "width": 64,
+      "layers": 2,
+      "dropout": 0.003197845038251046,
+      "lr": 0.0009539229802510883,
+      "decay": 0.00015517789864984843,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022054268047213554,
+            "log_loss": 0.12912517786026,
+            "average_precision": 0.0393100509579047,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 531.5489501953125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09752216935157776,
+            "log_loss": 0.49122464656829834,
+            "average_precision": 0.07656160957839453,
+            "f1_at_05": 0.04625850340136054,
+            "precision_at_05": 0.15223880597014924,
+            "recall_at_05": 0.02727272727272727,
+            "actual_events": 3740,
+            "expected_events": 1413.181640625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05978821869939566
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0709572359919548,
+            "log_loss": 0.42936208844184875,
+            "average_precision": 0.23645361952551625,
+            "f1_at_05": 0.0027768136063866713,
+            "precision_at_05": 0.5714285714285714,
+            "recall_at_05": 0.0013917884481558804,
+            "actual_events": 2874,
+            "expected_events": 230.29397583007812,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.0709572359919548
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 12,
+    "state": "COMPLETE",
+    "value": 0.06156274536624551,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.08609697791241441,
+      "lr": 0.00975340684327352,
+      "decay": 1.536408794017356e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 32.693581104278564,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.08609697791241441,
+      "lr": 0.00975340684327352,
+      "decay": 1.536408794017356e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0224872175604105,
+            "log_loss": 0.1092744916677475,
+            "average_precision": 0.06158251518520262,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 687.6288452148438,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09514738619327545,
+            "log_loss": 0.4410325884819031,
+            "average_precision": 0.1297404669971166,
+            "f1_at_05": 0.036010424070125564,
+            "precision_at_05": 0.158004158004158,
+            "recall_at_05": 0.020320855614973262,
+            "actual_events": 3740,
+            "expected_events": 1156.8782958984375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.058817301876842976
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06430818885564804,
+            "log_loss": 0.2676808834075928,
+            "average_precision": 0.4448583122813264,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 531.49462890625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06430818885564804
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 13,
+    "state": "COMPLETE",
+    "value": 0.06111976969987154,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.08654717313065714,
+      "lr": 0.009077435169813625,
+      "decay": 2.2819369023588572e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 32.276684284210205,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.08654717313065714,
+      "lr": 0.009077435169813625,
+      "decay": 2.2819369023588572e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02265176549553871,
+            "log_loss": 0.110874705016613,
+            "average_precision": 0.059048836800703296,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 710.9322509765625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09539777040481567,
+            "log_loss": 0.44173967838287354,
+            "average_precision": 0.12733747197429648,
+            "f1_at_05": 0.04,
+            "precision_at_05": 0.16666666666666666,
+            "recall_at_05": 0.022727272727272728,
+            "actual_events": 3740,
+            "expected_events": 1184.1683349609375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05902476795017719
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06321477144956589,
+            "log_loss": 0.26342421770095825,
+            "average_precision": 0.44030034643175064,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 608.73388671875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06321477144956589
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 14,
+    "state": "COMPLETE",
+    "value": 0.061370343435555696,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1834268638120497,
+      "lr": 0.00394663587332691,
+      "decay": 3.38833667615714e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 50.02088499069214,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1834268638120497,
+      "lr": 0.00394663587332691,
+      "decay": 3.38833667615714e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022671716287732124,
+            "log_loss": 0.11470427364110947,
+            "average_precision": 0.05718394130765437,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 693.992431640625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09635898470878601,
+            "log_loss": 0.4582962989807129,
+            "average_precision": 0.11076304961956353,
+            "f1_at_05": 0.031105710814094776,
+            "precision_at_05": 0.17066666666666666,
+            "recall_at_05": 0.017112299465240642,
+            "actual_events": 3740,
+            "expected_events": 1191.380859375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05951535049825907
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06322533637285233,
+            "log_loss": 0.24295182526111603,
+            "average_precision": 0.4878263876779717,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 581.4058837890625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06322533637285233
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 15,
+    "state": "COMPLETE",
+    "value": 0.06374875688925385,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.07995587356783412,
+      "lr": 0.0022785696606726943,
+      "decay": 0.00046719632932716766,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 32.38828682899475,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.07995587356783412,
+      "lr": 0.0022785696606726943,
+      "decay": 0.00046719632932716766,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022743256762623787,
+            "log_loss": 0.1216539517045021,
+            "average_precision": 0.04351584087242533,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 676.825439453125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09667009860277176,
+            "log_loss": 0.47883015871047974,
+            "average_precision": 0.08220145099003909,
+            "f1_at_05": 0.03764705882352941,
+            "precision_at_05": 0.1568627450980392,
+            "recall_at_05": 0.0213903743315508,
+            "actual_events": 3740,
+            "expected_events": 1163.7457275390625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05970667768269777
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06779083609580994,
+            "log_loss": 0.3184005320072174,
+            "average_precision": 0.3284908668349945,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 438.3658447265625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06779083609580994
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 16,
+    "state": "COMPLETE",
+    "value": 0.061212290078401566,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1909362293616315,
+      "lr": 0.004453644957997752,
+      "decay": 3.040361334700898e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 52.499977588653564,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1909362293616315,
+      "lr": 0.004453644957997752,
+      "decay": 3.040361334700898e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02274787425994873,
+            "log_loss": 0.11422771215438843,
+            "average_precision": 0.055520249309098435,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 708.963134765625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09631231427192688,
+            "log_loss": 0.45488566160202026,
+            "average_precision": 0.11273786812058255,
+            "f1_at_05": 0.03697558663190329,
+            "precision_at_05": 0.162839248434238,
+            "recall_at_05": 0.02085561497326203,
+            "actual_events": 3740,
+            "expected_events": 1210.4833984375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.059530094265937805
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06289448589086533,
+            "log_loss": 0.24998638033866882,
+            "average_precision": 0.4639736660258396,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 604.4998779296875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06289448589086533
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 17,
+    "state": "COMPLETE",
+    "value": 0.0643744277767837,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 1,
+      "dropout": 0.19679364841104152,
+      "lr": 0.005365117451700711,
+      "decay": 4.931219817321453e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 16.22508955001831,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 1,
+      "dropout": 0.19679364841104152,
+      "lr": 0.005365117451700711,
+      "decay": 4.931219817321453e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02271030656993389,
+            "log_loss": 0.12114615738391876,
+            "average_precision": 0.042196996596877416,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 674.463623046875,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09624336659908295,
+            "log_loss": 0.46270400285720825,
+            "average_precision": 0.08345226321302926,
+            "f1_at_05": 0.03331746787244169,
+            "precision_at_05": 0.15151515151515152,
+            "recall_at_05": 0.01871657754010695,
+            "actual_events": 3740,
+            "expected_events": 1158.961669921875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05947683658450842
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06927201896905899,
+            "log_loss": 0.31212034821510315,
+            "average_precision": 0.24020799086258748,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 459.87420654296875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06927201896905899
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 18,
+    "state": "COMPLETE",
+    "value": 0.0646892124786973,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.29939206631792203,
+      "lr": 0.0019157467933032064,
+      "decay": 0.0003960260937100163,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 32.47272562980652,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.29939206631792203,
+      "lr": 0.0019157467933032064,
+      "decay": 0.0003960260937100163,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02270563319325447,
+            "log_loss": 0.12247230857610703,
+            "average_precision": 0.0421921245726785,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 660.6351318359375,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09674833714962006,
+            "log_loss": 0.4800100326538086,
+            "average_precision": 0.07833442977556754,
+            "f1_at_05": 0.033309540804187486,
+            "precision_at_05": 0.1511879049676026,
+            "recall_at_05": 0.01871657754010695,
+            "actual_events": 3740,
+            "expected_events": 1136.5185546875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.059726985171437263
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06965143978595734,
+            "log_loss": 0.3331022262573242,
+            "average_precision": 0.20309346232263134,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 484.094482421875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06965143978595734
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 19,
+    "state": "COMPLETE",
+    "value": 0.06440954934805632,
+    "params": {
+      "features": "groups",
+      "group_basic": false,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": true,
+      "group_neighbors": false,
+      "group_history": true,
+      "group_calendar": false,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.3451026620343254,
+      "lr": 0.008993889586248936,
+      "decay": 1.8942303704310625e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 48.86588764190674,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "groups",
+      "group_basic": false,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": true,
+      "group_neighbors": false,
+      "group_history": true,
+      "group_calendar": false,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.3451026620343254,
+      "lr": 0.008993889586248936,
+      "decay": 1.8942303704310625e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022471550852060318,
+            "log_loss": 0.13946004211902618,
+            "average_precision": 0.03591547611461263,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 663.5556640625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09633135050535202,
+            "log_loss": 0.5528018474578857,
+            "average_precision": 0.07007937408320598,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 3740,
+            "expected_events": 1101.7879638671875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05940145067870617
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06941764801740646,
+            "log_loss": 0.3520304262638092,
+            "average_precision": 0.14856401737045818,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 800.510498046875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06941764801740646
+      }
+    ],
+    "selected_features": [
+      [
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate"
+      ],
+      [
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate"
+      ]
+    ]
+  },
+  {
+    "number": 20,
+    "state": "COMPLETE",
+    "value": 0.06442652503028512,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.20474576887557397,
+      "lr": 0.001359518762795006,
+      "decay": 0.009381387917486526,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 32.50143122673035,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 2,
+      "dropout": 0.20474576887557397,
+      "lr": 0.001359518762795006,
+      "decay": 0.009381387917486526,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02267640270292759,
+            "log_loss": 0.12171287089586258,
+            "average_precision": 0.03899548874142839,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 665.5010986328125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.0966176688671112,
+            "log_loss": 0.4675230085849762,
+            "average_precision": 0.07944731700685492,
+            "f1_at_05": 0.03453986278684646,
+            "precision_at_05": 0.14989733059548255,
+            "recall_at_05": 0.019518716577540108,
+            "actual_events": 3740,
+            "expected_events": 1161.948486328125,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.0596470357850194
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06920601427555084,
+            "log_loss": 0.33091238141059875,
+            "average_precision": 0.20312979916059615,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 505.20306396484375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06920601427555084
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 21,
+    "state": "COMPLETE",
+    "value": 0.0599450240842998,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.10488644416067129,
+      "lr": 0.003781814487892081,
+      "decay": 7.961230313598661e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 51.33382725715637,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.10488644416067129,
+      "lr": 0.003781814487892081,
+      "decay": 7.961230313598661e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022506659850478172,
+            "log_loss": 0.11298643052577972,
+            "average_precision": 0.059620985885398235,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 670.2380981445312,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09583526104688644,
+            "log_loss": 0.45534607768058777,
+            "average_precision": 0.1159874670266173,
+            "f1_at_05": 0.025449101796407185,
+            "precision_at_05": 0.19029850746268656,
+            "recall_at_05": 0.013636363636363636,
+            "actual_events": 3740,
+            "expected_events": 1148.4156494140625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05917096044868231
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0607190877199173,
+            "log_loss": 0.24598334729671478,
+            "average_precision": 0.4429196890912287,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 735.27734375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.0607190877199173
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 22,
+    "state": "COMPLETE",
+    "value": 0.060464668553322554,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.12976417659777412,
+      "lr": 0.0033178885251066528,
+      "decay": 9.656567759041869e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 48.680888175964355,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.12976417659777412,
+      "lr": 0.0033178885251066528,
+      "decay": 9.656567759041869e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022404072806239128,
+            "log_loss": 0.1136942058801651,
+            "average_precision": 0.05674903024752993,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 654.8216552734375,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09577657282352448,
+            "log_loss": 0.4551551043987274,
+            "average_precision": 0.11198147647765452,
+            "f1_at_05": 0.011437483753574213,
+            "precision_at_05": 0.205607476635514,
+            "recall_at_05": 0.0058823529411764705,
+            "actual_events": 3740,
+            "expected_events": 1138.7850341796875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.0590903228148818
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.061839014291763306,
+            "log_loss": 0.25300073623657227,
+            "average_precision": 0.43545479840199836,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 675.7696533203125,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.061839014291763306
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 23,
+    "state": "COMPLETE",
+    "value": 0.06063223537057638,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.12076410391967668,
+      "lr": 0.0031330095851811925,
+      "decay": 0.00014801520493651672,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 46.38248014450073,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.12076410391967668,
+      "lr": 0.0031330095851811925,
+      "decay": 0.00014801520493651672,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022324156016111374,
+            "log_loss": 0.11252901703119278,
+            "average_precision": 0.05746774409270466,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 647.3792114257812,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09561702609062195,
+            "log_loss": 0.45185595750808716,
+            "average_precision": 0.11389193084211033,
+            "f1_at_05": 0.011948051948051949,
+            "precision_at_05": 0.20909090909090908,
+            "recall_at_05": 0.006149732620320855,
+            "actual_events": 3740,
+            "expected_events": 1136.8692626953125,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05897059105336666
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0622938796877861,
+            "log_loss": 0.2593947649002075,
+            "average_precision": 0.4266725495741968,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 644.375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.0622938796877861
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 24,
+    "state": "COMPLETE",
+    "value": 0.06140920286998153,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.13579102840820648,
+      "lr": 0.0029515296813317276,
+      "decay": 9.766425752404971e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 51.45498585700989,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.13579102840820648,
+      "lr": 0.0029515296813317276,
+      "decay": 9.766425752404971e-05,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02237127535045147,
+            "log_loss": 0.1127801388502121,
+            "average_precision": 0.05895438743515665,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 648.9078369140625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09582202881574631,
+            "log_loss": 0.4518432915210724,
+            "average_precision": 0.11459822755818923,
+            "f1_at_05": 0.018357980622131564,
+            "precision_at_05": 0.1978021978021978,
+            "recall_at_05": 0.009625668449197862,
+            "actual_events": 3740,
+            "expected_events": 1142.7093505859375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05909665208309889
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06372175365686417,
+            "log_loss": 0.25873807072639465,
+            "average_precision": 0.4520964233298045,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 557.7159423828125,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06372175365686417
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 25,
+    "state": "COMPLETE",
+    "value": 0.06284391926601529,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.15406437897756053,
+      "lr": 0.0016097909991268657,
+      "decay": 0.0006572242707007128,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 50.06473445892334,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.15406437897756053,
+      "lr": 0.0016097909991268657,
+      "decay": 0.0006572242707007128,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022421034052968025,
+            "log_loss": 0.11605989187955856,
+            "average_precision": 0.05418696312419716,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 643.85888671875,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09647363424301147,
+            "log_loss": 0.46431204676628113,
+            "average_precision": 0.0984668292070236,
+            "f1_at_05": 0.022132796780684104,
+            "precision_at_05": 0.1864406779661017,
+            "recall_at_05": 0.011764705882352941,
+            "actual_events": 3740,
+            "expected_events": 1160.75244140625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05944733414798975
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06624050438404083,
+            "log_loss": 0.28255540132522583,
+            "average_precision": 0.3804742300560294,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 525.3857421875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06624050438404083
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 26,
+    "state": "COMPLETE",
+    "value": 0.06030475161969662,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.10753818074838399,
+      "lr": 0.003259031254515503,
+      "decay": 1.0419386006150801e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 58.641589403152466,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.10753818074838399,
+      "lr": 0.003259031254515503,
+      "decay": 1.0419386006150801e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022399134933948517,
+            "log_loss": 0.11347243934869766,
+            "average_precision": 0.05713108911723859,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 648.4683227539062,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09584955126047134,
+            "log_loss": 0.4558801054954529,
+            "average_precision": 0.11336151612081537,
+            "f1_at_05": 0.01593011305241521,
+            "precision_at_05": 0.20394736842105263,
+            "recall_at_05": 0.008288770053475936,
+            "actual_events": 3740,
+            "expected_events": 1132.8408203125,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05912434309720993
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.061485160142183304,
+            "log_loss": 0.2543198764324188,
+            "average_precision": 0.42800516494582724,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 697.3032836914062,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.061485160142183304
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 27,
+    "state": "COMPLETE",
+    "value": 0.06722540128976107,
+    "params": {
+      "features": "groups",
+      "group_basic": false,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": false,
+      "group_neighbors": false,
+      "group_history": true,
+      "group_calendar": true,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.05873419695358066,
+      "lr": 0.001143425696785577,
+      "decay": 1.6247852113584353e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "elapsed_seconds": 71.98893570899963,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "groups",
+      "group_basic": false,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": false,
+      "group_neighbors": false,
+      "group_history": true,
+      "group_calendar": true,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.05873419695358066,
+      "lr": 0.001143425696785577,
+      "decay": 1.6247852113584353e-06,
+      "epochs": 30,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022243935614824295,
+            "log_loss": 0.15953756868839264,
+            "average_precision": 0.041341712343946485,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 344.8030090332031,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.10084839165210724,
+            "log_loss": 0.5908229947090149,
+            "average_precision": 0.06939589421749279,
+            "f1_at_05": 0.05431240495329133,
+            "precision_at_05": 0.14484356894553882,
+            "recall_at_05": 0.03342245989304813,
+            "actual_events": 3740,
+            "expected_events": 933.37255859375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.06154616363346577
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07290463894605637,
+            "log_loss": 0.43075284361839294,
+            "average_precision": 0.07618770729310433,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 656.2323608398438,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07290463894605637
+      }
+    ],
+    "selected_features": [
+      [
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 28,
+    "state": "COMPLETE",
+    "value": 0.06443148944526911,
+    "params": {
+      "features": "ranked",
+      "top_k": 40,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1080742001630919,
+      "lr": 0.006074150618939072,
+      "decay": 1.0040298079215772e-06,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "elapsed_seconds": 162.74863576889038,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 40,
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.1080742001630919,
+      "lr": 0.006074150618939072,
+      "decay": 1.0040298079215772e-06,
+      "epochs": 60,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022048454731702805,
+            "log_loss": 0.2723844051361084,
+            "average_precision": 0.028599178466316336,
+            "f1_at_05": 0.002285714285714286,
+            "precision_at_05": 0.1111111111111111,
+            "recall_at_05": 0.0011547344110854503,
+            "actual_events": 866,
+            "expected_events": 191.61160278320312,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09460324794054031,
+            "log_loss": 1.290124773979187,
+            "average_precision": 0.07747954529525088,
+            "f1_at_05": 0.0015932023366967605,
+            "precision_at_05": 0.11538461538461539,
+            "recall_at_05": 0.0008021390374331551,
+            "actual_events": 3740,
+            "expected_events": 224.53207397460938,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05832585133612156
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.07053712755441666,
+            "log_loss": 0.8035218715667725,
+            "average_precision": 0.20861104016970805,
+            "f1_at_05": 0.002770083102493075,
+            "precision_at_05": 0.2857142857142857,
+            "recall_at_05": 0.0013917884481558804,
+            "actual_events": 2874,
+            "expected_events": 206.0912322998047,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.07053712755441666
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction",
+        "age",
+        "origin_year",
+        "log_length",
+        "length_m",
+        "surface",
+        "lay_year",
+        "abs_dy",
+        "history_250m_last2_leak_count",
+        "endpoint1_terminal",
+        "history_250m_prior_leak_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_count",
+        "mid_x",
+        "abs_dx",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "orientation_cos",
+        "neighbor_100m_count",
+        "neighbor_100m_material_gray_iron_fraction",
+        "endpoint1_branch",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "orientation_sin",
+        "neighbor_250m_surface_structure_fraction",
+        "endpoint1_degree",
+        "neighbor_100m_mean_length_m",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "history_100m_prior_leak_count"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "history_250m_last1_leak_count",
+        "history_250m_prior_leak_fraction",
+        "length_m",
+        "history_250m_prior_leak_count",
+        "log_length",
+        "history_250m_last2_leak_count",
+        "surface",
+        "neighbor_50m_material_gray_iron_fraction",
+        "endpoint1_terminal",
+        "lay_year",
+        "mid_x",
+        "abs_dy",
+        "neighbor_50m_surface_water_fraction",
+        "orientation_cos",
+        "neighbor_50m_count",
+        "history_100m_prior_leak_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_50m_surface_structure_fraction",
+        "mid_y",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_mean_length_m",
+        "abs_dx",
+        "nearest_prior_leak_m",
+        "orientation_sin",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_surface_farmland_fraction"
+      ]
+    ]
+  },
+  {
+    "number": 29,
+    "state": "COMPLETE",
+    "value": 0.055742811877280474,
+    "params": {
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.05074156611660053,
+      "lr": 0.0028864880345494622,
+      "decay": 3.926770864277056e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 243.2444622516632,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 128,
+      "layers": 3,
+      "dropout": 0.05074156611660053,
+      "lr": 0.0028864880345494622,
+      "decay": 3.926770864277056e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.021400736644864082,
+            "log_loss": 0.10138600319623947,
+            "average_precision": 0.10001770597445614,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 430.3731689453125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09211660921573639,
+            "log_loss": 0.4256799817085266,
+            "average_precision": 0.20336673095205995,
+            "f1_at_05": 0.017193426042983566,
+            "precision_at_05": 0.15813953488372093,
+            "recall_at_05": 0.00909090909090909,
+            "actual_events": 3740,
+            "expected_events": 833.000244140625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.056758672930300236
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.05472695082426071,
+            "log_loss": 0.24086222052574158,
+            "average_precision": 0.429361502767386,
+            "f1_at_05": 0.04493628437290409,
+            "precision_at_05": 0.6203703703703703,
+            "recall_at_05": 0.023312456506610995,
+            "actual_events": 2874,
+            "expected_events": 1160.128173828125,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.05472695082426071
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 30,
+    "state": "COMPLETE",
+    "value": 0.0574939614161849,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.048190057660523526,
+      "lr": 0.0064351210125675705,
+      "decay": 4.976165443392669e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 66.87764358520508,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.048190057660523526,
+      "lr": 0.0064351210125675705,
+      "decay": 4.976165443392669e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02176428958773613,
+            "log_loss": 0.10830105096101761,
+            "average_precision": 0.08641590623016196,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 444.9776611328125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09415604919195175,
+            "log_loss": 0.4497515857219696,
+            "average_precision": 0.14564057135682348,
+            "f1_at_05": 0.027120315581854043,
+            "precision_at_05": 0.17405063291139242,
+            "recall_at_05": 0.014705882352941176,
+            "actual_events": 3740,
+            "expected_events": 873.2786865234375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05796016938984394
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.057027753442525864,
+            "log_loss": 0.23536613583564758,
+            "average_precision": 0.4883250581167948,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 960.9614868164062,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.057027753442525864
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 31,
+    "state": "COMPLETE",
+    "value": 0.05746542662382126,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.05457446360381964,
+      "lr": 0.0052002098706098255,
+      "decay": 3.7627496869770784e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 68.47815084457397,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.05457446360381964,
+      "lr": 0.0052002098706098255,
+      "decay": 3.7627496869770784e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02156570553779602,
+            "log_loss": 0.10068982094526291,
+            "average_precision": 0.10016366732112926,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 477.43194580078125,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09304789453744888,
+            "log_loss": 0.4165114462375641,
+            "average_precision": 0.1915457407887196,
+            "f1_at_05": 0.023359840954274354,
+            "precision_at_05": 0.16549295774647887,
+            "recall_at_05": 0.012566844919786097,
+            "actual_events": 3740,
+            "expected_events": 928.3090209960938,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05730680003762245
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.057624053210020065,
+            "log_loss": 0.26270803809165955,
+            "average_precision": 0.41796859761813254,
+            "f1_at_05": 0.001389854065323141,
+            "precision_at_05": 0.5,
+            "recall_at_05": 0.0006958942240779402,
+            "actual_events": 2874,
+            "expected_events": 952.6743774414062,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.057624053210020065
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 32,
+    "state": "COMPLETE",
+    "value": 0.05577431386336684,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04981774239431921,
+      "lr": 0.00635628836601221,
+      "decay": 3.6074444738309578e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 68.01405382156372,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04981774239431921,
+      "lr": 0.00635628836601221,
+      "decay": 3.6074444738309578e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.021618677303195,
+            "log_loss": 0.1074686199426651,
+            "average_precision": 0.08086031578479783,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 433.2906494140625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.0933995395898819,
+            "log_loss": 0.4355725944042206,
+            "average_precision": 0.15637400923068479,
+            "f1_at_05": 0.006324110671936759,
+            "precision_at_05": 0.21818181818181817,
+            "recall_at_05": 0.0032085561497326204,
+            "actual_events": 3740,
+            "expected_events": 834.5648193359375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05750910844653845
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.054039519280195236,
+            "log_loss": 0.20425327122211456,
+            "average_precision": 0.4909990517675905,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 1095.632080078125,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.054039519280195236
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 33,
+    "state": "COMPLETE",
+    "value": 0.054443287663161755,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04201617667377932,
+      "lr": 0.006238732639804786,
+      "decay": 3.5714457362985233e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "elapsed_seconds": 72.5417218208313,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04201617667377932,
+      "lr": 0.006238732639804786,
+      "decay": 3.5714457362985233e-06,
+      "epochs": 100,
+      "batch": 8192
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.020055357366800308,
+            "log_loss": 0.08264527469873428,
+            "average_precision": 0.14580057706399607,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 576.288818359375,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.08800981193780899,
+            "log_loss": 0.3847693204879761,
+            "average_precision": 0.23541553902172985,
+            "f1_at_05": 0.0052645433008686494,
+            "precision_at_05": 0.1694915254237288,
+            "recall_at_05": 0.00267379679144385,
+            "actual_events": 3740,
+            "expected_events": 1024.898193359375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05403258465230465
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.05485399067401886,
+            "log_loss": 0.24090412259101868,
+            "average_precision": 0.4582372274407327,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 2874,
+            "expected_events": 1057.11279296875,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.05485399067401886
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 34,
+    "state": "COMPLETE",
+    "value": 0.05254347575828433,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.0026817253842499264,
+      "lr": 0.005287011263523852,
+      "decay": 3.249367149161778e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 109.35787105560303,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.0026817253842499264,
+      "lr": 0.005287011263523852,
+      "decay": 3.249367149161778e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.019568314775824547,
+            "log_loss": 0.08459203690290451,
+            "average_precision": 0.17058566667366554,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 640.885009765625,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.08056699484586716,
+            "log_loss": 0.36391010880470276,
+            "average_precision": 0.3315701871073809,
+            "f1_at_05": 0.09233840778637385,
+            "precision_at_05": 0.6928838951310862,
+            "recall_at_05": 0.04946524064171123,
+            "actual_events": 3740,
+            "expected_events": 1168.570068359375,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05006765481084585
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.05501929670572281,
+            "log_loss": 0.2330179363489151,
+            "average_precision": 0.47027360264885093,
+            "f1_at_05": 0.39858490566037735,
+            "precision_at_05": 0.6185944363103953,
+            "recall_at_05": 0.2940153096729297,
+            "actual_events": 2874,
+            "expected_events": 1255.48974609375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.05501929670572281
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 35,
+    "state": "COMPLETE",
+    "value": 0.06456476170569658,
+    "params": {
+      "features": "ranked",
+      "top_k": 16,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.002465182220279777,
+      "lr": 0.0073247761496145975,
+      "decay": 3.006701608795604e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 126.39413094520569,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 16,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.002465182220279777,
+      "lr": 0.0073247761496145975,
+      "decay": 3.006701608795604e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0227249376475811,
+            "log_loss": 0.1889611929655075,
+            "average_precision": 0.03633445836897929,
+            "f1_at_05": 0.006825938566552901,
+            "precision_at_05": 0.23076923076923078,
+            "recall_at_05": 0.003464203233256351,
+            "actual_events": 866,
+            "expected_events": 635.1965942382812,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09767676144838333,
+            "log_loss": 0.9208154082298279,
+            "average_precision": 0.06935569391213098,
+            "f1_at_05": 0.03384982121573302,
+            "precision_at_05": 0.15604395604395604,
+            "recall_at_05": 0.01898395721925134,
+            "actual_events": 3740,
+            "expected_events": 1245.3170166015625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.060200849547982216
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06892867386341095,
+            "log_loss": 0.6291452646255493,
+            "average_precision": 0.23499584616429955,
+            "f1_at_05": 0.0020826102047900035,
+            "precision_at_05": 0.42857142857142855,
+            "recall_at_05": 0.0010438413361169101,
+            "actual_events": 2874,
+            "expected_events": 319.29339599609375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06892867386341095
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction",
+        "age",
+        "origin_year",
+        "log_length",
+        "length_m",
+        "surface",
+        "lay_year",
+        "abs_dy",
+        "history_250m_last2_leak_count"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "history_250m_last1_leak_count",
+        "history_250m_prior_leak_fraction",
+        "length_m",
+        "history_250m_prior_leak_count",
+        "log_length",
+        "history_250m_last2_leak_count"
+      ]
+    ]
+  },
+  {
+    "number": 36,
+    "state": "COMPLETE",
+    "value": 0.06618365924805403,
+    "params": {
+      "features": "all",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.028501811838483496,
+      "lr": 0.002399082410508591,
+      "decay": 1.1069480260743812e-05,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 143.37128949165344,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "all",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.028501811838483496,
+      "lr": 0.002399082410508591,
+      "decay": 1.1069480260743812e-05,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.022213462740182877,
+            "log_loss": 0.28566065430641174,
+            "average_precision": 0.030656296556127813,
+            "f1_at_05": 0.002285714285714286,
+            "precision_at_05": 0.1111111111111111,
+            "recall_at_05": 0.0011547344110854503,
+            "actual_events": 866,
+            "expected_events": 218.11386108398438,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09482192248106003,
+            "log_loss": 1.3581945896148682,
+            "average_precision": 0.08372530158849976,
+            "f1_at_05": 0.0026504108136761197,
+            "precision_at_05": 0.15151515151515152,
+            "recall_at_05": 0.001336898395721925,
+            "actual_events": 3740,
+            "expected_events": 238.3043670654297,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.05851769261062145
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0738496258854866,
+            "log_loss": 0.9491757750511169,
+            "average_precision": 0.08653156883502433,
+            "f1_at_05": 0.013036020583190394,
+            "precision_at_05": 0.4634146341463415,
+            "recall_at_05": 0.006610995128740431,
+            "actual_events": 2874,
+            "expected_events": 156.44436645507812,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.0738496258854866
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "lay_year",
+        "lay_decade",
+        "material_cohort",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  },
+  {
+    "number": 37,
+    "state": "COMPLETE",
+    "value": 0.06663859356194735,
+    "params": {
+      "features": "ranked",
+      "top_k": 96,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.027120358889109634,
+      "lr": 0.0075327321908356245,
+      "decay": 1.6686358186508691e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 135.97588992118835,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "ranked",
+      "top_k": 96,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.027120358889109634,
+      "lr": 0.0075327321908356245,
+      "decay": 1.6686358186508691e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.023015592247247696,
+            "log_loss": 0.2885175347328186,
+            "average_precision": 0.03544538047873462,
+            "f1_at_05": 0.02688728024819028,
+            "precision_at_05": 0.12871287128712872,
+            "recall_at_05": 0.015011547344110854,
+            "actual_events": 866,
+            "expected_events": 318.06781005859375,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09705393016338348,
+            "log_loss": 1.3753633499145508,
+            "average_precision": 0.08648714535680424,
+            "f1_at_05": 0.018072289156626505,
+            "precision_at_05": 0.14754098360655737,
+            "recall_at_05": 0.009625668449197862,
+            "actual_events": 3740,
+            "expected_events": 414.8180236816406,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.06003476120531559
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.0732424259185791,
+            "log_loss": 0.8594169020652771,
+            "average_precision": 0.15818113638005238,
+            "f1_at_05": 0.0006944444444444445,
+            "precision_at_05": 0.16666666666666666,
+            "recall_at_05": 0.0003479471120389701,
+            "actual_events": 2874,
+            "expected_events": 103.17302703857422,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.0732424259185791
+      }
+    ],
+    "selected_features": [
+      [
+        "material_cohort",
+        "material",
+        "neighbor_100m_material_copper_fraction",
+        "cohort_prior_rate",
+        "lay_decade",
+        "no_prior_leak",
+        "material_prior_rate",
+        "neighbor_50m_material_copper_fraction",
+        "age",
+        "origin_year",
+        "log_length",
+        "length_m",
+        "surface",
+        "lay_year",
+        "abs_dy",
+        "history_250m_last2_leak_count",
+        "endpoint1_terminal",
+        "history_250m_prior_leak_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_count",
+        "mid_x",
+        "abs_dx",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "orientation_cos",
+        "neighbor_100m_count",
+        "neighbor_100m_material_gray_iron_fraction",
+        "endpoint1_branch",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "orientation_sin",
+        "neighbor_250m_surface_structure_fraction",
+        "endpoint1_degree",
+        "neighbor_100m_mean_length_m",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "history_100m_prior_leak_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_100m_material_cast_iron_fraction",
+        "mid_y",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "history_100m_last2_leak_count",
+        "nearest_prior_leak_m",
+        "neighbor_50m_surface_water_fraction",
+        "endpoint2_terminal",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "endpoint2_degree",
+        "neighbor_250m_surface_water_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "history_100m_prior_leak_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "history_100m_last1_leak_count",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_count",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "history_50m_prior_leak_fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "history_50m_last1_leak_count",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_material_brass_fraction",
+        "endpoint2_branch",
+        "lay_missing",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_surface_farmland_fraction"
+      ],
+      [
+        "material_cohort",
+        "material",
+        "cohort_prior_rate",
+        "origin_year",
+        "material_prior_rate",
+        "age",
+        "no_prior_leak",
+        "lay_decade",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "history_250m_last1_leak_count",
+        "history_250m_prior_leak_fraction",
+        "length_m",
+        "history_250m_prior_leak_count",
+        "log_length",
+        "history_250m_last2_leak_count",
+        "surface",
+        "neighbor_50m_material_gray_iron_fraction",
+        "endpoint1_terminal",
+        "lay_year",
+        "mid_x",
+        "abs_dy",
+        "neighbor_50m_surface_water_fraction",
+        "orientation_cos",
+        "neighbor_50m_count",
+        "history_100m_prior_leak_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_50m_surface_structure_fraction",
+        "mid_y",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_100m_mean_length_m",
+        "abs_dx",
+        "nearest_prior_leak_m",
+        "orientation_sin",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "endpoint1_branch",
+        "history_50m_prior_leak_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_100m_count",
+        "endpoint1_degree",
+        "neighbor_100m_material_cast_iron_fraction",
+        "history_50m_last1_leak_count",
+        "neighbor_100m_surface_structure_fraction",
+        "history_100m_last1_leak_count",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "history_100m_last2_leak_count",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "history_50m_prior_leak_count",
+        "endpoint2_terminal",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "history_100m_prior_leak_count",
+        "endpoint2_degree",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "history_50m_last2_leak_count",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "endpoint2_branch",
+        "lay_missing",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_polyurethane_fraction"
+      ]
+    ]
+  },
+  {
+    "number": 38,
+    "state": "COMPLETE",
+    "value": 0.05517290020361543,
+    "params": {
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04980191505977587,
+      "lr": 0.005091036222187415,
+      "decay": 3.856040976260788e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 123.58593130111694,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "basic",
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.04980191505977587,
+      "lr": 0.005091036222187415,
+      "decay": 3.856040976260788e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.02176072634756565,
+            "log_loss": 0.10533499717712402,
+            "average_precision": 0.08077350133608492,
+            "f1_at_05": 0.0,
+            "precision_at_05": 0.0,
+            "recall_at_05": 0.0,
+            "actual_events": 866,
+            "expected_events": 473.1846008300781,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09379563480615616,
+            "log_loss": 0.43874964118003845,
+            "average_precision": 0.17300568071282985,
+            "f1_at_05": 0.020525657071339173,
+            "precision_at_05": 0.1607843137254902,
+            "recall_at_05": 0.010962566844919787,
+            "actual_events": 3740,
+            "expected_events": 819.5924072265625,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.057778180576860905
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.05256761983036995,
+            "log_loss": 0.20340949296951294,
+            "average_precision": 0.44940931837735193,
+            "f1_at_05": 0.07566527733247835,
+            "precision_at_05": 0.4816326530612245,
+            "recall_at_05": 0.04105775922059847,
+            "actual_events": 2874,
+            "expected_events": 1418.0111083984375,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.05256761983036995
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing"
+      ]
+    ]
+  },
+  {
+    "number": 39,
+    "state": "COMPLETE",
+    "value": 0.06261782860383391,
+    "params": {
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": true,
+      "group_neighbors": true,
+      "group_history": true,
+      "group_calendar": true,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.011289417690517431,
+      "lr": 0.004697384548142426,
+      "decay": 5.731111652445906e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "elapsed_seconds": 135.82556819915771,
+    "full_config": {
+      "model": "08_mtlr",
+      "features": "groups",
+      "group_basic": true,
+      "group_cohort": false,
+      "group_space": true,
+      "group_topology": true,
+      "group_neighbors": true,
+      "group_history": true,
+      "group_calendar": true,
+      "width": 32,
+      "layers": 3,
+      "dropout": 0.011289417690517431,
+      "lr": 0.004697384548142426,
+      "decay": 5.731111652445906e-06,
+      "epochs": 100,
+      "batch": 2048
+    },
+    "inner_metrics": [
+      {
+        "validation_year": 2021,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.023024385794997215,
+            "log_loss": 0.24965447187423706,
+            "average_precision": 0.035092957938402725,
+            "f1_at_05": 0.014973262032085561,
+            "precision_at_05": 0.10144927536231885,
+            "recall_at_05": 0.008083140877598153,
+            "actual_events": 866,
+            "expected_events": 394.7286071777344,
+            "rows": 39580
+          },
+          {
+            "horizon": 2,
+            "brier": 0.09841173887252808,
+            "log_loss": 1.1924909353256226,
+            "average_precision": 0.07806734197679777,
+            "f1_at_05": 0.020338983050847456,
+            "precision_at_05": 0.1076923076923077,
+            "recall_at_05": 0.011229946524064172,
+            "actual_events": 3740,
+            "expected_events": 631.3836669921875,
+            "rows": 39580
+          }
+        ],
+        "brier": 0.060718062333762646
+      },
+      {
+        "validation_year": 2022,
+        "horizons": [
+          {
+            "horizon": 1,
+            "brier": 0.06451759487390518,
+            "log_loss": 0.6927741169929504,
+            "average_precision": 0.24232373404585653,
+            "f1_at_05": 0.20904117477685,
+            "precision_at_05": 0.6060100166944908,
+            "recall_at_05": 0.12630480167014613,
+            "actual_events": 2874,
+            "expected_events": 706.783447265625,
+            "rows": 38714
+          }
+        ],
+        "brier": 0.06451759487390518
+      }
+    ],
+    "selected_features": [
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ],
+      [
+        "material",
+        "surface",
+        "length_m",
+        "log_length",
+        "age",
+        "lay_missing",
+        "mid_x",
+        "mid_y",
+        "abs_dx",
+        "abs_dy",
+        "orientation_sin",
+        "orientation_cos",
+        "endpoint1_degree",
+        "endpoint1_terminal",
+        "endpoint1_branch",
+        "endpoint2_degree",
+        "endpoint2_terminal",
+        "endpoint2_branch",
+        "neighbor_50m_count",
+        "neighbor_50m_mean_length_m",
+        "neighbor_50m_material___unknown___fraction",
+        "neighbor_50m_material_brass_fraction",
+        "neighbor_50m_material_cast_iron_fraction",
+        "neighbor_50m_material_copper_fraction",
+        "neighbor_50m_material_gray_iron_fraction",
+        "neighbor_50m_material_polyurethane_fraction",
+        "neighbor_50m_material_wrought_iron_fraction",
+        "neighbor_50m_surface_farmland_fraction",
+        "neighbor_50m_surface_grassland_fraction",
+        "neighbor_50m_surface_road_fraction",
+        "neighbor_50m_surface_structure_fraction",
+        "neighbor_50m_surface_swamp_fraction",
+        "neighbor_50m_surface_water_fraction",
+        "neighbor_100m_count",
+        "neighbor_100m_mean_length_m",
+        "neighbor_100m_material___unknown___fraction",
+        "neighbor_100m_material_brass_fraction",
+        "neighbor_100m_material_cast_iron_fraction",
+        "neighbor_100m_material_copper_fraction",
+        "neighbor_100m_material_gray_iron_fraction",
+        "neighbor_100m_material_polyurethane_fraction",
+        "neighbor_100m_material_wrought_iron_fraction",
+        "neighbor_100m_surface_farmland_fraction",
+        "neighbor_100m_surface_grassland_fraction",
+        "neighbor_100m_surface_road_fraction",
+        "neighbor_100m_surface_structure_fraction",
+        "neighbor_100m_surface_swamp_fraction",
+        "neighbor_100m_surface_water_fraction",
+        "neighbor_250m_count",
+        "neighbor_250m_mean_length_m",
+        "neighbor_250m_material___unknown___fraction",
+        "neighbor_250m_material_brass_fraction",
+        "neighbor_250m_material_cast_iron_fraction",
+        "neighbor_250m_material_copper_fraction",
+        "neighbor_250m_material_gray_iron_fraction",
+        "neighbor_250m_material_polyurethane_fraction",
+        "neighbor_250m_material_wrought_iron_fraction",
+        "neighbor_250m_surface_farmland_fraction",
+        "neighbor_250m_surface_grassland_fraction",
+        "neighbor_250m_surface_road_fraction",
+        "neighbor_250m_surface_structure_fraction",
+        "neighbor_250m_surface_swamp_fraction",
+        "neighbor_250m_surface_water_fraction",
+        "history_50m_prior_leak_count",
+        "history_50m_last1_leak_count",
+        "history_50m_last2_leak_count",
+        "history_50m_prior_leak_fraction",
+        "history_100m_prior_leak_count",
+        "history_100m_last1_leak_count",
+        "history_100m_last2_leak_count",
+        "history_100m_prior_leak_fraction",
+        "history_250m_prior_leak_count",
+        "history_250m_last1_leak_count",
+        "history_250m_last2_leak_count",
+        "history_250m_prior_leak_fraction",
+        "nearest_prior_leak_m",
+        "no_prior_leak",
+        "cohort_prior_rate",
+        "material_prior_rate",
+        "origin_year"
+      ]
+    ]
+  }
+]

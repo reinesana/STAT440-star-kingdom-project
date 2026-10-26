@@ -1,0 +1,40 @@
+{
+  "model": "08_mtlr",
+  "origin": 2026,
+  "train_years": [
+    2019,
+    2025
+  ],
+  "inner_validation_years": [
+    2024,
+    2025
+  ],
+  "best_trial": 33,
+  "inner_mean_brier": 0.05068413447588682,
+  "config": {
+    "model": "08_mtlr",
+    "features": "basic",
+    "width": 32,
+    "layers": 3,
+    "dropout": 0.26941208612481304,
+    "lr": 0.0001222430956806661,
+    "decay": 2.4657954209192112e-06,
+    "epochs": 100,
+    "batch": 2048
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 40,
+  "failed_trials": 0,
+  "training_landmarks": 261851,
+  "training_event_landmarks": 49849,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

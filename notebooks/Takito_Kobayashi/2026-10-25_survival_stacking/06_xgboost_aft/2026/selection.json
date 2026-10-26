@@ -1,0 +1,43 @@
+{
+  "model": "06_xgboost_aft",
+  "origin": 2026,
+  "train_years": [
+    2019,
+    2025
+  ],
+  "inner_validation_years": [
+    2024,
+    2025
+  ],
+  "best_trial": 22,
+  "inner_mean_brier": 0.04799211237181977,
+  "config": {
+    "model": "06_xgboost_aft",
+    "features": "basic",
+    "distribution": "normal",
+    "aft_scale": 1.1876093889252213,
+    "trees": 750,
+    "depth": 2,
+    "lr": 0.037818695065890744,
+    "child": 10.243849200617205,
+    "sample": 0.8856572812343099,
+    "colsample": 0.868632142343317,
+    "l2": 1.024043300661133,
+    "l1": 0.18410672589711402
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 40,
+  "failed_trials": 0,
+  "training_landmarks": 261851,
+  "training_event_landmarks": 49849,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}
