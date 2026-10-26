@@ -420,4 +420,4 @@ remain unchanged. Full definitions, limitations and rebuild instructions are in
 
 ## Takito latest model — 26 October 2026
 
-[Model and experiment report](reports/2026-10-26_takito_latest_model.md) · [21a submission and reproducible evidence](submissions/2026-10-26_best20a_catboost_logrf/). The user-provided screenshot shows Takito $74.78M; filename association and evaluator-version comparability are explicitly qualified in the report.
+[Model and experiment report](reports/2026-10-26_takito_latest_model.md) · [21a submission and reproducible evidence](submissions/2026-10-26_best20a_catboost_logrf/). The user confirmed that the screenshot’s Takito **$74.78M** result belongs to **21a**. Evaluator-version comparability is qualified in the report.

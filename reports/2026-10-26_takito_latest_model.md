@@ -2,7 +2,7 @@
 
 ## Result and evidence
 
-The user-supplied evaluator screenshot shows **Takito: $74.78M at 15:42 on 26 October 2026**, the highest value among the visible rows. Other visible Takito results are $74.25M and $74.00M at 15:34 and $74.16M at 15:25. The screenshot does not show uploaded filenames. Consequently, **the association of $74.78M with candidate 21a is awaiting confirmation**; this report does not treat that association as verified. The screenshot is user-provided evidence, not a fresh evaluator query or proof of a global leaderboard rank. Times are copied from the screenshot without timezone conversion.
+The user-supplied evaluator screenshot shows **Takito: $74.78M at 15:42 on 26 October 2026**, the highest value among the visible rows. Other visible Takito results are $74.25M and $74.00M at 15:34 and $74.16M at 15:25. The screenshot does not show uploaded filenames. The user subsequently confirmed that this is the result of **21a_20a_catboost6863_logrf3137.csv**. The filename association is user-confirmed. The screenshot is user-provided evidence, not a fresh evaluator query or proof of a global leaderboard rank. Times are copied from the screenshot without timezone conversion.
 
 The latest locally prepared candidate is **21a_20a_catboost6863_logrf3137.csv**. Its code, frozen predictions, audit tables and existing validation outputs are published together in [the submission folder](../submissions/2026-10-26_best20a_catboost_logrf/). No further evaluator submission was made for this report.
 
@@ -48,7 +48,7 @@ The new stack slightly reduces RMSE versus stable while increasing MAE, and it d
 | Construction cost, historical local formula, no future leaks | $148,081,592.66 | $148,028,948.98 |
 | Completion year in that local scenario | 2041 | 2041 |
 | Zero-cost skipped units in that local scenario | 13,138 | 13,248 |
-| Official score assigned to this exact file | historical 74.03M record, earlier evaluator version | awaiting screenshot/file confirmation |
+| Official score assigned to this exact file | historical 74.03M record, earlier evaluator version | **$74.78M (user-confirmed screenshot result)** |
 
 The local construction difference is $52,643.68. It is not the difference in official scores. Original 20a order was reproduced with its original costs; 21a has exactly the same circle multiset. The published frozen inputs reproduce the 21a CSV exactly after newline normalization, including forecast recomputation, the fallback join, full iron coverage, budget carryover and completion under the historical local cost function.
 
@@ -83,4 +83,4 @@ This rebuilds the plan using frozen predictions and pipe probabilities and verif
 - [Shared experiment record](https://docs.google.com/document/d/1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ/edit), current relevant contents read 26 October 2026: historical method/results and evaluator change note.
 - [20a at reviewed main commit 668a598](https://github.com/reinesana/STAT440-star-kingdom-project/tree/668a598ba8efd478d1c5bf569b39fc7fb93162e2/submissions/2026-10-22_candidate_20_sameyear_merge): frozen geometry and reference plan.
 - [Published candidate and evidence](../submissions/2026-10-26_best20a_catboost_logrf/): exact coefficients, forecasts, OOF tables, validation, manifest and audits.
-- User-provided evaluator screenshot: visible Takito results dated 26 October 2026; filename association pending. Browser chrome and unrelated screen contents are not republished.
+- User-provided evaluator screenshot: visible Takito results dated 26 October 2026; filename association confirmed by the user. Browser chrome and unrelated screen contents are not republished.

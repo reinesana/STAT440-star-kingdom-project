@@ -1,6 +1,6 @@
 {
   "publication_date": "2026-10-26",
-  "candidate_score_status": "screenshot filename association unconfirmed",
+  "candidate_score_status": "74.78M; screenshot filename association explicitly confirmed by user",
   "observed_takito_score_millions": 74.78,
   "verification": "portable reproduction passed; historical local formula, no future leaks",
   "files": {
@@ -49,8 +49,8 @@
       "sha256_lf": "9697c9c71501fe9c9d0586045077e3da9842ad7be3cc8f43b478ef2deefed079"
     },
     "manifest.json": {
-      "sha256": "b2de5a5edae25348670c55855122c2141c2de3d8ffb8d0d190fe7333800a0762",
-      "sha256_lf": "c94ffd73a2e2fc3edc05384ae718fb63c7a5ff55b66aa904f7443916eec264ab"
+      "sha256": "97bf4b7490dc62b425f2c1aef90c27f2735d86391d9736af59f07c1acd470236",
+      "sha256_lf": "7e88e9592ee809ae10d9694b994c3ac1de2c671f1904a49c234e257245adfb0a"
     },
     "mean_metrics.csv": {
       "sha256": "c75d3e24064aa0b7a2c1d686e711090a60d6684e4223da2be47a41dbfc7f9637",
@@ -65,12 +65,12 @@
       "sha256_lf": "78ab63f411f58320a8f57225265e4541bad7ea738844ea346743b29aa80b95b4"
     },
     "README.md": {
-      "sha256": "7e89a660135ae96f2c016e308a66b7b14060a573cfc339bf1d61f2a7e11e3b71",
-      "sha256_lf": "9ba30f46fab4cfa4f4c3d9a9bfd82b07a096de684b108970186acf68738507c3"
+      "sha256": "a2a1ed33e5e0cb951b4f02b7ec06964592c10e6b8f4d7405bc07fea4869d558b",
+      "sha256_lf": "61b7c647496970c1e00f29e0587034d824f770a1964be92407048d39974ac0aa"
     },
     "README_ja.md": {
-      "sha256": "75156ab1d74b4b7350a8c393d45f1a8979309c8431f4b68ee279569f5472f111",
-      "sha256_lf": "8ab616fc0324fc3be3244ba2ea783567aa25fdd8a550cfec1a452239416794ab"
+      "sha256": "2f47119d55a2c224ac50d3598291bf3a01c614f6947fe24eb18e09ff462b3079",
+      "sha256_lf": "883100ba476935c6d1f7fec5e80c7d76544ceafceb59888b43641e33b178d1cb"
     },
     "reproduce.py": {
       "sha256": "bb65266ac4c4f621771db2d0edbd33aa1ee5504e361484c02b9f3fe48143a967",
@@ -92,5 +92,6 @@
       "sha256": "8710d34ac8e2803e16aa5178f6407f50b5271e624f71b190e64cf37e86c8c61d",
       "sha256_lf": "b79c649754f2d9b8e96496906a58d1feab9702b3c799e4437991cf4a62b9da52"
     }
-  }
+  },
+  "candidate_public_score_millions": 74.78
 }

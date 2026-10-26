@@ -288,11 +288,12 @@
     "survival-models-worktree\\src\\build_cost_submissions.py": "b796c5343d90c0415a56f484f8559aa622d9903a4f38fe1d9c1ed08cc64464d7",
     "github-main\\submissions\\2026-10-26_best20a_catboost_logrf\\build_submission.py": "b55a3f86cebf22f7c1ee6395113bbb8410241d5f332c1282fa39a44d84ca5deb"
   },
-  "public_score_millions": null,
+  "public_score_millions": 74.78,
   "limitations": [
-    "No new official score;74.03M belongs to original20a only.",
     "Construction/budget validation assumes no future leaks; not an official score forecast.",
     "Geometry was optimized under the prior recipe and deliberately frozen for cost-only comparison.",
-    "Conditional repair-cost backtests reuse previously inspected historical years."
-  ]
+    "Conditional repair-cost backtests reuse previously inspected historical years.",
+    "Historical 20a score and current 21a score are not a controlled same-evaluator-version comparison."
+  ],
+  "public_score_source": "User-provided evaluator screenshot, 2026-10-26 15:42; user explicitly confirmed candidate 21a filename association."
 }
