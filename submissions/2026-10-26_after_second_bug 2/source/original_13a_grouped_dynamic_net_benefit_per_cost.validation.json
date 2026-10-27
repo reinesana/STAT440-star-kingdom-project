@@ -1,0 +1,135 @@
+{
+  "file": "original_13a_grouped_dynamic_net_benefit_per_cost.csv",
+  "units": 37799,
+  "original_iron": 38455,
+  "uncovered_iron": 0,
+  "remaining_iron": 0,
+  "construction_cost": 193162059.49,
+  "completion_year": 2046,
+  "completed_by_2051": true,
+  "skipped_units": 13164,
+  "scenario": "No future leaks; corrected surface_rate * area**0.85; not an official score prediction",
+  "annual": [
+    {
+      "year": 2027,
+      "spent": 9994337.43,
+      "balance": 5662.57,
+      "remaining": 23486
+    },
+    {
+      "year": 2028,
+      "spent": 10003176.9,
+      "balance": 2485.67,
+      "remaining": 20833
+    },
+    {
+      "year": 2029,
+      "spent": 9997714.41,
+      "balance": 4771.26,
+      "remaining": 18985
+    },
+    {
+      "year": 2030,
+      "spent": 10002575.73,
+      "balance": 2195.53,
+      "remaining": 17275
+    },
+    {
+      "year": 2031,
+      "spent": 10001388.9,
+      "balance": 806.63,
+      "remaining": 14991
+    },
+    {
+      "year": 2032,
+      "spent": 9996809.23,
+      "balance": 3997.4,
+      "remaining": 12800
+    },
+    {
+      "year": 2033,
+      "spent": 9975077.73,
+      "balance": 28919.67,
+      "remaining": 10764
+    },
+    {
+      "year": 2034,
+      "spent": 10012953.65,
+      "balance": 15966.02,
+      "remaining": 8542
+    },
+    {
+      "year": 2035,
+      "spent": 9987526.38,
+      "balance": 28439.64,
+      "remaining": 6727
+    },
+    {
+      "year": 2036,
+      "spent": 10000341.57,
+      "balance": 28098.07,
+      "remaining": 5472
+    },
+    {
+      "year": 2037,
+      "spent": 10009813.29,
+      "balance": 18284.78,
+      "remaining": 4318
+    },
+    {
+      "year": 2038,
+      "spent": 10016625.61,
+      "balance": 1659.17,
+      "remaining": 3560
+    },
+    {
+      "year": 2039,
+      "spent": 10001053.98,
+      "balance": 605.19,
+      "remaining": 2762
+    },
+    {
+      "year": 2040,
+      "spent": 9998797.39,
+      "balance": 1807.8,
+      "remaining": 2151
+    },
+    {
+      "year": 2041,
+      "spent": 9974952.59,
+      "balance": 26855.21,
+      "remaining": 1771
+    },
+    {
+      "year": 2042,
+      "spent": 9993943.94,
+      "balance": 32911.27,
+      "remaining": 1433
+    },
+    {
+      "year": 2043,
+      "spent": 10013834.87,
+      "balance": 19076.4,
+      "remaining": 952
+    },
+    {
+      "year": 2044,
+      "spent": 9976363.56,
+      "balance": 42712.84,
+      "remaining": 532
+    },
+    {
+      "year": 2045,
+      "spent": 10034406.66,
+      "balance": 8306.18,
+      "remaining": 136
+    },
+    {
+      "year": 2046,
+      "spent": 3170365.67,
+      "balance": 6837940.51,
+      "remaining": 0
+    }
+  ],
+  "sha256": "74c56b8bcdd7a7638f8dac9bee4cea991172981a4495fcea163f5f01e819bf24"
+}

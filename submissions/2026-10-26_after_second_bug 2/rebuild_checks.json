@@ -1,0 +1,20 @@
+{
+  "corrected_formula": "100 + surface_rate * area**0.85 + 200 * unreplaced_length",
+  "merged_pairs": 666,
+  "independent_merged_coverage_check": true,
+  "original_iron_count": 38455,
+  "max_09a_benefit_reconstruction_error": 2.9103830456733704e-11,
+  "prediction_models_retrained": false,
+  "official_results": "Pending",
+  "source_sha256": {
+    "09a_full_ensemble_net.csv": "3c871b165901564653cd1acb56cbfbd0df7f943eaf1ef733e55aa9ca20d7c1c2",
+    "original_12a_dynamic_net_benefit_per_cost.csv": "2d10233a1d62cd02ebf16a7782c11edc019eb29792d4df3ce79f7405d8f3f112",
+    "ensemble_stable.csv": "d1098c4b78cd9efd17b3b39054eae83c4535b99e768aa10ff81f492247786771",
+    "original_13a_grouped_dynamic_net_benefit_per_cost.csv": "74c56b8bcdd7a7638f8dac9bee4cea991172981a4495fcea163f5f01e819bf24",
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "probabilities.csv": "f8fb266940bbeadebae0b2637b70ba6aefab0a4d936d3d991a3684cef72153f8",
+    "original_10a_09a_nearby_pairs.csv": "e5a42a2b0db640bc5cf2372181890731dddf107623b8da06c44ab8a7a683cab7",
+    "train.csv": "d0795fd76cef831eed8c2c8ff5faba1c6a7f1a73c57c787d20dc292ef8cf69ea",
+    "09a_full_ensemble_net.audit.csv": "a413f8f9ec1fc323a667f32893211d7982668965908134aba1e384bdb2d0759f"
+  }
+}
