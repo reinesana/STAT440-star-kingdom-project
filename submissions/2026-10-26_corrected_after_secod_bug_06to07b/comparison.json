@@ -1,0 +1,29 @@
+[
+  {
+    "file": "06_corrected_stable_risk_per_work_cost.csv",
+    "units": 38455,
+    "construction_cost": 194877381.84,
+    "completion_year": 2046,
+    "uncovered_iron": 0,
+    "remaining_iron": 0,
+    "sha256": "0f06bbe8d590f5cc39ed82eeed6e9ba7149d8b9b645c4dd32cb79008497bd545"
+  },
+  {
+    "file": "07a_corrected_full_ensemble_gross.csv",
+    "units": 38455,
+    "construction_cost": 195022408.73,
+    "completion_year": 2046,
+    "uncovered_iron": 0,
+    "remaining_iron": 0,
+    "sha256": "d46d532117774223a33a736f12f4a9569f675e702b035f8bda0cf2ff4375c3af"
+  },
+  {
+    "file": "07b_corrected_catboost_lightgbm_gross.csv",
+    "units": 38455,
+    "construction_cost": 194814617.24,
+    "completion_year": 2046,
+    "uncovered_iron": 0,
+    "remaining_iron": 0,
+    "sha256": "493685743a5d4275df8fb898c942c1a47371c4364d5a1478f24d1fdf4139e210"
+  }
+]
