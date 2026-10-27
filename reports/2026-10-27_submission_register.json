@@ -1,0 +1,97 @@
+{
+  "prepared_date_utc": "2026-10-27",
+  "scope": "October 26 submission session referenced as today; source dates preserved",
+  "shared_doc_read": "2026-10-27",
+  "records": [
+    {
+      "candidate": "09a",
+      "file": "submissions/2026-10-26_after_second_bug 2/09a_corrected_reference.csv",
+      "public_score_millions": 65.4,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "da9fc8d3629bcaef7cd037cd0f3b570c69b9b27b598361598ce4b0a293e27621",
+      "method": "Fixed initial net benefit / corrected cost"
+    },
+    {
+      "candidate": "10a",
+      "file": "submissions/2026-10-26_after_second_bug 2/10a_corrected_nearby_pairs.csv",
+      "public_score_millions": 65.78,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "9f639b72bdb394649ab3c123c7df727802cc13d5cf89ada7c436ccdcb2d43875",
+      "method": "Nearby grouping rebuilt with corrected costs"
+    },
+    {
+      "candidate": "11b",
+      "file": "submissions/2026-10-26_after_second_bug 2/11b_corrected_net_benefit_only.csv",
+      "public_score_millions": 51.99,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "15ac9353e30aa5999a28a1cca78e8914d9fc5eac8e18929dd3e34c09a13fdffa",
+      "method": "Fixed net benefit only; unchanged order"
+    },
+    {
+      "candidate": "11c",
+      "file": "submissions/2026-10-26_after_second_bug 2/11c_corrected_net_benefit_sqrt_cost.csv",
+      "public_score_millions": 61.7,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "c756076d015561d87048b48df0c17048650520871ea626a93c106625a1293b3f",
+      "method": "Fixed net benefit / sqrt(corrected cost)"
+    },
+    {
+      "candidate": "12a",
+      "file": "submissions/2026-10-26_after_second_bug 2/12a_corrected_dynamic.csv",
+      "public_score_millions": 69.89,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "d5d7124550d94a8fdfabf7ec102710ce9b6a0a59236a6f60b95c12e84fb1b17a",
+      "method": "Dynamic overlap updates, original circles"
+    },
+    {
+      "candidate": "13a",
+      "file": "submissions/2026-10-26_after_second_bug 2/13a_corrected_grouped_dynamic.csv",
+      "public_score_millions": 70.24,
+      "status": "submitted; user-stated screenshot order",
+      "evaluation": "October 26 current",
+      "sha256": "1d5d69637097ad60e85c0d3b611cd4c6441e63894e96824e137d43e846fbf82d",
+      "method": "Rebuilt grouping plus dynamic overlap updates"
+    },
+    {
+      "candidate": "21a",
+      "file": "submissions/2026-10-26_best20a_catboost_logrf/21a_20a_catboost6863_logrf3137.csv",
+      "public_score_millions": 74.78,
+      "status": "submitted; filename confirmed by user",
+      "evaluation": "screenshot October 26; evaluator-version comparison qualified",
+      "sha256": "64f1ef531e09d99998e2037ce3cfcce239bdbebcf265e67bd26a0e827a7fc8f1",
+      "method": "20a circles + p17b + CatBoost 68.627% / corrected log RF 31.373%; dynamic net benefit/cost"
+    },
+    {
+      "candidate": null,
+      "file": null,
+      "public_score_millions": 74.25,
+      "status": "screenshot result; filename unresolved",
+      "evaluation": "October 26 screenshot 15:34",
+      "sha256": null,
+      "method": null
+    },
+    {
+      "candidate": null,
+      "file": null,
+      "public_score_millions": 74.0,
+      "status": "screenshot result; filename unresolved",
+      "evaluation": "October 26 screenshot 15:34",
+      "sha256": null,
+      "method": null
+    },
+    {
+      "candidate": null,
+      "file": null,
+      "public_score_millions": 74.16,
+      "status": "screenshot result; filename unresolved",
+      "evaluation": "October 26 screenshot 15:25",
+      "sha256": null,
+      "method": null
+    }
+  ]
+}

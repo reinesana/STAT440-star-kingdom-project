@@ -1,5 +1,7 @@
 # STAT 440 – Star Kingdom Pipe Replacement
 
+[提出モデル・スコア・再現資料の統合一覧（10月26日セッション）](reports/2026-10-27_submitted_models.md)
+
 ## Project description — updated October 14, 2026
 
 Star Kingdom has a natural gas network of approximately 43,000 iron, copper, brass and polyurethane pipes. The project replaces every iron pipe with polyurethane during **2027–2051**, using **$10 million per year for 25 years**. We choose circular work areas and their execution order to prevent costly leaks and reduce earthwork costs.
