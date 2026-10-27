@@ -1,0 +1,133 @@
+{
+  "features": [
+    "material",
+    "surface",
+    "pipe_length",
+    "pipe_age",
+    "midpoint_x",
+    "midpoint_y"
+  ],
+  "categories": {
+    "material": [
+      "brass",
+      "cast iron",
+      "copper",
+      "gray iron",
+      "polyurethane",
+      "wrought iron"
+    ],
+    "surface": [
+      "farmland",
+      "grassland",
+      "road",
+      "structure",
+      "swamp",
+      "water"
+    ]
+  },
+  "history_cutoff": "2026-12-31",
+  "prediction_window": [
+    2027,
+    2028
+  ],
+  "maximum_advance": 3000,
+  "priority_fraction": 0.2,
+  "priority_threshold": 3625.0651595817003,
+  "advanced_units": 5497,
+  "validation": [
+    {
+      "role": "risk",
+      "candidate": 0,
+      "year": 2025,
+      "metric": "log_loss",
+      "value": 0.2119091621266826,
+      "average_precision": 0.19599803517177544,
+      "observed_rate": 0.05255357619231111,
+      "predicted_rate": 0.03280269496503951
+    },
+    {
+      "role": "risk",
+      "candidate": 0,
+      "year": 2026,
+      "metric": "log_loss",
+      "value": 0.3126599098998365,
+      "average_precision": 0.3691451887558175,
+      "observed_rate": 0.09504442497810037,
+      "predicted_rate": 0.03296049394478663
+    },
+    {
+      "role": "risk",
+      "candidate": 1,
+      "year": 2025,
+      "metric": "log_loss",
+      "value": 0.20768606684746158,
+      "average_precision": 0.2133327378552682,
+      "observed_rate": 0.05255357619231111,
+      "predicted_rate": 0.027104907640175088
+    },
+    {
+      "role": "risk",
+      "candidate": 1,
+      "year": 2026,
+      "metric": "log_loss",
+      "value": 0.3068667569096808,
+      "average_precision": 0.368730917455076,
+      "observed_rate": 0.09504442497810037,
+      "predicted_rate": 0.034005350091952664
+    },
+    {
+      "role": "cost",
+      "candidate": 0,
+      "year": 2025,
+      "metric": "RMSE",
+      "value": 115056.51738030145
+    },
+    {
+      "role": "cost",
+      "candidate": 0,
+      "year": 2026,
+      "metric": "RMSE",
+      "value": 129909.56990318777
+    },
+    {
+      "role": "cost",
+      "candidate": 1,
+      "year": 2025,
+      "metric": "RMSE",
+      "value": 115200.8963217701
+    },
+    {
+      "role": "cost",
+      "candidate": 1,
+      "year": 2026,
+      "metric": "RMSE",
+      "value": 131221.86194222307
+    }
+  ],
+  "models": {
+    "risk": {
+      "candidate": 1,
+      "parameters": {
+        "n_estimators": 160,
+        "num_leaves": 15,
+        "min_child_samples": 100
+      },
+      "training_rows": 305561
+    },
+    "cost": {
+      "candidate": 0,
+      "parameters": {
+        "n_estimators": 80,
+        "num_leaves": 7,
+        "min_child_samples": 150
+      },
+      "training_rows": 14113
+    }
+  },
+  "limitations": [
+    "Fixed 2027-2028 priority window; no annual adaptive reorder.",
+    "Validation used for model selection, not untouched final test.",
+    "Priority heuristic; no proven future score improvement.",
+    "Circle risk may overlap; scoring does not claim independent avoided savings."
+  ]
+}
