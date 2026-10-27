@@ -32,7 +32,7 @@ lines=source.read_text().splitlines()
 xy,r=sim.read_units(source)
 inside=sim.containment(xy,r,a,b,lengths)
 value=np.clip(prob*(severity-200*lengths),0,None)
-order=so.order_dynamic(inside,r,pipes,lengths,np.zeros((len(pipes),len(sim.YEARS))),static_value=value,blend=1.)
+order=so.order_dynamic(inside,r,pipes,lengths,np.zeros((len(pipes),len(sim.YEARS))),static_value=value,blend=1.,legacy_cost=True)
 content='\n'.join(lines[k] for k in order)+'\n'
 expected=(HERE/'21a_20a_catboost6863_logrf3137.csv').read_text()
 assert content==expected, 'Reproduced order differs'
@@ -40,7 +40,7 @@ assert Counter(content.splitlines())==Counter(lines)
 assert content.encode()==(HERE/'21a_20a_catboost6863_logrf3137.csv').read_bytes().replace(b'\r\n',b'\n')
 output=HERE/'21a.reproduced.csv';output.write_text(content,encoding='utf-8',newline='\n')
 history=pd.read_csv(ROOT/'data/train.csv',dtype={'Pipe ID':str})
-rep=validate(output,pipes,history,a,b,(a+b)/2,lengths,pipes.Material.isin(IRON).to_numpy())
+rep=validate(output,pipes,history,a,b,(a+b)/2,lengths,pipes.Material.isin(IRON).to_numpy(),legacy_cost=True)
 assert rep['uncovered_iron_count']==0 and rep['completed_by_2051']
 assert abs(rep['construction_cost']-148028948.98)<.01
 print(json.dumps(rep,indent=2))

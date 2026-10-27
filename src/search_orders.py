@@ -34,7 +34,7 @@ def circle_terms(inside, r, pipes, lengths):
     poly = (pipes.mat.eq('polyurethane') | pipes.leak_date.notna()).to_numpy()
     surf = pipes.Surface.to_numpy()
     live = [ids[~poly[ids]] for ids in inside]
-    cost = np.array([100 + (sum(RATES[s] for s in set(surf[ids])) * math.pi * rad**2)**0.85
+    cost = np.array([100 + sum(RATES[s] for s in set(surf[ids])) * (math.pi * rad**2)**0.85
                      + 200 * lengths[lv].sum() for ids, lv, rad in zip(inside, live, r)])
     return live, cost
 
@@ -82,7 +82,7 @@ def order_rolling(live, cost, yc, horizon, decay=0.0, budget=10_000_000, skip=0)
 
 
 def order_dynamic(inside, r, pipes, lengths, value_by_year, decay=0.15, skip=0,
-                  budget=10_000_000, static_value=None, blend=0.0):
+                  budget=10_000_000, static_value=None, blend=0.0, legacy_cost=False):
     """Year-by-year greedy that also updates overlapping circles after each pick.
 
     Within a year, circles are chosen by (value of still-unreplaced pipes) /
@@ -93,8 +93,12 @@ def order_dynamic(inside, r, pipes, lengths, value_by_year, decay=0.15, skip=0,
     """
     import heapq
     surf = pipes.Surface.to_numpy()
-    area = np.array([sum(RATES[s] for s in set(surf[ids])) * math.pi * rad**2
-                     for ids, rad in zip(inside, r)])**0.85 + 100
+    area = np.array([sum(RATES[s] for s in set(surf[ids])) * (math.pi * rad**2)**0.85
+                     for ids, rad in zip(inside, r)]) + 100
+    if legacy_cost:
+        # Explicit archival reproduction only; never use for new experiments.
+        area = np.array([(sum(RATES[s] for s in set(surf[ids])) * math.pi * rad**2)**0.85
+                         for ids, rad in zip(inside, r)]) + 100
     state = (pipes.mat.eq('polyurethane') | pipes.leak_date.notna()).to_numpy().copy()
     reverse = [[] for _ in range(len(pipes))]
     for j, ids in enumerate(inside):
@@ -158,7 +162,7 @@ def extra_metal_circles(inside, pipes, a, b, yc, margin=1e-6):
         covered[ids] = True
     lengths = pipes.len.to_numpy()
     rate = pipes.Surface.map(RATES).to_numpy()
-    cost = 100 + (rate * math.pi * (lengths / 2)**2)**0.85 + 200 * lengths
+    cost = 100 + rate * (math.pi * (lengths / 2)**2)**0.85 + 200 * lengths
     pick = (pipes.mat.isin(['copper', 'brass']) & pipes.leak_date.isna()).to_numpy() & ~covered
     pick &= yc.sum(1) > cost
     idx = np.where(pick)[0]

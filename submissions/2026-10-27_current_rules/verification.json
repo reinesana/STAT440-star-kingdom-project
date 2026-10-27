@@ -1,0 +1,14 @@
+{
+  "cost_model_version": "2026-10-26-area-exponent",
+  "team_13a_independent_validator_matches": true,
+  "team_13a_construction_cost": 192591377.43,
+  "team_13a_completion_year": 2046,
+  "corrected_21a_simulator_validator_agree": true,
+  "official_public_score": null,
+  "sha256": {
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "src\\rebuild_current_21a.py": "0b18c4731e0fc409c553f39c1db6565c7d6c39a15af4a13b0e16857a128eb260",
+    "submissions\\2026-10-27_current_rules\\21a_corrected_order.csv": "069e4fbb8478fde858a6f18ecb3b461bc986bfe6549825f6bf2eb4e1f6d92331"
+  }
+}

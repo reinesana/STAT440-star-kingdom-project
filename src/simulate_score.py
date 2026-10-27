@@ -245,9 +245,9 @@ def containment(xy, r, a, b, lengths):
 def simulate(inside, r, pipes, lengths, h, pools, sims, seed=0, lag=0):
     rng = np.random.default_rng(seed)
     surf = pipes.Surface.to_numpy()
-    area_rate = np.array([sum(RATES[s] for s in set(surf[ids])) * math.pi * rad**2
+    area_rate = np.array([sum(RATES[s] for s in set(surf[ids])) * (math.pi * rad**2)**0.85
                           for ids, rad in zip(inside, r)])
-    surface_term = area_rate**0.85
+    surface_term = area_rate  # 2026-10-26: exponent applies to area only
     start_poly = (pipes.mat.eq('polyurethane') | pipes.leak_date.notna()).to_numpy()
     metal = ~pipes.mat.eq('polyurethane').to_numpy()
     iron = pipes.mat.isin(IRON).to_numpy()
@@ -285,7 +285,7 @@ def simulate(inside, r, pipes, lengths, h, pools, sims, seed=0, lag=0):
         feasible = cursor == len(inside)
         leaks = np.where((first < replaced_year + lag) & (first < len(YEARS)) & metal)[0]
         repair = leak_cost[leaks].sum()
-        results.append(dict(construction=construction, repair=repair, leaks=len(leaks),
+        results.append(dict(cost_model_version='2026-10-26-area-exponent', construction=construction, repair=repair, leaks=len(leaks),
                             score=250_000_000 - construction - repair, feasible=feasible,
                             iron_leaks=int(iron[leaks].sum()), finish=2027 + yi))
     return pd.DataFrame(results)

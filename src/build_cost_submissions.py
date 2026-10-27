@@ -43,7 +43,7 @@ def containment(units, tree, a, b):
     return result
 
 
-def validate(path, pipes, history, a, b, mid, lengths, target):
+def validate(path, pipes, history, a, b, mid, lengths, target, legacy_cost=False):
     units = read_units(path)
     inside = containment(units, cKDTree(mid), a, b)
     covered = np.zeros(len(pipes), bool)
@@ -64,7 +64,10 @@ def validate(path, pipes, history, a, b, mid, lengths, target):
                 skipped += 1
                 continue
             rate = sum(RATES[s] for s in set(pipes.Surface.iloc[ids]))
-            raw = 100 + (rate*math.pi*units[cursor][1]**2)**.85 + 200*lengths[replace].sum()
+            raw = 100 + rate*(math.pi*units[cursor][1]**2)**.85 + 200*lengths[replace].sum()
+            if legacy_cost:
+                # Explicit archival reproduction only.
+                raw = 100 + (rate*math.pi*units[cursor][1]**2)**.85 + 200*lengths[replace].sum()
             cost = int(Decimal(str(raw)).quantize(Decimal('.01'), rounding=ROUND_HALF_UP)*100)
             if cost > budget:
                 break
@@ -83,6 +86,7 @@ def validate(path, pipes, history, a, b, mid, lengths, target):
                   completed_by_2051=True, completion_year=year, construction_cost=total/100,
                   no_future_leak_score=250_000_000-total/100, skipped_units=skipped,
                   scenario='No future leaks; NOT an estimated official score',
+                  cost_model_version=('legacy-product-exponent' if legacy_cost else '2026-10-26-area-exponent'),
                   annual_execution=annual, radius_margin_m=MARGIN_M,
                   sha256=digest(path), exported_csv_reparsed=True)
     path.with_suffix('.validation.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
@@ -124,7 +128,7 @@ def main():
     for (_, radius), ids in zip(units, inside):
         active = ids[~initial[ids]]
         rate = sum(RATES[s] for s in set(pipes.Surface.iloc[ids]))
-        construction.append(0 if not len(active) else 100+(rate*math.pi*radius**2)**.85+200*lengths[active].sum())
+        construction.append(0 if not len(active) else 100+rate*(math.pi*radius**2)**.85+200*lengths[active].sum())
     construction = np.array(construction)
     configurations = [('01_catboost_risk','takito_catboost','risk'),
                       ('02_stable_risk','ensemble_stable','risk'),

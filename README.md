@@ -66,6 +66,10 @@ Submit a CSV with **no header**, one work unit per line:
 - For straight pipes, check that **both endpoints** are inside. Checking only the midpoint is insufficient.
 - Validate coverage again after exporting the CSV, accounting for numerical precision.
 
+## Current experiment rules — October 26 correction
+
+Use the corrected formula below for all new experiments. [Current rules and migration](docs/current_rules.md) supersede the cost formula in the archived October 14 specification. The merged team rebuild is in `submissions/2026-10-26_after_second_bug 2/`. Earlier plans and validation JSON are historical artifacts: revalidate or rebuild into a new dated directory before comparing them.
+
 ## Work-unit cost
 
 | Component | Rate |
@@ -87,7 +91,7 @@ surface_rate = sum of rates for distinct surface types among all wholly containe
 replacement_length = total length of currently non-polyurethane wholly contained pipes
 
 cost = round_to_cents(
-    100 + (surface_rate * area)^0.85 + 200 * replacement_length
+    100 + surface_rate * area^0.85 + 200 * replacement_length
 )
 ```
 
@@ -279,13 +283,13 @@ EDA documentation
 
 工事費 =
     100
-    + (地表単価の合計 × 円の面積)^0.85
+    + 地表単価の合計 × 円の面積^0.85
     + 200 × 交換する管の合計長さ
 ```
 
 最後に、工事費をセント単位に丸めます。
 
-地表工事費は少し特殊です。例えば円の中に草地と道路の管があれば、単価を `3 + 17 = 20` として、**円全体の面積**に掛けます。その結果を0.85乗します。
+地表工事費は少し特殊です。例えば円の中に草地と道路の管があれば、単価を `3 + 17 = 20` として、**円全体の面積**に掛けます。面積だけを0.85乗してから単価を掛けます。
 
 草地の管が何本あっても、草地の単価は1回だけ足します。一方、建物の管が1本でも完全に含まれると、建物の単価50が加わります。
 

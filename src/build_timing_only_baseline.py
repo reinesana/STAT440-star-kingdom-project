@@ -118,7 +118,7 @@ def main():
                 continue
             rate = sum(RATES[s] for s in set(pipes.Surface.iloc[inside]))
             radius = circles[next_unit][1]
-            raw = 100 + (rate * math.pi * radius ** 2) ** 0.85 + 200 * lengths[replace].sum()
+            raw = 100 + rate * (math.pi * radius ** 2) ** 0.85 + 200 * lengths[replace].sum()
             cents = int(Decimal(str(raw)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP) * 100)
             if cents > budget_cents:
                 break
@@ -149,6 +149,7 @@ def main():
         'work_unit_count': len(circles), 'uncovered_iron_count': int((target & ~covered).sum()),
         'uncovered_unknown_count': int((unknown & ~covered).sum()),
         'scenario': 'No future leaks; historical leak pipes start as polyurethane.',
+        'cost_model_version': '2026-10-26-area-exponent',
         'rounding': 'Nearest cent, ties half up; budget uses integer cents.',
         'completed_by_2051': finished,
         'completion_year': annual[-1]['year'] if finished else None,

@@ -46,7 +46,7 @@ def shifted_circles(pipes, a, b, lengths, min_saving=1.0):
         return ids[(np.linalg.norm(a[ids] - c, axis=1) <= r) & (np.linalg.norm(b[ids] - c, axis=1) <= r)]
 
     def cost(ids, r):
-        return 100 + (sum(RATES[s] for s in set(surf[ids])) * math.pi * r * r) ** 0.85 \
+        return 100 + sum(RATES[s] for s in set(surf[ids])) * (math.pi * r * r) ** 0.85 \
             + 200 * lengths[ids[live[ids] & ~iron[ids]]].sum()
 
     out = {}

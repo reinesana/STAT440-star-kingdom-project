@@ -74,7 +74,7 @@ def main():
     for (_, radius), ids in zip(units, inside):
         active = ids[~initial[ids]]
         rate = sum(RATES[s] for s in set(pipes.Surface.iloc[ids]))
-        construction.append(0 if not len(active) else 100+(rate*math.pi*radius**2)**.85+200*lengths[active].sum())
+        construction.append(0 if not len(active) else 100+rate*(math.pi*radius**2)**.85+200*lengths[active].sum())
     construction = np.array(construction)
 
     costs = pd.read_csv(COST, dtype={'id': str})
@@ -91,7 +91,8 @@ def main():
     write_units(check, units, order_units(priority_06, unit_ids))
     reproduced = digest(check) == digest(CANDIDATE_06)
     check.unlink()
-    assert reproduced, 'Candidate 06 not reproduced; pipeline differs from 2026-10-13 build'
+    # Old candidate 06 used the pre-October-26 formula; hash equality is no longer expected.
+    print('Historical candidate 06 hash matches:', reproduced)
 
     leak = pd.read_csv(LEAK, dtype={'pipe_id': str}).set_index('pipe_id')
     assert leak.index.is_unique and set(leak.index) == set(pipes['Pipe ID']) and leak.year.eq(2027).all()

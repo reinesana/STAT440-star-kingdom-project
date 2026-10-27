@@ -84,7 +84,7 @@ def planned_years(path, pipes, a, b, lengths):
             if not len(rep):
                 cur += 1
                 continue
-            cost = 100 + (sum(RATES[s] for s in set(surf[ids])) * math.pi * r[cur] ** 2) ** 0.85 + 200 * lengths[rep].sum()
+            cost = 100 + sum(RATES[s] for s in set(surf[ids])) * (math.pi * r[cur] ** 2) ** 0.85 + 200 * lengths[rep].sum()
             if cost > budget:
                 break
             budget -= cost
@@ -112,7 +112,7 @@ def merge_same_year(pipes, a, b, lengths, xy, r, year, executes, slack=1.3, max_
         return ids[(np.linalg.norm(a[ids] - c, axis=1) <= rad) & (np.linalg.norm(b[ids] - c, axis=1) <= rad)]
 
     def fixed_term(ids, rad):
-        return 0.0 if not live[ids].any() else 100 + (sum(RATES[s] for s in set(surf[ids])) * math.pi * rad ** 2) ** 0.85
+        return 0.0 if not live[ids].any() else 100 + sum(RATES[s] for s in set(surf[ids])) * (math.pi * rad ** 2) ** 0.85
 
     inside = [contained(c, rad) for c, rad in zip(xy, r)]
     cover = np.zeros(len(pipes), int)
