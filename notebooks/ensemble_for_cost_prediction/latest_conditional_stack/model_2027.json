@@ -1,0 +1,227 @@
+{
+  "model_id": "conditional_material_surface_rmse",
+  "model_version": "2026-10-28",
+  "forecast_year": 2027,
+  "prediction_target": "repair cost conditional on a leak, original dollars",
+  "base_columns": [
+    "takito_catboost",
+    "anthony_rf_log_mean",
+    "rion_lgb_log_mean_refit"
+  ],
+  "training_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "training_rows": 8592,
+  "category_key_format": "material + \" | \" + surface",
+  "parameters": {
+    "dimension": "material_surface",
+    "minimum_group_rows": 50,
+    "global_weights": [
+      0.686270116974983,
+      0.31372988302501703,
+      0.0
+    ],
+    "groups": {
+      "brass | grassland": {
+        "n": 113,
+        "local_weights": [
+          0.0,
+          0.5129759764373183,
+          0.48702402356268176
+        ]
+      },
+      "brass | structure": {
+        "n": 185,
+        "local_weights": [
+          0.2381568035329274,
+          0.37529439604665976,
+          0.38654880042041284
+        ]
+      },
+      "cast iron | farmland": {
+        "n": 153,
+        "local_weights": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cast iron | grassland": {
+        "n": 486,
+        "local_weights": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cast iron | road": {
+        "n": 104,
+        "local_weights": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "cast iron | structure": {
+        "n": 307,
+        "local_weights": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cast iron | swamp": {
+        "n": 65,
+        "local_weights": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cast iron | water": {
+        "n": 986,
+        "local_weights": [
+          0.0,
+          0.10853536245083924,
+          0.8914646375491608
+        ]
+      },
+      "gray iron | grassland": {
+        "n": 108,
+        "local_weights": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "gray iron | road": {
+        "n": 93,
+        "local_weights": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "gray iron | structure": {
+        "n": 89,
+        "local_weights": [
+          0.7152258709912814,
+          0.0,
+          0.2847741290087186
+        ]
+      },
+      "gray iron | water": {
+        "n": 155,
+        "local_weights": [
+          0.08356884105843207,
+          0.9164311589415679,
+          0.0
+        ]
+      },
+      "wrought iron | farmland": {
+        "n": 1639,
+        "local_weights": [
+          0.2677127600336867,
+          0.7322872399663134,
+          0.0
+        ]
+      },
+      "wrought iron | grassland": {
+        "n": 1539,
+        "local_weights": [
+          0.0014891909082717855,
+          0.8702453973555377,
+          0.12826541173619055
+        ]
+      },
+      "wrought iron | road": {
+        "n": 277,
+        "local_weights": [
+          0.8443712193121746,
+          0.0,
+          0.15562878068782537
+        ]
+      },
+      "wrought iron | structure": {
+        "n": 206,
+        "local_weights": [
+          0.5648945801672693,
+          0.43510541983273066,
+          0.0
+        ]
+      },
+      "wrought iron | swamp": {
+        "n": 297,
+        "local_weights": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "wrought iron | water": {
+        "n": 1675,
+        "local_weights": [
+          0.0,
+          0.8307042509489369,
+          0.16929574905106312
+        ]
+      }
+    },
+    "tau": 50.0,
+    "selection": {
+      "objective": "rmse",
+      "selected": 50.0,
+      "default_without_earlier_validation": 200.0,
+      "trials": [
+        {
+          "value": 0.0,
+          "validation_years": [
+            2024,
+            2025,
+            2026
+          ],
+          "mean_loss": 112804.31819951157
+        },
+        {
+          "value": 50.0,
+          "validation_years": [
+            2024,
+            2025,
+            2026
+          ],
+          "mean_loss": 112760.63224243505
+        },
+        {
+          "value": 200.0,
+          "validation_years": [
+            2024,
+            2025,
+            2026
+          ],
+          "mean_loss": 112852.69330205601
+        },
+        {
+          "value": 1000.0,
+          "validation_years": [
+            2024,
+            2025,
+            2026
+          ],
+          "mean_loss": 112981.16093252902
+        },
+        {
+          "value": 1000000000.0,
+          "validation_years": [
+            2024,
+            2025,
+            2026
+          ],
+          "mean_loss": 113047.50416448864
+        }
+      ]
+    }
+  }
+}

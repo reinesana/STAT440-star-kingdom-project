@@ -1,6 +1,8 @@
 # Repair cost prediction: single-model and ensemble candidates
 
-CatBoost is now an explicit candidate: it has the best single-model RMSE. The shrinkage ensemble remains the budget-focused default because it has smaller annual total bias. The candidate set has been expanded without automatically replacing that default.
+**Current recommendation, 28 October 2026:** use the [material × surface conditional convex stack](latest_conditional_stack/METHOD.en.md) when prioritizing RMSE and smaller observed worst-year deterioration relative to CatBoost. This user-approved recommendation supersedes the historical default below. Ridge has the best mean RMSE in the new common-year comparison, while equal-three has smaller total bias; the recommendation is a stability-oriented tradeoff, not universal superiority. The new model has no official planning score.
+
+The remaining sections preserve the earlier candidate study and its 2023–2026 scope. CatBoost had the best single-model RMSE in that study; the shrinkage ensemble was its budget-focused default because it had smaller annual total bias. Its historical exports and four-year results have not been overwritten by the new three-year study.
 
 ## Observed evaluation results
 
@@ -29,7 +31,7 @@ Ten components, each weighted 10%. Lowest mean annual RMSE among the ensembles.
 
 CSV: [predictions/ensemble_equal.csv](predictions/ensemble_equal.csv)
 
-### Shrinkage ensemble (budget-focused default)
+### Shrinkage ensemble (historical budget-focused default)
 50% regularized past-OOF RMSE weights + 50% equal weights. Every component has at least 5% weight. Lowest mean and worst absolute annual total bias among compared candidates.
 
 CSV: [predictions/ensemble_stable.csv](predictions/ensemble_stable.csv)

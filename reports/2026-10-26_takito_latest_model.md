@@ -1,10 +1,12 @@
-# Takito latest model and replacement plan — 26 October 2026
+# Historical Takito model and replacement plan — 26 October 2026
+
+> Updated navigation, 28 October 2026: the current recommended **repair-cost predictor** is the [material × surface conditional stack](../notebooks/ensemble_for_cost_prediction/latest_conditional_stack/README.md). This dated report preserves the 21a artifact and its historical evaluator evidence; its scores do not belong to the new predictor. The new predictor has no official planning evaluation. 最新の修理費モデルはリンク先に更新し、以下は過去の提出記録として保持しています。
 
 ## Result and evidence
 
 The user-supplied evaluator screenshot shows **Takito: $74.78M at 15:42 on 26 October 2026**, the highest value among the visible rows. Other visible Takito results are $74.25M and $74.00M at 15:34 and $74.16M at 15:25. The screenshot does not show uploaded filenames. The user subsequently confirmed that this is the result of **21a_20a_catboost6863_logrf3137.csv**. The filename association is user-confirmed. The screenshot is user-provided evidence, not a fresh evaluator query or proof of a global leaderboard rank. Times are copied from the screenshot without timezone conversion.
 
-The latest locally prepared candidate is **21a_20a_catboost6863_logrf3137.csv**. Its code, frozen predictions, audit tables and existing validation outputs are published together in [the submission folder](../submissions/2026-10-26_best20a_catboost_logrf/). No further evaluator submission was made for this report.
+The locally prepared candidate documented on 26 October was **21a_20a_catboost6863_logrf3137.csv**. Its code, frozen predictions, audit tables and existing validation outputs are published together in [the submission folder](../submissions/2026-10-26_best20a_catboost_logrf/). No further evaluator submission was made for this report.
 
 ## Process
 

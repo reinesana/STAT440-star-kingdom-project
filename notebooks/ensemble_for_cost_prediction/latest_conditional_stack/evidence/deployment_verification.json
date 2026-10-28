@@ -1,0 +1,82 @@
+{
+  "training_cutoff_exclusive": "2027-01-01",
+  "base_training_rows": 14113,
+  "base_training_years": [
+    2019,
+    2026
+  ],
+  "meta_training_oof_rows": 8592,
+  "meta_training_oof_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "forecast_year": 2027,
+  "forecast_pipes": 27240,
+  "fixed_selected_hyperparameters": true,
+  "new_hyperparameter_search": false,
+  "independent_base_refits": {
+    "takito_catboost": {
+      "training_rows": 14113,
+      "training_years": [
+        2019,
+        2026
+      ],
+      "max_training_year": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ],
+      "max_abs_difference_vs_original_forecast": 1.1641532182693481e-10,
+      "refit_from_scratch": true,
+      "smearing_factor": 1.0
+    },
+    "anthony_rf_log_mean": {
+      "training_rows": 14113,
+      "training_years": [
+        2019,
+        2026
+      ],
+      "max_training_year": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ],
+      "max_abs_difference_vs_original_forecast": 1.0477378964424133e-09,
+      "refit_from_scratch": true,
+      "smearing_factor": 2.3423682660509533
+    },
+    "rion_lgb_log_mean_refit": {
+      "training_rows": 14113,
+      "training_years": [
+        2019,
+        2026
+      ],
+      "max_training_year": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ],
+      "max_abs_difference_vs_original_forecast": 8.731149137020111e-11,
+      "refit_from_scratch": true,
+      "smearing_factor": 2.1890644588280925
+    }
+  },
+  "full_reloaded_model_forecast_reproduction": true,
+  "full_reversed_query_check": true,
+  "fitted_model_sha256": "03a5077a7bfffaa2a21a0da1194e2b1bdebb6f8146806e920895a3c30f018ecc",
+  "fitted_model_bytes": 152386,
+  "training_input_sha256": "99c812818843264a762a7f5e901415af4e339f09b9d3d5dc3c8b7d2a38740ff8",
+  "past_oof_input_sha256": "c485e87add4c712bf9b0b9b4eb0436935b5e436a905e1625e2686ef56b5a6e48",
+  "forecast_feature_input_sha256": "dcb02db7afc655361f82520f96c411551866dbda465928a2a6fc7bcea3258f17",
+  "raw_training_targets_published": false,
+  "prepared_feature_matrices_published": false,
+  "user_authorization": "User explicitly requested pushing the fitted model trained through 2026 and its predictions on 2026-10-28",
+  "actual_fitted_predictor": "Contains all three freshly fitted base estimators, preprocessing, log correction factors and selected conditional meta-model, not weights alone",
+  "official_planning_score": null,
+  "portable_train_entrypoint_executed": true,
+  "conditional_meta_weights_refitted": true,
+  "rebuilt_cli_max_forecast_difference": 1.3096723705530167e-10,
+  "reloaded_canonical_model_all_forecasts_verified": true
+}

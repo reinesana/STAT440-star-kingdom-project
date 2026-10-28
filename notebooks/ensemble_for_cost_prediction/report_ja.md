@@ -1,6 +1,8 @@
 # 修理コスト予測：単一モデルとアンサンブル候補の比較
 
-最良単一モデルのCatBoostを正式な候補に追加しました。RMSEを最優先するならCatBoost、年間総額の偏りを抑えるなら縮小重みアンサンブルが有力です。従来の既定候補は縮小重みのまま保持し、単一モデルを含む候補集合を拡張しました。
+**2026年10月28日更新：最新の推奨モデルは[材質×地表面別・RMSE重視の条件付きstacking](latest_conditional_stack/METHOD.ja.md)です。** 年平均RMSEとCatBoost比の最悪年の悪化幅を考慮し、ユーザーの承認を受けて推奨を更新しました。平均RMSE最良はRidge、総額の偏りでは3モデル等重みが優れるため、すべての指標で最良という意味ではありません。新モデルの公式評価は未実施です。
+
+以下は従来の2023〜2026年比較を履歴として保持しています。この比較ではCatBoostが単体RMSE最良、縮小重みが予算重視の既定候補でした。旧CSVと4年平均の数値は書き換えず、新しい3年比較とは区別します。
 
 ## 評価結果
 
@@ -29,7 +31,7 @@ CSV: [predictions/takito_catboost.csv](predictions/takito_catboost.csv)
 
 CSV: [predictions/ensemble_equal.csv](predictions/ensemble_equal.csv)
 
-### 縮小重みアンサンブル（予算重視の既定候補）
+### 縮小重みアンサンブル（当時の予算重視の既定候補）
 過去OOFのRMSE重みに正則化を加え、その50%と等重み50%を混合。各構成モデルに最低5%の重みを残す。比較候補中で平均・最悪年の総額絶対偏りが最小。
 
 CSV: [predictions/ensemble_stable.csv](predictions/ensemble_stable.csv)

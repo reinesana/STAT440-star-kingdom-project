@@ -1,0 +1,23 @@
+{
+  "github-main\\notebooks\\Takito_Kobayashi\\2026-10-26\\AllModelStacking\\base_oof_2023_2026.csv": "1511de09d9cc05712ec243ee87a4194861479dfe5211ed0c89c3a5cb5bf6b8d1",
+  "github-main\\notebooks\\Takito_Kobayashi\\2026-10-26\\AllModelStacking\\base_predictions_2027.csv": "3078b504f4c1aad9a9cc15fa16225d1fd370e47486d7c0b365db9075c019ee3d",
+  "ensemble_training\\data\\training_rich.csv": "99c812818843264a762a7f5e901415af4e339f09b9d3d5dc3c8b7d2a38740ff8",
+  "ensemble_training\\data\\forecast_features_2027.csv": "dcb02db7afc655361f82520f96c411551866dbda465928a2a6fc7bcea3258f17",
+  "github-main\\notebooks\\Takito_Kobayashi\\2026-10-26\\AllModelStacking\\heldout_predictions_2024_2026.csv": "5d3d4b6e891b3246fdc659fc78016a25cd9c8220b9e8430111619aadb887874b",
+  "github-main\\notebooks\\Takito_Kobayashi\\2026-10-26\\AllModelStacking\\predictions_2027.csv": "d0d6fd5d00ae61b0cb197f15eb34310fba92ae079e28a37f72eca9742f6d52dc",
+  "ensemble_training\\optuna\\results\\configs\\takito_catboost\\2023.json": "c653fd014fa205b2378404e6a3f34a0cad0a9959ec2a3457ff29f6dfef5beeab",
+  "ensemble_training\\optuna\\results\\configs\\takito_catboost\\2024.json": "56f15ddacc780ffb0b718b268ce14771ad781d4092a9281f6a9dd2a8f364ef4c",
+  "ensemble_training\\optuna\\results\\configs\\takito_catboost\\2025.json": "74c8f67b7511ee9b575b574fb82b89db64eb24eb8026766fb7397c6235272d07",
+  "ensemble_training\\optuna\\results\\configs\\takito_catboost\\2026.json": "56f4d516772db9d7b5d78bf25d9f31174e6a2b09f38286c5153e551e423ab370",
+  "ensemble_training\\optuna\\results\\configs\\takito_catboost\\2027.json": "fa06d1c90e81c38dffc93d6e2a924a03b548832d8f4d61e7b84f8e07ac1c265e",
+  "ensemble_training\\optuna\\results\\configs\\anthony_rf_log_mean\\2023.json": "3dea44b4b414ea0f860fa7d5f9bdccb4bf9b2281e9bad4c77edb0a74289ff071",
+  "ensemble_training\\optuna\\results\\configs\\anthony_rf_log_mean\\2024.json": "3d884444b48d1ad161b5ea93a98955795e6ebae4df85f0d4c0f7f78956747236",
+  "ensemble_training\\optuna\\results\\configs\\anthony_rf_log_mean\\2025.json": "932c40b2b8c05c9ce02ff643c36fecb765776913688c7f041a55d60a4fbbdcfb",
+  "ensemble_training\\optuna\\results\\configs\\anthony_rf_log_mean\\2026.json": "90b316d60f060c00cc9a6208fea48b7c441f585bcf593e4f31cf6ac6ec48bec0",
+  "ensemble_training\\optuna\\results\\configs\\anthony_rf_log_mean\\2027.json": "a21c6437b3e9d41bb766e156f5f88199a575bdb625507069164ef6216305e039",
+  "ensemble_training\\optuna\\results\\configs\\rion_lgb_log_mean_refit\\2023.json": "0ded828a89b0aafa1bde2044e9cf01ffe36e99238a367398d501993ad83af348",
+  "ensemble_training\\optuna\\results\\configs\\rion_lgb_log_mean_refit\\2024.json": "cd12472c8e054cfca5e86c8ed07132313b7d406b897885227d5b8efb494f3f50",
+  "ensemble_training\\optuna\\results\\configs\\rion_lgb_log_mean_refit\\2025.json": "629fe99a693d7a750b10d6722d142a1a1a85affd3671d6c37b108285ebd0c9be",
+  "ensemble_training\\optuna\\results\\configs\\rion_lgb_log_mean_refit\\2026.json": "2ab033e00d5a6ebead0bf3529bd1cbf835fd6a6d96f7d0eaee45e1cdf8d35040",
+  "ensemble_training\\optuna\\results\\configs\\rion_lgb_log_mean_refit\\2027.json": "77191e3dc0f70b88bddb6294b14465d4d25e06e64a8a837ada05d299a4fb7be4"
+}
