@@ -1,5 +1,6 @@
 # Latest conditional repair-cost stack: method and comparison
 
+**Model: CMS001 — Material-Surface Cost Stack / 材質・地表面別コストスタック (v1.0.0).** [Current selection](../latest_model.json) · [Model registry](../model_registry.json) · [How to switch](../MODEL_MANAGEMENT.md)
 [日本語](METHOD.ja.md) · [Model and evidence](README.md)
 
 ## Direct comparison with the shared Google Doc's team ensemble

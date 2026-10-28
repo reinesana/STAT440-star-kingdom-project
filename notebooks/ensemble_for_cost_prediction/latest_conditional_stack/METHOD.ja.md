@@ -1,5 +1,6 @@
 # 最新の修理費モデル：仕組み・従来モデルとの比較
 
+**Model: CMS001 — Material-Surface Cost Stack / 材質・地表面別コストスタック (v1.0.0).** [Current selection](../latest_model.json) · [Model registry](../model_registry.json) · [How to switch](../MODEL_MANAGEMENT.md)
 [English](METHOD.en.md) · [モデルと根拠ファイル](README.md)
 
 ## 共有Google Docの「皆で作ったアンサンブル」との直接比較

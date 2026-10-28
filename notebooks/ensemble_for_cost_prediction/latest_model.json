@@ -29,5 +29,11 @@
     2024,
     2025,
     2026
-  ]
+  ],
+  "registry_id": "CMS001",
+  "display_name": "Material-Surface Cost Stack",
+  "display_name_ja": "材質・地表面別コストスタック",
+  "version": "1.0.0",
+  "registry": "model_registry.json",
+  "identity_note": "CMS001 is the stable model identity; model_id retains the technical recipe. Cxxx are separate experiment/submission identifiers."
 }

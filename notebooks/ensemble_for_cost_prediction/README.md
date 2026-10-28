@@ -1,6 +1,6 @@
 # Repair cost model candidates for 2027
 
-**Current recommendation, 28 October 2026:** [material × surface conditional stack — English / 日本語](latest_conditional_stack/README.md). This replaces the recommendation below for stability-oriented conditional repair-amount prediction. [Actual fitted model through 2026](latest_conditional_stack/fitted_model_2027.joblib) · [2027 forecasts](latest_conditional_stack/predictions_2027.csv). It has no official planning score. Historical prediction CSVs retain their original scope and values.
+**Current recommendation: CMS001 — Material-Surface Cost Stack (v1.0.0), 28 October 2026:** [material × surface conditional stack — English / 日本語](latest_conditional_stack/README.md). This replaces the recommendation below for stability-oriented conditional repair-amount prediction. [Actual fitted model through 2026](latest_conditional_stack/fitted_model_2027.joblib) · [2027 forecasts](latest_conditional_stack/predictions_2027.csv). It has no official planning score. Historical prediction CSVs retain their original scope and values.
 
 [English report](report_en.md) · [日本語レポート](report_ja.md)
 
@@ -13,3 +13,5 @@ Training-code snapshots are provided for inspection. They retain their original 
 [Repair-all 2027 scenario totals](evidence/repair_all_2027_totals.csv) · [Inputs and outputs](evidence/model_input_contract.json) · [Per-pipe missing-value flags](evidence/input_quality_by_pipe.csv) · [Input-quality audit](evidence/input_quality_audit.json)
 
 To regenerate the report additions and scenario sums from the committed CSVs, run `python notebooks/ensemble_for_cost_prediction/training_code/update_reports.py` from the repository root (pandas, numpy and tabulate required). This updates documentation and audit tables only; it does not retrain or change predictions.
+
+Model management: [registry](model_registry.json) · [current selection](latest_model.json) · [switching instructions](MODEL_MANAGEMENT.md).

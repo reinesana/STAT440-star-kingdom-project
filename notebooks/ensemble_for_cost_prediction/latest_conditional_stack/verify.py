@@ -73,7 +73,9 @@ def main():
         for trial in record['parameters']['selection']['trials']:
             assert all(y<record['origin'] for y in trial['validation_years'])
         for g in record['parameters']['groups'].values(): assert g['n']>=50
-    metadata=json.loads((HERE.parent/'latest_model.json').read_text())
+    metadata=json.loads((HERE.parent/'latest_model.json').read_text(encoding='utf-8'))
+    registry=json.loads((HERE.parent/'model_registry.json').read_text(encoding='utf-8'))['models']
+    assert registry[metadata['registry_id']]==metadata
     assert metadata['model_id']==c['model_id'] and metadata['official_planning_score'] is None
     import joblib
     fitted=joblib.load(HERE/'fitted_model_2027.joblib')

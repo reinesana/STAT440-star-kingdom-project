@@ -1,5 +1,6 @@
 # 最新の推奨修理費モデル — 2026年10月28日
 
+**Model: CMS001 — Material-Surface Cost Stack / 材質・地表面別コストスタック (v1.0.0).** [Current selection](../latest_model.json) · [Model registry](../model_registry.json) · [How to switch](../MODEL_MANAGEMENT.md)
 [日本語：仕組み・従来比較・旧手動補正の扱い](METHOD.ja.md) · [English methods](METHOD.en.md)
 
 **最新の推奨は、材質×地表面別・RMSE重視の条件付きstacking。** CatBoost・平均補正あり対数RF・平均補正あり対数LightGBMを組み合わせ、漏水した場合の修理金額を予測する。

@@ -424,11 +424,11 @@ remain unchanged. Full definitions, limitations and rebuild instructions are in
 [the Japanese addendum](data/train_predict_cost_jpn.md), and
 [the feature dictionary](data/train_predict_cost_feature_dictionary_2026-10-05.md).
 
-## Latest recommended repair-cost model — 28 October 2026
+## Latest recommended repair-cost model — CMS001 (28 October 2026)
 
 **共有Google Docのチームアンサンブルとも直接比較済み。** Docに記載されたXGBoost・CatBoost・LightGBM各1/3の漏水確率モデルに対し、最新時間モデルF168は同一132,121管年の平均Brierを**9.47%改善**（0.050400 → 0.045625）し、平均PR-AUCと年間漏水件数の平均絶対偏りも改善しました。2023年のBrierと平均log lossでは従来モデルが良好です。[対象・年別結果・限界](notebooks/ensemble_for_cost_prediction/latest_conditional_stack/METHOD.ja.md#共有google-docの皆で作ったアンサンブルとの直接比較)。この時間モデルの比較と、以下の修理費モデルの比較は別です。
 
-**The current stability-oriented recommendation is material × surface conditional convex stacking** over CatBoost, corrected log RF and corrected log LightGBM. It predicts repair amount conditional on a leak. On the same 6,766 events in 2024–2026, mean annual RMSE is **$112,943.12** and MAE is **$23,375.50**. RMSE is lower than all 24 saved earlier repair-cost recipes: 0.77% better than the stable ensemble and 0.58% better than the 15-input optimized stack. The newly tested Ridge still has lower mean RMSE; equal-three has smaller total bias. This recommendation balances accuracy with observed worst-year relative deterioration, not every metric or official planning score.
+**The current stability-oriented recommendation is CMS001 (Material-Surface Cost Stack), a material × surface conditional convex stack** over CatBoost, corrected log RF and corrected log LightGBM. It predicts repair amount conditional on a leak. On the same 6,766 events in 2024–2026, mean annual RMSE is **$112,943.12** and MAE is **$23,375.50**. RMSE is lower than all 24 saved earlier repair-cost recipes: 0.77% better than the stable ensemble and 0.58% better than the 15-input optimized stack. The newly tested Ridge still has lower mean RMSE; equal-three has smaller total bias. This recommendation balances accuracy with observed worst-year relative deterioration, not every metric or official planning score.
 
 [Latest model: English / 日本語](notebooks/ensemble_for_cost_prediction/latest_conditional_stack/README.md) · [English methods](notebooks/ensemble_for_cost_prediction/latest_conditional_stack/METHOD.en.md) · [日本語の説明](notebooks/ensemble_for_cost_prediction/latest_conditional_stack/METHOD.ja.md).
 
