@@ -1,0 +1,39 @@
+{
+  "updated": "2026-10-28",
+  "model_id": "conditional_material_surface_rmse",
+  "status": "user-approved stability-oriented recommendation; official planning evaluation pending",
+  "target": "conditional repair amount; not leak probability or a work-unit submission",
+  "directory": "latest_conditional_stack",
+  "config": "latest_conditional_stack/model_2027.json",
+  "predictions": "latest_conditional_stack/predictions_2027.csv",
+  "schema": [
+    "pipe_id",
+    "predicted_repair_cost"
+  ],
+  "supported_forecast_pipes": 27240,
+  "mean_annual_RMSE": 112943.12407343672,
+  "mean_annual_MAE": 23375.49526099346,
+  "selection_note": "Post-validation user choice balancing RMSE and observed relative worst-year deterioration; not lowest mean RMSE or lowest total bias",
+  "best_mean_RMSE_recipe": "ridge_selected_rmse",
+  "official_planning_score": null,
+  "fitted_model": "latest_conditional_stack/fitted_model_2027.joblib",
+  "base_training_rows": 14113,
+  "base_training_years": [
+    2019,
+    2026
+  ],
+  "base_models_freshly_refitted": true,
+  "meta_training_rows": 8592,
+  "meta_training_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "registry_id": "CMS001",
+  "display_name": "Material-Surface Cost Stack",
+  "display_name_ja": "材質・地表面別コストスタック",
+  "version": "1.0.0",
+  "registry": "model_registry.json",
+  "identity_note": "CMS001 is the stable model identity; model_id retains the technical recipe. Cxxx are separate experiment/submission identifiers."
+}

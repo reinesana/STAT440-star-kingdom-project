@@ -1,0 +1,18 @@
+{
+  "verification_pass": true,
+  "original_iron": 38455,
+  "active_iron": 26237,
+  "already_replaced_iron": 12218,
+  "all_active_targets_exactly_once": true,
+  "all_original_targets_exactly_once": true,
+  "work_unit_CSV_matches_official_73_71_exact_SHA256": true,
+  "independent_shared_validator_pass": true,
+  "rank_years_and_total_cost_reconciled": true,
+  "training_reused_through_2026": true,
+  "new_training_not_claimed": true,
+  "no_raw_train_or_features_copied": true,
+  "only_source_models": [
+    "CMS001",
+    "F168"
+  ]
+}

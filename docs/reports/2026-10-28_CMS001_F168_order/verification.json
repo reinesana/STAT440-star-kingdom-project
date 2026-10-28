@@ -1,0 +1,42 @@
+{
+  "verification_pass": true,
+  "model_training_cutoff": "2026-12-31",
+  "forecast_origin": 2027,
+  "raw_training_records": 14113,
+  "pipe_inventory": 43039,
+  "original_iron": 38455,
+  "active_iron": 26237,
+  "already_replaced_original_iron": 12218,
+  "work_units": 38455,
+  "completion_year_no_future_leaks": 2046,
+  "construction_cost_no_future_leaks": 192907258.31,
+  "all_iron_covered": true,
+  "completed_by_2051": true,
+  "source_only": [
+    "CMS001",
+    "F168"
+  ],
+  "inherited_12a_order_or_years": false,
+  "submission_sha256": "5c092bfa45a3872bad57830e8be16f28a36bfb430f2021f2fb4d04ecad47d7e4",
+  "cost_fallback_ids": [
+    "P09986",
+    "P09987",
+    "P42036",
+    "P42037",
+    "P42038",
+    "P42039",
+    "P42040",
+    "P42041"
+  ],
+  "cost_fallback_value": 6363.980157982212,
+  "official_public_M": 73.71,
+  "official_private_M": null,
+  "official_result_source": "user confirmed submission order plus screenshot2026-10-28; sourceCSV exact SHA256 matched",
+  "training_reused_not_rerun": true,
+  "input_sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "inputs\\CMS001_predictions_2027.csv": "01c194da1c12c3d76ad0c8744c63b36cfaa071659de14484496758dd57f2a422",
+    "inputs\\F168_curves_2027.npz": "ceb27cd2552da76574fdd1d11c5f72666ccc67d7cda64a36f7f37d2f92536cdc"
+  }
+}

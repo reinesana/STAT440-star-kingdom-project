@@ -1,0 +1,171 @@
+{
+  "regime": "optuna_base",
+  "method": "stack_ridge",
+  "model": "all",
+  "k": 10,
+  "pool": "hazard_stack",
+  "optimization": "optuna",
+  "forecast_id": "F168",
+  "origin": 2027,
+  "meta_training_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "max_meta_label_year": 2026,
+  "stacking": {
+    "params": {
+      "alpha": 7308.877234445037
+    },
+    "trials": [
+      {
+        "number": 0,
+        "value": 0.06641905648987882,
+        "datetime_start": "2026-10-27 12:59:37.069197",
+        "datetime_complete": "2026-10-27 12:59:37.138302",
+        "duration": "0 days 00:00:00.069105",
+        "params_alpha": 0.033882844938214335,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 1,
+        "value": 0.06639330189468262,
+        "datetime_start": "2026-10-27 12:59:37.138328",
+        "datetime_complete": "2026-10-27 12:59:37.205175",
+        "duration": "0 days 00:00:00.066847",
+        "params_alpha": 244.64591639744725,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 2,
+        "value": 0.06641056848047476,
+        "datetime_start": "2026-10-27 12:59:37.205208",
+        "datetime_complete": "2026-10-27 12:59:37.271237",
+        "duration": "0 days 00:00:00.066029",
+        "params_alpha": 79.65638793073461,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 3,
+        "value": 0.06641114466034362,
+        "datetime_start": "2026-10-27 12:59:37.271270",
+        "datetime_complete": "2026-10-27 12:59:37.338703",
+        "duration": "0 days 00:00:00.067433",
+        "params_alpha": 74.2251376217879,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 4,
+        "value": 0.06641572837089749,
+        "datetime_start": "2026-10-27 12:59:37.338731",
+        "datetime_complete": "2026-10-27 12:59:37.405653",
+        "duration": "0 days 00:00:00.066922",
+        "params_alpha": 31.13742851537808,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 5,
+        "value": 0.06641905640866412,
+        "datetime_start": "2026-10-27 12:59:37.405681",
+        "datetime_complete": "2026-10-27 12:59:37.473575",
+        "duration": "0 days 00:00:00.067894",
+        "params_alpha": 0.034639952480949913,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 6,
+        "value": 0.06601262003457897,
+        "datetime_start": "2026-10-27 12:59:37.473612",
+        "datetime_complete": "2026-10-27 12:59:37.542215",
+        "duration": "0 days 00:00:00.068603",
+        "params_alpha": 5258.130306334449,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 7,
+        "value": 0.06641484509459557,
+        "datetime_start": "2026-10-27 12:59:37.542250",
+        "datetime_complete": "2026-10-27 12:59:37.607921",
+        "duration": "0 days 00:00:00.065671",
+        "params_alpha": 39.41848012094506,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 8,
+        "value": 0.0661078994596426,
+        "datetime_start": "2026-10-27 12:59:37.607958",
+        "datetime_complete": "2026-10-27 12:59:37.672418",
+        "duration": "0 days 00:00:00.064460",
+        "params_alpha": 3673.7774485459386,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 9,
+        "value": 0.06625325687594093,
+        "datetime_start": "2026-10-27 12:59:37.672452",
+        "datetime_complete": "2026-10-27 12:59:37.738286",
+        "duration": "0 days 00:00:00.065834",
+        "params_alpha": 1740.7846744784038,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 10,
+        "value": 0.06641895418679222,
+        "datetime_start": "2026-10-27 12:59:37.738320",
+        "datetime_complete": "2026-10-27 12:59:37.804509",
+        "duration": "0 days 00:00:00.066189",
+        "params_alpha": 0.9876559619902221,
+        "state": "COMPLETE"
+      },
+      {
+        "number": 11,
+        "value": 0.06591157470560385,
+        "datetime_start": "2026-10-27 12:59:37.804544",
+        "datetime_complete": "2026-10-27 12:59:37.870010",
+        "duration": "0 days 00:00:00.065466",
+        "params_alpha": 7308.877234445037,
+        "state": "COMPLETE"
+      }
+    ],
+    "inner_validation_year": 2026,
+    "meta_training_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "selected_models": [
+    "01_elastic_net_cox",
+    "02_weibull_aft",
+    "03_lognormal_aft",
+    "04_spline_survival",
+    "05_random_survival_forest",
+    "06_xgboost_aft",
+    "07_catboost_hazard",
+    "08_mtlr",
+    "09_deephit",
+    "10_hierarchical_hazard"
+  ],
+  "past_model_brier": {
+    "01_elastic_net_cox": 0.0499927639815111,
+    "02_weibull_aft": 0.050026824704976915,
+    "03_lognormal_aft": 0.050632973610471116,
+    "04_spline_survival": 0.045918391377969,
+    "05_random_survival_forest": 0.04160076517096977,
+    "06_xgboost_aft": 0.04116513523796576,
+    "07_catboost_hazard": 0.03886884349986402,
+    "08_mtlr": 0.04466992819974782,
+    "09_deephit": 0.04572896461829857,
+    "10_hierarchical_hazard": 0.05305395083568918
+  },
+  "seconds": 0.9589369297027588,
+  "sha256": "ceb27cd2552da76574fdd1d11c5f72666ccc67d7cda64a36f7f37d2f92536cdc"
+}
