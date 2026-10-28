@@ -1,0 +1,224 @@
+{
+  "cost_model_version": "2026-10-26-area-exponent",
+  "source_sha256": "a64bfcd50a263ea7d3abd83b4c8d1517dc914575b942e77e7979efdeb9813b03",
+  "submission_sha256": "8a046e2dfe1e00ffa3cc3ea845aec77b7e1ffe645f3fe6445563e4a1062ba186",
+  "source_units": 19352,
+  "new_units": 19334,
+  "search": {
+    "evaluated": 2570,
+    "positive_proposals": 13,
+    "selected_triples": 9,
+    "skip_guard_rejected": 19,
+    "skip_probability_cap": 0.1,
+    "any_empty_union_bound_cap": 0.15,
+    "min_lower_fixed_saving": 25,
+    "triple_only_fixed_savings_cases": 3,
+    "max_row_gap": 320,
+    "nearest_neighbors": 10,
+    "search_radius_m": 100,
+    "max_new_design_pipes": 16,
+    "nominal_fixed_savings": 2855.0320089411666
+  },
+  "forecast_changed": false,
+  "coverage_preserved": true,
+  "no_future_leak_delayed_pipes": 0,
+  "no_future_leak_advanced_pipes": 10,
+  "exact_no_future_leak_construction_saving": 3171.74,
+  "arms": {
+    "best_77_22": {
+      "feasible": true,
+      "finish": 2045,
+      "construction": 180290222.26,
+      "repair": 0.0,
+      "score": 69709777.74,
+      "leaks": 0,
+      "remaining_iron": 0
+    },
+    "construction_savings": {
+      "feasible": true,
+      "finish": 2045,
+      "construction": 180287050.52,
+      "repair": 0.0,
+      "score": 69712949.48,
+      "leaks": 0,
+      "remaining_iron": 0
+    }
+  },
+  "comparison": [
+    {
+      "model": "fine",
+      "scale": 0.5,
+      "arm": "best_77_22",
+      "mean_score": 47290926.04166666,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "fine",
+      "scale": 0.5,
+      "arm": "construction_savings",
+      "mean_score": 47313091.24866667,
+      "score_gain": 22165.20699999978,
+      "gain_mc95": [
+        -14983.379239738726,
+        59313.79323973828
+      ],
+      "construction_saved": 1382.8846666604281,
+      "repair_saved": 20782.322333332897,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "fine",
+      "scale": 1.0,
+      "arm": "best_77_22",
+      "mean_score": 39606355.72833333,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "fine",
+      "scale": 1.0,
+      "arm": "construction_savings",
+      "mean_score": 39609065.45333334,
+      "score_gain": 2709.725,
+      "gain_mc95": [
+        2213.6948351383194,
+        3205.7551648616804
+      ],
+      "construction_saved": 2308.091333334645,
+      "repair_saved": 401.6336666668455,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "fine",
+      "scale": 2.0,
+      "arm": "best_77_22",
+      "mean_score": 30557941.983000003,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "fine",
+      "scale": 2.0,
+      "arm": "construction_savings",
+      "mean_score": 30561576.391999997,
+      "score_gain": 3634.408999999923,
+      "gain_mc95": [
+        2402.4750159780447,
+        4866.342984021801
+      ],
+      "construction_saved": 1526.1370000004767,
+      "repair_saved": 2108.271999999384,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 0.5,
+      "arm": "best_77_22",
+      "mean_score": 43128826.972666666,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 0.5,
+      "arm": "construction_savings",
+      "mean_score": 43131375.45133334,
+      "score_gain": 2548.478666665529,
+      "gain_mc95": [
+        1700.3846066744431,
+        3396.572726656615
+      ],
+      "construction_saved": 1905.859333330393,
+      "repair_saved": 642.619333333522,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 1.0,
+      "arm": "best_77_22",
+      "mean_score": 35057732.54833333,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 1.0,
+      "arm": "construction_savings",
+      "mean_score": 35060344.58133333,
+      "score_gain": 2612.032999999573,
+      "gain_mc95": [
+        1600.0877919644277,
+        3623.978208034718
+      ],
+      "construction_saved": 1855.4089999983707,
+      "repair_saved": 756.6239999999602,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 2.0,
+      "arm": "best_77_22",
+      "mean_score": 27771573.873999998,
+      "score_gain": 0.0,
+      "gain_mc95": [
+        0.0,
+        0.0
+      ],
+      "construction_saved": 0.0,
+      "repair_saved": 0.0,
+      "feasible_fraction": 1.0
+    },
+    {
+      "model": "old",
+      "scale": 2.0,
+      "arm": "construction_savings",
+      "mean_score": 27772783.658,
+      "score_gain": 1209.784000000482,
+      "gain_mc95": [
+        -1913.8678551094451,
+        4333.435855110409
+      ],
+      "construction_saved": 397.4593333338698,
+      "repair_saved": 812.3246666664878,
+      "feasible_fraction": 1.0
+    }
+  ],
+  "input_sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "timing_limitation": "Same-year mergers refer to baseline no-future-leak schedule, not guaranteed identical timing under every unknown future.",
+  "original_iron_coverage_note": "Preserves all baseline covered pipes; historical original iron coverage limitation inherited, not supplemented.",
+  "official_score": null
+}

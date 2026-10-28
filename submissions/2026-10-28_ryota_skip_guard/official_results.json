@@ -1,0 +1,22 @@
+{
+  "recorded_date": "2026-10-28",
+  "provenance": "User-provided screenshots and submission confirmation; service not independently queried.",
+  "cost_model_version": "2026-10-26-area-exponent",
+  "baseline": {
+    "repository_path": "submissions/2026-10-28_ryota_construction_expanded/outputs/submission_construction_expanded.csv",
+    "displayed_public_score_millions": 77.22,
+    "sha256": "a64bfcd50a263ea7d3abd83b4c8d1517dc914575b942e77e7979efdeb9813b03"
+  },
+  "current": {
+    "submission": "outputs/submission_skip_guard.csv",
+    "displayed_public_score_millions": 77.22,
+    "sha256": "8a046e2dfe1e00ffa3cc3ea845aec77b7e1ffe645f3fe6445563e4a1062ba186"
+  },
+  "displayed_change_millions": 0.0,
+  "precision": "Rounded 0.01M leaderboard display; equal displayed scores do not prove an exact tie.",
+  "private_score": null,
+  "evidence": {
+    "official_annual_table.png": "eb48695d2285f0ae7da2d535bbb019b8531b4a3e06b081f6d275d7c8e1a0cbb4",
+    "official_score.png": "0a8dab65c777a2fcf1af4b42ff236b0cfcacc3128b5d3fba2baeb43fbeca4bd4"
+  }
+}

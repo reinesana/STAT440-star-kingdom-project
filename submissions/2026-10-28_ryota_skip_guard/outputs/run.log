@@ -1,0 +1,26 @@
+triple search 2027 evaluated 403 positive 13
+triple search 2028 evaluated 925 positive 13
+triple search 2029 evaluated 1107 positive 13
+triple search 2030 evaluated 1387 positive 13
+triple search 2031 evaluated 1693 positive 13
+triple search 2032 evaluated 1836 positive 13
+triple search 2033 evaluated 1890 positive 13
+triple search 2034 evaluated 1944 positive 13
+triple search 2035 evaluated 1992 positive 13
+triple search 2036 evaluated 2080 positive 13
+triple search 2037 evaluated 2176 positive 13
+triple search 2038 evaluated 2243 positive 13
+triple search 2039 evaluated 2291 positive 13
+triple search 2040 evaluated 2306 positive 13
+triple search 2041 evaluated 2317 positive 13
+triple search 2042 evaluated 2345 positive 13
+triple search 2043 evaluated 2406 positive 13
+triple search 2044 evaluated 2570 positive 13
+triple search 2045 evaluated 2570 positive 13
+simulated fine 0.5
+simulated fine 1.0
+simulated fine 2.0
+simulated old 0.5
+simulated old 1.0
+simulated old 2.0
+COMPLETE {'evaluated': 2570, 'positive_proposals': 13, 'selected_triples': 9, 'skip_guard_rejected': 19, 'skip_probability_cap': 0.1, 'any_empty_union_bound_cap': 0.15, 'min_lower_fixed_saving': 25, 'triple_only_fixed_savings_cases': 3, 'max_row_gap': 320, 'nearest_neighbors': 10, 'search_radius_m': 100, 'max_new_design_pipes': 16, 'nominal_fixed_savings': 2855.0320089411666} actual no-leak savings 3171.74

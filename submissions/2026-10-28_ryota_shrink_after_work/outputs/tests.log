@@ -1,0 +1,7 @@
+test_initial_polyurethane_coverage_not_silently_removed (test_shrink_after_work.ShrinkTests.test_initial_polyurethane_coverage_not_silently_removed) ... ok
+test_shrink_after_previous_pipe_replaced (test_shrink_after_work.ShrinkTests.test_shrink_after_previous_pipe_replaced) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK

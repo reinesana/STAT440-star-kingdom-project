@@ -1,0 +1,14 @@
+test_reject_high_empty_probability_despite_nominal_savings (test_merge_skip_guard.GuardTests.test_reject_high_empty_probability_despite_nominal_savings) ... ok
+test_union_bound_rejects_several_small_skip_risks (test_merge_skip_guard.GuardTests.test_union_bound_rejects_several_small_skip_risks) ... ok
+test_zero_skip_risk_keeps_positive_saving (test_merge_skip_guard.GuardTests.test_zero_skip_risk_keeps_positive_saving) ... ok
+triple search 2028 evaluated 0 positive 0
+triple search 2029 evaluated 0 positive 0
+triple search 2030 evaluated 0 positive 0
+test_different_years_not_merged (test_merge_skip_guard.TripleTests.test_different_years_not_merged) ... ok
+triple search 2027 evaluated 1 positive 1
+test_three_way_saving_when_no_pair_saves_fixed_cost (test_merge_skip_guard.TripleTests.test_three_way_saving_when_no_pair_saves_fixed_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.005s
+
+OK

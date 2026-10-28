@@ -1,0 +1,7 @@
+simulated fine 0.5
+simulated fine 1.0
+simulated fine 2.0
+simulated old 0.5
+simulated old 1.0
+simulated old 2.0
+COMPLETE {'shrunk_circles': 81, 'removed_circles': 0, 'exact_replacement_set_per_row_preserved': True, 'all_original_prefix_coverage_preserved': True, 'nominal_fixed_savings': 84298.09} actual no-leak savings 84298.09

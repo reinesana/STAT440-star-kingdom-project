@@ -1,5 +1,7 @@
 # STAT 440 – Star Kingdom Pipe Replacement
 
+[10月28日：Ryota 直近3版の比較・最高点 $77.29M（後続81円の縮小）](reports/2026-10-28_ryota_geometry_comparison.md)
+
 [10月28日：Ryota 探索拡張版 $77.22M（$77.07M版から追加226組を統合）](reports/2026-10-28_ryota_construction_expanded.md)
 
 [10月28日：Ryota 工事費削減版 $77.07M（$76.91M版から近隣円260組を統合）](reports/2026-10-28_ryota_construction_savings.md)
