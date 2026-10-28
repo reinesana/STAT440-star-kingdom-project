@@ -1,0 +1,10 @@
+merge search year 2028 evaluated 0 accepted candidates 0
+merge search year 2029 evaluated 0 accepted candidates 0
+test_different_planned_years_not_merged (test_expand_construction.ConstructionTests.test_different_planned_years_not_merged) ... ok
+merge search year 2027 evaluated 1 accepted candidates 1
+test_parallel_pipes_merge_preserves_coverage_and_saves (test_expand_construction.ConstructionTests.test_parallel_pipes_merge_preserves_coverage_and_saves) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK

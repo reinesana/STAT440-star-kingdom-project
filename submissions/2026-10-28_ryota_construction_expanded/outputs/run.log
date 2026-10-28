@@ -1,0 +1,26 @@
+merge search year 2027 evaluated 1358 accepted candidates 91
+merge search year 2028 evaluated 2677 accepted candidates 104
+merge search year 2029 evaluated 3303 accepted candidates 115
+merge search year 2030 evaluated 4229 accepted candidates 181
+merge search year 2031 evaluated 4998 accepted candidates 203
+merge search year 2032 evaluated 5682 accepted candidates 215
+merge search year 2033 evaluated 6034 accepted candidates 222
+merge search year 2034 evaluated 6346 accepted candidates 226
+merge search year 2035 evaluated 6670 accepted candidates 228
+merge search year 2036 evaluated 7129 accepted candidates 239
+merge search year 2037 evaluated 7509 accepted candidates 248
+merge search year 2038 evaluated 7763 accepted candidates 250
+merge search year 2039 evaluated 7972 accepted candidates 251
+merge search year 2040 evaluated 8195 accepted candidates 251
+merge search year 2041 evaluated 8384 accepted candidates 251
+merge search year 2042 evaluated 8576 accepted candidates 254
+merge search year 2043 evaluated 8767 accepted candidates 254
+merge search year 2044 evaluated 9117 accepted candidates 254
+merge search year 2045 evaluated 9118 accepted candidates 254
+simulated fine 0.5
+simulated fine 1.0
+simulated fine 2.0
+simulated old 0.5
+simulated old 1.0
+simulated old 2.0
+COMPLETE {'evaluated': 9118, 'positive_proposals': 254, 'selected_pairs': 226, 'max_row_gap': 320, 'nearest_neighbors': 24, 'search_radius_m': 120, 'max_new_design_pipes': 12, 'nominal_fixed_savings': 135746.95272362002} actual no-leak savings 135746.94

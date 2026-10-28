@@ -1,0 +1,23 @@
+{
+  "recorded_date": "2026-10-28",
+  "provenance": "User-provided screenshot and statement identifying the submitted CSV; service not independently queried.",
+  "cost_model_version": "2026-10-26-area-exponent",
+  "baseline": {
+    "submission": "../2026-10-28_ryota_construction_savings/outputs/submission_construction_savings.csv",
+    "displayed_public_score_millions": 77.07,
+    "sha256": "c9e3dc15bb92865501907f0310db99f98e50394408608e09b018487a0d7ade33"
+  },
+  "current": {
+    "submission": "outputs/submission_construction_expanded.csv",
+    "displayed_public_score_millions": 77.22,
+    "sha256": "a64bfcd50a263ea7d3abd83b4c8d1517dc914575b942e77e7979efdeb9813b03"
+  },
+  "displayed_gain_millions": 0.15,
+  "displayed_gain_vs_76_91_millions": 0.31,
+  "score_precision": "Rounded to 0.01M on leaderboard; exact underlying scores unavailable.",
+  "evidence": {
+    "official_annual_table_77_22m.png": "052070258393a4b847fb2f42a268b2dcfd5ac247c3da17ea1f0ddafa38e53853",
+    "official_score_77_22m.png": "7b242d1e0c2100fdda1c857eb3db210efaeb9ec421e2bedc549d896d62749f72"
+  },
+  "private_score": null
+}
