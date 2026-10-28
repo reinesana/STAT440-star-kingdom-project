@@ -1,0 +1,17 @@
+{
+  "submission_bytes_match_scored_artifact": true,
+  "baseline_bytes_match_previous_best": true,
+  "all_baseline_covered_pipes_preserved": true,
+  "no_future_leak_delayed_pipes": 0,
+  "no_future_leak_construction_savings": 238637.33,
+  "shared_active_iron_validation_passed": true,
+  "strict_original_iron_geometry_passed": false,
+  "shared_zero_hazard_simulator_construction": 180425969.2000001,
+  "cost_model_version": "2026-10-26-area-exponent",
+  "source_sha256": {
+    "src\\build_cost_submissions.py": "4033a69e69fd934123d164c39cd21ab87561064ccc795d69998c84a35145220f",
+    "src\\simulate_score.py": "4fa89cfd88148e3cb8e1ec80e291e817f8c0b28bc94c5693afe00afbaf514bbe",
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  }
+}
