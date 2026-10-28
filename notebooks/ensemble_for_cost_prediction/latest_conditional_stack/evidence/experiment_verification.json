@@ -1,0 +1,152 @@
+{
+  "independent_saved_csv_metrics": true,
+  "exact_original_three_model_controls": true,
+  "original_stack_control": true,
+  "all_2027_exports_read_back": true,
+  "base_training_tuning_cutoffs": [
+    {
+      "model": "takito_catboost",
+      "origin": 2023,
+      "training_end": 2022,
+      "inner_years": [
+        2021,
+        2022
+      ]
+    },
+    {
+      "model": "takito_catboost",
+      "origin": 2024,
+      "training_end": 2023,
+      "inner_years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "model": "takito_catboost",
+      "origin": 2025,
+      "training_end": 2024,
+      "inner_years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "model": "takito_catboost",
+      "origin": 2026,
+      "training_end": 2025,
+      "inner_years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "model": "takito_catboost",
+      "origin": 2027,
+      "training_end": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "model": "anthony_rf_log_mean",
+      "origin": 2023,
+      "training_end": 2022,
+      "inner_years": [
+        2021,
+        2022
+      ]
+    },
+    {
+      "model": "anthony_rf_log_mean",
+      "origin": 2024,
+      "training_end": 2023,
+      "inner_years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "model": "anthony_rf_log_mean",
+      "origin": 2025,
+      "training_end": 2024,
+      "inner_years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "model": "anthony_rf_log_mean",
+      "origin": 2026,
+      "training_end": 2025,
+      "inner_years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "model": "anthony_rf_log_mean",
+      "origin": 2027,
+      "training_end": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "model": "rion_lgb_log_mean_refit",
+      "origin": 2023,
+      "training_end": 2022,
+      "inner_years": [
+        2021,
+        2022
+      ]
+    },
+    {
+      "model": "rion_lgb_log_mean_refit",
+      "origin": 2024,
+      "training_end": 2023,
+      "inner_years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "model": "rion_lgb_log_mean_refit",
+      "origin": 2025,
+      "training_end": 2024,
+      "inner_years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "model": "rion_lgb_log_mean_refit",
+      "origin": 2026,
+      "training_end": 2025,
+      "inner_years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "model": "rion_lgb_log_mean_refit",
+      "origin": 2027,
+      "training_end": 2026,
+      "inner_years": [
+        2025,
+        2026
+      ]
+    }
+  ],
+  "all_origins_future_label_poisoning_and_full_refit": true,
+  "all_nested_selections_prior_years_only": true,
+  "all_predictions_reconstructed_from_json": true,
+  "reversed_queries": true,
+  "unseen_group_fallback": true,
+  "evaluation_events": 6766,
+  "forecast_pipes": 27240,
+  "compared_recipes": 22,
+  "caveat": "Repeatedly inspected historical validation; no independent final holdout or official score."
+}

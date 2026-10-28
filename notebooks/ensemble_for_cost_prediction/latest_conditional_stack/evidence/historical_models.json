@@ -1,0 +1,603 @@
+[
+  {
+    "origin": 2024,
+    "training_years": [
+      2023
+    ],
+    "training_rows": 1826,
+    "parameters": {
+      "dimension": "material_surface",
+      "minimum_group_rows": 50,
+      "global_weights": [
+        0.7277698436553828,
+        0.2722301563446172,
+        0.0
+      ],
+      "groups": {
+        "brass | grassland": {
+          "n": 101,
+          "local_weights": [
+            0.0,
+            0.5356963195328766,
+            0.46430368046712356
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.734723475976807e-18
+          }
+        },
+        "brass | structure": {
+          "n": 159,
+          "local_weights": [
+            0.2562226271379307,
+            0.0,
+            0.7437773728620694
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.3877787807814457e-17
+          }
+        },
+        "cast iron | farmland": {
+          "n": 52,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | grassland": {
+          "n": 304,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | road": {
+          "n": 62,
+          "local_weights": [
+            0.13284997659888773,
+            0.8671500234011124,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | structure": {
+          "n": 78,
+          "local_weights": [
+            0.0,
+            0.7253519972390507,
+            0.27464800276094925
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.0408340855860843e-17
+          }
+        },
+        "cast iron | water": {
+          "n": 552,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "wrought iron | farmland": {
+          "n": 93,
+          "local_weights": [
+            0.5520630278401972,
+            0.0,
+            0.44793697215980277
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 3.469446951953614e-18
+          }
+        },
+        "wrought iron | grassland": {
+          "n": 134,
+          "local_weights": [
+            0.06530628408808527,
+            0.0,
+            0.9346937159119146
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 8.673617379884035e-19
+          }
+        },
+        "wrought iron | water": {
+          "n": 145,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        }
+      },
+      "tau": 200.0,
+      "selection": {
+        "objective": "rmse",
+        "selected": 200.0,
+        "default_without_earlier_validation": 200.0,
+        "trials": [
+          {
+            "value": 0.0,
+            "validation_years": [],
+            "mean_loss": null
+          },
+          {
+            "value": 50.0,
+            "validation_years": [],
+            "mean_loss": null
+          },
+          {
+            "value": 200.0,
+            "validation_years": [],
+            "mean_loss": null
+          },
+          {
+            "value": 1000.0,
+            "validation_years": [],
+            "mean_loss": null
+          },
+          {
+            "value": 1000000000.0,
+            "validation_years": [],
+            "mean_loss": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "origin": 2025,
+    "training_years": [
+      2023,
+      2024
+    ],
+    "training_rows": 3781,
+    "parameters": {
+      "dimension": "material_surface",
+      "minimum_group_rows": 50,
+      "global_weights": [
+        0.7926082041024038,
+        0.20739179589759613,
+        0.0
+      ],
+      "groups": {
+        "brass | grassland": {
+          "n": 109,
+          "local_weights": [
+            0.0,
+            0.5063795584572456,
+            0.49362044154275453
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 4.336808689942018e-19
+          }
+        },
+        "brass | structure": {
+          "n": 178,
+          "local_weights": [
+            0.22412840120432131,
+            0.0,
+            0.7758715987956787
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.3877787807814457e-17
+          }
+        },
+        "cast iron | farmland": {
+          "n": 83,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | grassland": {
+          "n": 390,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | road": {
+          "n": 73,
+          "local_weights": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | structure": {
+          "n": 137,
+          "local_weights": [
+            0.0,
+            0.8174960548807154,
+            0.18250394511928453
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 2.0816681711721685e-17
+          }
+        },
+        "cast iron | water": {
+          "n": 763,
+          "local_weights": [
+            0.0,
+            0.12304526249406375,
+            0.8769547375059363
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 8.673617379884035e-19
+          }
+        },
+        "wrought iron | farmland": {
+          "n": 404,
+          "local_weights": [
+            0.2522386470769656,
+            0.055742849748666445,
+            0.692018503174368
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 2.168404344971009e-18
+          }
+        },
+        "wrought iron | grassland": {
+          "n": 630,
+          "local_weights": [
+            0.0,
+            0.04399640161552507,
+            0.9560035983844749
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.734723475976807e-18
+          }
+        },
+        "wrought iron | road": {
+          "n": 54,
+          "local_weights": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "wrought iron | water": {
+          "n": 749,
+          "local_weights": [
+            0.0,
+            0.865076838663464,
+            0.13492316133653603
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        }
+      },
+      "tau": 0.0,
+      "selection": {
+        "objective": "rmse",
+        "selected": 0.0,
+        "default_without_earlier_validation": 200.0,
+        "trials": [
+          {
+            "value": 0.0,
+            "validation_years": [
+              2024
+            ],
+            "mean_loss": 97219.02319024206
+          },
+          {
+            "value": 50.0,
+            "validation_years": [
+              2024
+            ],
+            "mean_loss": 97384.06596301528
+          },
+          {
+            "value": 200.0,
+            "validation_years": [
+              2024
+            ],
+            "mean_loss": 97567.45694717228
+          },
+          {
+            "value": 1000.0,
+            "validation_years": [
+              2024
+            ],
+            "mean_loss": 97710.41621831521
+          },
+          {
+            "value": 1000000000.0,
+            "validation_years": [
+              2024
+            ],
+            "mean_loss": 97770.87559118173
+          }
+        ]
+      }
+    }
+  },
+  {
+    "origin": 2026,
+    "training_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "training_rows": 5554,
+    "parameters": {
+      "dimension": "material_surface",
+      "minimum_group_rows": 50,
+      "global_weights": [
+        0.4713074726895797,
+        0.5286925273104204,
+        0.0
+      ],
+      "groups": {
+        "brass | grassland": {
+          "n": 112,
+          "local_weights": [
+            0.0,
+            0.5252526818800494,
+            0.47474731811995075
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "brass | structure": {
+          "n": 183,
+          "local_weights": [
+            0.24395573098280215,
+            0.3549738628178155,
+            0.4010704061993824
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 5.679623438226145e-13
+          }
+        },
+        "cast iron | farmland": {
+          "n": 111,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | grassland": {
+          "n": 440,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | road": {
+          "n": 87,
+          "local_weights": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | structure": {
+          "n": 216,
+          "local_weights": [
+            0.0,
+            0.13478512023522693,
+            0.8652148797647731
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 3.469446951953614e-18
+          }
+        },
+        "cast iron | swamp": {
+          "n": 53,
+          "local_weights": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "cast iron | water": {
+          "n": 861,
+          "local_weights": [
+            0.0,
+            0.15701266856536694,
+            0.8429873314346331
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 8.673617379884035e-19
+          }
+        },
+        "wrought iron | farmland": {
+          "n": 726,
+          "local_weights": [
+            0.23898532014898982,
+            0.7610146798510101,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.734723475976807e-18
+          }
+        },
+        "wrought iron | grassland": {
+          "n": 1058,
+          "local_weights": [
+            0.01561545463095285,
+            0.7495748634746141,
+            0.23480968189443313
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 4.7488055154865094e-17
+          }
+        },
+        "wrought iron | road": {
+          "n": 164,
+          "local_weights": [
+            0.808716562958602,
+            0.16659451883096107,
+            0.024688918210437054
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 1.131040150426088e-08
+          }
+        },
+        "wrought iron | structure": {
+          "n": 123,
+          "local_weights": [
+            0.6774432328487949,
+            0.32255676715120507,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 2.7755575615628914e-17
+          }
+        },
+        "wrought iron | swamp": {
+          "n": 191,
+          "local_weights": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 0.0
+          }
+        },
+        "wrought iron | water": {
+          "n": 1055,
+          "local_weights": [
+            0.0,
+            0.838478583418908,
+            0.16152141658109198
+          ],
+          "optimization": {
+            "success": true,
+            "kkt_scaled_residual": 4.336808689942018e-19
+          }
+        }
+      },
+      "tau": 50.0,
+      "selection": {
+        "objective": "rmse",
+        "selected": 50.0,
+        "default_without_earlier_validation": 200.0,
+        "trials": [
+          {
+            "value": 0.0,
+            "validation_years": [
+              2024,
+              2025
+            ],
+            "mean_loss": 105757.40503302845
+          },
+          {
+            "value": 50.0,
+            "validation_years": [
+              2024,
+              2025
+            ],
+            "mean_loss": 105657.88416499108
+          },
+          {
+            "value": 200.0,
+            "validation_years": [
+              2024,
+              2025
+            ],
+            "mean_loss": 105739.83496027479
+          },
+          {
+            "value": 1000.0,
+            "validation_years": [
+              2024,
+              2025
+            ],
+            "mean_loss": 105870.78654562842
+          },
+          {
+            "value": 1000000000.0,
+            "validation_years": [
+              2024,
+              2025
+            ],
+            "mean_loss": 105939.75487633297
+          }
+        ]
+      }
+    }
+  }
+]

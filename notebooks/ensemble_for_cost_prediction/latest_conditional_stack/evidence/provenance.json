@@ -1,0 +1,44 @@
+{
+  "publication_date": "2026-10-28",
+  "selected_model": "conditional_material_surface_rmse",
+  "source_experiment": "notebooks/Takito_Kobayashi/2026-10-28/ThreeModelStacking",
+  "source_experiment_sha256": {
+    "run_experiment.py": "8e4228dcbd82280c337ac9b34d61fe058024df21a8a753739278458cdc4c06b2",
+    "verify_experiment.py": "b0b9054e13f3ce41ef53f3ba4f459fa25d26ddb4d7b40d47b365c460506236e6",
+    "SHA256.json": "87150545a94a258e23fe64a291b1772b287ed52aa1315fd35c3e50b3b228dc5c"
+  },
+  "prior_benchmark": {
+    "path": "docs/reports/2026-10-28_timing_winner/evidence/cost_internal_comparison.csv",
+    "sha256": "2d6bbafd2532f6930db1cf7d9fd4be9c058bf5f4839e2ce0c546a5bf96a0cb1e",
+    "recipes": 24
+  },
+  "shared_doc": {
+    "id": "1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ",
+    "read_date": "2026-10-28",
+    "modified_time": "2026-10-27T22:34:03.947Z",
+    "edited": false
+  },
+  "selection": "User accepted stability-oriented recommendation after inspecting historical comparison; not a preregistered model-selection score",
+  "evaluation_years": [
+    2024,
+    2025,
+    2026
+  ],
+  "evaluation_events": 6766,
+  "final_training_oof_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "final_training_oof_rows": 8592,
+  "forecast_pipes": 27240,
+  "forecast_sha256": "01c194da1c12c3d76ad0c8744c63b36cfaa071659de14484496758dd57f2a422",
+  "construction_cost_version_reference": "2026-10-26-area-exponent; no new construction simulation in this package",
+  "official_planning_score": null,
+  "base_models_refitted": true,
+  "raw_data_published": false,
+  "package_scope": "Actual fitted base estimators/preprocessing and conditional weights, inference and rebuild code, 2027 severity forecasts, aggregate evidence. No raw targets or prepared feature matrices.",
+  "historical_scope_note": "27,240 supported forecasts. Earlier 28,926-row public exports remain unchanged; no new extrapolated rows.",
+  "user_authorization": "2026-10-28: User explicitly requested training through 2026 and pushing the actual model and predictions together"
+}

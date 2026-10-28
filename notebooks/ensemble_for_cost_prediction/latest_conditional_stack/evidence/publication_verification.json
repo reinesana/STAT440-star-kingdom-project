@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-28",
+  "forecast_rows": 27240,
+  "portable_inference_reproduced": true,
+  "publication_checks": "PASS: 3 actual fitted bases through 2026, 27,240 forecasts, reverse order, convex bounds, unseen/missing groups, invalid-input rejection, aggregate metrics, 24 prior recipes, chronological selection and all package hashes.",
+  "package_relative_links_checked": 54,
+  "old_benchmark_recipes": 24,
+  "raw_training_targets_published": false,
+  "signed_or_private_links_published": false,
+  "official_new_model_score": null,
+  "inference_support_policy": "27,240 supported pipes; 1,686 historical extrapolated rows not added",
+  "claim_scope": "Lower common-year mean RMSE than 24 saved prior recipes; not every new recipe, every metric, every Shana original fitted model, or every planning score",
+  "manual_correction": "Old cohort probability override not used by F168; related past-only cohort/age features learned instead; dollar-mean log correction retained",
+  "correction_judgment": "Manual probability override deemed inappropriate for current policy by user; causal score effect not isolated",
+  "fitted_model_published": true,
+  "base_models_freshly_trained_through_2026": true,
+  "explicit_model_and_forecast_publication_requested": true,
+  "portable_training_and_inference_verified": true
+}
