@@ -2,6 +2,24 @@
 
 [日本語](METHOD.ja.md) · [Model and evidence](README.md)
 
+## Direct comparison with the shared Google Doc's team ensemble
+
+The [shared Google Doc](https://docs.google.com/document/d/1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ/edit), read on 28 October 2026, identifies the selected team ensemble as **raw XGBoost + CatBoost + baseline raw LightGBM, each weighted 1/3**. This is a leakage-probability model, confirmed against its [selection record](../../leak_model_comparison/comparison_results/selection.json) and [saved OOF predictions](../../leak_model_comparison/comparison_results/selected_oof_predictions.csv).
+
+**The latest timing model F168 outperformed this team ensemble in four-year mean Brier, mean PR-AUC and mean absolute annual leak-count bias on identical pipe/year observations.** Recompute both on the 132,121 common pipe-years in 2023–2026, with unique joins and matching labels. Mean annual Brier falls from **0.050400 to 0.045625 (9.47% improvement)**; PR-AUC rises from **0.343890 to 0.405169**; mean absolute annual count bias falls from **19.06% to 4.88%**.
+
+| Common-row Brier (lower is better) | Team equal-three | F168 |
+|---|---:|---:|
+| 2023: 35,817 pipes | **0.035815** | 0.038870 |
+| 2024: 33,993 pipes | 0.035003 | **0.033550** |
+| 2025: 32,042 pipes | 0.048990 | **0.044183** |
+| 2026: 30,269 pipes | 0.081792 | **0.065896** |
+| Annual mean | 0.050400 | **0.045625** |
+
+F168 wins Brier in 3 of 4 years. The earlier ensemble still wins 2023 Brier and mean log loss: **0.189145 versus F168 0.230070**, using the same probability clipping epsilon of 1e-7. This is not superiority in every year or metric. Coverage differs, so neither model's previously reported full-population average is mixed into this common-row comparison. [Annual results](evidence/shared_doc_timing_ensemble_comparison.csv) and [coverage/source checks](evidence/shared_doc_timing_comparison.json) are included. These are reused historical results, not proof of a better official planning score or a causal benefit of particular features.
+
+This probability comparison concerns **F168**, separately from the conditional repair-amount stack below. The shared Doc's rule-based zero probability for native polyurethane or previously replaced pipes is also distinct from the old 16b/17b manual installation-year probability overrides.
+
 ## Recommendation and measured improvement
 
 The current recommendation is **material × surface conditional convex stacking, optimized for squared error** (`conditional_material_surface_rmse`). This supersedes the earlier stable-ensemble and global-stack recommendation for this severity-prediction task. It predicts repair amount conditional on leakage, not failure probability or the final planning score.

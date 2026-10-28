@@ -1,0 +1,77 @@
+{
+  "shared_doc_id": "1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ",
+  "read_date": "2026-10-28",
+  "selected_ensemble": "raw XGBoost + CatBoost + baseline raw LightGBM, each 1/3",
+  "target": "next-year leakage probability; distinct from conditional repair amount",
+  "coverage": [
+    {
+      "year": 2023,
+      "old_rows": 37495,
+      "F168_rows": 35840,
+      "common_rows": 35817,
+      "excluded_old_rows": 1678,
+      "excluded_F168_rows": 23,
+      "actual_leaks": 1824
+    },
+    {
+      "year": 2024,
+      "old_rows": 35671,
+      "F168_rows": 34014,
+      "common_rows": 33993,
+      "excluded_old_rows": 1678,
+      "excluded_F168_rows": 21,
+      "actual_leaks": 1951
+    },
+    {
+      "year": 2025,
+      "old_rows": 33720,
+      "F168_rows": 32059,
+      "common_rows": 32042,
+      "excluded_old_rows": 1678,
+      "excluded_F168_rows": 17,
+      "actual_leaks": 1773
+    },
+    {
+      "year": 2026,
+      "old_rows": 31947,
+      "F168_rows": 30286,
+      "common_rows": 30269,
+      "excluded_old_rows": 1678,
+      "excluded_F168_rows": 17,
+      "actual_leaks": 3038
+    }
+  ],
+  "mean_annual_metrics": {
+    "F168": {
+      "Brier": 0.04562489415569617,
+      "log_loss": 0.23007047358839175,
+      "PR_AUC": 0.40516858508246567,
+      "count_bias_pct": -4.881757956844668
+    },
+    "shared_doc_equal_xgb_cat_lgb": {
+      "Brier": 0.05040021172410862,
+      "log_loss": 0.1891449776985361,
+      "PR_AUC": 0.3438900706287929,
+      "count_bias_pct": 8.136328396276213
+    }
+  },
+  "relative_mean_Brier_change_pct": -9.474796642824835,
+  "common_pipe_years": 132121,
+  "mean_absolute_annual_count_bias_pct": {
+    "F168": 4.881757956844668,
+    "shared_doc_equal_xgb_cat_lgb": 19.05584883748378
+  },
+  "source_sha256": {
+    "selected_oof": "fa0383711ea7b6ca63d4eba5de74e4ad98e2e18de3894dd20fd1ed7b827c0e6d",
+    "F168": {
+      "output\\2026-10-27_time_exhaustive\\forecasts\\F168\\2023\\curves.npz": "6871fefeefdf578052386f0731d411e715d0c4af3770556a38e7c92f741f5505",
+      "output\\2026-10-27_time_exhaustive\\forecasts\\F168\\2024\\curves.npz": "20dbf9349772a5d3316f1134e89ba09aa57219e8eaf70dae141fcbe3481377d2",
+      "output\\2026-10-27_time_exhaustive\\forecasts\\F168\\2025\\curves.npz": "8a136b22f702800fe1c01c1af590c0c4908aebd8631e4b8af9d00573b45deefb",
+      "output\\2026-10-27_time_exhaustive\\forecasts\\F168\\2026\\curves.npz": "48bed7a2fdc1ae832cb1dbb380ba682b6baa41599914e7346e8a300dcd71f84e"
+    }
+  },
+  "historical_years_reused": true,
+  "log_loss_common_clipping_epsilon": 1e-07,
+  "independent_brier_and_log_loss_recalculation": true,
+  "official_planning_gain_from_this_comparison": null
+}

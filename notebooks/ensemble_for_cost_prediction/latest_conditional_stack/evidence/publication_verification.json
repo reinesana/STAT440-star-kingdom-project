@@ -3,7 +3,7 @@
   "forecast_rows": 27240,
   "portable_inference_reproduced": true,
   "publication_checks": "PASS: 3 actual fitted bases through 2026, 27,240 forecasts, reverse order, convex bounds, unseen/missing groups, invalid-input rejection, aggregate metrics, 24 prior recipes, chronological selection and all package hashes.",
-  "package_relative_links_checked": 36,
+  "package_relative_links_checked": 45,
   "old_benchmark_recipes": 24,
   "raw_training_targets_published": false,
   "signed_or_private_links_published": false,

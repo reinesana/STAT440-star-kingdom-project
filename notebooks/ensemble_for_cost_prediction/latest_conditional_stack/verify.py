@@ -57,6 +57,16 @@ def main():
         ref=priors.set_index('model').loc[old]
         assert abs(ref.mean_rmse-mean.loc[new,'RMSE'])<1e-7
         assert abs(ref.mean_mae-mean.loc[new,'MAE'])<1e-7
+    timing=pd.read_csv(HERE/'evidence/shared_doc_timing_ensemble_comparison.csv')
+    timing_report=json.loads((HERE/'evidence/shared_doc_timing_comparison.json').read_text())
+    timing_means=timing.groupby('model').Brier.mean()
+    assert timing_report['common_pipe_years']==132121
+    for name,q in timing.groupby('model'):
+        assert q.n.sum()==132121 and q.year.tolist()==[2023,2024,2025,2026]
+        assert abs(q.Brier.mean()-timing_report['mean_annual_metrics'][name]['Brier'])<1e-12
+        assert abs(abs(q.count_bias_pct).mean()-timing_report['mean_absolute_annual_count_bias_pct'][name])<1e-10
+    change=100*(timing_means['F168']/timing_means['shared_doc_equal_xgb_cat_lgb']-1)
+    assert abs(change-timing_report['relative_mean_Brier_change_pct'])<1e-10 and round(change,2)==-9.47
     history=json.loads((HERE/'evidence/historical_models.json').read_text())
     for record in [*history,dict(origin=2027,training_years=c['training_years'],parameters=c['parameters'])]:
         assert max(record['training_years'])<record['origin']
