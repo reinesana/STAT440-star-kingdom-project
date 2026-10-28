@@ -1,0 +1,28 @@
+{
+  "experiment_date": "2026-10-27",
+  "publication_date": "2026-10-28",
+  "selected_forecast": "F168",
+  "selected_order": "R029",
+  "canonical_submission": "T27118.csv",
+  "source_code_sha256": {
+    "timing_experiment/ensembles.py": "c8860becbec04c337fe94be29b1ba7fd7c1212affbc1f0090302dbd0d3b58338",
+    "timing_experiment/evaluate.py": "09ebb9a4c5323fa952d180fe4c61954ea63badc546b43fcceb08d24685d5b921",
+    "timing_experiment/train_bases.py": "e070b778c222536ae9a79d81e620e1451ba7bb6cc84b5b385fe6b4127c3586ae",
+    "timing_experiment/reduced_schedules.py": "6b11dd591bc16c8260c8958368a4d572c8b2e0723f6417994e1db5c2349ad78c",
+    "timing_experiment/reduced_shortlist.py": "260b4a6ba51f1a05782a1c1729c430125e0d769caab42b00f9c24909aada007d",
+    "timing_experiment/spec.py": "be2dfc17043e2c5bf554c28f5f337a8bb10da37c027e1b2c7aa91be7cb545b41",
+    "survival_source/models.py": "e80d0e4afa0a4b2c19b091acf3c2d788dd3d4af6dc2ec9dc6d8b1787a38d41cd",
+    "survival_source/data.py": "1c364f6137c277ac94c0c671907938b27507421f059da02c4ba104baf875d72e"
+  },
+  "input_sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "scope": "Documentation and verified summary evidence; base training artifacts and full experiment bank are not bundled",
+  "tail": "Constant final observed hazard, capped at .95, beyond empirical support; shared annual meta-map at all horizons",
+  "public_selected_candidates": 20,
+  "comparison_recipes": 591,
+  "fixed_experiment_rows": 95742,
+  "focused_forecasters": 9,
+  "focused_schedule_experiment_rows": 36
+}
