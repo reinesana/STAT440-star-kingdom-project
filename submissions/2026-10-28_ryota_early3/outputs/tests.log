@@ -1,0 +1,11 @@
+test_budget_carryover_and_first_unit_blocking (test_optimize.GeometryTests.test_budget_carryover_and_first_unit_blocking) ... ok
+test_cent_rounding (test_optimize.GeometryTests.test_cent_rounding) ... ok
+test_grid_matches_bruteforce (test_optimize.GeometryTests.test_grid_matches_bruteforce) ... ok
+test_known_disks (test_optimize.GeometryTests.test_known_disks) ... ok
+test_leaks_after_construction_completion_count (test_optimize.GeometryTests.test_leaks_after_construction_completion_count) ... ok
+test_random_disks_against_exhaustive_boundaries (test_optimize.GeometryTests.test_random_disks_against_exhaustive_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.150s
+
+OK

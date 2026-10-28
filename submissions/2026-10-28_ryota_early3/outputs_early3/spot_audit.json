@@ -1,0 +1,14 @@
+{
+  "early3_adaptive": {
+    "rows": 19838,
+    "full_data_brute_force_checks": 100,
+    "passed": true,
+    "sha256": "964546f23afa68f8046e2194993d29dc7e152293be12452a53721c611ff3f6ce"
+  },
+  "early3_reorder_only": {
+    "rows": 15328,
+    "full_data_brute_force_checks": 100,
+    "passed": true,
+    "sha256": "63fb47cdddc67fe8ab01439c518140a014dd684e54ebea6a51b7df377deea050"
+  }
+}

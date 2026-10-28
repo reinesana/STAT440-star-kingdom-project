@@ -1,0 +1,16 @@
+early plan 2027 circles 1 balance 3000000.0
+early plan 2028 circles 1 balance 7000000.0
+early plan 2029 circles 0 balance 17000000.0
+test_risk_efficient_group_and_isolated_pipe (test_early_three_years.EarlyTests.test_risk_efficient_group_and_isolated_pipe) ... ok
+test_three_year_probability_uses_survival (test_early_three_years.EarlyTests.test_three_year_probability_uses_survival) ... ok
+test_budget_carryover_and_first_unit_blocking (test_optimize.GeometryTests.test_budget_carryover_and_first_unit_blocking) ... ok
+test_cent_rounding (test_optimize.GeometryTests.test_cent_rounding) ... ok
+test_grid_matches_bruteforce (test_optimize.GeometryTests.test_grid_matches_bruteforce) ... ok
+test_known_disks (test_optimize.GeometryTests.test_known_disks) ... ok
+test_leaks_after_construction_completion_count (test_optimize.GeometryTests.test_leaks_after_construction_completion_count) ... ok
+test_random_disks_against_exhaustive_boundaries (test_optimize.GeometryTests.test_random_disks_against_exhaustive_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.101s
+
+OK

@@ -1,0 +1,3 @@
+# Preserve scored submissions and their recorded SHA-256 across Git platforms.
+*.csv -text
+*.png binary

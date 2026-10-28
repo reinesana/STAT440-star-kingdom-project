@@ -1,0 +1,26 @@
+risk candidate 0.5 0.85 loss 0.1672394482056615
+risk candidate 1.0 0.85 loss 0.16935104254578692
+risk candidate 2.0 0.85 loss 0.1821052382327327
+risk candidate 0.5 1.0 loss 0.17147376386740032
+risk candidate 1.0 1.0 loss 0.17240179398467387
+risk candidate 2.0 1.0 loss 0.18467167390768313
+selected (0.5, 0.85) holdout [{'model': 'old', 'year': 2026, 'rows': 30286, 'observed': 0.10031037443042991, 'predicted': 0.06153525496182851, 'log_loss': 0.2643653198766931, 'brier': 0.08057300948757984, 'top_decile_event_recall': 0.28275181040158}, {'model': 'fine', 'year': 2026, 'rows': 30286, 'observed': 0.10031037443042991, 'predicted': 0.04657071680940216, 'log_loss': 0.2721932895386837, 'brier': 0.07937428329185219, 'top_decile_event_recall': 0.4957208689927584}]
+candidate search 0 / 26237
+candidate search 5000 / 26237
+candidate search 10000 / 26237
+candidate search 15000 / 26237
+candidate search 20000 / 26237
+candidate search 25000 / 26237
+early plan 2027 circles 2534 balance 4.53
+early plan 2028 circles 2250 balance 147.12
+early plan 2029 circles 1200 balance 158.29
+previous_71_40 {'rows': 15328, 'no_future_leaks': {'feasible': True, 'finish': 2044, 'construction': 175986889.96, 'repair': 0.0, 'score': 74013110.04, 'leaks': 0, 'remaining_iron': 0}, 'expected_first3_leaks': 3215.564622569094, 'expected_first3_repair': 39648292.974712566}
+early3_adaptive {'rows': 19838, 'no_future_leaks': {'feasible': True, 'finish': 2045, 'construction': 180664606.53, 'repair': 0.0, 'score': 69335393.47, 'leaks': 0, 'remaining_iron': 0}, 'expected_first3_leaks': 2823.8419822930096, 'expected_first3_repair': 34937102.40037096}
+early3_reorder_only {'rows': 15328, 'no_future_leaks': {'feasible': True, 'finish': 2044, 'construction': 175958049.37, 'repair': 0.0, 'score': 74041950.63, 'leaks': 0, 'remaining_iron': 0}, 'expected_first3_leaks': 3049.0514562376975, 'expected_first3_repair': 38983710.975992605}
+simulation old 0.5 done
+simulation old 1.0 done
+simulation old 2.0 done
+simulation fine 0.5 done
+simulation fine 1.0 done
+simulation fine 2.0 done
+COMPLETE 171.48069977760315

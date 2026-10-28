@@ -1,0 +1,156 @@
+{
+  "submission": "early3_adaptive.csv",
+  "work_unit_count": 19838,
+  "uncovered_iron_count": 0,
+  "completed_by_2051": true,
+  "completion_year": 2045,
+  "construction_cost": 180664606.53,
+  "no_future_leak_score": 69335393.47,
+  "skipped_units": 311,
+  "scenario": "No future leaks; NOT an estimated official score",
+  "cost_model_version": "2026-10-26-area-exponent",
+  "annual_execution": [
+    {
+      "year": 2027,
+      "construction_cost": 9999995.47,
+      "executed_units": 2534,
+      "budget_balance": 4.53,
+      "remaining_units": 17304
+    },
+    {
+      "year": 2028,
+      "construction_cost": 9999857.41,
+      "executed_units": 2250,
+      "budget_balance": 147.12,
+      "remaining_units": 15054
+    },
+    {
+      "year": 2029,
+      "construction_cost": 9999988.83,
+      "executed_units": 1200,
+      "budget_balance": 158.29,
+      "remaining_units": 13854
+    },
+    {
+      "year": 2030,
+      "construction_cost": 9990565.01,
+      "executed_units": 1914,
+      "budget_balance": 9593.28,
+      "remaining_units": 11925
+    },
+    {
+      "year": 2031,
+      "construction_cost": 9989858.98,
+      "executed_units": 1712,
+      "budget_balance": 19734.3,
+      "remaining_units": 10182
+    },
+    {
+      "year": 2032,
+      "construction_cost": 10018067.1,
+      "executed_units": 1439,
+      "budget_balance": 1667.2,
+      "remaining_units": 8717
+    },
+    {
+      "year": 2033,
+      "construction_cost": 9997559.0,
+      "executed_units": 843,
+      "budget_balance": 4108.2,
+      "remaining_units": 7848
+    },
+    {
+      "year": 2034,
+      "construction_cost": 9982547.91,
+      "executed_units": 831,
+      "budget_balance": 21560.29,
+      "remaining_units": 6992
+    },
+    {
+      "year": 2035,
+      "construction_cost": 10014220.41,
+      "executed_units": 841,
+      "budget_balance": 7339.88,
+      "remaining_units": 6108
+    },
+    {
+      "year": 2036,
+      "construction_cost": 9976638.25,
+      "executed_units": 1076,
+      "budget_balance": 30701.63,
+      "remaining_units": 4992
+    },
+    {
+      "year": 2037,
+      "construction_cost": 10023298.39,
+      "executed_units": 1037,
+      "budget_balance": 7403.24,
+      "remaining_units": 3928
+    },
+    {
+      "year": 2038,
+      "construction_cost": 9938370.05,
+      "executed_units": 703,
+      "budget_balance": 69033.19,
+      "remaining_units": 3205
+    },
+    {
+      "year": 2039,
+      "construction_cost": 10033931.68,
+      "executed_units": 660,
+      "budget_balance": 35101.51,
+      "remaining_units": 2531
+    },
+    {
+      "year": 2040,
+      "construction_cost": 9984815.52,
+      "executed_units": 632,
+      "budget_balance": 50285.99,
+      "remaining_units": 1889
+    },
+    {
+      "year": 2041,
+      "construction_cost": 10012802.72,
+      "executed_units": 559,
+      "budget_balance": 37483.27,
+      "remaining_units": 1316
+    },
+    {
+      "year": 2042,
+      "construction_cost": 10019259.37,
+      "executed_units": 536,
+      "budget_balance": 18223.9,
+      "remaining_units": 766
+    },
+    {
+      "year": 2043,
+      "construction_cost": 10010201.72,
+      "executed_units": 402,
+      "budget_balance": 8022.18,
+      "remaining_units": 361
+    },
+    {
+      "year": 2044,
+      "construction_cost": 9976542.28,
+      "executed_units": 343,
+      "budget_balance": 31479.9,
+      "remaining_units": 15
+    },
+    {
+      "year": 2045,
+      "construction_cost": 696086.43,
+      "executed_units": 15,
+      "budget_balance": 9335393.47,
+      "remaining_units": 0
+    }
+  ],
+  "radius_margin_m": 1e-06,
+  "sha256": "964546f23afa68f8046e2194993d29dc7e152293be12452a53721c611ff3f6ce",
+  "exported_csv_reparsed": true,
+  "target_scope": "Initially unreplaced iron ONLY",
+  "strict_all_original_iron_geometry_passed": false,
+  "strict_failure": "Uncovered original iron",
+  "uncovered_original_iron_count": 10726,
+  "uncovered_active_iron_count": 0,
+  "note": "User-submitted scored artifact preserved byte-for-byte; not fully compliant with the repository all-original geometric coverage check."
+}

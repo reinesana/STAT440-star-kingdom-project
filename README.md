@@ -1,5 +1,7 @@
 # STAT 440 – Star Kingdom Pipe Replacement
 
+[10月28日：Ryota 初期3年間重視版 $76.91M（提出CSV・再現コード・検証結果）](reports/2026-10-28_ryota_early3.md)
+
 [提出モデル・スコア・再現資料の統合一覧（10月26日セッション）](reports/2026-10-27_submitted_models.md)
 
 ## Project description — updated October 14, 2026

@@ -1,0 +1,25 @@
+{
+  "provenance": "User-reported official evaluation; screenshots supplied in this chat. Submission mapping is based on the user statements, not independently checked against the evaluation service.",
+  "recorded_date": "2026-10-28",
+  "score_precision": "Rounded leaderboard display to 0.01 million; exact underlying scores unavailable.",
+  "results": [
+    {
+      "method": "previous_multi_pipe",
+      "submission": "outputs/multi_pipe.csv",
+      "submission_sha256": "a9f62647860ea96aa59a0a5b48eac0662e57e544e86ee77bec68612c8487daba",
+      "displayed_score_millions": 71.4,
+      "screenshot": "official_score_71_40m.png",
+      "screenshot_sha256": "8da994cccd478614993b96461094982e13c4d91cd9b8447283de3e300cb8b0fd"
+    },
+    {
+      "method": "early3_adaptive",
+      "submission": "outputs_early3/early3_adaptive.csv",
+      "submission_sha256": "964546f23afa68f8046e2194993d29dc7e152293be12452a53721c611ff3f6ce",
+      "displayed_score_millions": 76.91,
+      "screenshot": "official_score_76_91m.png",
+      "screenshot_sha256": "8918ab2d46bde232906660333b477a0d299ed10c67881415d4bae02e7423287b"
+    }
+  ],
+  "displayed_improvement_millions": 5.51,
+  "displayed_relative_improvement_percent": 7.72
+}

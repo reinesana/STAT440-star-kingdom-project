@@ -1,0 +1,254 @@
+{
+  "data": {
+    "pipes": 43039,
+    "events": 14113,
+    "active_iron": 26237,
+    "original_iron": 38455,
+    "missing_material": 8,
+    "missing_lay_date": 15,
+    "history_start": "2019-01-06",
+    "history_end": "2026-12-31"
+  },
+  "inputs": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "validation": [
+    {
+      "year": 2025,
+      "n": 32059,
+      "events": 1773,
+      "observed": 0.05530428272871892,
+      "predicted": 0.042922675135308314,
+      "log_loss": 0.19187354665597756,
+      "brier": 0.04929737887127808
+    },
+    {
+      "year": 2026,
+      "n": 30286,
+      "events": 3038,
+      "observed": 0.10031037443042991,
+      "predicted": 0.06153525496182851,
+      "log_loss": 0.2643653198766931,
+      "brier": 0.08057300948757984
+    }
+  ],
+  "arms": {
+    "pairwise": {
+      "rows": 20537,
+      "uncovered_active_iron": 0,
+      "uncovered_original_iron": 10748,
+      "sha256": "121017ed893277eff338dedc4660c08e3f8ec738cae712763ab9c7399bb9653f",
+      "selected_group_sizes": {
+        "2": 5700,
+        "1": 14837
+      },
+      "no_future_leaks": {
+        "feasible": true,
+        "finish": 2045,
+        "construction": 181563237.62,
+        "repair": 0.0,
+        "score": 68436762.38,
+        "leaks": 0,
+        "remaining_iron": 0
+      }
+    },
+    "multi_pipe": {
+      "rows": 15328,
+      "uncovered_active_iron": 0,
+      "uncovered_original_iron": 10491,
+      "sha256": "a9f62647860ea96aa59a0a5b48eac0662e57e544e86ee77bec68612c8487daba",
+      "selected_group_sizes": {
+        "6": 854,
+        "5": 494,
+        "4": 551,
+        "3": 728,
+        "2": 1554,
+        "1": 11147
+      },
+      "no_future_leaks": {
+        "feasible": true,
+        "finish": 2044,
+        "construction": 175986889.96,
+        "repair": 0.0,
+        "score": 74013110.04,
+        "leaks": 0,
+        "remaining_iron": 0
+      }
+    },
+    "single_pipe": {
+      "rows": 26237,
+      "uncovered_active_iron": 0,
+      "uncovered_original_iron": 10866,
+      "sha256": "904a601c10e1d25c85aef7327c883f7d868c958b223be4ee4e016533c72750f7",
+      "selected_group_sizes": {
+        "1": 26237
+      },
+      "no_future_leaks": {
+        "feasible": true,
+        "finish": 2046,
+        "construction": 190155279.56,
+        "repair": 0.0,
+        "score": 59844720.44,
+        "leaks": 0,
+        "remaining_iron": 0
+      }
+    }
+  },
+  "simulation_summary": [
+    {
+      "scenario": "hazard_x0.5",
+      "arm": "multi_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 44679405.36466666,
+      "mean_construction": 154425352.84933335,
+      "mean_repair": 50895241.786,
+      "mean_leaks": 3380.3333333333335,
+      "latest_finish": 2042,
+      "paired_gain_vs_pairwise": 3446043.1546666673,
+      "paired_standard_error": 399147.21340397565,
+      "paired_mc_95_interval": [
+        2663714.616394875,
+        4228371.69293846
+      ]
+    },
+    {
+      "scenario": "hazard_x0.5",
+      "arm": "pairwise",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 41233362.21000001,
+      "mean_construction": 157465549.54066664,
+      "mean_repair": 51301088.24933334,
+      "mean_leaks": 3383.9333333333334,
+      "latest_finish": 2042,
+      "paired_gain_vs_pairwise": 0.0,
+      "paired_standard_error": 0.0,
+      "paired_mc_95_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "hazard_x0.5",
+      "arm": "single_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 38411254.79633333,
+      "mean_construction": 160450328.51733336,
+      "mean_repair": 51138416.68633332,
+      "mean_leaks": 3378.8,
+      "latest_finish": 2043,
+      "paired_gain_vs_pairwise": -2822107.4136666665,
+      "paired_standard_error": 189863.32050337325,
+      "paired_mc_95_interval": [
+        -3194239.521853278,
+        -2449975.305480055
+      ]
+    },
+    {
+      "scenario": "hazard_x1",
+      "arm": "multi_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 35345121.974,
+      "mean_construction": 138986353.57633334,
+      "mean_repair": 75668524.44966666,
+      "mean_leaks": 5461.4,
+      "latest_finish": 2041,
+      "paired_gain_vs_pairwise": 1472978.4203333333,
+      "paired_standard_error": 401881.82749124663,
+      "paired_mc_95_interval": [
+        685290.03845049,
+        2260666.802216177
+      ]
+    },
+    {
+      "scenario": "hazard_x1",
+      "arm": "pairwise",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 33872143.55366667,
+      "mean_construction": 140337833.7973333,
+      "mean_repair": 75790022.649,
+      "mean_leaks": 5438.2,
+      "latest_finish": 2041,
+      "paired_gain_vs_pairwise": 0.0,
+      "paired_standard_error": 0.0,
+      "paired_mc_95_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "hazard_x1",
+      "arm": "single_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 33870484.88966667,
+      "mean_construction": 141187997.20633334,
+      "mean_repair": 74941517.90400001,
+      "mean_leaks": 5398.6,
+      "latest_finish": 2041,
+      "paired_gain_vs_pairwise": -1658.6640000004322,
+      "paired_standard_error": 242867.22891322014,
+      "paired_mc_95_interval": [
+        -477678.43266991194,
+        474361.10466991103
+      ]
+    },
+    {
+      "scenario": "hazard_x2",
+      "arm": "multi_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 25744613.07466667,
+      "mean_construction": 118880476.39733332,
+      "mean_repair": 105374910.52799998,
+      "mean_leaks": 8115.933333333333,
+      "latest_finish": 2039,
+      "paired_gain_vs_pairwise": -1717374.7906666668,
+      "paired_standard_error": 546010.2675684976,
+      "paired_mc_95_interval": [
+        -2787554.915100922,
+        -647194.6662324115
+      ]
+    },
+    {
+      "scenario": "hazard_x2",
+      "arm": "pairwise",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 27461987.865333326,
+      "mean_construction": 118537881.75566667,
+      "mean_repair": 104000130.379,
+      "mean_leaks": 8024.666666666667,
+      "latest_finish": 2038,
+      "paired_gain_vs_pairwise": 0.0,
+      "paired_standard_error": 0.0,
+      "paired_mc_95_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "hazard_x2",
+      "arm": "single_pipe",
+      "simulations": 30,
+      "feasible_fraction": 1.0,
+      "mean_score": 29227396.54933333,
+      "mean_construction": 118178558.465,
+      "mean_repair": 102594044.98566668,
+      "mean_leaks": 7921.733333333334,
+      "latest_finish": 2038,
+      "paired_gain_vs_pairwise": 1765408.6840000004,
+      "paired_standard_error": 275606.71799236326,
+      "paired_mc_95_interval": [
+        1225219.5167349684,
+        2305597.8512650323
+      ]
+    }
+  ],
+  "seconds": 104.12249636650085
+}

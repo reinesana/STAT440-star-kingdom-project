@@ -1,0 +1,14 @@
+data verified; active iron 26237
+candidate search 0 / 26237
+candidate search 5000 / 26237
+candidate search 10000 / 26237
+candidate search 15000 / 26237
+candidate search 20000 / 26237
+candidate search 25000 / 26237
+pairwise {'rows': 20537, 'uncovered_active_iron': 0, 'uncovered_original_iron': 10748, 'sha256': '121017ed893277eff338dedc4660c08e3f8ec738cae712763ab9c7399bb9653f', 'selected_group_sizes': {2: 5700, 1: 14837}, 'no_future_leaks': {'feasible': True, 'finish': 2045, 'construction': 181563237.62, 'repair': 0.0, 'score': 68436762.38, 'leaks': 0, 'remaining_iron': 0}}
+multi_pipe {'rows': 15328, 'uncovered_active_iron': 0, 'uncovered_original_iron': 10491, 'sha256': 'a9f62647860ea96aa59a0a5b48eac0662e57e544e86ee77bec68612c8487daba', 'selected_group_sizes': {6: 854, 5: 494, 4: 551, 3: 728, 2: 1554, 1: 11147}, 'no_future_leaks': {'feasible': True, 'finish': 2044, 'construction': 175986889.96, 'repair': 0.0, 'score': 74013110.04, 'leaks': 0, 'remaining_iron': 0}}
+single_pipe {'rows': 26237, 'uncovered_active_iron': 0, 'uncovered_original_iron': 10866, 'sha256': '904a601c10e1d25c85aef7327c883f7d868c958b223be4ee4e016533c72750f7', 'selected_group_sizes': {1: 26237}, 'no_future_leaks': {'feasible': True, 'finish': 2046, 'construction': 190155279.56, 'repair': 0.0, 'score': 59844720.44, 'leaks': 0, 'remaining_iron': 0}}
+simulation scenario complete 0.5
+simulation scenario complete 1.0
+simulation scenario complete 2.0
+FINISHED 104.1299057006836

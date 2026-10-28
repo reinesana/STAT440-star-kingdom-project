@@ -1,0 +1,31 @@
+{
+  "outputs/multi_pipe.csv": {
+    "strict_original_geometry_passed": false,
+    "strict_failure": "Uncovered original iron",
+    "uncovered_original_iron": 10491,
+    "uncovered_active_iron": 0,
+    "active_iron_no_future_leak_validation_passed": true,
+    "shared_simulator_no_future_leak_construction": 175986889.9600003,
+    "cost_model_version": "2026-10-26-area-exponent",
+    "sha256": "a9f62647860ea96aa59a0a5b48eac0662e57e544e86ee77bec68612c8487daba"
+  },
+  "outputs_early3/early3_adaptive.csv": {
+    "strict_original_geometry_passed": false,
+    "strict_failure": "Uncovered original iron",
+    "uncovered_original_iron": 10726,
+    "uncovered_active_iron": 0,
+    "active_iron_no_future_leak_validation_passed": true,
+    "shared_simulator_no_future_leak_construction": 180664606.53000003,
+    "cost_model_version": "2026-10-26-area-exponent",
+    "sha256": "964546f23afa68f8046e2194993d29dc7e152293be12452a53721c611ff3f6ce"
+  },
+  "input_sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "shared_source_sha256": {
+    "build_cost_submissions.py": "4033a69e69fd934123d164c39cd21ab87561064ccc795d69998c84a35145220f",
+    "simulate_score.py": "4fa89cfd88148e3cb8e1ec80e291e817f8c0b28bc94c5693afe00afbaf514bbe"
+  },
+  "shared_doc_access": "Read attempted during GitHub integration; Google Doc unavailable via web tool. No retraining/new optimization performed during integration."
+}
