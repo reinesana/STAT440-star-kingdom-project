@@ -1,0 +1,22 @@
+experiment_id,model,displayed_public_million,approx_total_cost_dollars,mapping_status
+C001,takito_catboost,46.72,203280000.0,UNCONFIRMED: assumes ascending filenames for both batches
+C002,rion_lgb_log_mean_refit,47.59,202410000.0,UNCONFIRMED: assumes ascending filenames for both batches
+C003,previous_six_optimized,46.93,203070000.0,UNCONFIRMED: assumes ascending filenames for both batches
+C004,anthony_rf_log_mean,45.77,204230000.0,Confirmed by user: ascending filename order in screenshot
+C006,top3_equal,45.96,204040000.0,Confirmed by user: ascending filename order in screenshot
+C008,ensemble_equal,46.08,203920000.0,Confirmed by user: ascending filename order in screenshot
+C009,ensemble_stable,45.74,204260000.0,Confirmed by user: ascending filename order in screenshot
+C010,ensemble_balanced,44.75,205250000.0,Confirmed by user: ascending filename order in screenshot
+C011,prior_surface_mean,43.34,206660000.0,Confirmed by user: ascending filename order in screenshot
+C012,ensemble_rmse_weighted,44.38,205620000.0,Confirmed by user: ascending filename order in screenshot
+C013,rion_rf_raw_refit,47.03,202970000.0,Confirmed by user: ascending filename order in screenshot
+C014,takito_lightgbm,47.22,202780000.0,Confirmed by user: ascending filename order in screenshot
+C015,extra_trees,43.66,206340000.0,Confirmed by user: ascending filename order in screenshot
+C016,takito_xgboost,45.95,204050000.0,Confirmed by user: ascending filename order in screenshot
+C017,anthony_linear_raw,45.26,204740000.0,Confirmed by user: ascending filename order in screenshot
+C018,hierarchical_gamma,45.0,205000000.0,Confirmed by user: ascending filename order in screenshot
+C019,anthony_gamma,44.53,205470000.0,Confirmed by user: ascending filename order in screenshot
+C020,small_mlp,46.51,203490000.0,Confirmed by user: ascending filename order in screenshot
+C021,rion_gamma_refit,44.53,205470000.0,Confirmed by user: ascending filename order in screenshot
+C023,ridge_stack,44.35,205650000.0,Confirmed by user: ascending filename order in screenshot
+C024,rion_lgb_log_mean_refit_plain,47.59,202410000.0,Confirmed by user: ascending filename order in screenshot

@@ -2,6 +2,8 @@
 
 [English](METHOD.en.md) · [日本語](METHOD.ja.md)
 
+Follow-up cost comparison: [English](COST.en.md) · [日本語](COST.ja.md). Rounded user-reported public results and confirmed filename mappings are distinguished from exact official annual evidence.
+
 This documents the best **official total cost among the 20 submitted timing candidates** in the October 27–28 experiment. It does not claim an untouched private-test win.
 
 - Forecast: **F168**, ten survival models combined with standardized Ridge stacking.
