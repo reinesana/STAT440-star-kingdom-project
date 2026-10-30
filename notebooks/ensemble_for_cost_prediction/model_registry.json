@@ -39,6 +39,54 @@
       "version": "1.0.0",
       "registry": "model_registry.json",
       "identity_note": "CMS001 is the stable model identity; model_id retains the technical recipe. Cxxx are separate experiment/submission identifiers."
+    },
+    "CMS002": {
+      "updated": "2026-10-30",
+      "registry_id": "CMS002",
+      "display_name": "Fixed Four-Predictor Cost Model",
+      "display_name_ja": "仕様固定・基本4項目コストモデル",
+      "version": "1.0.0",
+      "model_id": "fixed_four_predictor_raw_catboost",
+      "directory": "fixed_protocol",
+      "status": "Selected by user policy: fixed specification and integrity checks, independent of backtest/public performance",
+      "target": "Conditional repair amount for active pipes; inactive planning cost is zero",
+      "config": "fixed_protocol/PROTOCOL.json",
+      "predictions": "fixed_protocol/artifacts/cost_predictions_2027.csv",
+      "fitted_model": "fixed_protocol/artifacts/severity.cbm",
+      "schema": [
+        "pipe_id",
+        "predicted_repair_cost"
+      ],
+      "features": [
+        "material",
+        "surface",
+        "length_m",
+        "age",
+        "length_missing",
+        "age_missing"
+      ],
+      "base_training_years": [
+        2019,
+        2026
+      ],
+      "official_planning_score": null,
+      "selection_note": "Single specification committed as 6a2da48 before training; no searches or metric-driven switch. Previously seen years are descriptive backtests, not untouched holdout.",
+      "protocol_id": "FIXED20261030-v1",
+      "timing_model_id": "HFX001",
+      "registry": "model_registry.json",
+      "reproduction": "fixed_protocol/README.md",
+      "base_training_rows": 14113,
+      "supported_forecast_pipes": 27248,
+      "forecast_inventory_rows": 43039,
+      "eligible_incomplete_input": 17,
+      "mean_annual_RMSE": 115040.4100686862,
+      "mean_annual_MAE": 25173.518351353647,
+      "evaluation_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "evaluation_status": "Descriptive previously inspected years; not selection evidence or untouched holdout"
     }
   }
 }

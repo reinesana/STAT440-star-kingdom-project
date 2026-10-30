@@ -1,5 +1,9 @@
 # STAT 440 – Star Kingdom Pipe Replacement
 
+**2026-10-30 model update:** [CMS002 cost + HFX001 annual leak risk](notebooks/ensemble_for_cost_prediction/fixed_protocol/README.md) use a specification committed before this run, six input columns, and no public-score or backtest-driven candidate selection. This replaces CMS001/F168 as the current modeling policy; historical artifacts remain for reproduction. No accuracy improvement, new untouched holdout or official planning score is claimed.
+
+**モデル更新（10月30日）：** [CMS002／HFX001](notebooks/ensemble_for_cost_prediction/fixed_protocol/README.md)へ変更。仕様を実行前に固定し、公開スコアと繰り返しの過去検証を見た候補選定を外す。旧版は履歴として保存。精度改善や未使用テストでの優位を主張する更新ではない。
+
 [提出モデル・スコア・再現資料の統合一覧（10月26日セッション）](reports/2026-10-27_submitted_models.md)
 
 ## Project description — updated October 14, 2026

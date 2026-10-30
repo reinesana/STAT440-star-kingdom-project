@@ -1,0 +1,63 @@
+{
+  "protocol_sha256": "f71e80dc605a0a06281d4b4d215a145a5ab6e234247dc27402b162231865a84d",
+  "source_sha256": "027cb979a14dba8be10f4703df7442fcc995411e25aa5561d8b3ce7b57859968",
+  "input_sha256": {
+    "pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  },
+  "protocol": {
+    "protocol_id": "FIXED20261030-v1",
+    "created_utc_date": "2026-10-30",
+    "cost_model_id": "CMS002",
+    "timing_model_id": "HFX001",
+    "features": [
+      "material",
+      "surface",
+      "length_m",
+      "age",
+      "length_missing",
+      "age_missing"
+    ],
+    "categorical": [
+      "material",
+      "surface"
+    ],
+    "training_start": 2019,
+    "forecast_year": 2027,
+    "report_years": [
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "parameters": {
+      "iterations": 200,
+      "depth": 4,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 10.0,
+      "random_seed": 440,
+      "thread_count": 2,
+      "boosting_type": "Ordered",
+      "bootstrap_type": "No",
+      "random_strength": 0.0,
+      "border_count": 64,
+      "verbose": false,
+      "allow_writing_files": false
+    },
+    "hazard_loss": "Logloss",
+    "cost_loss": "RMSE",
+    "selection": "One fixed specification; no feature, model, threshold, ensemble-weight or hyperparameter search; no early stopping; no public-score input; never select or revise from report-year metrics.",
+    "risk_set": "Non-polyurethane pipes installed by year start (unknown installation dates retained); remove pipes whose first observed leak precedes year start. Label is first observed leak during that year.",
+    "cost_target": "Raw nonnegative event Cost in train.csv, using original inventory attributes and age at event-year start; every supplied event retained. No log transform, learned smearing or tail clipping.",
+    "missing": "Unknown material/surface are explicit categories. Missing length/age are NaN with flags, handled by CatBoost. Unknown material is not assigned zero risk.",
+    "year_features": "No calendar year, installation cohort, coordinate, neighborhood, target encoding, historical target aggregate, pipe ID or manually overwritten probability in inputs.",
+    "evaluation": "Expanding-year descriptive backtest. Each report year is predicted by a model fit only on preceding years. These years were previously inspected in other experiments and are NOT an untouched holdout.",
+    "long_horizon": "No calibrated long-horizon claim; release forecasts for 2027 only.",
+    "acceptance": "Accept on data-integrity and reproducibility checks, independent of metric values. No official evaluator submission or public-score comparison in this update.",
+    "limitation": "Frozen after prior project-wide exploration: cannot erase historical knowledge or guarantee absence of adaptive bias. This is a prospective process reset, not a preregistration made before the data existed. Accuracy improvement is not claimed."
+  },
+  "python": "3.14.5",
+  "catboost": "1.2.10",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3"
+}

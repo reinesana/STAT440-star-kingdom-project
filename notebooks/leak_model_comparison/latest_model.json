@@ -1,0 +1,23 @@
+{
+  "updated": "2026-10-30",
+  "registry_id": "HFX001",
+  "display_name": "Fixed Four-Predictor Annual Hazard",
+  "version": "1.0.0",
+  "previous_model": "F168",
+  "target": "Annual first-observed-leak probability for 2027; not an exact date or work plan",
+  "config": "../ensemble_for_cost_prediction/fixed_protocol/PROTOCOL.json",
+  "fitted_model": "../ensemble_for_cost_prediction/fixed_protocol/artifacts/hazard.cbm",
+  "predictions": "../ensemble_for_cost_prediction/fixed_protocol/artifacts/predictions_2027.csv",
+  "probability_column": "p_leak",
+  "features": [
+    "material",
+    "surface",
+    "length_m",
+    "age",
+    "length_missing",
+    "age_missing"
+  ],
+  "selection_note": "Single specification committed as 6a2da48 before training; no searches or metric-driven switch. Previously seen years are descriptive backtests, not untouched holdout.",
+  "official_planning_score": null,
+  "new_untouched_holdout": false
+}

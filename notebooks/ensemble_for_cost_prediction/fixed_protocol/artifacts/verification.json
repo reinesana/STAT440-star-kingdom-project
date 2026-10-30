@@ -1,0 +1,52 @@
+{
+  "rows": 43039,
+  "eligible": 27248,
+  "eligible_incomplete_input": 17,
+  "save_reload_exact": true,
+  "reversed_input_exact": true,
+  "finite_nonnegative_cost_and_bounded_probability": true,
+  "training_counts": [
+    {
+      "prediction_year": 2023,
+      "training_end": 2022,
+      "risk_rows": 159938,
+      "cost_rows": 5521
+    },
+    {
+      "prediction_year": 2024,
+      "training_end": 2023,
+      "risk_rows": 195778,
+      "cost_rows": 7347
+    },
+    {
+      "prediction_year": 2025,
+      "training_end": 2024,
+      "risk_rows": 229792,
+      "cost_rows": 9302
+    },
+    {
+      "prediction_year": 2026,
+      "training_end": 2025,
+      "risk_rows": 261851,
+      "cost_rows": 11075
+    },
+    {
+      "prediction_year": 2027,
+      "training_end": 2026,
+      "risk_rows": 292137,
+      "cost_rows": 14113
+    }
+  ],
+  "official_evaluation": null,
+  "new_untouched_holdout": false,
+  "output_sha256": {
+    "cost_backtest.csv": "eefbb055d687a8d2f6d18412178e7d5fb414d52f935fa2f713e1cd67a63e507d",
+    "cost_predictions_2027.csv": "cbdef2b701744ed4cf5d67a3ea7280e21815f8d74e91fc23749e6f060fc81f5e",
+    "descriptive_backtest.csv": "df846c092d297babed7fdd68d9ed7bbe0b461d22f5523ef04c9832b1d03172c4",
+    "frozen_run.json": "b7635b226c23b890ae7b8cf1b07b6805ead02df24cf88b10a7a7f2f54b7bdbb2",
+    "hazard.cbm": "fdd3eae8f9880d023edf08da2f1ac6033aa702233ddddb561ae4dbe090598815",
+    "hazard_backtest.csv.gz": "aeabb69e38bd6a9323fda85d5b77c92bec363c45e4fd71dc7152bf30473dc189",
+    "predictions_2027.csv": "5c08be4f27bc709e603ada005e9fd82433a1663c48950ebfa32d1e10739bd062",
+    "severity.cbm": "7b1833b9665e42dc72722a9217e6e534959cf58103581dee3461deff857d06e5"
+  }
+}
