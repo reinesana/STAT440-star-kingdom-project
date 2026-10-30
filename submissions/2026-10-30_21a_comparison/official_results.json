@@ -1,0 +1,37 @@
+{
+  "recorded_date": "2026-10-30",
+  "submission": "21a_corrected_order.csv",
+  "submission_sha256": "1c304722ab0f9214bf1db4caf95f67601f1c3b1eed6f28e3adc3ddbd5ce2ef67",
+  "csv_line_ending": "CRLF",
+  "cost_model_version": "2026-10-26-area-exponent",
+  "displayed_public_score_millions": 74.95,
+  "private_score": null,
+  "provenance": "User-provided evaluator screenshots and submission context; service not independently queried. Exact score is reconstructed from annual cost totals.",
+  "work_unit_count": 36375,
+  "construction_cost": "144501626.47",
+  "repair_cost": "30552610.55",
+  "reconstructed_score": "74945762.98",
+  "official_construction_finish_year": 2041,
+  "input_sha256_lf": {
+    "data/pipes.csv": "adba16c208c9d2497aa09667f102da1f28f9646c6e8bf53a4ba9dd44ede2e4c5",
+    "data/train.csv": "cf93bbe8046e7867f7f54750a64d3f70363384287040a59cbaea11a8b096dccf",
+    "src/build_baseline.py": "73bfc0b39e75ad10f6049905f1ba8c83b0000ca6db677d5bea4fb81b0a6e352b",
+    "src/build_cost_submissions.py": "a3b50cc97f5006cb8859d722eabbb487a424700ac6447e379a447b6f6c488391",
+    "src/simulate_score.py": "f6f94db92a15661fb56c91b05910da24ad3bc27383609a4902677c1734558e8d",
+    "submissions/2026-10-28_ryota_early3/optimize.py": "64e3444ad3073b56917783e676bbd38f14e9efe32af9cc24c0b1398ac12cfa6e",
+    "submissions/2026-10-28_ryota_early3/early_three_years.py": "a8fabefa784ada3766961a420a6a042a3d83f7189c9ac7145b02e92d64f908a8",
+    "src/search_orders.py": "be2a08438034943526985893f66a3eb886f6268cd7c15711350846d28040cbf1",
+    "submissions/2026-10-26_best20a_catboost_logrf/20a_original_control.csv": "bee3665ae61c51d829886ac8ca39cde77a0f479d009484a4236280c6d4dff86a",
+    "submissions/2026-10-26_best20a_catboost_logrf/weights_2027.json": "b79c649754f2d9b8e96496906a58d1feab9702b3c799e4437991cf4a62b9da52",
+    "submissions/2026-10-26_best20a_catboost_logrf/base_predictions_2027.csv": "827035f85dcd041093584952edc80b174ab5c88614e0519c186651775051b46c",
+    "submissions/2026-10-26_best20a_catboost_logrf/predictions_2027.csv": "78ab63f411f58320a8f57225265e4541bad7ea738844ea346743b29aa80b95b4",
+    "submissions/2026-10-26_best20a_catboost_logrf/severity_join.audit.csv": "7b944e14c78cbffc6d48d382ad1aec63f824f2341ab7d013469b492eeea78536"
+  },
+  "publication_checks": "Syntax, Markdown links, submission hashes and CSV structure checked. Portable reproduction entry points were not rerun during publication.",
+  "local_no_future_leak_validation": {
+    "uncovered_iron_count": 0,
+    "completed_by_2051": true,
+    "completion_year": 2045,
+    "construction_cost": 187750619.7
+  }
+}
