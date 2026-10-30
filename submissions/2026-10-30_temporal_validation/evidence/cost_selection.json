@@ -1,0 +1,10 @@
+{
+  "selected_on_2024_2025": "past_only_two_model_stack",
+  "development_metrics": {
+    "past_only_two_model_stack": 105939.75283812798,
+    "corrected_log_rf": 105962.4433292769,
+    "catboost": 106627.6994103929,
+    "ryota_material_surface": 107577.17033213355
+  },
+  "selection_does_not_use_2026": true
+}

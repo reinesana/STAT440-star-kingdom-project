@@ -1,0 +1,10 @@
+{
+  "reported_submission_time": "2026-10-30 16:06",
+  "time_zone": "not established from screenshot",
+  "public_display_millions": 77.46,
+  "team": "UniUni",
+  "displayed_public_rank": 2,
+  "private_score": null,
+  "evidence": "User-provided evaluator screenshots. Annual breakdown visually matches the earlier integrated-coverage result. Uploaded-file identity was not independently verified.",
+  "interpretation": "Repeat public evaluation, not independent private/generalization evidence."
+}

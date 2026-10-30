@@ -1,0 +1,23 @@
+{
+  "years": [
+    2024,
+    2025,
+    2026
+  ],
+  "development_years": [
+    2024,
+    2025
+  ],
+  "confirmation_year": 2026,
+  "untouched_holdout": false,
+  "leak_primary": "Equal-year Brier, supported by log loss and calibration; no public-score selection",
+  "cost_primary": "Equal-year RMSE with MAE and total-cost bias diagnostics",
+  "candidate_gate": "Change existing submission only with consistent temporal evidence and controlled planning comparison",
+  "scope": "Reuse saved past-only ML forecasts; refit Ryota baseline per cutoff; no hyperparameter search",
+  "limitations": [
+    "These historical years have previously been inspected.",
+    "p17b manually staged 2027 cohort overrides have no frozen historical backtest and must not be retroactively applied.",
+    "One-year validation cannot certify 25-year forecasts."
+  ],
+  "cost_model_version": "2026-10-26-area-exponent"
+}
