@@ -1,0 +1,10 @@
+{
+  "selected_on_2024_2025": "team_ml_equal",
+  "development_metrics": {
+    "team_ml_equal": 0.04199660814256728,
+    "fixed_half_blend": 0.042502086259446875,
+    "ryota_fine": 0.045073098985491576,
+    "ryota_age": 0.049146115400402424
+  },
+  "selection_does_not_use_2026": true
+}

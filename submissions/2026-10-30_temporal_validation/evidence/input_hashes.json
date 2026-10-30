@@ -1,0 +1,10 @@
+{
+  "data/pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+  "data/train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+  "data/leak_prediction_master.csv": "f39b7a3e9beb4955ac4f59a77e80d668ef0ea681b013f9cd8aaa259d86161015",
+  "submissions/2026-10-28_ryota_early3/optimize.py": "f45faf7cc57d7526ffc74b465557558099d9231d510aac6903c2e91c8df23fd2",
+  "notebooks/Amy_Sim/predictions/xgboost_oof_predictions.csv": "4d245a446de41c791a69c8e289b9a25a4dbe66924423956ea95988e7a58ee270",
+  "notebooks/Ryota_Sato/catboost_predictions.csv": "4d615f38d76aa17c04630490d5202de5e31edf825d795c64745a50958446175d",
+  "notebooks/Mar_Nacianceno/lightgbm_baseline_oof_predictions.csv": "29048f667001f2f0e1a4c4293c342d7e174beb55f4f3c6577475dbcbd0e46a3a",
+  "submissions/2026-10-26_best20a_catboost_logrf/base_oof_2023_2026.csv": "1511de09d9cc05712ec243ee87a4194861479dfe5211ed0c89c3a5cb5bf6b8d1"
+}

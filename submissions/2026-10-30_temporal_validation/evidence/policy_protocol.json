@@ -1,0 +1,21 @@
+{
+  "years": [
+    2024,
+    2025,
+    2026
+  ],
+  "models": [
+    "ryota_fine",
+    "team_ml_equal"
+  ],
+  "geometry": "Fixed inventory midpoint circle for each original iron pipe; radius half length plus 1e-6m; no optimized submitted geometry",
+  "budget": 10000000,
+  "ordering": "Shared order_dynamic, expected net repair benefit per current construction cost",
+  "cost_forecast": "Same past-only material/surface means for both arms",
+  "evaluation": "Actual held-year recorded repair costs avoided under start-of-year replacement assumption",
+  "limitations": [
+    "One-year retrospective counterfactual, not official or 25-year score.",
+    "Unknown/missing ML inputs use the same Ryota fine forecast fallback.",
+    "Does not compare the manually overridden p17b procedure or compare alternative cost models in planning."
+  ]
+}
