@@ -1,0 +1,11 @@
+{
+  "reason": "User requested lighter models first",
+  "lane_a": ["10_hierarchical_hazard", "08_mtlr", "09_deephit"],
+  "lane_b": ["02_weibull_aft", "03_lognormal_aft", "04_spline_survival"],
+  "lane_c": ["07_catboost_hazard", "06_xgboost_aft"],
+  "after_light_stage": ["01_elastic_net_cox", "05_random_survival_forest"],
+  "heavy_state": "suspended in memory; current trials retained",
+  "hyperparameters_or_features_changed": false,
+  "validation_changed": false,
+  "publication": "verify and upload eight-model interim results before heavy-stage completion"
+}

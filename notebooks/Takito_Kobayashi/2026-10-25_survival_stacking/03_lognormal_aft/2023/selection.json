@@ -1,0 +1,45 @@
+{
+  "model": "03_lognormal_aft",
+  "origin": 2023,
+  "train_years": [
+    2019,
+    2022
+  ],
+  "inner_validation_years": [
+    2021,
+    2022
+  ],
+  "best_trial": 36,
+  "inner_mean_brier": 0.06195388376593636,
+  "config": {
+    "model": "03_lognormal_aft",
+    "features": "ranked",
+    "top_k": 16,
+    "penalty": 0.0013285476740356513
+  },
+  "selected_features": [
+    "age",
+    "origin_year",
+    "material_cohort",
+    "lay_decade",
+    "lay_year",
+    "material",
+    "history_250m_last1_leak_count",
+    "cohort_prior_rate",
+    "material_prior_rate",
+    "history_100m_last1_leak_count",
+    "mid_y",
+    "history_250m_prior_leak_count",
+    "neighbor_250m_material_gray_iron_fraction",
+    "length_m",
+    "neighbor_250m_mean_length_m",
+    "history_250m_prior_leak_fraction"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 38,
+  "failed_trials": 2,
+  "training_landmarks": 159938,
+  "training_event_landmarks": 16578,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

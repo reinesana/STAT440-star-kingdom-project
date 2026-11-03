@@ -1,0 +1,38 @@
+{
+  "model": "07_catboost_hazard",
+  "origin": 2024,
+  "train_years": [
+    2019,
+    2023
+  ],
+  "inner_validation_years": [
+    2022,
+    2023
+  ],
+  "best_trial": 34,
+  "inner_mean_brier": 0.04606053282363118,
+  "config": {
+    "model": "07_catboost_hazard",
+    "features": "basic",
+    "trees": 600,
+    "depth": 5,
+    "lr": 0.12940408751827065,
+    "l2": 9.325164876873519,
+    "random_strength": 1.4668691194886878
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 40,
+  "failed_trials": 0,
+  "training_landmarks": 195778,
+  "training_event_landmarks": 25708,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

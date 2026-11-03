@@ -1,0 +1,34 @@
+{
+  "model": "02_weibull_aft",
+  "origin": 2025,
+  "train_years": [
+    2019,
+    2024
+  ],
+  "inner_validation_years": [
+    2023,
+    2024
+  ],
+  "best_trial": 32,
+  "inner_mean_brier": 0.06366477126394102,
+  "config": {
+    "model": "02_weibull_aft",
+    "features": "basic",
+    "penalty": 0.429329993128035
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 40,
+  "completed_trials": 36,
+  "failed_trials": 4,
+  "training_landmarks": 229792,
+  "training_event_landmarks": 37438,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

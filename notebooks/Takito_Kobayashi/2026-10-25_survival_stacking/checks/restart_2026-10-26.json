@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-26T04:04:33.376771+00:00",
+  "interrupted_trials": [
+    {
+      "study": "01_elastic_net_cox_2023",
+      "trial": 25,
+      "reason": "process absent at restart audit; interruption, not a model convergence failure"
+    },
+    {
+      "study": "03_lognormal_aft_2026",
+      "trial": 6,
+      "reason": "process absent at restart audit; interruption, not a model convergence failure"
+    },
+    {
+      "study": "05_random_survival_forest_2023",
+      "trial": 1,
+      "reason": "process absent at restart audit; interruption, not a model convergence failure"
+    }
+  ]
+}

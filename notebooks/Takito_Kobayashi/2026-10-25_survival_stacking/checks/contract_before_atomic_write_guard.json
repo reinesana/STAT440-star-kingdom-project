@@ -1,0 +1,31 @@
+{
+  "seed": 440,
+  "outer_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "deployment_origin": 2027,
+  "objective": "mean across two prior origins of their mean 1/2-year Brier, truncated before outer year",
+  "features": "joint semantic-group / supervised-ranked subset and hyperparameter search",
+  "requested_outer_trials": 40,
+  "requested_deployment_trials": 60,
+  "code_sha256": {
+    "build_results.py": "ca30150cc8a787d9d6c02b9df72d51255772af625dfdb1f89d481290e2d2b3a9",
+    "data.py": "1c364f6137c277ac94c0c671907938b27507421f059da02c4ba104baf875d72e",
+    "experiment.py": "d2cf4da75f3345d1788503ecf7a8272760c7229f5ca216ecab56b7cc9ef52778",
+    "models.py": "e80d0e4afa0a4b2c19b091acf3c2d788dd3d4af6dc2ec9dc6d8b1787a38d41cd",
+    "predict.py": "b852d34910dcf7f76a47be0c8910b32c0a86a0324aa3fd33ed3facf37a782552",
+    "verify.py": "dc3dc96eced6ec13c7e39cbc7aecdfc40ebc2ece6e4e821579c3b9afe05f41e2"
+  },
+  "shared_record": "https://docs.google.com/document/d/1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ/edit",
+  "censoring": "administrative at training year end; annual event timing uses year midpoint",
+  "landmarking": "all still-at-risk pipes at each historical Jan 1; correlated within pipe",
+  "forecast": "first leak without future planned replacement; observed history frozen at forecast origin",
+  "asymmetric_penalty": false,
+  "source_commit": "668a598ba8efd478d1c5bf569b39fc7fb93162e2",
+  "operational_revision": "checks/budget_accounting.md",
+  "full_refit_policy": "Try converged candidates in inner-score order if a full-data refit fails; never consult outer outcomes",
+  "parallel_reporting_policy": "Workers do not collect outer metrics; supervisor collects after all final exports"
+}
