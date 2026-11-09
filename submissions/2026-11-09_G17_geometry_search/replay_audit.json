@@ -1,0 +1,22 @@
+{
+  "G05": {
+    "sha256": "47a960a0cec73ee2abd1bb5df61891b66f64eca4a05f114e76a25e9b7a6dd86b",
+    "uncovered_iron": 0,
+    "independent_replay_agrees": true
+  },
+  "C01": {
+    "sha256": "3588893def624a003b214a49d95a20b3d0e807545db26f3629c827c9a6eec6b5",
+    "uncovered_iron": 0,
+    "independent_replay_agrees": true
+  },
+  "C02": {
+    "sha256": "4f6691cdbade9e0a6b2e9088618a3929d7eabb5744e452a8beb7da6476ec1233",
+    "uncovered_iron": 0,
+    "independent_replay_agrees": true
+  },
+  "C03": {
+    "sha256": "02303f1a7eeb4b0b38d9158b0fc3d090b23cd45790a6d6df8adebf4c64b3ea40",
+    "uncovered_iron": 0,
+    "independent_replay_agrees": true
+  }
+}

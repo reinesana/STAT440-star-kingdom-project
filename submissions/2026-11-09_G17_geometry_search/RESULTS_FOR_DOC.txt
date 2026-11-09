@@ -1,0 +1,11 @@
+G17の円の中心・半径・分割探索：公式提出と内部評価（2026-11-09）
+
+推奨：C03。公式Publicと内部評価を別々に確認して判断した。Privateでの優位は未確認。
+基準：G17 Public $79,168,928.88。提出済みCSVのGitHub版とSHA256の一致を確認。
+
+候補 / Public score / G17との差 / 内部平均改善 / 内部の最悪条件平均改善 / 改善条件数
+C01 中心移動 / $79,177,265.21 / $+8,336.33 / $+7,931.63 / $+6,138.71 / 24/24
+C02 分割 / $79,183,830.86 / $+14,901.98 / $+20,979.12 / $+16,573.68 / 24/24
+C03 中心移動＋分割 / $79,192,152.48 / $+23,223.60 / $+28,859.48 / $+25,332.06 / 24/24
+
+Method: Geometry changes only, with fixed model forecasts. All three candidates pass 24-condition paired internal confirmation; official Public results are reported separately. Private performance remains unknown.

@@ -1,0 +1,9 @@
+{
+  "user_update": "2026-11-09: Evaluate using both internal metrics and an actual submitted Public score.",
+  "authorization": "Official candidate submission and recurring GitHub publication are authorized by the user.",
+  "selection_before_public": "Submit each unique changed C01/C02/C03 CSV that passes coverage, budget and completion validation. Skip byte-identical duplicates and unchanged G17. At most three submissions, without modifying candidates after seeing Public results.",
+  "internal_gate": "The original internal development/confirmation gate remains unchanged. Failing it does not cancel the requested Public experiment; it limits the adoption recommendation.",
+  "overall_judgment": "Report Public delta and paired internal mean, worst setting, positive settings and family Monte Carlo intervals separately. Recommend adoption when both support improvement; report mixed evidence explicitly, without converting the two into an arbitrary weighted score.",
+  "main_reference": "G17, Public 79168928.88 USD",
+  "private_performance": "Unknown"
+}

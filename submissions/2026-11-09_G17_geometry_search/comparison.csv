@@ -1,0 +1,4 @@
+candidate,method,public_score,public_gain,internal_mean_gain,internal_worst_setting_gain,positive_settings,internal_gate_pass,all_feasible,nominal_no_future_leak_saving,sha256,submission_id
+C01,中心移動,79177265.21,8336.33,7931.626712239347,6138.706328125438,24,True,True,8336.98,3588893def624a003b214a49d95a20b3d0e807545db26f3629c827c9a6eec6b5,SlbPjt916jic
+C02,分割,79183830.86,14901.98,20979.11856770796,16573.679296873976,24,True,True,14901.96,4f6691cdbade9e0a6b2e9088618a3929d7eabb5744e452a8beb7da6476ec1233,S1Ha1p2b_hrw
+C03,中心移動＋分割,79192152.48,23223.60,28859.47660807293,25332.05999999936,24,True,True,23224.26,02303f1a7eeb4b0b38d9158b0fc3d090b23cd45790a6d6df8adebf4c64b3ea40,SFN8bz8ynqbp

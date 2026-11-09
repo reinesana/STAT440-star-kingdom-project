@@ -1,0 +1,21 @@
+{
+  "comparator": "G17",
+  "passed_development": [
+    "C03",
+    "C02",
+    "C01"
+  ],
+  "passed_confirmation": [
+    "C03",
+    "C02",
+    "C01"
+  ],
+  "official_submission": true,
+  "public_scores": {
+    "C01": "79177265.21",
+    "C02": "79183830.86",
+    "C03": "79192152.48"
+  },
+  "recommended": "C03",
+  "reason": "Both official Public gain and fresh paired internal validation support this candidate; Private superiority remains unverified."
+}

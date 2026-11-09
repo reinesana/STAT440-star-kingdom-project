@@ -1,0 +1,16 @@
+{
+  "github_G17_url": "https://github.com/reinesana/STAT440-star-kingdom-project/blob/takito/g04-robustness-paper-2026-11-02/docs/reports/2026-11-02_regional_optimization/G17/G17_single_merge.csv",
+  "remote_G17_sha256_verified": "47a960a0cec73ee2abd1bb5df61891b66f64eca4a05f114e76a25e9b7a6dd86b",
+  "owning_sources": {
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_regional_optimization\\round4\\assess.py": "b2fddef61f10d1a7bb2149ed556533396b5e3647eb7145f358be6601b0cadb26",
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_geometry_optimization\\optimize_geometry.py": "c3b3a3e8920ebae199ca8d7c264eca09f137d584c7f68e1cc590367b5130254a",
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_geometry_optimization\\evaluate_plans.py": "7823f82a1b807b90218cce8671d05a064c846aaa506ad40a2b1240111098eff8",
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_robustness_paper\\inputs\\CMS001_predictions_2027.csv": "01c194da1c12c3d76ad0c8744c63b36cfaa071659de14484496758dd57f2a422",
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_robustness_paper\\inputs\\F168_curves_2027.npz": "ceb27cd2552da76574fdd1d11c5f72666ccc67d7cda64a36f7f37d2f92536cdc",
+    "C:\\Users\\takit\\Fall 2026\\STAT440\\final project\\output\\2026-11-02_geometry_optimization\\delivery\\G04_economic_triples.csv": "3e240e4122be8e69e6f9ede23c7bb042c215a84d853815bd0d372d999aa5ecc4"
+  },
+  "convex_fixture_checks": {
+    "excluded_endpoint_at_0_0p5": "center=(0,-0.751004), expected result passed",
+    "excluded_segment_midpoint": "infeasible, as expected"
+  }
+}

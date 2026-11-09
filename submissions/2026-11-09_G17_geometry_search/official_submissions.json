@@ -1,0 +1,53 @@
+[
+  {
+    "candidate": "C01",
+    "csv": "C01.csv",
+    "sha256": "3588893def624a003b214a49d95a20b3d0e807545db26f3629c827c9a6eec6b5",
+    "status": "complete",
+    "public_score": "79177265.21",
+    "submission_id": "SlbPjt916jic",
+    "account": "Takito",
+    "team": "UniUni",
+    "user_authorized": true,
+    "CAPEX": "139694200.75",
+    "OPEX": "31128534.04",
+    "delta_vs_G17": "8336.33",
+    "result_url": "http://172.16.42.11:51238/static/output/G_9H6afUZyQ4rNTrnp96KgTg.txt",
+    "annual_breakdown": "C01_official_annual.txt",
+    "score_source": "Decimal sum of official 25-year annual CAPEX and OPEX"
+  },
+  {
+    "candidate": "C02",
+    "csv": "C02.csv",
+    "sha256": "4f6691cdbade9e0a6b2e9088618a3929d7eabb5744e452a8beb7da6476ec1233",
+    "status": "complete",
+    "public_score": "79183830.86",
+    "submission_id": "S1Ha1p2b_hrw",
+    "account": "Takito",
+    "team": "UniUni",
+    "user_authorized": true,
+    "CAPEX": "139687635.10",
+    "OPEX": "31128534.04",
+    "delta_vs_G17": "14901.98",
+    "result_url": "http://172.16.42.11:51238/static/output/wVpCzOKuXInjBBDAs5vfTyZm.txt",
+    "annual_breakdown": "C02_official_annual.txt",
+    "score_source": "Decimal sum of official 25-year annual CAPEX and OPEX"
+  },
+  {
+    "candidate": "C03",
+    "csv": "C03.csv",
+    "sha256": "02303f1a7eeb4b0b38d9158b0fc3d090b23cd45790a6d6df8adebf4c64b3ea40",
+    "status": "complete",
+    "public_score": "79192152.48",
+    "submission_id": "SFN8bz8ynqbp",
+    "account": "Takito",
+    "team": "UniUni",
+    "user_authorized": true,
+    "CAPEX": "139679313.48",
+    "OPEX": "31128534.04",
+    "delta_vs_G17": "23223.60",
+    "result_url": "http://172.16.42.11:51238/static/output/K4mlQ4pcRXIksRybodq8fjZk.txt",
+    "annual_breakdown": "C03_official_annual.txt",
+    "score_source": "Decimal sum of official 25-year annual CAPEX and OPEX"
+  }
+]

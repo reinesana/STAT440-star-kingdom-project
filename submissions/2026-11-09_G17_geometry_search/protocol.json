@@ -1,0 +1,33 @@
+{
+  "comparator": "G17",
+  "source_sha256": "47a960a0cec73ee2abd1bb5df61891b66f64eca4a05f114e76a25e9b7a6dd86b",
+  "methods": [
+    "C01_convex_endpoint_exclusion",
+    "C02_new_bipartitions",
+    "C03_combined"
+  ],
+  "center_search": "Convex minimum-radius subproblems with endpoint-exclusion halfplanes; beam width 4, depth 3, up to 8 offending pipes per state. Numerical local solver; global geometry optimum not claimed.",
+  "split_search": "All unique bipartitions for 2..7 targets; 12 angular midpoint cuts for 8..25. Minimum circles and inherited center search per subset. Require lower nominal construction and positive expected fixed-cost saving under BOTH forecast families.",
+  "adoption": "Every one of 24 setting mean gains positive, both forecast-family paired MC95 lower bounds positive, and all scenarios feasible in development AND fresh confirmation.",
+  "development_seed": 202611091701,
+  "confirmation_seed": 202611091702,
+  "development_draws": 48,
+  "confirmation_draws": 128,
+  "hazard_scales": [
+    0.5,
+    1.0,
+    1.5
+  ],
+  "spatial_rho": [
+    0.0,
+    0.35
+  ],
+  "repair_cost_cv": [
+    0.0,
+    1.5
+  ],
+  "changes_after_confirmation": false,
+  "official_submission": false,
+  "note": "Synthetic forecast-conditional evaluation; Monte Carlo confidence is not evidence of real-world forecast accuracy.",
+  "algorithm_sha256": "89a8f15e94447f6802566b4fe7442bd125ced0d1ef58b058e22d5f2ca617697c"
+}
