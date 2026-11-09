@@ -1,0 +1,26 @@
+{
+  "candidate": "catboost_basic_bins3_raw",
+  "adoption_recommended": false,
+  "reason": "No consistent confirmed improvement over CMS001",
+  "selection_years": [
+    2024,
+    2025
+  ],
+  "confirmation_year": 2026,
+  "common_high_prevented_selected": 18,
+  "common_high_prevented_CMS001": 19,
+  "high_total": 36,
+  "G17_high_prevented_selected": 16,
+  "G17_high_prevented_CMS001": 18,
+  "G17_selected_minus_CMS001_simulated_total": 2895871.4187887367,
+  "G17_selected_minus_original_simulated_total": 5745098.910038715,
+  "tail_only_is_exploratory_control_not_selected": true,
+  "official_submission": true,
+  "public_score": null,
+  "official_public_scores": {
+    "TP01": "75329907.47",
+    "TP02": "74921636.70"
+  },
+  "joint_adoption_recommended": false,
+  "joint_decision": "JOINT_DECISION.ja.md"
+}

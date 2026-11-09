@@ -1,0 +1,34 @@
+{
+  "candidates": [
+    {
+      "candidate": "TP01",
+      "method": "catboost_basic_bins3_raw",
+      "csv": "submission_files\\selected_G17.csv",
+      "sha256": "628966b1033242bd1c41db679964b86dc1b17574ba46932f6202b71a43273ab5",
+      "rows": 59117,
+      "status": "prepared",
+      "submission_id": null,
+      "public_score": null,
+      "official_annual_breakdown": "pending",
+      "authorized_user_request": "Evaluate jointly using internal indicators and actual submitted Public scores",
+      "hyperparameters_changed_after_Public": false
+    },
+    {
+      "candidate": "TP02",
+      "method": "lightgbm_basic_bins3_raw; F168 * p(high cost) / construction cost",
+      "csv": "submission_files\\tail_probability_only_G17.csv",
+      "sha256": "766ec949ef1a285be3a3a25a120e1377fc6366cc03ab62b7d5f1c785b921f1f5",
+      "rows": 59117,
+      "status": "prepared",
+      "submission_id": null,
+      "public_score": null,
+      "official_annual_breakdown": "pending",
+      "authorized_user_request": "Evaluate jointly using internal indicators and actual submitted Public scores",
+      "hyperparameters_changed_after_Public": false
+    }
+  ],
+  "internal_metrics_sha256": "3d9682fac22f4bfbbe9e07cb451e70e8e18c16b47fdbfa01aafbda5c6f331059",
+  "simulation_summary_sha256": "8950ef77985968632e6515fe75497a8fa113e296bae27580efa97133968109a6",
+  "selection_lock_sha256": "6e7e95f01b5afa0dd4991b3a3d00a778d26c3d4723e515b9986a8ffe2cb80b5c",
+  "official_submissions_authorized": 2
+}

@@ -1,0 +1,52 @@
+{
+  "training_rows": 14113,
+  "query_checks": [
+    {
+      "year": 2023,
+      "n": 35832,
+      "query_sha256": "f2dd68ceecb4bdca3088f72c78b979bfa2c2b1167abdc2d3b671a4e84e482b92",
+      "age_at_jan1_verified": true,
+      "event_features_match_past_only_cache": true
+    },
+    {
+      "year": 2024,
+      "n": 34006,
+      "query_sha256": "0df9b9811e2bfcaff9e144a292d9189023d214f310654021e08ab2354623e9cc",
+      "age_at_jan1_verified": true,
+      "event_features_match_past_only_cache": true
+    },
+    {
+      "year": 2025,
+      "n": 32051,
+      "query_sha256": "ade09ad5f1ac82d072494b437802d60e27e1ecb4bf463f1d0249ca9b80c35c9e",
+      "age_at_jan1_verified": true,
+      "event_features_match_past_only_cache": true
+    },
+    {
+      "year": 2026,
+      "n": 30278,
+      "query_sha256": "ef11361212b62a820dddfb0ca4ee87d6535f2a4ba30e455629af2f535b1b3dad",
+      "age_at_jan1_verified": true,
+      "event_features_match_past_only_cache": true
+    },
+    {
+      "year": 2027,
+      "n": 27240,
+      "query_sha256": "3712e5c5ed7f0f1eded6f9aecb066c33b7019687162afe0079bd43e421bfd506",
+      "age_at_jan1_verified": true,
+      "event_features_match_past_only_cache": true
+    }
+  ],
+  "previous_invariance_audit_sha256": "f597eb7b0f7d8c25062b3909b1d9bcac316387775a5252744aea61ed55ab6f44",
+  "feature_contract_sha256": "f335295f6a394ac7fe6cf52330165d685e39642ef8e58e4a3f290de1acdb6fa2",
+  "protocol_sha256": "cc05480e704e41bb4bcda4425be84c3db077a60ee3ceb8c96e71b53f21084c23",
+  "coordinate_units": "metres",
+  "future_ages_not_used": true,
+  "source_sha256": {
+    "data/pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data/train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "ensemble_training/data/training_rich.csv": "99c812818843264a762a7f5e901415af4e339f09b9d3d5dc3c8b7d2a38740ff8",
+    "ensemble_training/features.py": "6444998b1e6cf1fffdb5d004b23699adff3d370bc4b231879f655727a9a456f3"
+  },
+  "code_sha256": "57b953ec3b1db8538419994e1482a9b794aea60d6ddb2ddd1f8455e6219d5c69"
+}

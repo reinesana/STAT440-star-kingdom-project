@@ -1,0 +1,36 @@
+[
+  {
+    "candidate": "TP01",
+    "method": "catboost_basic_bins3_raw",
+    "csv": "submission_files\\selected_G17.csv",
+    "sha256": "628966b1033242bd1c41db679964b86dc1b17574ba46932f6202b71a43273ab5",
+    "rows": 59117,
+    "status": "complete",
+    "submission_id": "S1txbe31ipyk",
+    "public_score": "75329907.47",
+    "official_annual_breakdown": "official_TP01.csv",
+    "authorized_user_request": "Evaluate jointly using internal indicators and actual submitted Public scores",
+    "hyperparameters_changed_after_Public": false,
+    "result_url": "http://172.16.42.11:51238/static/output/C2VLj4J71iElYOKcwblv8ZET.txt",
+    "CAPEX": "142887336.05",
+    "OPEX": "31782756.48",
+    "delta_vs_G17": "-3839021.41"
+  },
+  {
+    "candidate": "TP02",
+    "method": "lightgbm_basic_bins3_raw; F168 * p(high cost) / construction cost",
+    "csv": "submission_files\\tail_probability_only_G17.csv",
+    "sha256": "766ec949ef1a285be3a3a25a120e1377fc6366cc03ab62b7d5f1c785b921f1f5",
+    "rows": 59117,
+    "status": "complete",
+    "submission_id": "SklR6l27kez6",
+    "public_score": "74921636.70",
+    "official_annual_breakdown": "official_TP02.csv",
+    "authorized_user_request": "Evaluate jointly using internal indicators and actual submitted Public scores",
+    "hyperparameters_changed_after_Public": false,
+    "result_url": "http://172.16.42.11:51238/static/output/fMIxd_AyXDX9sLyhd3Ky0Jqh.txt",
+    "CAPEX": "143181078.24",
+    "OPEX": "31897285.06",
+    "delta_vs_G17": "-4247292.18"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "high_count_delta": 1,
+  "high_recall_delta": 0.027777777777777776,
+  "high_recall_spatial_bootstrap_95": [
+    0.0,
+    0.12121212121212122
+  ],
+  "dollar_delta": -144004.01000000024,
+  "dollar_spatial_bootstrap_95": [
+    -3940277.63975,
+    4900386.643249999
+  ]
+}

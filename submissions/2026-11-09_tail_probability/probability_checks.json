@@ -1,0 +1,6 @@
+{
+  "probabilities_nonnegative": true,
+  "sum_to_one": true,
+  "threshold_order_projection": true,
+  "mixture_amount_arithmetic": true
+}

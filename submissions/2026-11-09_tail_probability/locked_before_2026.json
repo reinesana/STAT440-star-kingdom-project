@@ -1,0 +1,12 @@
+{
+  "model": "catboost_basic_bins3_raw",
+  "selection_years": [
+    2024,
+    2025
+  ],
+  "selection_geometry": "common",
+  "primary": "mean recall of observed leak costs above train-only 99th percentile under $10m",
+  "development_high_recall": 0.78125,
+  "development_cost_capture": 0.7286832172500941,
+  "source_code_sha256": "91d2aa67522cdf6b5ae101820a18547b2da62ac37b44d2e928b80fd05ed77a0b"
+}

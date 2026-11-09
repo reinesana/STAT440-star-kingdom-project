@@ -1,0 +1,3 @@
+candidate,model,high_prevented,high_total,high_recall,cost_capture,public_score,public_delta_vs_G17,official_capex,official_opex,capex_delta_vs_G17,opex_delta_vs_G17,simulated_total_delta_vs_original_G17,paired_mc_se,adoption
+TP01,catboost_basic_bins3_raw,16,36,0.4444444444444444,0.4581667855162565,75329907.47,-3839021.41,142887336.05,31782756.48,3184798.97,654222.44,5745098.910038713,254438.10872834365,not recommended
+TP02,tail_probability_only,19,36,0.5277777777777778,0.4840071955502422,74921636.7,-4247292.18,143181078.24,31897285.06,3478541.16,768751.02,2286805.7180077005,273973.1553293971,not recommended

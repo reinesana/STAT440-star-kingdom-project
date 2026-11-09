@@ -1,0 +1,44 @@
+{
+  "year": 2027,
+  "family": "catboost",
+  "pack": "basic",
+  "train_end": 2026,
+  "inner_train_end": 2025,
+  "calibration_year": 2026,
+  "thresholds": [
+    78043.48399999984,
+    407534.7272000001
+  ],
+  "train_rows": 14113,
+  "calibrations": [
+    {
+      "slope": 1.1629149325711987,
+      "intercept": -0.1619549787036902,
+      "positive_count": 123,
+      "n": 3038,
+      "optimizer_success": true
+    },
+    {
+      "slope": 1.3186557545958544,
+      "intercept": 0.6845595916807529,
+      "positive_count": 36,
+      "n": 3038,
+      "optimizer_success": true
+    }
+  ],
+  "seconds": 22.868431091308594,
+  "features": [
+    "scenario_year",
+    "material",
+    "surface",
+    "material_surface",
+    "pipe_length_m",
+    "log1p_pipe_length_m",
+    "midpoint_x_m",
+    "midpoint_y_m",
+    "age_at_year_start",
+    "log1p_age_at_year_start",
+    "age_missing"
+  ],
+  "class_weights_used": false
+}

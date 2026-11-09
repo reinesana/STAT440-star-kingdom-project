@@ -1,0 +1,17 @@
+model,high_recall,cost_capture,worst_high_recall,feasible
+catboost_basic_bins3_raw,0.78125,0.7286832172500941,0.75,True
+lightgbm_basic_bins3_raw,0.78125,0.7260819184026306,0.75,True
+catboost_basic_bins2_raw,0.78125,0.7248059355716368,0.75,True
+lightgbm_basic_bins2_raw,0.78125,0.7232337932834749,0.75,True
+lightgbm_basic_bins3_platt,0.78125,0.721458658366807,0.75,True
+lightgbm_basic_bins2_platt,0.78125,0.7202905343216303,0.75,True
+catboost_local_bins2_raw,0.78125,0.7177396598800964,0.75,True
+catboost_basic_bins3_platt,0.78125,0.7176543189865567,0.75,True
+catboost_local_bins3_raw,0.78125,0.7157246697494084,0.75,True
+catboost_basic_bins2_platt,0.78125,0.7140494635663902,0.75,True
+catboost_local_bins2_platt,0.78125,0.7112209333363707,0.75,True
+catboost_local_bins3_platt,0.78125,0.7103146325624607,0.75,True
+lightgbm_local_bins3_raw,0.75,0.7093500639684556,0.75,True
+lightgbm_local_bins3_platt,0.75,0.7057633810286801,0.75,True
+lightgbm_local_bins2_raw,0.75,0.7056149992661394,0.75,True
+lightgbm_local_bins2_platt,0.75,0.7032883558011911,0.75,True
