@@ -1,0 +1,14 @@
+{
+  "candidate_model": "lightgbm",
+  "candidate_penalty": 2.4,
+  "adoption_status": "hold; consistent benefit for the most expensive cases not established",
+  "confirmation_capture_delta_percentage_points": 0.08602052069976995,
+  "confirmation_prevented_dollars_delta": 61116.46999999881,
+  "confirmation_top1pct_prevented_candidate": 19,
+  "confirmation_top1pct_prevented_symmetric": 19,
+  "confirmation_top1pct_total": 31,
+  "forward_asymmetric_capture": 0.6420047365605639,
+  "forward_symmetric_capture": 0.6544285241587021,
+  "simulated_2027_candidate_minus_CMS001": 2220599.1403122954,
+  "official_submission": false
+}

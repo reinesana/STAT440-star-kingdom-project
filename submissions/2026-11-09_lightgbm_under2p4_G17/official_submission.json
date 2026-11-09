@@ -1,0 +1,23 @@
+{
+  "candidate": "AC01_lightgbm_under2p4_G17",
+  "submission_id": "SDtTshmc1ne4",
+  "status": "complete",
+  "server_displayed_time": "2026-11-09 13:53",
+  "account": "Takito",
+  "team": "UniUni",
+  "csv": "submission_files/selected_G17_circles.csv",
+  "sha256": "df5083ba455057b3d25d30ab099578391380c2533840f7b50bbf080bfe5129e8",
+  "model": "LightGBM",
+  "underestimation_penalty": 2.4,
+  "geometry": "G17 circles, assignment-preserving dependency-constrained reorder",
+  "public_score": "76362946.88",
+  "official_annual_breakdown": "official_annual_breakdown.csv",
+  "user_explicitly_authorized_submission": true,
+  "submission_count_authorized_for_this_turn": 1,
+  "CAPEX": "142832806.52",
+  "OPEX": "30804246.60",
+  "result_url": "http://172.16.42.11:51238/static/output/ee8eORjFV8OTo1vKiFmiK2XG.txt",
+  "delta_vs_G17": "-2805982.00",
+  "historical_record_delta_vs_G25": "-4791896.13",
+  "official_construction_finish_offset": 15
+}

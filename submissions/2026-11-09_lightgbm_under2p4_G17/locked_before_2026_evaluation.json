@@ -1,0 +1,11 @@
+{
+  "model": "lightgbm",
+  "k": 2.4,
+  "best_symmetric_model": "lightgbm",
+  "selection_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "code_sha256": "071fae26d4756f02ccf9bfbad594b1b473241b510b30e50f4de4193b400e02b2"
+}

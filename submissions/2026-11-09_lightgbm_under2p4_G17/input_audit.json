@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "year": 2023,
+      "query_rows": 35832,
+      "active_pipes": 35840,
+      "missing": 8,
+      "future_mutation_invariant": true
+    },
+    {
+      "year": 2024,
+      "query_rows": 34006,
+      "active_pipes": 34014,
+      "missing": 8,
+      "future_mutation_invariant": true
+    },
+    {
+      "year": 2025,
+      "query_rows": 32051,
+      "active_pipes": 32059,
+      "missing": 8,
+      "future_mutation_invariant": true
+    },
+    {
+      "year": 2026,
+      "query_rows": 30278,
+      "active_pipes": 30286,
+      "missing": 8,
+      "future_mutation_invariant": true
+    },
+    {
+      "year": 2027,
+      "query_rows": 27240,
+      "active_pipes": 27248,
+      "missing": 8,
+      "future_mutation_invariant": true
+    }
+  ],
+  "training_rows": 14113,
+  "source_sha256": {
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+    "ensemble_training\\data\\training_rich.csv": "99c812818843264a762a7f5e901415af4e339f09b9d3d5dc3c8b7d2a38740ff8",
+    "ensemble_training\\data\\feature_contract.json": "f335295f6a394ac7fe6cf52330165d685e39642ef8e58e4a3f290de1acdb6fa2",
+    "output\\2026-11-09_asymmetric_cost\\run.py": "7ebd340058a5756178de5a3ef5046b28605a589771f1af1513f4788c2ddf672d",
+    "output\\2026-11-09_asymmetric_cost\\PROTOCOL.md": "8980d0208938cc99a18bd2e56ac18050b9f53a88ca66317f977a4538726cd2a8"
+  },
+  "shared_doc_sha256": "e55528e5f8dd1881a71e529119cd32744664bc9f1a10c295be9f3495e4a89bec"
+}

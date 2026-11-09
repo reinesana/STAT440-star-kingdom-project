@@ -1,0 +1,12 @@
+[
+  {
+    "path": "lightgbm_k1.0.joblib",
+    "reloaded_prediction_match": true,
+    "n": 27240
+  },
+  {
+    "path": "lightgbm_k2.4.joblib",
+    "reloaded_prediction_match": true,
+    "n": 27240
+  }
+]

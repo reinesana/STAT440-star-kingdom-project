@@ -1,0 +1,5 @@
+model,mean_total_cost,selected_minus_model,paired_mc_se,selected_wins_fraction,draws,interpretation
+CMS001,196495853.1573828,2220599.1403122954,232413.7761466753,0.28125,256,train-only hypothetical future; first year observed only for historical origins
+best_symmetric,198937889.26929665,-221436.97160156444,126180.64620138364,0.41015625,256,train-only hypothetical future; first year observed only for historical origins
+same_model_k1,198937889.26929665,-221436.97160156444,126180.64620138364,0.41015625,256,train-only hypothetical future; first year observed only for historical origins
+selected,198716452.2976951,0.0,0.0,0.0,256,train-only hypothetical future; first year observed only for historical origins

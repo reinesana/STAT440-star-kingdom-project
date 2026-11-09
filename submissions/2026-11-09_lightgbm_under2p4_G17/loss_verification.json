@@ -1,0 +1,6 @@
+{
+  "asymmetry_ratio_correct": true,
+  "finite_difference_gradient": true,
+  "catboost_negative_derivative_sign": true,
+  "constant_expectile_example": 7.5
+}

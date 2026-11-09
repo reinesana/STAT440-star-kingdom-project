@@ -1,0 +1,33 @@
+{
+  "repository": "https://github.com/reinesana/STAT440-star-kingdom-project",
+  "current_main": "34c72a8ec4a4a9db8e1fb1ff91f47819175d4ba6",
+  "commit_date": "2026-11-09T20:23:41Z",
+  "files": [
+    {
+      "path": "data/pipes.csv",
+      "normalized_content_matches": true,
+      "remote_sha256": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+      "local_sha256": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2"
+    },
+    {
+      "path": "data/train.csv",
+      "normalized_content_matches": true,
+      "remote_sha256": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189",
+      "local_sha256": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+    },
+    {
+      "path": "src/build_cost_submissions.py",
+      "normalized_content_matches": true,
+      "remote_sha256": "a3b50cc97f5006cb8859d722eabbb487a424700ac6447e379a447b6f6c488391",
+      "local_sha256": "4033a69e69fd934123d164c39cd21ab87561064ccc795d69998c84a35145220f"
+    },
+    {
+      "path": "notebooks/Takito_Kobayashi/2026-10-28/ThreeModelStacking/config_2026.json",
+      "remote_status": "404; local artifact provenance only"
+    },
+    {
+      "path": "notebooks/Takito_Kobayashi/2026-10-28/ThreeModelStacking/config_2027.json",
+      "remote_status": "404; local artifact provenance only"
+    }
+  ]
+}

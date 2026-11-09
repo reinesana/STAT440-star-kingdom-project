@@ -1,0 +1,23 @@
+{
+  "2024": {
+    "n": 1955,
+    "max_abs_difference": 0.7590190677874489,
+    "mean_abs_difference": 0.00038824505060506626,
+    "rows_difference_over_2c": 1,
+    "interpretation": "Historical inventory refits with frozen recipes; float/forest threshold differences from original event-only OOF are recorded. No observed event predictions overwritten."
+  },
+  "2025": {
+    "n": 1773,
+    "max_abs_difference": 19.934043506233138,
+    "mean_abs_difference": 0.16543849653586884,
+    "rows_difference_over_2c": 616,
+    "interpretation": "Historical inventory refits with frozen recipes; float/forest threshold differences from original event-only OOF are recorded. No observed event predictions overwritten."
+  },
+  "2026": {
+    "n": 3038,
+    "max_abs_difference": 9.313225746154785e-10,
+    "mean_abs_difference": 1.670889657342082e-11,
+    "rows_difference_over_2c": 0,
+    "interpretation": "Historical inventory refits with frozen recipes; float/forest threshold differences from original event-only OOF are recorded. No observed event predictions overwritten."
+  }
+}
