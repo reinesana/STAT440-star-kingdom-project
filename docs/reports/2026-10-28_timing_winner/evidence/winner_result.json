@@ -1,0 +1,12 @@
+{
+  "experiment_id": "R029",
+  "forecast_id": "F168",
+  "csv_sha256": "a7268dab2a127f3b19a5c349433755aea1866e573b572cd09176c5d7960b6401",
+  "official_submission_id": "S5DAfoqe0xc5",
+  "submitted_at": "2026-10-28T01:01:53.543Z",
+  "public_score_dollars": 30476153.88,
+  "public_total_cost_dollars": 219523846.12,
+  "construction_dollars": 158410940.32,
+  "repair_dollars": 61112905.8,
+  "cost_model_version": "2026-10-26-area-exponent"
+}
