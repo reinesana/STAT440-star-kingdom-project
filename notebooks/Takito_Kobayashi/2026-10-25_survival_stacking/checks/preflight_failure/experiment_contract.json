@@ -1,0 +1,28 @@
+{
+  "seed": 440,
+  "outer_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "deployment_origin": 2027,
+  "objective": "equal-weight mean next-year Brier over two prior validation years",
+  "features": "joint semantic-group / supervised-ranked subset and hyperparameter search",
+  "requested_outer_trials": 40,
+  "requested_deployment_trials": 60,
+  "code_sha256": {
+    "build_results.py": "ca30150cc8a787d9d6c02b9df72d51255772af625dfdb1f89d481290e2d2b3a9",
+    "data.py": "1c364f6137c277ac94c0c671907938b27507421f059da02c4ba104baf875d72e",
+    "experiment.py": "dc2213294260eb61f47bce74eb06862ff846d98c17a0e1085b9c7f7c12907b03",
+    "models.py": "5dcf410291fab42f97dc3d9884e322ba6736ad13b399bbdfd6bc1b03f40f9b5e",
+    "predict.py": "b852d34910dcf7f76a47be0c8910b32c0a86a0324aa3fd33ed3facf37a782552",
+    "verify.py": "7ccb20fc67a97c0f8fdbace59e287524a419ffeeb0b1dd252ad86fbe5bcaee8b"
+  },
+  "shared_record": "https://docs.google.com/document/d/1N32Z_DC6Frw1OYwSNA9mIlXjgDPuKiOQXH4nJV2RZcQ/edit",
+  "censoring": "administrative at training year end; annual event timing uses year midpoint",
+  "landmarking": "all still-at-risk pipes at each historical Jan 1; correlated within pipe",
+  "forecast": "first leak without future planned replacement; observed history frozen at forecast origin",
+  "asymmetric_penalty": false,
+  "source_commit": "668a598ba8efd478d1c5bf569b39fc7fb93162e2"
+}

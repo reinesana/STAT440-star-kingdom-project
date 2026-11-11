@@ -1,0 +1,36 @@
+{
+  "rows_inventory": 43039,
+  "rows_events": 14113,
+  "missing_lay": 15,
+  "missing_material": 8,
+  "native_polyurethane": 1678,
+  "events_unique": true,
+  "all_inventory_pre2019": true,
+  "units": "metres",
+  "future_mutation_checks": [
+    {
+      "origin": 2021,
+      "future_event_deletion_invariant": true,
+      "rows": 39580
+    },
+    {
+      "origin": 2023,
+      "future_event_deletion_invariant": true,
+      "rows": 35840
+    },
+    {
+      "origin": 2026,
+      "future_event_deletion_invariant": true,
+      "rows": 30286
+    },
+    {
+      "origin": 2027,
+      "future_event_deletion_invariant": true,
+      "rows": 27248
+    }
+  ],
+  "input_sha256": {
+    "data\\pipes.csv": "f849cbede7693f1924f3dd03e1a522e87418d0dc6fe9527acb69d85483ea74a2",
+    "data\\train.csv": "a062e6af1d13eade4c85edda2a1704f18b18a15ec5f1e80800769f8a48712189"
+  }
+}

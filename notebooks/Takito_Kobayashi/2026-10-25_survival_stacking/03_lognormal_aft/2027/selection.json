@@ -1,0 +1,52 @@
+{
+  "model": "03_lognormal_aft",
+  "origin": 2027,
+  "train_years": [
+    2019,
+    2026
+  ],
+  "inner_validation_years": [
+    2025,
+    2026
+  ],
+  "best_trial": 58,
+  "inner_mean_brier": 0.09067494781002883,
+  "config": {
+    "model": "03_lognormal_aft",
+    "features": "groups",
+    "group_basic": false,
+    "group_cohort": false,
+    "group_space": false,
+    "group_topology": false,
+    "group_neighbors": false,
+    "group_history": true,
+    "group_calendar": true,
+    "penalty": 0.08251402079250579
+  },
+  "selected_features": [
+    "history_50m_prior_leak_count",
+    "history_50m_last1_leak_count",
+    "history_50m_last2_leak_count",
+    "history_50m_prior_leak_fraction",
+    "history_100m_prior_leak_count",
+    "history_100m_last1_leak_count",
+    "history_100m_last2_leak_count",
+    "history_100m_prior_leak_fraction",
+    "history_250m_prior_leak_count",
+    "history_250m_last1_leak_count",
+    "history_250m_last2_leak_count",
+    "history_250m_prior_leak_fraction",
+    "nearest_prior_leak_m",
+    "no_prior_leak",
+    "cohort_prior_rate",
+    "material_prior_rate",
+    "origin_year"
+  ],
+  "requested_trials": 60,
+  "completed_trials": 56,
+  "failed_trials": 4,
+  "training_landmarks": 292137,
+  "training_event_landmarks": 74153,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

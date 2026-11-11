@@ -1,0 +1,42 @@
+{
+  "model": "09_deephit",
+  "origin": 2027,
+  "train_years": [
+    2019,
+    2026
+  ],
+  "inner_validation_years": [
+    2025,
+    2026
+  ],
+  "best_trial": 52,
+  "inner_mean_brier": 0.07086741551756859,
+  "config": {
+    "model": "09_deephit",
+    "features": "basic",
+    "width": 32,
+    "layers": 2,
+    "dropout": 0.31319887442911465,
+    "lr": 0.0009536383532700529,
+    "decay": 0.0003472372299687962,
+    "epochs": 30,
+    "batch": 8192,
+    "alpha": 0.5219051713954631,
+    "sigma": 0.5850120960589846
+  },
+  "selected_features": [
+    "material",
+    "surface",
+    "length_m",
+    "log_length",
+    "age",
+    "lay_missing"
+  ],
+  "requested_trials": 60,
+  "completed_trials": 60,
+  "failed_trials": 0,
+  "training_landmarks": 292137,
+  "training_event_landmarks": 74153,
+  "unique_training_pipes": 41361,
+  "full_refit_rejections": []
+}

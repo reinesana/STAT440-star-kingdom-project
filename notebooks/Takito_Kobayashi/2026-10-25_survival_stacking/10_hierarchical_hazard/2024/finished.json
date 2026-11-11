@@ -1,0 +1,8 @@
+{
+  "model": "10_hierarchical_hazard",
+  "origin": 2024,
+  "rows": 34014,
+  "support_years": 25,
+  "elapsed_seconds": 509.80664253234863,
+  "prediction_sha256": "6f684d121ba9c6059809e390b09b378403de1bc3d99e6b57679a296ec9607da8"
+}

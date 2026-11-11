@@ -1,0 +1,85 @@
+{
+  "smoke": [
+    {
+      "model": "01_elastic_net_cox",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 2,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "02_weibull_aft",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "03_lognormal_aft",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "04_spline_survival",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "05_random_survival_forest",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 2,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "06_xgboost_aft",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "07_catboost_hazard",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "08_mtlr",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 2,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "09_deephit",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 2,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    },
+    {
+      "model": "10_hierarchical_hazard",
+      "finite_supported_curves": true,
+      "monotone": true,
+      "support": 25,
+      "rows": 3000,
+      "smoke_only_not_evaluation": true
+    }
+  ],
+  "training_future_label_invariant": true
+}
